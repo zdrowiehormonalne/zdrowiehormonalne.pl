@@ -96,7 +96,7 @@ const translations = {
       title: "Lekarz prowadzący",
       name: "lek. Marta Treblińska",
       education: "Lekarz medycyny, Warszawski Uniwersytet Medyczny",
-      harvard: "Testosterone Therapy and Sexual Dysfunction — Harvard Medical School (15.75 AMA PRA Category 1 Credits™)",
+      harvard: "Testosterone Therapy and Sexual Dysfunction — Harvard Medical School",
       experience: "Wieloletnie doświadczenie w diagnostyce i leczeniu zaburzeń hormonalnych u mężczyzn",
       ebm: "Podejście oparte na medycynie opartej na dowodach (evidence-based medicine)",
       alfa: "Certyfikat TRT Master Practitioner u dr n. med. Marty Mazur — Projekt Alfa"
@@ -210,7 +210,7 @@ const translations = {
       title: "Attending physician",
       name: "Marta Treblińska, MD",
       education: "Doctor of Medicine, Medical University of Warsaw",
-      harvard: "Testosterone Therapy and Sexual Dysfunction — Harvard Medical School (15.75 AMA PRA Category 1 Credits™)",
+      harvard: "Testosterone Therapy and Sexual Dysfunction — Harvard Medical School",
       experience: "Years of experience in diagnosing and treating hormonal disorders in men",
       ebm: "Evidence-based medicine approach",
       alfa: "TRT Master Practitioner certificate — Dr. Marta Mazur, Projekt Alfa"
@@ -324,7 +324,7 @@ const translations = {
       title: "Behandelnde Ärztin",
       name: "Dr. med. Marta Treblińska",
       education: "Ärztin, Medizinische Universität Warschau",
-      harvard: "Testosterone Therapy and Sexual Dysfunction — Harvard Medical School (15.75 AMA PRA Category 1 Credits™)",
+      harvard: "Testosterone Therapy and Sexual Dysfunction — Harvard Medical School",
       experience: "Langjährige Erfahrung in der Diagnostik und Behandlung hormoneller Störungen bei Männern",
       ebm: "Evidenzbasierter medizinischer Ansatz",
       alfa: "TRT Master Practitioner Zertifikat — Dr. med. Marta Mazur, Projekt Alfa"
@@ -700,11 +700,11 @@ const ProcessSection = () => {
     ] }),
     /* @__PURE__ */ jsxs("div", { className: "relative", children: [
       /* @__PURE__ */ jsx("div", { className: "hidden md:block absolute left-[2.25rem] top-8 bottom-8 w-px bg-border" }),
-      /* @__PURE__ */ jsx("div", { className: "space-y-8", children: steps.map((s, i) => /* @__PURE__ */ jsx(ScrollReveal, { delay: i * 150, children: /* @__PURE__ */ jsxs("div", { className: "flex items-start gap-6 md:gap-8", children: [
-        /* @__PURE__ */ jsx("div", { className: "flex-shrink-0 w-[4.5rem] h-[4.5rem] rounded-2xl bg-hero text-hero-foreground flex items-center justify-center font-serif text-xl relative z-10", children: s.num }),
-        /* @__PURE__ */ jsxs("div", { className: "pt-3", children: [
-          /* @__PURE__ */ jsx("h3", { className: "font-sans font-semibold text-foreground text-lg mb-1", children: s.title }),
-          /* @__PURE__ */ jsx("p", { className: "text-muted-foreground", children: s.desc })
+      /* @__PURE__ */ jsx("div", { className: "space-y-8", children: steps.map((s, i) => /* @__PURE__ */ jsx(ScrollReveal, { delay: i * 150, children: /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-[4rem,1fr] items-start gap-4 md:grid-cols-[4.5rem,1fr] md:gap-8", children: [
+        /* @__PURE__ */ jsx("div", { className: "relative z-10 flex h-16 w-16 items-center justify-center self-start rounded-xl bg-hero font-serif text-xl text-hero-foreground md:h-[4.5rem] md:w-[4.5rem] md:rounded-2xl", children: s.num }),
+        /* @__PURE__ */ jsxs("div", { className: "min-w-0 pt-1 md:pt-2", children: [
+          /* @__PURE__ */ jsx("h3", { className: "font-sans text-lg font-semibold leading-tight text-foreground", children: s.title }),
+          /* @__PURE__ */ jsx("p", { className: "mt-2 text-muted-foreground", children: s.desc })
         ] })
       ] }) }, i)) })
     ] }),
@@ -715,7 +715,7 @@ const TrtInfoSection = () => {
   const { t } = useLanguage();
   return /* @__PURE__ */ jsx("section", { className: "py-20 md:py-28 bg-section-alt", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-3xl", children: [
     /* @__PURE__ */ jsx(ScrollReveal, { children: /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl md:text-4xl text-foreground text-center mb-8", children: t.trtInfo.title }) }),
-    /* @__PURE__ */ jsx(ScrollReveal, { delay: 150, children: /* @__PURE__ */ jsxs("div", { className: "bg-card rounded-2xl p-8 md:p-12 border border-border shadow-sm", children: [
+    /* @__PURE__ */ jsx(ScrollReveal, { delay: 150, children: /* @__PURE__ */ jsxs("div", { className: "bg-card rounded-2xl p-5 sm:p-8 md:p-12 border border-border shadow-sm", children: [
       /* @__PURE__ */ jsx("p", { className: "text-foreground leading-relaxed mb-6", children: t.trtInfo.p1 }),
       /* @__PURE__ */ jsx("p", { className: "text-foreground leading-relaxed mb-6", children: t.trtInfo.p2 }),
       /* @__PURE__ */ jsx("p", { className: "text-sm text-muted-foreground border-t border-border pt-6 italic", children: t.trtInfo.disclaimer })
@@ -1098,28 +1098,28 @@ const ContactSection = () => {
     /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8", children: [
       /* @__PURE__ */ jsxs("div", { className: "space-y-6", children: [
         /* @__PURE__ */ jsx(ScrollReveal, { delay: 100, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", className: "flex items-center gap-4 p-5 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-sm transition-all group", children: [
-          /* @__PURE__ */ jsx("div", { className: "w-12 h-12 rounded-lg bg-teal-light flex items-center justify-center text-teal-mid group-hover:scale-110 transition-transform", children: /* @__PURE__ */ jsx(Phone, { className: "w-5 h-5" }) }),
+          /* @__PURE__ */ jsx("div", { className: "w-12 h-12 shrink-0 rounded-lg bg-teal-light flex items-center justify-center text-teal-mid group-hover:scale-110 transition-transform", children: /* @__PURE__ */ jsx(Phone, { className: "w-5 h-5" }) }),
           /* @__PURE__ */ jsxs("div", { children: [
             /* @__PURE__ */ jsx("p", { className: "text-sm text-muted-foreground", children: t.contact.phone }),
             /* @__PURE__ */ jsx("p", { className: "font-semibold text-foreground", children: phoneDisplay })
           ] })
         ] }) }),
         /* @__PURE__ */ jsx(ScrollReveal, { delay: 200, children: /* @__PURE__ */ jsxs("a", { href: "mailto:treblinskamarta@zdrowiehormonalne.pl", className: "flex items-center gap-4 p-5 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-sm transition-all group", children: [
-          /* @__PURE__ */ jsx("div", { className: "w-12 h-12 rounded-lg bg-teal-light flex items-center justify-center text-teal-mid group-hover:scale-110 transition-transform", children: /* @__PURE__ */ jsx(Mail, { className: "w-5 h-5" }) }),
+          /* @__PURE__ */ jsx("div", { className: "w-12 h-12 shrink-0 rounded-lg bg-teal-light flex items-center justify-center text-teal-mid group-hover:scale-110 transition-transform", children: /* @__PURE__ */ jsx(Mail, { className: "w-5 h-5" }) }),
           /* @__PURE__ */ jsxs("div", { children: [
             /* @__PURE__ */ jsx("p", { className: "text-sm text-muted-foreground", children: t.contact.email }),
-            /* @__PURE__ */ jsx("p", { className: "font-semibold text-foreground", children: "treblinskamarta@zdrowiehormonalne.pl" })
+            /* @__PURE__ */ jsx("p", { className: "font-semibold text-foreground break-all text-sm sm:text-base", children: "treblinskamarta@zdrowiehormonalne.pl" })
           ] })
         ] }) }),
         /* @__PURE__ */ jsx(ScrollReveal, { delay: 300, children: /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-4 p-5 rounded-xl bg-card border border-border", children: [
-          /* @__PURE__ */ jsx("div", { className: "w-12 h-12 rounded-lg bg-teal-light flex items-center justify-center text-teal-mid", children: /* @__PURE__ */ jsx(Video, { className: "w-5 h-5" }) }),
+          /* @__PURE__ */ jsx("div", { className: "w-12 h-12 shrink-0 rounded-lg bg-teal-light flex items-center justify-center text-teal-mid", children: /* @__PURE__ */ jsx(Video, { className: "w-5 h-5" }) }),
           /* @__PURE__ */ jsxs("div", { children: [
             /* @__PURE__ */ jsx("p", { className: "text-sm text-muted-foreground", children: t.contact.consultForm }),
             /* @__PURE__ */ jsx("p", { className: "font-semibold text-foreground", children: t.contact.consultFormValue })
           ] })
         ] }) }),
         /* @__PURE__ */ jsx(ScrollReveal, { delay: 400, children: /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-4 p-5 rounded-xl bg-card border border-border", children: [
-          /* @__PURE__ */ jsx("div", { className: "w-12 h-12 rounded-lg bg-teal-light flex items-center justify-center text-teal-mid", children: /* @__PURE__ */ jsx(Clock, { className: "w-5 h-5" }) }),
+          /* @__PURE__ */ jsx("div", { className: "w-12 h-12 shrink-0 rounded-lg bg-teal-light flex items-center justify-center text-teal-mid", children: /* @__PURE__ */ jsx(Clock, { className: "w-5 h-5" }) }),
           /* @__PURE__ */ jsxs("div", { children: [
             /* @__PURE__ */ jsx("p", { className: "text-sm text-muted-foreground", children: t.contact.schedule }),
             /* @__PURE__ */ jsx("p", { className: "font-semibold text-foreground", children: t.contact.scheduleValue })
