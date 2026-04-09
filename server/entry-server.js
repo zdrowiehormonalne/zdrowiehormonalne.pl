@@ -8,7 +8,7 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useLocation, Routes, Route } from "react-router-dom";
-import { Phone, X, Menu, Mail, Check, Copy, BatteryLow, HeartPulse, Brain, TrendingDown, FlaskConical, Stethoscope, BarChart3, FileSearch, ClipboardCheck, ShieldCheck, GraduationCap, Award, BookOpen, ArrowLeft, ArrowRight, ExternalLink, Star, ChevronDown, Video, Clock, Calendar } from "lucide-react";
+import { Calendar, X, Menu, Phone, Mail, Check, Copy, BatteryLow, HeartPulse, Brain, TrendingDown, FlaskConical, Stethoscope, BarChart3, FileSearch, ClipboardCheck, ShieldCheck, GraduationCap, Award, BookOpen, ArrowLeft, ArrowRight, ExternalLink, Star, ChevronDown, Video, Clock } from "lucide-react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
 import useEmblaCarousel from "embla-carousel-react";
@@ -40,7 +40,7 @@ const translations = {
       doctor: "Lekarz",
       faq: "FAQ",
       contact: "Kontakt",
-      call: "Zadzwoń"
+      call: "Umów wizytę"
     },
     hero: {
       badge: "Konsultacje lekarskie · Diagnostyka · Terapia",
@@ -154,7 +154,7 @@ const translations = {
       doctor: "Doctor",
       faq: "FAQ",
       contact: "Contact",
-      call: "Call"
+      call: "Book a visit"
     },
     hero: {
       badge: "Medical consultations · Diagnostics · Therapy",
@@ -268,7 +268,7 @@ const translations = {
       doctor: "Ärztin",
       faq: "FAQ",
       contact: "Kontakt",
-      call: "Anrufen"
+      call: "Termin buchen"
     },
     hero: {
       badge: "Ärztliche Beratung · Diagnostik · Therapie",
@@ -545,8 +545,8 @@ const SiteNav = () => {
             }) })
           ] })
         ] }),
-        /* @__PURE__ */ jsx(Button, { size: "sm", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", children: [
-          /* @__PURE__ */ jsx(Phone, { className: "w-3.5 h-3.5 mr-1.5" }),
+        /* @__PURE__ */ jsx(Button, { size: "sm", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "#kontakt", onClick: (e) => scrollTo(e, "#kontakt"), children: [
+          /* @__PURE__ */ jsx(Calendar, { className: "w-3.5 h-3.5 mr-1.5" }),
           t.nav.call
         ] }) })
       ] }),
@@ -587,8 +587,8 @@ const SiteNav = () => {
     ] }),
     open && /* @__PURE__ */ jsxs("div", { className: "md:hidden bg-card border-b border-border px-6 pb-4 space-y-2", children: [
       links.map((l) => /* @__PURE__ */ jsx("a", { href: l.href, onClick: (e) => scrollTo(e, l.href), className: "block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer", children: l.label }, l.href)),
-      /* @__PURE__ */ jsx(Button, { size: "sm", className: "w-full mt-2", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", children: [
-        /* @__PURE__ */ jsx(Phone, { className: "w-3.5 h-3.5 mr-1.5" }),
+      /* @__PURE__ */ jsx(Button, { size: "sm", className: "w-full mt-2", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "#kontakt", onClick: (e) => scrollTo(e, "#kontakt"), children: [
+        /* @__PURE__ */ jsx(Calendar, { className: "w-3.5 h-3.5 mr-1.5" }),
         t.nav.call
       ] }) })
     ] })
@@ -613,7 +613,11 @@ const HeroSection = () => {
       /* @__PURE__ */ jsx("p", { className: "text-lg md:text-xl text-hero-foreground max-w-2xl mx-auto mb-10 leading-relaxed", children: t.hero.description }),
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row gap-4 justify-center mb-12", children: [
         /* @__PURE__ */ jsx(Button, { variant: "hero", size: "lg", className: "h-13 px-8", asChild: true, children: /* @__PURE__ */ jsx("a", { href: "#kontakt", children: t.hero.cta }) }),
-        /* @__PURE__ */ jsx(Button, { variant: "hero-outline", size: "lg", className: "h-13 px-8", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", children: [
+        /* @__PURE__ */ jsx(Button, { variant: "hero-outline", size: "lg", className: "h-13 px-8", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "#kontakt", onClick: (e) => {
+          var _a;
+          e.preventDefault();
+          (_a = document.getElementById("kontakt")) == null ? void 0 : _a.scrollIntoView({ behavior: "smooth" });
+        }, children: [
           /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4 mr-1" }),
           phoneDisplay
         ] }) })
@@ -1275,10 +1279,15 @@ const FloatingCTA = () => {
     /* @__PURE__ */ jsxs(
       "a",
       {
-        href: "tel:+48572565887",
+        href: "#kontakt",
+        onClick: (e) => {
+          var _a;
+          e.preventDefault();
+          (_a = document.getElementById("kontakt")) == null ? void 0 : _a.scrollIntoView({ behavior: "smooth" });
+        },
         className: "hidden md:flex fixed bottom-6 right-6 z-50 items-center gap-2 rounded-full bg-primary text-primary-foreground font-medium text-sm h-12 px-5 shadow-lg hover:bg-primary/90 transition-colors animate-in slide-in-from-bottom-4 duration-300",
         children: [
-          /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4" }),
+          /* @__PURE__ */ jsx(Calendar, { className: "w-4 h-4" }),
           t.nav.call
         ]
       }
