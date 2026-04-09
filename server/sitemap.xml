@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://zdrowiehormonalne.pl/</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://zdrowiehormonalne.pl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zdrowiehormonalne.pl/en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zdrowiehormonalne.pl/de"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://zdrowiehormonalne.pl/en</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://zdrowiehormonalne.pl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zdrowiehormonalne.pl/en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zdrowiehormonalne.pl/de"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zdrowiehormonalne.pl/de</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://zdrowiehormonalne.pl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zdrowiehormonalne.pl/en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zdrowiehormonalne.pl/de"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zdrowiehormonalne.pl/polityka-prywatnosci</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://zdrowiehormonalne.pl/regulamin</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
