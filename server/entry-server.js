@@ -8,7 +8,7 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useLocation, Routes, Route } from "react-router-dom";
-import { Phone, X, Menu, Mail, BatteryLow, HeartPulse, Brain, TrendingDown, FlaskConical, Stethoscope, BarChart3, FileSearch, ClipboardCheck, ShieldCheck, GraduationCap, Award, BookOpen, ArrowLeft, ArrowRight, ExternalLink, Star, ChevronDown, Video, Clock } from "lucide-react";
+import { Phone, X, Menu, Mail, Check, Copy, BatteryLow, HeartPulse, Brain, TrendingDown, FlaskConical, Stethoscope, BarChart3, FileSearch, ClipboardCheck, ShieldCheck, GraduationCap, Award, BookOpen, ArrowLeft, ArrowRight, ExternalLink, Star, ChevronDown, Video, Clock } from "lucide-react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
 import useEmblaCarousel from "embla-carousel-react";
@@ -594,9 +594,17 @@ const SiteNav = () => {
     ] })
   ] });
 };
+const EMAIL$1 = "treblinskamarta@zdrowiehormonalne.pl";
 const HeroSection = () => {
   const { t, locale } = useLanguage();
   const phoneDisplay = locale === "pl" ? "572 565 887" : "+48 572 565 887";
+  const [copied, setCopied] = useState(false);
+  const handleCopy = (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(EMAIL$1);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2e3);
+  };
   return /* @__PURE__ */ jsxs("section", { className: "bg-hero text-hero-foreground relative overflow-hidden", children: [
     /* @__PURE__ */ jsx("div", { className: "absolute inset-0 opacity-[0.03]", style: { backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` } }),
     /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 py-20 md:py-32 relative z-10 max-w-4xl text-center animate-fade-in", children: [
@@ -611,9 +619,12 @@ const HeroSection = () => {
         ] }) })
       ] }),
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-hero-foreground", children: [
-        /* @__PURE__ */ jsxs("a", { href: "mailto:treblinskamarta@zdrowiehormonalne.pl", className: "flex items-center gap-2 hover:text-hero-foreground/90 transition-colors", children: [
-          /* @__PURE__ */ jsx(Mail, { className: "w-4 h-4" }),
-          "treblinskamarta@zdrowiehormonalne.pl"
+        /* @__PURE__ */ jsxs("span", { className: "flex items-center gap-2", children: [
+          /* @__PURE__ */ jsxs("a", { href: `mailto:${EMAIL$1}`, className: "flex items-center gap-2 hover:text-hero-foreground/90 transition-colors", children: [
+            /* @__PURE__ */ jsx(Mail, { className: "w-4 h-4" }),
+            EMAIL$1
+          ] }),
+          /* @__PURE__ */ jsx("button", { onClick: handleCopy, className: "p-1 rounded hover:bg-hero-foreground/10 transition-colors", title: "Copy email", children: copied ? /* @__PURE__ */ jsx(Check, { className: "w-3.5 h-3.5" }) : /* @__PURE__ */ jsx(Copy, { className: "w-3.5 h-3.5" }) })
         ] }),
         /* @__PURE__ */ jsx("span", { className: "hidden sm:inline", children: "·" }),
         /* @__PURE__ */ jsx("span", { children: t.hero.doctorName })
@@ -920,7 +931,7 @@ const CarouselItem = React.forwardRef(
 );
 CarouselItem.displayName = "CarouselItem";
 const CarouselPrevious = React.forwardRef(
-  ({ className, variant = "outline", size = "icon", ...props }, ref) => {
+  ({ className, variant = "outline", size = "icon", onClick, ...props }, ref) => {
     const { orientation, scrollPrev, canScrollPrev } = useCarousel();
     return /* @__PURE__ */ jsxs(
       Button,
@@ -934,7 +945,10 @@ const CarouselPrevious = React.forwardRef(
           className
         ),
         disabled: !canScrollPrev,
-        onClick: scrollPrev,
+        onClick: (e) => {
+          scrollPrev();
+          onClick == null ? void 0 : onClick(e);
+        },
         ...props,
         children: [
           /* @__PURE__ */ jsx(ArrowLeft, { className: "h-4 w-4" }),
@@ -946,7 +960,7 @@ const CarouselPrevious = React.forwardRef(
 );
 CarouselPrevious.displayName = "CarouselPrevious";
 const CarouselNext = React.forwardRef(
-  ({ className, variant = "outline", size = "icon", ...props }, ref) => {
+  ({ className, variant = "outline", size = "icon", onClick, ...props }, ref) => {
     const { orientation, scrollNext, canScrollNext } = useCarousel();
     return /* @__PURE__ */ jsxs(
       Button,
@@ -960,7 +974,10 @@ const CarouselNext = React.forwardRef(
           className
         ),
         disabled: !canScrollNext,
-        onClick: scrollNext,
+        onClick: (e) => {
+          scrollNext();
+          onClick == null ? void 0 : onClick(e);
+        },
         ...props,
         children: [
           /* @__PURE__ */ jsx(ArrowRight, { className: "h-4 w-4" }),
@@ -983,7 +1000,14 @@ const MEDFILE_URL = "https://www.medfile.pl/marta-treblinska-2/specjalista/ostro
 const Stars = () => /* @__PURE__ */ jsx("div", { className: "flex gap-0.5", children: [...Array(5)].map((_, i) => /* @__PURE__ */ jsx(Star, { className: "h-4 w-4 fill-yellow-400 text-yellow-400" }, i)) });
 const ReviewsSection = () => {
   const { locale } = useLanguage();
+  const timerRef = useRef();
   const plugin = useRef(Autoplay({ delay: 4e3, stopOnInteraction: false, stopOnMouseEnter: true }));
+  const handleArrowClick = useCallback(() => {
+    const autoplay = plugin.current;
+    autoplay.stop();
+    clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => autoplay.play(), 5e3);
+  }, []);
   const title = locale === "en" ? "Patient Reviews" : locale === "de" ? "Patientenbewertungen" : "Opinie pacjentów";
   const allReviews = locale === "en" ? "See all reviews" : locale === "de" ? "Alle Bewertungen" : "Zobacz wszystkie opinie";
   const verified = locale === "en" ? "Verified visit" : locale === "de" ? "Verifizierter Besuch" : "Weryfikacja wizyty";
@@ -1025,8 +1049,8 @@ const ReviewsSection = () => {
               '"'
             ] })
           ] }) }, idx)) }),
-          /* @__PURE__ */ jsx(CarouselPrevious, { className: "-left-4 md:-left-6 bg-card border-border" }),
-          /* @__PURE__ */ jsx(CarouselNext, { className: "-right-4 md:-right-6 bg-card border-border" })
+          /* @__PURE__ */ jsx(CarouselPrevious, { className: "-left-4 md:-left-6 bg-card border-border", onClick: handleArrowClick }),
+          /* @__PURE__ */ jsx(CarouselNext, { className: "-right-4 md:-right-6 bg-card border-border", onClick: handleArrowClick })
         ]
       }
     ) })
@@ -1078,9 +1102,18 @@ const FaqSection = () => {
     ] }) }, i)) })
   ] }) });
 };
+const EMAIL = "treblinskamarta@zdrowiehormonalne.pl";
 const ContactSection = () => {
   const { t, locale } = useLanguage();
   const phoneDisplay = locale === "pl" ? "572 565 887" : "+48 572 565 887";
+  const [copied, setCopied] = useState(false);
+  const handleCopy = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigator.clipboard.writeText(EMAIL);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2e3);
+  };
   return /* @__PURE__ */ jsx("section", { className: "py-20 md:py-28 bg-background", id: "kontakt", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-4xl", children: [
     /* @__PURE__ */ jsxs(ScrollReveal, { children: [
       /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl md:text-4xl text-foreground text-center mb-4", children: t.contact.title }),
@@ -1095,12 +1128,21 @@ const ContactSection = () => {
             /* @__PURE__ */ jsx("p", { className: "font-semibold text-foreground", children: phoneDisplay })
           ] })
         ] }) }),
-        /* @__PURE__ */ jsx(ScrollReveal, { delay: 200, children: /* @__PURE__ */ jsxs("a", { href: "mailto:treblinskamarta@zdrowiehormonalne.pl", className: "flex items-center gap-4 p-5 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-sm transition-all group", children: [
+        /* @__PURE__ */ jsx(ScrollReveal, { delay: 200, children: /* @__PURE__ */ jsxs("a", { href: `mailto:${EMAIL}`, className: "flex items-center gap-4 p-5 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-sm transition-all group", children: [
           /* @__PURE__ */ jsx("div", { className: "w-12 h-12 shrink-0 rounded-lg bg-teal-light flex items-center justify-center text-teal-mid group-hover:scale-110 transition-transform", children: /* @__PURE__ */ jsx(Mail, { className: "w-5 h-5" }) }),
-          /* @__PURE__ */ jsxs("div", { children: [
+          /* @__PURE__ */ jsxs("div", { className: "min-w-0 flex-1", children: [
             /* @__PURE__ */ jsx("p", { className: "text-sm text-muted-foreground", children: t.contact.email }),
-            /* @__PURE__ */ jsx("p", { className: "font-semibold text-foreground break-all text-sm sm:text-base", children: "treblinskamarta@zdrowiehormonalne.pl" })
-          ] })
+            /* @__PURE__ */ jsx("p", { className: "font-semibold text-foreground text-xs sm:text-sm md:text-base break-all select-all", children: EMAIL })
+          ] }),
+          /* @__PURE__ */ jsx(
+            "button",
+            {
+              onClick: handleCopy,
+              className: "shrink-0 p-2 rounded-lg hover:bg-muted transition-colors text-muted-foreground hover:text-foreground",
+              title: "Copy email",
+              children: copied ? /* @__PURE__ */ jsx(Check, { className: "w-4 h-4 text-green-500" }) : /* @__PURE__ */ jsx(Copy, { className: "w-4 h-4" })
+            }
+          )
         ] }) }),
         /* @__PURE__ */ jsx(ScrollReveal, { delay: 300, children: /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-4 p-5 rounded-xl bg-card border border-border", children: [
           /* @__PURE__ */ jsx("div", { className: "w-12 h-12 shrink-0 rounded-lg bg-teal-light flex items-center justify-center text-teal-mid", children: /* @__PURE__ */ jsx(Video, { className: "w-5 h-5" }) }),
