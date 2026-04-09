@@ -8,7 +8,7 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useLocation, Routes, Route } from "react-router-dom";
-import { Phone, X, Menu, Mail, Check, Copy, BatteryLow, HeartPulse, Brain, TrendingDown, FlaskConical, Stethoscope, BarChart3, FileSearch, ClipboardCheck, ShieldCheck, GraduationCap, Award, BookOpen, ArrowLeft, ArrowRight, ExternalLink, Star, ChevronDown, Video, Clock } from "lucide-react";
+import { Phone, X, Menu, Mail, Check, Copy, BatteryLow, HeartPulse, Brain, TrendingDown, FlaskConical, Stethoscope, BarChart3, FileSearch, ClipboardCheck, ShieldCheck, GraduationCap, Award, BookOpen, ArrowLeft, ArrowRight, ExternalLink, Star, ChevronDown, Video, Clock, Calendar } from "lucide-react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
 import useEmblaCarousel from "embla-carousel-react";
@@ -1235,6 +1235,56 @@ const CookieBanner = () => {
     ] })
   ] }) }) });
 };
+const FloatingCTA = () => {
+  const { t } = useLanguage();
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 400);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  if (!visible) return null;
+  return /* @__PURE__ */ jsxs(Fragment, { children: [
+    /* @__PURE__ */ jsxs("div", { className: "fixed bottom-0 left-0 right-0 z-50 md:hidden bg-card/95 backdrop-blur-lg border-t border-border px-4 py-3 flex gap-3 animate-in slide-in-from-bottom-4 duration-300", children: [
+      /* @__PURE__ */ jsxs(
+        "a",
+        {
+          href: "#kontakt",
+          className: "flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-primary text-primary-foreground font-medium text-sm h-11 px-4 shadow-lg",
+          onClick: (e) => {
+            var _a;
+            e.preventDefault();
+            (_a = document.getElementById("kontakt")) == null ? void 0 : _a.scrollIntoView({ behavior: "smooth" });
+          },
+          children: [
+            /* @__PURE__ */ jsx(Calendar, { className: "w-4 h-4" }),
+            t.hero.cta
+          ]
+        }
+      ),
+      /* @__PURE__ */ jsx(
+        "a",
+        {
+          href: "tel:+48572565887",
+          className: "inline-flex items-center justify-center rounded-lg bg-primary/10 text-primary font-medium text-sm h-11 w-11 shrink-0",
+          children: /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4" })
+        }
+      )
+    ] }),
+    /* @__PURE__ */ jsxs(
+      "a",
+      {
+        href: "tel:+48572565887",
+        className: "hidden md:flex fixed bottom-6 right-6 z-50 items-center gap-2 rounded-full bg-primary text-primary-foreground font-medium text-sm h-12 px-5 shadow-lg hover:bg-primary/90 transition-colors animate-in slide-in-from-bottom-4 duration-300",
+        children: [
+          /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4" }),
+          t.nav.call
+        ]
+      }
+    )
+  ] });
+};
 const Index = () => {
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsx(SiteNav, {}),
@@ -1250,6 +1300,7 @@ const Index = () => {
       /* @__PURE__ */ jsx(ContactSection, {})
     ] }),
     /* @__PURE__ */ jsx(SiteFooter, {}),
+    /* @__PURE__ */ jsx(FloatingCTA, {}),
     /* @__PURE__ */ jsx(CookieBanner, {})
   ] });
 };
