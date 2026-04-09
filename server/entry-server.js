@@ -726,26 +726,14 @@ const DoctorSection = () => {
   const { t } = useLanguage();
   const [lightbox, setLightbox] = useState(null);
   const certificates = [
-    { src: "/images/cert-harvard.jpg", alt: "Harvard Medical School Certificate" },
-    { src: "/images/cert-trt-master.jpg", alt: "TRT Master Practitioner Certificate" }
+    { webp: "/images/cert-harvard.webp", jpg: "/images/cert-harvard.jpg", alt: "Harvard Medical School Certificate" },
+    { webp: "/images/cert-trt-master.webp", jpg: "/images/cert-trt-master.jpg", alt: "TRT Master Practitioner Certificate" }
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsx("section", { className: "py-20 md:py-28 bg-background", id: "lekarz", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-4xl", children: [
       /* @__PURE__ */ jsx(ScrollReveal, { children: /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl md:text-4xl text-foreground text-center mb-14", children: t.doctor.title }) }),
       /* @__PURE__ */ jsx(ScrollReveal, { delay: 150, children: /* @__PURE__ */ jsxs("div", { className: "flex flex-col md:flex-row items-center gap-10 md:gap-14", children: [
-        /* @__PURE__ */ jsx("div", { className: "w-48 h-48 md:w-56 md:h-56 rounded-2xl bg-muted flex-shrink-0 overflow-hidden", children: /* @__PURE__ */ jsx(
-          "img",
-          {
-            src: "/images/doctor.jpg",
-            alt: t.doctor.name,
-            className: "w-full h-full object-cover",
-            onError: (e) => {
-              const target = e.currentTarget;
-              target.style.display = "none";
-              target.parentElement.innerHTML = '<div class="w-full h-full bg-hero flex items-center justify-center text-hero-foreground font-serif text-5xl">MT</div>';
-            }
-          }
-        ) }),
+        /* @__PURE__ */ jsx("div", { className: "w-48 h-48 md:w-56 md:h-56 rounded-2xl bg-hero flex-shrink-0 flex items-center justify-center text-hero-foreground font-serif text-5xl", children: "MT" }),
         /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h3", { className: "font-serif text-2xl text-foreground mb-2", children: t.doctor.name }),
           /* @__PURE__ */ jsxs("div", { className: "space-y-4 text-muted-foreground", children: [
@@ -775,19 +763,22 @@ const DoctorSection = () => {
       /* @__PURE__ */ jsx(ScrollReveal, { delay: 300, children: /* @__PURE__ */ jsx("div", { className: "mt-16 grid grid-cols-1 sm:grid-cols-2 gap-6", children: certificates.map((cert) => /* @__PURE__ */ jsx(
         "button",
         {
-          onClick: () => setLightbox(cert.src),
+          onClick: () => setLightbox(cert.webp),
           className: "group rounded-xl overflow-hidden border border-border bg-card shadow-sm hover:shadow-md transition-shadow cursor-zoom-in",
-          children: /* @__PURE__ */ jsx(
-            "img",
-            {
-              src: cert.src,
-              alt: cert.alt,
-              className: "w-full h-auto object-contain",
-              loading: "lazy"
-            }
-          )
+          children: /* @__PURE__ */ jsxs("picture", { children: [
+            /* @__PURE__ */ jsx("source", { srcSet: cert.webp, type: "image/webp" }),
+            /* @__PURE__ */ jsx(
+              "img",
+              {
+                src: cert.jpg,
+                alt: cert.alt,
+                className: "w-full h-auto object-contain",
+                loading: "lazy"
+              }
+            )
+          ] })
         },
-        cert.src
+        cert.webp
       )) }) })
     ] }) }),
     lightbox && /* @__PURE__ */ jsx(
