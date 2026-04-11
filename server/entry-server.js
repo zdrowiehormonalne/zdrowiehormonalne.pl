@@ -148,15 +148,16 @@ const translations = {
     },
     feedback: {
       button: "Feedback",
-      title: "Podziel się opinią",
+      title: "Feedback dot. strony",
+      subtitle: "Zgłoś błąd, sugestię lub problem techniczny. To nie jest formularz kontaktowy do lekarza.",
       messageLabel: "Wiadomość",
-      messagePlaceholder: "Napisz swoją opinię, sugestię lub zgłoś problem...",
+      messagePlaceholder: "Np. błąd na stronie, problem z wyświetlaniem, sugestia...",
       emailLabel: "E-mail",
       emailOptional: "(opcjonalnie)",
       emailPlaceholder: "twoj@email.pl",
       emailHint: "Zostaw adres e-mail, jeśli chcesz, abyśmy mogli się z Tobą skontaktować.",
       submit: "Wyślij",
-      successTitle: "Dziękujemy za opinię!",
+      successTitle: "Dziękujemy!",
       successDesc: "Twoja wiadomość została przesłana.",
       error: "Coś poszło nie tak. Spróbuj ponownie."
     }
@@ -276,15 +277,16 @@ const translations = {
     },
     feedback: {
       button: "Feedback",
-      title: "Share your feedback",
+      title: "Website feedback",
+      subtitle: "Report a bug, suggest an improvement, or flag a technical issue. This is not a contact form for medical consultations.",
       messageLabel: "Message",
-      messagePlaceholder: "Write your opinion, suggestion or report an issue...",
+      messagePlaceholder: "E.g. a bug, display issue, suggestion...",
       emailLabel: "E-mail",
       emailOptional: "(optional)",
       emailPlaceholder: "your@email.com",
       emailHint: "Leave your e-mail if you'd like us to get back to you.",
       submit: "Send",
-      successTitle: "Thank you for your feedback!",
+      successTitle: "Thank you!",
       successDesc: "Your message has been submitted.",
       error: "Something went wrong. Please try again."
     }
@@ -404,15 +406,16 @@ const translations = {
     },
     feedback: {
       button: "Feedback",
-      title: "Feedback hinterlassen",
+      title: "Website-Feedback",
+      subtitle: "Melden Sie einen Fehler, schlagen Sie eine Verbesserung vor oder melden Sie ein technisches Problem. Dies ist kein Kontaktformular für ärztliche Beratungen.",
       messageLabel: "Nachricht",
-      messagePlaceholder: "Schreiben Sie Ihre Meinung, einen Vorschlag oder melden Sie ein Problem...",
+      messagePlaceholder: "Z. B. ein Fehler, Darstellungsproblem, Verbesserungsvorschlag...",
       emailLabel: "E-Mail",
       emailOptional: "(optional)",
       emailPlaceholder: "ihre@email.de",
       emailHint: "Hinterlassen Sie Ihre E-Mail-Adresse, wenn wir Sie kontaktieren sollen.",
       submit: "Senden",
-      successTitle: "Vielen Dank für Ihr Feedback!",
+      successTitle: "Vielen Dank!",
       successDesc: "Ihre Nachricht wurde übermittelt.",
       error: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
     }
@@ -1408,13 +1411,16 @@ const FeedbackButton = () => {
             className: "w-full max-w-sm rounded-xl border border-border bg-card p-5 shadow-xl animate-in slide-in-from-bottom-4 duration-300",
             onClick: (e) => e.stopPropagation(),
             children: [
-              /* @__PURE__ */ jsxs("div", { className: "mb-3 flex items-center justify-between", children: [
-                /* @__PURE__ */ jsx("h2", { className: "text-base font-semibold text-foreground", children: fb.title }),
+              /* @__PURE__ */ jsxs("div", { className: "mb-3 flex items-start justify-between gap-2", children: [
+                /* @__PURE__ */ jsxs("div", { children: [
+                  /* @__PURE__ */ jsx("h2", { className: "text-base font-semibold text-foreground", children: fb.title }),
+                  /* @__PURE__ */ jsx("p", { className: "mt-0.5 text-xs text-muted-foreground", children: fb.subtitle })
+                ] }),
                 /* @__PURE__ */ jsx(
                   "button",
                   {
                     onClick: handleClose,
-                    className: "rounded-md p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
+                    className: "shrink-0 rounded-md p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
                     "aria-label": "Close",
                     children: /* @__PURE__ */ jsx(X, { className: "h-4 w-4" })
                   }
