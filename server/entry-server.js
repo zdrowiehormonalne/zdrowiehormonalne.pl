@@ -742,7 +742,8 @@ const DoctorSection = () => {
   const [lightbox, setLightbox] = useState(null);
   const certificates = [
     { webp: "/images/cert-harvard.webp", jpg: "/images/cert-harvard.jpg", alt: "Harvard Medical School Certificate" },
-    { webp: "/images/cert-trt-master.webp", jpg: "/images/cert-trt-master.jpg", alt: "TRT Master Practitioner Certificate" }
+    { webp: "/images/cert-trt-master.webp", jpg: "/images/cert-trt-master.jpg", alt: "TRT Master Practitioner Certificate" },
+    { webp: "/images/cert-dr-marcin-madziarski.webp", jpg: "/images/cert-dr-marcin-madziarski.jpg", alt: "Kurs TrT - od teorii do praktyki klinicznej" }
   ];
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsx("section", { className: "py-20 md:py-28 bg-background", id: "lekarz", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-4xl", children: [
