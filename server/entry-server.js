@@ -831,6 +831,12 @@ const HeroSection = () => {
         ] }),
         /* @__PURE__ */ jsx("span", { className: "hidden sm:inline", children: "·" }),
         /* @__PURE__ */ jsx("span", { children: t.hero.doctorName })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: "mt-4 flex items-center justify-center gap-2 text-xs text-hero-foreground/60", children: [
+        /* @__PURE__ */ jsx("span", { children: "🎓" }),
+        /* @__PURE__ */ jsx("span", { children: "Harvard Medical School" }),
+        /* @__PURE__ */ jsx("span", { children: "·" }),
+        /* @__PURE__ */ jsx("span", { children: "Warszawski Uniwersytet Medyczny" })
       ] })
     ] })
   ] });
