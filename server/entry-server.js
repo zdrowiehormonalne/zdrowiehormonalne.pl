@@ -8,7 +8,7 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useLocation, useNavigate, Link, useParams, Navigate, Routes, Route } from "react-router-dom";
-import { Calendar, X, Menu, Phone, Mail, Check, Copy, BatteryLow, HeartPulse, Brain, TrendingDown, FlaskConical, Stethoscope, BarChart3, FileSearch, ClipboardCheck, ShieldCheck, Crosshair, GraduationCap, Award, BookOpen, ArrowLeft, ArrowRight, ExternalLink, Star, Clock, ChevronDown, Video, AlertCircle, CheckCircle, ClipboardList, MessageSquarePlus, Send, Loader2 } from "lucide-react";
+import { Calendar, X, Menu, Phone, Mail, Check, Copy, BatteryLow, Brain, Moon, HeartPulse, TrendingUp, FlaskConical, Stethoscope, BarChart3, FileSearch, ClipboardCheck, ShieldCheck, Crosshair, GraduationCap, Award, BookOpen, ArrowLeft, ArrowRight, ExternalLink, Star, Clock, ChevronDown, Video, AlertCircle, CheckCircle, ClipboardList, MessageSquarePlus, Send, Loader2 } from "lucide-react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
 import useEmblaCarousel from "embla-carousel-react";
@@ -58,11 +58,18 @@ const translations = {
     symptoms: {
       title: "Kiedy warto rozważyć konsultację lekarską?",
       subtitle: "Rozpoznajesz któreś z tych objawów? Mogą mieć wiele przyczyn — niedobór testosteronu jest jedną z nich. Konsultacja lekarska pomoże wyjaśnić, co się dzieje.",
-      fatigue: "Przewlekłe zmęczenie",
-      libido: "Obniżone libido",
-      concentration: "Pogorszenie koncentracji",
-      muscle: "Spadek siły mięśniowej",
-      hormones: "Nieprawidłowe wyniki badań hormonalnych"
+      fatigue: "Chroniczne zmęczenie i brak energii",
+      fatigueDesc: "Budzisz się zmęczony, choć przespałeś całą noc.",
+      brain: "Mgła w głowie",
+      brainDesc: "Trudniej się skupić, zebrać do działania, skończyć rzeczy.",
+      sleep: "Problemy ze snem i regeneracją",
+      sleepDesc: "Sen nie daje odpoczynku, ciało wolniej dochodzi do siebie.",
+      libido: "Spadek libido",
+      libidoDesc: "Mniejsza ochota na seks lub coś, co wcześniej przychodziło naturalnie.",
+      weight: "Przyrost tłuszczu mimo starań",
+      weightDesc: "Zmienia się sylwetka, choć tryb życia taki sam.",
+      hormones: "Nieprawidłowe wyniki badań hormonalnych",
+      hormonesDesc: "Masz wyniki, ale nie wiesz, co z nimi zrobić."
     },
     services: {
       title: "Co obejmuje konsultacja?",
@@ -222,11 +229,18 @@ const translations = {
     symptoms: {
       title: "When should you consider a medical consultation?",
       subtitle: "Do you recognize any of these symptoms? They can have many causes — testosterone deficiency is one of them. A medical consultation will help clarify what is happening.",
-      fatigue: "Chronic fatigue",
+      fatigue: "Chronic fatigue and low energy",
+      fatigueDesc: "You wake up tired, even after a full night's sleep.",
+      brain: "Brain fog",
+      brainDesc: "Hard to focus, get started, or follow through on things.",
+      sleep: "Sleep and recovery problems",
+      sleepDesc: "Sleep doesn't feel restful, your body takes longer to recover.",
       libido: "Decreased libido",
-      concentration: "Poor concentration",
-      muscle: "Loss of muscle strength",
-      hormones: "Abnormal hormonal test results"
+      libidoDesc: "Less interest in sex, or something that used to come naturally has changed.",
+      weight: "Weight gain despite effort",
+      weightDesc: "Your body composition is changing even though your lifestyle hasn't.",
+      hormones: "Abnormal hormonal test results",
+      hormonesDesc: "You have results but don't know what to make of them."
     },
     services: {
       title: "What does a consultation cover?",
@@ -386,11 +400,18 @@ const translations = {
     symptoms: {
       title: "Wann sollten Sie eine ärztliche Beratung in Betracht ziehen?",
       subtitle: "Erkennen Sie sich in einem dieser Symptome wieder? Sie können viele Ursachen haben — Testosteronmangel ist eine davon. Eine ärztliche Beratung schafft Klarheit.",
-      fatigue: "Chronische Müdigkeit",
+      fatigue: "Chronische Müdigkeit und Energiemangel",
+      fatigueDesc: "Sie wachen müde auf, obwohl Sie die ganze Nacht geschlafen haben.",
+      brain: "Gehirnnebel",
+      brainDesc: "Schwer, sich zu konzentrieren, anzufangen oder Dinge zu Ende zu bringen.",
+      sleep: "Schlaf- und Erholungsprobleme",
+      sleepDesc: "Der Schlaf fühlt sich nicht erholsam an, der Körper erholt sich langsamer.",
       libido: "Verminderte Libido",
-      concentration: "Konzentrationsstörungen",
-      muscle: "Abnahme der Muskelkraft",
-      hormones: "Auffällige Hormonwerte"
+      libidoDesc: "Weniger Lust auf Sex oder etwas, das früher selbstverständlich war, hat sich verändert.",
+      weight: "Gewichtszunahme trotz Bemühungen",
+      weightDesc: "Die Körperzusammensetzung verändert sich, obwohl der Lebensstil gleich geblieben ist.",
+      hormones: "Auffällige Hormonwerte",
+      hormonesDesc: "Sie haben Ergebnisse, wissen aber nicht, was Sie damit anfangen sollen."
     },
     services: {
       title: "Was beinhaltet eine Beratung?",
@@ -839,20 +860,22 @@ const ScrollReveal = ({ children, className = "", delay = 0 }) => {
 const SymptomsSection = () => {
   const { t } = useLanguage();
   const symptoms = [
-    { icon: BatteryLow, label: t.symptoms.fatigue },
-    { icon: HeartPulse, label: t.symptoms.libido },
-    { icon: Brain, label: t.symptoms.concentration },
-    { icon: TrendingDown, label: t.symptoms.muscle },
-    { icon: FlaskConical, label: t.symptoms.hormones }
+    { icon: BatteryLow, label: t.symptoms.fatigue, desc: t.symptoms.fatigueDesc },
+    { icon: Brain, label: t.symptoms.brain, desc: t.symptoms.brainDesc },
+    { icon: Moon, label: t.symptoms.sleep, desc: t.symptoms.sleepDesc },
+    { icon: HeartPulse, label: t.symptoms.libido, desc: t.symptoms.libidoDesc },
+    { icon: TrendingUp, label: t.symptoms.weight, desc: t.symptoms.weightDesc },
+    { icon: FlaskConical, label: t.symptoms.hormones, desc: t.symptoms.hormonesDesc }
   ];
   return /* @__PURE__ */ jsx("section", { className: "py-20 md:py-28 bg-background", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-4xl", children: [
     /* @__PURE__ */ jsxs(ScrollReveal, { children: [
       /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl md:text-4xl text-foreground text-center mb-4", children: t.symptoms.title }),
       /* @__PURE__ */ jsx("p", { className: "text-muted-foreground text-center mb-14 max-w-2xl mx-auto", children: t.symptoms.subtitle })
     ] }),
-    /* @__PURE__ */ jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6", children: symptoms.map((s, i) => /* @__PURE__ */ jsx(ScrollReveal, { delay: i * 100, children: /* @__PURE__ */ jsxs("div", { className: "group flex items-center gap-4 p-6 rounded-xl bg-card border border-border hover:border-primary/20 hover:shadow-md transition-all duration-300 h-full", children: [
-      /* @__PURE__ */ jsx("div", { className: "flex-shrink-0 w-10 h-10 rounded-lg bg-teal-light flex items-center justify-center text-teal-mid group-hover:scale-110 transition-transform", children: /* @__PURE__ */ jsx(s.icon, { className: "w-5 h-5" }) }),
-      /* @__PURE__ */ jsx("span", { className: "text-foreground font-medium leading-snug", children: s.label })
+    /* @__PURE__ */ jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6", children: symptoms.map((s, i) => /* @__PURE__ */ jsx(ScrollReveal, { delay: i * 100, children: /* @__PURE__ */ jsxs("div", { className: "group flex flex-col items-center text-center p-6 rounded-xl bg-card border border-border hover:border-primary/20 hover:shadow-md transition-all duration-300 h-full", children: [
+      /* @__PURE__ */ jsx("div", { className: "w-12 h-12 rounded-xl bg-teal-light flex items-center justify-center text-teal-mid group-hover:scale-110 transition-transform mb-4 flex-shrink-0", children: /* @__PURE__ */ jsx(s.icon, { className: "w-5 h-5" }) }),
+      /* @__PURE__ */ jsx("p", { className: "text-foreground font-semibold leading-snug mb-2", children: s.label }),
+      /* @__PURE__ */ jsx("p", { className: "text-muted-foreground text-sm leading-relaxed", children: s.desc })
     ] }) }, i)) })
   ] }) });
 };
