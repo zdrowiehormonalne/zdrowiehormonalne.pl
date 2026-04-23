@@ -143,7 +143,8 @@ const translations = {
       firstConsultation: "Pierwsza konsultacja",
       firstConsultationDesc: "Skontaktuj się telefonicznie lub mailowo, aby umówić wizytę. Podczas rejestracji otrzymasz informacje o badaniach, które warto wykonać przed konsultacją.",
       callNow: "Zadzwoń teraz",
-      priceNote: "Konsultacja od 599 zł"
+      priceNote: "Pierwsza konsultacja (60 min) — 799 zł",
+      priceFollowUp: "Wizyta kontrolna (30 min) — 449 zł"
     },
     footer: {
       entityInfo: "Informacje o podmiocie",
@@ -314,7 +315,8 @@ const translations = {
       firstConsultation: "First consultation",
       firstConsultationDesc: "Contact us by phone or email to schedule a visit. During registration, you will receive information about tests worth doing before the consultation.",
       callNow: "Call now",
-      priceNote: "Consultation from 500 PLN"
+      priceNote: "First consultation (60 min) — 799 PLN",
+      priceFollowUp: "Follow-up visit (30 min) — 449 PLN"
     },
     footer: {
       entityInfo: "Entity information",
@@ -485,7 +487,8 @@ const translations = {
       firstConsultation: "Erstberatung",
       firstConsultationDesc: "Nehmen Sie telefonisch oder per E-Mail Kontakt auf, um einen Termin zu vereinbaren. Bei der Anmeldung erhalten Sie Hinweise zu empfohlenen Voruntersuchungen.",
       callNow: "Jetzt anrufen",
-      priceNote: "Beratung ab 500 PLN"
+      priceNote: "Erstberatung (60 Min.) — 799 PLN",
+      priceFollowUp: "Kontrolltermin (30 Min.) — 449 PLN"
     },
     footer: {
       entityInfo: "Angaben zur Praxis",
@@ -2226,7 +2229,10 @@ const ContactSection = () => {
       /* @__PURE__ */ jsx(ScrollReveal, { delay: 200, children: /* @__PURE__ */ jsxs("div", { className: "bg-hero rounded-2xl p-8 md:p-10 flex flex-col justify-center text-center h-full", children: [
         /* @__PURE__ */ jsx("h3", { className: "font-serif text-2xl text-hero-foreground mb-4", children: t.contact.firstConsultation }),
         /* @__PURE__ */ jsx("p", { className: "text-hero-foreground/70 mb-4 leading-relaxed", children: t.contact.firstConsultationDesc }),
-        /* @__PURE__ */ jsx("p", { className: "text-hero-foreground/50 text-sm mb-6", children: t.contact.priceNote }),
+        /* @__PURE__ */ jsxs("div", { className: "mb-6 space-y-1", children: [
+          /* @__PURE__ */ jsx("p", { className: "text-hero-foreground/50 text-sm", children: t.contact.priceNote }),
+          /* @__PURE__ */ jsx("p", { className: "text-hero-foreground/50 text-sm", children: t.contact.priceFollowUp })
+        ] }),
         /* @__PURE__ */ jsx(Button, { variant: "hero", size: "lg", className: "mx-auto", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", children: [
           /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4 mr-2" }),
           t.contact.callNow
