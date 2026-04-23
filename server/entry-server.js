@@ -130,6 +130,7 @@ const translations = {
       email: "E-mail",
       consultForm: "Forma konsultacji",
       consultFormValue: "Zdalnie — wygodnie, z dowolnego miejsca",
+      remoteNote: "Bez dojazdu i kolejek — indywidualny termin.",
       schedule: "Terminy",
       scheduleValue: "Indywidualnie dostosowane do pacjenta",
       firstConsultation: "Pierwsza konsultacja",
@@ -293,6 +294,7 @@ const translations = {
       email: "E-mail",
       consultForm: "Consultation format",
       consultFormValue: "Remote — conveniently, from anywhere",
+      remoteNote: "No commute, no waiting room — individual appointment.",
       schedule: "Appointments",
       scheduleValue: "Individually tailored to the patient",
       firstConsultation: "First consultation",
@@ -456,6 +458,7 @@ const translations = {
       email: "E-Mail",
       consultForm: "Beratungsform",
       consultFormValue: "Fernberatung — bequem, von überall",
+      remoteNote: "Kein Anfahrtsweg, kein Wartezimmer — individueller Termin.",
       schedule: "Termine",
       scheduleValue: "Individuell auf den Patienten abgestimmt",
       firstConsultation: "Erstberatung",
@@ -2185,7 +2188,8 @@ const ContactSection = () => {
           /* @__PURE__ */ jsx("div", { className: "w-12 h-12 shrink-0 rounded-lg bg-teal-light flex items-center justify-center text-teal-mid", children: /* @__PURE__ */ jsx(Video, { className: "w-5 h-5" }) }),
           /* @__PURE__ */ jsxs("div", { children: [
             /* @__PURE__ */ jsx("p", { className: "text-sm text-muted-foreground", children: t.contact.consultForm }),
-            /* @__PURE__ */ jsx("p", { className: "font-semibold text-foreground", children: t.contact.consultFormValue })
+            /* @__PURE__ */ jsx("p", { className: "font-semibold text-foreground", children: t.contact.consultFormValue }),
+            /* @__PURE__ */ jsx("p", { className: "text-xs text-muted-foreground mt-0.5", children: t.contact.remoteNote })
           ] })
         ] }) }),
         /* @__PURE__ */ jsx(ScrollReveal, { delay: 400, children: /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-4 p-5 rounded-xl bg-card border border-border", children: [
