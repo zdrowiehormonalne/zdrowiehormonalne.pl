@@ -50,7 +50,7 @@ const translations = {
       title: "Chroniczne zmęczenie, brak energii, obniżone libido?",
       description: "To może być niedobór testosteronu. Zdalna konsultacja lekarska — wygodnie, z dowolnego miejsca.",
       cta: "Umów konsultację lekarską",
-      doctorName: "lek. Marta Treblińska",
+      doctorName: "lekarz Marta Treblińska",
       perk1: "Bez poczekalni i ryzyka zakażenia",
       perk2: "Z dowolnego miejsca w Polsce",
       perk3: "Indywidualny termin wizyty"
@@ -110,7 +110,7 @@ const translations = {
     },
     doctor: {
       title: "Lekarz prowadzący",
-      name: "lek. Marta Treblińska",
+      name: "lekarz Marta Treblińska",
       education: "Lekarz medycyny, Warszawski Uniwersytet Medyczny",
       harvard: "Testosterone Therapy and Sexual Dysfunction — Harvard Medical School",
       experience: "Wieloletnie doświadczenie w diagnostyce i leczeniu zaburzeń hormonalnych u mężczyzn",
@@ -150,7 +150,7 @@ const translations = {
       entityInfo: "Informacje o podmiocie",
       practice: "Indywidualna Praktyka Lekarska Marta Treblińska",
       address: "ul. Duboisa 1/21, Ostrów Mazowiecki",
-      doctorName: "lek. Marta Treblińska",
+      doctorName: "lekarz Marta Treblińska",
       remote: "Konsultacje zdalne",
       legalInfo: "Informacje prawne",
       privacy: "Polityka prywatności (RODO)",
@@ -2823,7 +2823,7 @@ const BlogPost = () => {
         ] }, i)) }),
         /* @__PURE__ */ jsxs("div", { className: "mt-12 p-8 rounded-2xl bg-hero text-hero-foreground text-center", children: [
           /* @__PURE__ */ jsx("h3", { className: "font-serif text-2xl mb-3", children: "Chcesz omówić swój przypadek?" }),
-          /* @__PURE__ */ jsx("p", { className: "text-hero-foreground/70 mb-6 max-w-md mx-auto", children: "Skontaktuj się z lek. Martą Treblińską — konsultacja zdalna, z dowolnego miejsca." }),
+          /* @__PURE__ */ jsx("p", { className: "text-hero-foreground/70 mb-6 max-w-md mx-auto", children: "Skontaktuj się z lekarz Martą Treblińską — konsultacja zdalna, z dowolnego miejsca." }),
           /* @__PURE__ */ jsx(Button, { variant: "hero", size: "lg", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", children: [
             /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4 mr-2" }),
             "Zadzwoń teraz"
@@ -2870,7 +2870,7 @@ const Regulamin = () => {
       /* @__PURE__ */ jsxs("div", { className: "space-y-8 text-muted-foreground leading-relaxed", children: [
         /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground mb-3", children: "1. Postanowienia ogólne" }),
-          /* @__PURE__ */ jsx("p", { children: 'Niniejszy regulamin określa zasady korzystania ze strony internetowej prowadzonej przez Indywidualną Praktykę Lekarską lek. med. Marta Treblińska (dalej: „Usługodawca").' })
+          /* @__PURE__ */ jsx("p", { children: 'Niniejszy regulamin określa zasady korzystania ze strony internetowej prowadzonej przez Indywidualną Praktykę Lekarską lekarz med. Marta Treblińska (dalej: „Usługodawca").' })
         ] }),
         /* @__PURE__ */ jsxs("div", { children: [
           /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground mb-3", children: "2. Zakres usług" }),
