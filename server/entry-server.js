@@ -823,62 +823,51 @@ const HeroSection = () => {
     setTimeout(() => setCopied(false), 2e3);
   };
   return /* @__PURE__ */ jsxs("section", { ref: sectionRef, className: "bg-white text-foreground relative overflow-hidden", children: [
-    /* @__PURE__ */ jsx("div", { className: "absolute inset-0 pointer-events-none", style: {
-      background: "radial-gradient(at 15% 20%, hsl(199 60% 85% / 0.55), transparent 50%), radial-gradient(at 75% 80%, hsl(180 50% 90% / 0.45), transparent 55%), radial-gradient(at 50% 0%, hsl(35 80% 92% / 0.6), transparent 50%)"
-    } }),
-    /* @__PURE__ */ jsx("div", { className: "absolute inset-0 pointer-events-none mix-blend-multiply opacity-70", style: {
-      background: "radial-gradient(circle 450px at var(--mx, 25%) var(--my, 40%), hsl(199 70% 55% / 0.18), transparent 65%)"
-    } }),
-    /* @__PURE__ */ jsx("div", { className: "absolute inset-0 pointer-events-none mix-blend-screen opacity-80", style: {
-      background: "radial-gradient(circle 350px at calc(var(--mx, 25%) - 80px) calc(var(--my, 40%) + 60px), hsl(35 85% 70% / 0.15), transparent 60%)"
-    } }),
-    /* @__PURE__ */ jsx("div", { className: "absolute inset-0 opacity-[0.025] pointer-events-none", style: { backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` } }),
-    /* @__PURE__ */ jsx("div", { className: "hidden md:block absolute inset-y-0 right-0 w-[38%] lg:w-[36%] xl:w-[34%]", children: /* @__PURE__ */ jsxs("picture", { className: "block w-full h-full", children: [
-      /* @__PURE__ */ jsx("source", { srcSet: "/images/dr-marta-treblinska-hero.webp?v=3", type: "image/webp" }),
-      /* @__PURE__ */ jsx(
-        "img",
-        {
-          src: "/images/dr-marta-treblinska-hero.jpg?v=3",
-          alt: t.hero.doctorName,
-          className: "w-full h-full object-cover object-right",
-          width: 750,
-          height: 1166,
-          fetchPriority: "high",
-          style: {
-            maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 6%, black 18%)",
-            WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 6%, black 18%)"
-          }
-        }
-      )
-    ] }) }),
-    /* @__PURE__ */ jsx("div", { className: "container mx-auto px-6 py-20 md:py-28 lg:py-32 relative z-10 max-w-7xl animate-fade-in", children: /* @__PURE__ */ jsxs("div", { className: "max-w-xl lg:max-w-2xl text-center md:mr-[40%] lg:mr-[38%] xl:mr-[36%]", children: [
-      /* @__PURE__ */ jsx("p", { className: "inline-block text-sm uppercase tracking-[0.2em] text-foreground font-semibold mb-6 px-4 py-2 rounded-full bg-foreground/5 border border-foreground/15", children: t.hero.badge }),
-      /* @__PURE__ */ jsx("h1", { className: "font-serif text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 text-foreground", children: t.hero.title }),
-      /* @__PURE__ */ jsx("p", { className: "text-lg md:text-xl text-foreground mb-10 leading-relaxed", children: t.hero.description }),
-      /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row gap-4 mb-12 justify-center", children: [
-        /* @__PURE__ */ jsx(Button, { variant: "hero", size: "lg", className: "h-13 px-8", asChild: true, children: /* @__PURE__ */ jsx("a", { href: "#kontakt", children: t.hero.cta }) }),
-        /* @__PURE__ */ jsx(Button, { variant: "outline", size: "lg", className: "h-13 px-8", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", children: [
-          /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4 mr-1" }),
-          phoneDisplay
-        ] }) })
-      ] }),
-      /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm text-foreground", children: [
-        /* @__PURE__ */ jsxs("span", { className: "flex items-center gap-2", children: [
-          /* @__PURE__ */ jsxs("a", { href: `mailto:${EMAIL$1}`, className: "flex items-center gap-2 hover:text-foreground/90 transition-colors", children: [
-            /* @__PURE__ */ jsx(Mail, { className: "w-4 h-4" }),
-            EMAIL$1
-          ] }),
-          /* @__PURE__ */ jsx("button", { onClick: handleCopy, className: "p-1 rounded hover:bg-foreground/5 transition-colors", title: "Copy email", children: copied ? /* @__PURE__ */ jsx(Check, { className: "w-3.5 h-3.5" }) : /* @__PURE__ */ jsx(Copy, { className: "w-3.5 h-3.5" }) })
+    /* @__PURE__ */ jsx("div", { className: "absolute inset-0 opacity-25 pointer-events-none", style: { backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23dde2e9' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` } }),
+    /* @__PURE__ */ jsx("div", { className: "container mx-auto px-6 relative z-10 max-w-7xl animate-fade-in", children: /* @__PURE__ */ jsxs("div", { className: "flex flex-col md:flex-row md:items-center gap-0 md:gap-4 lg:gap-8", children: [
+      /* @__PURE__ */ jsx("div", { className: "flex-1 order-1 py-8 md:py-24 lg:py-28", children: /* @__PURE__ */ jsxs("div", { className: "text-center md:max-w-xl md:ml-auto md:pr-4", children: [
+        /* @__PURE__ */ jsx("p", { className: "inline-block text-sm uppercase tracking-[0.2em] text-foreground font-semibold mb-6 px-4 py-2 rounded-full bg-foreground/5 border border-foreground/15", children: t.hero.badge }),
+        /* @__PURE__ */ jsx("h1", { className: "font-serif text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 text-foreground", children: t.hero.title }),
+        /* @__PURE__ */ jsx("p", { className: "text-lg md:text-xl text-foreground mb-10 leading-relaxed", children: t.hero.description }),
+        /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row gap-4 mb-12 justify-center", children: [
+          /* @__PURE__ */ jsx(Button, { variant: "hero", size: "lg", className: "h-13 px-8", asChild: true, children: /* @__PURE__ */ jsx("a", { href: "#kontakt", children: t.hero.cta }) }),
+          /* @__PURE__ */ jsx(Button, { variant: "outline", size: "lg", className: "h-13 px-8", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", children: [
+            /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4 mr-1" }),
+            phoneDisplay
+          ] }) })
         ] }),
-        /* @__PURE__ */ jsx("span", { className: "hidden sm:inline", children: "·" }),
-        /* @__PURE__ */ jsx("span", { children: t.hero.doctorName })
-      ] }),
-      /* @__PURE__ */ jsxs("div", { className: "mt-4 flex items-center justify-center gap-2 text-xs text-foreground/60", children: [
-        /* @__PURE__ */ jsx("span", { children: "🎓" }),
-        /* @__PURE__ */ jsx("span", { children: "Harvard Medical School" }),
-        /* @__PURE__ */ jsx("span", { children: "·" }),
-        /* @__PURE__ */ jsx("span", { children: "Warszawski Uniwersytet Medyczny" })
-      ] })
+        /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm text-foreground", children: [
+          /* @__PURE__ */ jsxs("span", { className: "flex items-center gap-2", children: [
+            /* @__PURE__ */ jsxs("a", { href: `mailto:${EMAIL$1}`, className: "flex items-center gap-2 hover:text-foreground/90 transition-colors", children: [
+              /* @__PURE__ */ jsx(Mail, { className: "w-4 h-4" }),
+              EMAIL$1
+            ] }),
+            /* @__PURE__ */ jsx("button", { onClick: handleCopy, className: "p-1 rounded hover:bg-foreground/5 transition-colors", title: "Copy email", children: copied ? /* @__PURE__ */ jsx(Check, { className: "w-3.5 h-3.5" }) : /* @__PURE__ */ jsx(Copy, { className: "w-3.5 h-3.5" }) })
+          ] }),
+          /* @__PURE__ */ jsx("span", { className: "hidden sm:inline", children: "·" }),
+          /* @__PURE__ */ jsx("span", { children: t.hero.doctorName })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "mt-4 flex items-center justify-center gap-2 text-xs text-foreground/60", children: [
+          /* @__PURE__ */ jsx("span", { children: "🎓" }),
+          /* @__PURE__ */ jsx("span", { children: "Harvard Medical School" }),
+          /* @__PURE__ */ jsx("span", { children: "·" }),
+          /* @__PURE__ */ jsx("span", { children: "Warszawski Uniwersytet Medyczny" })
+        ] })
+      ] }) }),
+      /* @__PURE__ */ jsx("div", { className: "order-2 md:flex-shrink-0 md:w-[44%] lg:w-[42%] xl:w-[40%] relative", children: /* @__PURE__ */ jsxs("picture", { className: "block w-full h-full", children: [
+        /* @__PURE__ */ jsx("source", { srcSet: "/images/dr-marta-treblinska-hero.webp?v=6", type: "image/webp" }),
+        /* @__PURE__ */ jsx(
+          "img",
+          {
+            src: "/images/dr-marta-treblinska-hero.jpg?v=6",
+            alt: t.hero.doctorName,
+            className: "hero-photo-mask w-full h-96 md:h-full object-cover [object-position:50%_18%] md:[object-position:right_center]",
+            width: 750,
+            height: 1166,
+            fetchPriority: "high"
+          }
+        )
+      ] }) })
     ] }) })
   ] });
 };
