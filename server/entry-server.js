@@ -47,7 +47,7 @@ const translations = {
     },
     hero: {
       badge: "Konsultacje lekarskie · Diagnostyka · Terapia",
-      title: "Chroniczne zmęczenie, brak energii, obniżone libido?",
+      title: "Chroniczne zmęczenie, problemy ze snem, obniżone libido?",
       description: "To może być niedobór testosteronu. Zdalna konsultacja lekarska — wygodnie, z dowolnego miejsca.",
       cta: "Umów konsultację lekarską",
       doctorName: "lekarz Marta Treblińska",
@@ -219,7 +219,7 @@ const translations = {
     },
     hero: {
       badge: "Medical consultations · Diagnostics · Therapy",
-      title: "Chronic fatigue, low energy, decreased libido?",
+      title: "Chronic fatigue, sleep problems, decreased libido?",
       description: "This may be testosterone deficiency. Remote medical consultation — convenient, from anywhere.",
       cta: "Book a consultation",
       doctorName: "Marta Treblińska, MD",
@@ -391,7 +391,7 @@ const translations = {
     },
     hero: {
       badge: "Ärztliche Beratung · Diagnostik · Therapie",
-      title: "Chronische Müdigkeit, Energiemangel, verminderte Libido?",
+      title: "Chronische Müdigkeit, Schlafprobleme, verminderte Libido?",
       description: "Das könnte ein Testosteronmangel sein. Ärztliche Fernberatung — bequem, von überall.",
       cta: "Beratung vereinbaren",
       doctorName: "Dr. med. Marta Treblińska",
