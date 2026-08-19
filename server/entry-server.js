@@ -8,7 +8,7 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useLocation, useNavigate, Link, useParams, Navigate, Routes, Route } from "react-router-dom";
-import { Calendar, X, Menu, Phone, Mail, Check, Copy, BatteryLow, Brain, Moon, HeartPulse, TrendingUp, FlaskConical, Stethoscope, BarChart3, FileSearch, ClipboardCheck, ShieldCheck, Crosshair, GraduationCap, Award, BookOpen, ArrowLeft, ArrowRight, ExternalLink, Star, Clock, ChevronDown, Video, AlertCircle, CheckCircle, ClipboardList, MessageSquarePlus, Send, Loader2 } from "lucide-react";
+import { Calendar, X, Menu, ArrowRight, Phone, Mail, Check, Copy, BatteryLow, Brain, Moon, HeartPulse, TrendingUp, FlaskConical, Stethoscope, BarChart3, FileSearch, ClipboardCheck, ShieldCheck, Crosshair, GraduationCap, Award, BookOpen, ArrowLeft, ExternalLink, Star, Clock, ChevronDown, Video, AlertCircle, CheckCircle, ClipboardList, MessageSquarePlus, Send, Loader2 } from "lucide-react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
 import useEmblaCarousel from "embla-carousel-react";
@@ -49,7 +49,8 @@ const translations = {
       badge: "Konsultacje lekarskie · Diagnostyka · Terapia",
       title: "Chroniczne zmęczenie, problemy ze snem, obniżone libido?",
       description: "To może być niedobór testosteronu. Zdalna konsultacja lekarska — wygodnie, z dowolnego miejsca.",
-      cta: "Umów konsultację lekarską",
+      cta: "Umów konsultację",
+      ctaPhonePrefix: "lub zadzwoń:",
       doctorName: "lekarz Marta Treblińska",
       perk1: "Bez poczekalni i ryzyka zakażenia",
       perk2: "Z dowolnego miejsca w Polsce",
@@ -222,6 +223,7 @@ const translations = {
       title: "Chronic fatigue, sleep problems, decreased libido?",
       description: "This may be testosterone deficiency. Remote medical consultation — convenient, from anywhere.",
       cta: "Book a consultation",
+      ctaPhonePrefix: "or call:",
       doctorName: "Marta Treblińska, MD",
       perk1: "No waiting room, no infection risk",
       perk2: "From anywhere in Poland",
@@ -394,6 +396,7 @@ const translations = {
       title: "Chronische Müdigkeit, Schlafprobleme, verminderte Libido?",
       description: "Das könnte ein Testosteronmangel sein. Ärztliche Fernberatung — bequem, von überall.",
       cta: "Beratung vereinbaren",
+      ctaPhonePrefix: "oder anrufen:",
       doctorName: "Dr. med. Marta Treblińska",
       perk1: "Kein Wartezimmer, kein Ansteckungsrisiko",
       perk2: "Von überall aus Polen",
@@ -606,12 +609,14 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         hero: "bg-primary text-primary-foreground hover:bg-primary/85 shadow-lg text-base font-medium",
-        "hero-outline": "border-2 border-hero-foreground/30 text-hero-foreground hover:bg-hero-foreground/10 text-base font-medium"
+        "hero-outline": "border-2 border-hero-foreground/30 text-hero-foreground hover:bg-hero-foreground/10 text-base font-medium",
+        cta: "bg-cta text-cta-foreground font-semibold shadow-[0_2px_8px_-3px_hsl(var(--cta)/0.45)] hover:bg-cta-hover hover:shadow-[0_4px_12px_-4px_hsl(var(--cta)/0.45)] hover:-translate-y-px active:translate-y-0 focus-visible:ring-cta transition-all duration-200 [&_.cta-arrow]:transition-transform hover:[&_.cta-arrow]:translate-x-1"
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
+        xl: "h-14 rounded-xl px-9 text-base",
         icon: "h-10 w-10"
       }
     },
@@ -736,7 +741,7 @@ const SiteNav = () => {
             }) })
           ] })
         ] }),
-        /* @__PURE__ */ jsx(Button, { size: "sm", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "#kontakt", onClick: (e) => scrollTo(e, "#kontakt"), children: [
+        /* @__PURE__ */ jsx(Button, { variant: "cta", size: "sm", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "#kontakt", onClick: (e) => scrollTo(e, "#kontakt"), children: [
           /* @__PURE__ */ jsx(Calendar, { className: "w-3.5 h-3.5 mr-1.5" }),
           t.nav.call
         ] }) })
@@ -790,7 +795,7 @@ const SiteNav = () => {
           children: t.nav.blog
         }
       ),
-      /* @__PURE__ */ jsx(Button, { size: "sm", className: "w-full mt-2", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "#kontakt", onClick: (e) => scrollTo(e, "#kontakt"), children: [
+      /* @__PURE__ */ jsx(Button, { variant: "cta", size: "sm", className: "w-full mt-2", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "#kontakt", onClick: (e) => scrollTo(e, "#kontakt"), children: [
         /* @__PURE__ */ jsx(Calendar, { className: "w-3.5 h-3.5 mr-1.5" }),
         t.nav.call
       ] }) })
@@ -829,12 +834,25 @@ const HeroSection = () => {
         /* @__PURE__ */ jsx("p", { className: "inline-block text-sm uppercase tracking-[0.2em] text-foreground font-semibold mb-6 px-4 py-2 rounded-full bg-foreground/5 border border-foreground/15", children: t.hero.badge }),
         /* @__PURE__ */ jsx("h1", { className: "font-serif text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 text-foreground", children: t.hero.title }),
         /* @__PURE__ */ jsx("p", { className: "text-lg md:text-xl text-foreground mb-10 leading-relaxed", children: t.hero.description }),
-        /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row gap-4 mb-12 justify-center", children: [
-          /* @__PURE__ */ jsx(Button, { variant: "hero", size: "lg", className: "h-13 px-8", asChild: true, children: /* @__PURE__ */ jsx("a", { href: "#kontakt", children: t.hero.cta }) }),
-          /* @__PURE__ */ jsx(Button, { variant: "outline", size: "lg", className: "h-13 px-8", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", children: [
-            /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4 mr-1" }),
-            phoneDisplay
-          ] }) })
+        /* @__PURE__ */ jsxs("div", { className: "mb-12 flex flex-col items-center gap-3", children: [
+          /* @__PURE__ */ jsx(Button, { variant: "cta", size: "xl", className: "w-full sm:w-auto", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "#kontakt", children: [
+            t.hero.cta,
+            /* @__PURE__ */ jsx(ArrowRight, { className: "cta-arrow" })
+          ] }) }),
+          /* @__PURE__ */ jsxs("p", { className: "mt-1 flex items-center justify-center gap-2 text-sm text-foreground/70", children: [
+            /* @__PURE__ */ jsx("span", { children: t.hero.ctaPhonePrefix }),
+            /* @__PURE__ */ jsxs(
+              "a",
+              {
+                href: "tel:+48572565887",
+                className: "inline-flex items-center gap-1.5 font-semibold text-foreground underline decoration-foreground/25 underline-offset-4 transition-colors hover:decoration-foreground",
+                children: [
+                  /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4" }),
+                  phoneDisplay
+                ]
+              }
+            )
+          ] })
         ] }),
         /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm text-foreground", children: [
           /* @__PURE__ */ jsxs("span", { className: "flex items-center gap-2", children: [
@@ -2300,7 +2318,7 @@ const ContactSection = () => {
           /* @__PURE__ */ jsx("p", { className: "text-hero-foreground/50 text-sm", children: t.contact.priceNote }),
           /* @__PURE__ */ jsx("p", { className: "text-hero-foreground/50 text-sm", children: t.contact.priceFollowUp })
         ] }),
-        /* @__PURE__ */ jsx(Button, { variant: "hero", size: "lg", className: "mx-auto", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", children: [
+        /* @__PURE__ */ jsx(Button, { variant: "cta", size: "lg", className: "mx-auto", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", children: [
           /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4 mr-2" }),
           t.contact.callNow
         ] }) })
@@ -2453,7 +2471,7 @@ const AdamQuizModal = ({ open, onOpenChange }) => {
         /* @__PURE__ */ jsx("p", { className: "text-muted-foreground text-sm leading-relaxed", children: positive ? t.adam.positiveText : t.adam.negativeText })
       ] }),
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col gap-2", children: [
-        positive && /* @__PURE__ */ jsx(Button, { className: "w-full", asChild: true, onClick: handleClose, children: /* @__PURE__ */ jsx("a", { href: "#kontakt", children: t.adam.ctaConsult }) }),
+        positive && /* @__PURE__ */ jsx(Button, { variant: "cta", className: "w-full", asChild: true, onClick: handleClose, children: /* @__PURE__ */ jsx("a", { href: "#kontakt", children: t.adam.ctaConsult }) }),
         /* @__PURE__ */ jsx(Button, { variant: "outline", className: "w-full", onClick: handleClose, children: t.adam.close })
       ] }),
       /* @__PURE__ */ jsx("p", { className: "text-xs text-muted-foreground", children: t.adam.disclaimer })
@@ -2571,7 +2589,7 @@ const FloatingCTA = () => {
         "a",
         {
           href: "#kontakt",
-          className: "flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-primary text-primary-foreground font-medium text-sm h-11 px-4 shadow-lg",
+          className: "flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-cta text-cta-foreground font-semibold text-sm h-11 px-4 shadow-[0_2px_10px_-3px_hsl(var(--cta)/0.45)]",
           onClick: (e) => {
             var _a;
             e.preventDefault();
@@ -2587,7 +2605,7 @@ const FloatingCTA = () => {
         "a",
         {
           href: "tel:+48572565887",
-          className: "inline-flex items-center justify-center rounded-lg bg-primary/10 text-primary font-medium text-sm h-11 w-11 shrink-0",
+          className: "inline-flex items-center justify-center rounded-lg border border-border bg-background text-foreground font-medium text-sm h-11 w-11 shrink-0",
           children: /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4" })
         }
       )
@@ -2601,7 +2619,7 @@ const FloatingCTA = () => {
           e.preventDefault();
           (_a = document.getElementById("kontakt")) == null ? void 0 : _a.scrollIntoView({ behavior: "smooth" });
         },
-        className: "hidden md:flex fixed bottom-6 right-6 z-50 items-center gap-2 rounded-full bg-primary text-primary-foreground font-medium text-sm h-12 px-5 shadow-lg hover:bg-primary/90 transition-colors animate-in slide-in-from-bottom-4 duration-300",
+        className: "hidden md:flex fixed bottom-6 right-6 z-50 items-center gap-2 rounded-full bg-cta text-cta-foreground font-semibold text-sm h-12 px-5 shadow-[0_3px_12px_-4px_hsl(var(--cta)/0.5)] hover:bg-cta-hover hover:-translate-y-px transition-all duration-200 animate-in slide-in-from-bottom-4 duration-300",
         children: [
           /* @__PURE__ */ jsx(Calendar, { className: "w-4 h-4" }),
           t.nav.call
@@ -2885,7 +2903,7 @@ const BlogPost = () => {
         /* @__PURE__ */ jsxs("div", { className: "mt-12 p-8 rounded-2xl bg-hero text-hero-foreground text-center", children: [
           /* @__PURE__ */ jsx("h3", { className: "font-serif text-2xl mb-3", children: "Chcesz omówić swój przypadek?" }),
           /* @__PURE__ */ jsx("p", { className: "text-hero-foreground/70 mb-6 max-w-md mx-auto", children: "Skontaktuj się z lekarz Martą Treblińską — konsultacja zdalna, z dowolnego miejsca." }),
-          /* @__PURE__ */ jsx(Button, { variant: "hero", size: "lg", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", children: [
+          /* @__PURE__ */ jsx(Button, { variant: "cta", size: "lg", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", children: [
             /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4 mr-2" }),
             "Zadzwoń teraz"
           ] }) })
