@@ -1483,7 +1483,7 @@ const SiteNav = () => {
   }, [isHome, navigate]);
   const Flag = flagComponents[locale];
   return /* @__PURE__ */ jsxs("nav", { className: "sticky top-0 z-40 bg-card/80 backdrop-blur-lg border-b border-border", children: [
-    /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-5xl flex items-center justify-between h-16", children: [
+    /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-7xl flex items-center justify-between gap-6 h-16", children: [
       /* @__PURE__ */ jsx(
         "a",
         {
@@ -1494,11 +1494,11 @@ const SiteNav = () => {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }
           },
-          className: "font-serif text-lg text-foreground",
+          className: "font-serif text-lg text-foreground whitespace-nowrap shrink-0",
           children: t.hero.doctorName
         }
       ),
-      /* @__PURE__ */ jsxs("div", { className: "hidden md:flex items-center gap-6", children: [
+      /* @__PURE__ */ jsxs("div", { className: "hidden lg:flex items-center gap-4 xl:gap-5", children: [
         links.map(
           (l) => l.to ? /* @__PURE__ */ jsx(
             Link,
@@ -1550,7 +1550,7 @@ const SiteNav = () => {
           t.nav.call
         ] }) })
       ] }),
-      /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-2 md:hidden", children: [
+      /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-2 lg:hidden", children: [
         /* @__PURE__ */ jsxs("div", { className: "relative", children: [
           /* @__PURE__ */ jsx(
             "button",
@@ -1585,7 +1585,7 @@ const SiteNav = () => {
         /* @__PURE__ */ jsx("button", { className: "p-2 text-foreground", onClick: () => setOpen(!open), "aria-label": "Menu", children: open ? /* @__PURE__ */ jsx(X, { className: "w-5 h-5" }) : /* @__PURE__ */ jsx(Menu, { className: "w-5 h-5" }) })
       ] })
     ] }),
-    open && /* @__PURE__ */ jsxs("div", { className: "md:hidden bg-card border-b border-border px-6 pb-4 space-y-2", children: [
+    open && /* @__PURE__ */ jsxs("div", { className: "lg:hidden bg-card border-b border-border px-6 pb-4 space-y-2", children: [
       links.map(
         (l) => l.to ? /* @__PURE__ */ jsx(
           Link,
@@ -2112,7 +2112,7 @@ const DoctorSection = () => {
         ] })
       ] }) }),
       /* @__PURE__ */ jsx(ScrollReveal, { delay: 300, children: /* @__PURE__ */ jsx("div", { className: "mt-16", children: /* @__PURE__ */ jsxs(Carousel, { opts: { align: "start", loop: false }, className: "w-full", children: [
-        /* @__PURE__ */ jsx(CarouselContent, { className: "-ml-4", children: certificates.map((cert) => /* @__PURE__ */ jsx(CarouselItem, { className: "pl-4 basis-4/5 sm:basis-1/2 lg:basis-1/3", children: /* @__PURE__ */ jsx(
+        /* @__PURE__ */ jsx(CarouselContent, { className: "-ml-4", children: certificates.map((cert) => /* @__PURE__ */ jsx(CarouselItem, { className: "pl-4 basis-[88%] sm:basis-2/3 lg:basis-3/5", children: /* @__PURE__ */ jsx(
           "button",
           {
             onClick: () => setLightbox(cert.webp),
