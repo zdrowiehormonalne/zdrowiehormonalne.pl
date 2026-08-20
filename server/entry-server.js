@@ -1456,9 +1456,11 @@ const SiteNav = () => {
   const isHome = homePaths.includes(location.pathname);
   const links = [
     { label: t.nav.symptoms, href: "#objawy" },
+    { label: t.nav.questionnaires, to: "/kwestionariusze" },
     { label: t.nav.services, href: "#uslugi" },
     { label: t.nav.process, href: "#proces" },
     { label: t.nav.doctor, href: "#lekarz" },
+    { label: t.nav.blog, to: "/blog" },
     { label: t.nav.faq, href: "#faq" },
     { label: t.nav.contact, href: "#kontakt" }
   ];
@@ -1490,24 +1492,17 @@ const SiteNav = () => {
         }
       ),
       /* @__PURE__ */ jsxs("div", { className: "hidden md:flex items-center gap-6", children: [
-        links.map((l) => /* @__PURE__ */ jsx("a", { href: l.href, onClick: (e) => scrollTo(e, l.href), className: "text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer", children: l.label }, l.href)),
-        /* @__PURE__ */ jsx(
-          Link,
-          {
-            to: "/kwestionariusze",
-            onClick: () => window.scrollTo({ top: 0, behavior: "smooth" }),
-            className: "text-sm text-muted-foreground hover:text-foreground transition-colors",
-            children: t.nav.questionnaires
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          Link,
-          {
-            to: "/blog",
-            onClick: () => window.scrollTo({ top: 0, behavior: "smooth" }),
-            className: "text-sm text-muted-foreground hover:text-foreground transition-colors",
-            children: t.nav.blog
-          }
+        links.map(
+          (l) => l.to ? /* @__PURE__ */ jsx(
+            Link,
+            {
+              to: l.to,
+              onClick: () => window.scrollTo({ top: 0, behavior: "smooth" }),
+              className: "text-sm text-muted-foreground hover:text-foreground transition-colors",
+              children: l.label
+            },
+            l.to
+          ) : /* @__PURE__ */ jsx("a", { href: l.href, onClick: (e) => scrollTo(e, l.href), className: "text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer", children: l.label }, l.href)
         ),
         /* @__PURE__ */ jsxs("div", { className: "relative", children: [
           /* @__PURE__ */ jsxs(
@@ -1584,30 +1579,20 @@ const SiteNav = () => {
       ] })
     ] }),
     open && /* @__PURE__ */ jsxs("div", { className: "md:hidden bg-card border-b border-border px-6 pb-4 space-y-2", children: [
-      links.map((l) => /* @__PURE__ */ jsx("a", { href: l.href, onClick: (e) => scrollTo(e, l.href), className: "block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer", children: l.label }, l.href)),
-      /* @__PURE__ */ jsx(
-        Link,
-        {
-          to: "/kwestionariusze",
-          onClick: () => {
-            setOpen(false);
-            window.scrollTo({ top: 0, behavior: "smooth" });
+      links.map(
+        (l) => l.to ? /* @__PURE__ */ jsx(
+          Link,
+          {
+            to: l.to,
+            onClick: () => {
+              setOpen(false);
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            },
+            className: "block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors",
+            children: l.label
           },
-          className: "block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors",
-          children: t.nav.questionnaires
-        }
-      ),
-      /* @__PURE__ */ jsx(
-        Link,
-        {
-          to: "/blog",
-          onClick: () => {
-            setOpen(false);
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          },
-          className: "block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors",
-          children: t.nav.blog
-        }
+          l.to
+        ) : /* @__PURE__ */ jsx("a", { href: l.href, onClick: (e) => scrollTo(e, l.href), className: "block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer", children: l.label }, l.href)
       ),
       /* @__PURE__ */ jsx(Button, { variant: "cta", size: "sm", className: "w-full mt-2", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "#kontakt", onClick: (e) => scrollTo(e, "#kontakt"), children: [
         /* @__PURE__ */ jsx(Calendar, { className: "w-3.5 h-3.5 mr-1.5" }),
