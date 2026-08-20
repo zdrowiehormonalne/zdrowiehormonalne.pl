@@ -1371,7 +1371,6 @@ function useLanguage() {
   if (!ctx) throw new Error("useLanguage must be used within LanguageProvider");
   return ctx;
 }
-const SCROLL_MARGIN = 96;
 const scrollToAnchor = (el) => {
   el.scrollIntoView({ behavior: "smooth", block: "start" });
   let takenOver = false;
@@ -1383,7 +1382,8 @@ const scrollToAnchor = (el) => {
   window.setTimeout(() => {
     events.forEach((e) => window.removeEventListener(e, release));
     if (takenOver) return;
-    const drift = el.getBoundingClientRect().top - SCROLL_MARGIN;
+    const target = parseFloat(getComputedStyle(el).scrollMarginTop) || 0;
+    const drift = el.getBoundingClientRect().top - target;
     if (Math.abs(drift) > 4) window.scrollBy({ top: drift, behavior: "auto" });
   }, 700);
 };
