@@ -43,7 +43,8 @@ const translations = {
       faq: "FAQ",
       contact: "Kontakt",
       call: "Umów wizytę",
-      blog: "Blog"
+      blog: "Blog",
+      questionnaires: "Kwestionariusze"
     },
     hero: {
       badge: "Konsultacje lekarskie · Diagnostyka · Terapia",
@@ -132,6 +133,260 @@ const translations = {
       q5: "Czy terapia hormonalna jest bezpieczna?",
       a5: "Każda terapia niesie ze sobą potencjalne korzyści i ryzyka. Bezpieczeństwo leczenia zależy od prawidłowej kwalifikacji, odpowiedniego dawkowania oraz regularnego monitorowania pacjenta przez lekarza."
     },
+    questionnaires: {
+      "pageTitle": "Kwestionariusze przesiewowe",
+      "pageSubtitle": "Narzędzia stosowane w praktyce klinicznej, które pomagają uporządkować objawy przed rozmową z lekarzem. Żadne z nich nie stawia diagnozy.",
+      "question": "Pytanie",
+      "back": "Wstecz",
+      "close": "Zamknij",
+      "book": "Umów konsultację",
+      "score": "Twój wynik",
+      "sourceLink": "Zobacz publikację źródłową w PubMed",
+      "fill": "Wypełnij kwestionariusz",
+      "sourceLabel": "Źródło",
+      "pageNote": "Wyniki kwestionariuszy nie są diagnozą. Mają wartość dopiero zestawione z wywiadem lekarskim i wynikami badań — proszę nie interpretować ich samodzielnie."
+    },
+    iief5: {
+      "name": "IIEF-5 — funkcja erekcyjna",
+      "tagline": "5 pytań · około 2 minut",
+      "intro": "Skrócona wersja Międzynarodowego Wskaźnika Funkcji Erekcyjnej, używana też pod nazwą SHIM. Pytania dotyczą ostatnich 6 miesięcy.",
+      "disclaimer": "IIEF-5 jest narzędziem przesiewowym i nie zastępuje diagnozy lekarskiej. Zaburzenia erekcji mogą mieć wiele przyczyn — naczyniowych, metabolicznych, neurologicznych, psychicznych i hormonalnych.",
+      "questions": [
+        {
+          "text": "Jak ocenia Pan swoją pewność, że może uzyskać i utrzymać erekcję?",
+          "options": [
+            {
+              "label": "Bardzo niska",
+              "score": 1
+            },
+            {
+              "label": "Niska",
+              "score": 2
+            },
+            {
+              "label": "Umiarkowana",
+              "score": 3
+            },
+            {
+              "label": "Wysoka",
+              "score": 4
+            },
+            {
+              "label": "Bardzo wysoka",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "text": "Gdy miał Pan erekcję po stymulacji seksualnej, jak często była ona wystarczająco twarda do penetracji?",
+          "options": [
+            {
+              "label": "Brak aktywności seksualnej",
+              "score": 0
+            },
+            {
+              "label": "Prawie nigdy lub nigdy",
+              "score": 1
+            },
+            {
+              "label": "Rzadziej niż w połowie przypadków",
+              "score": 2
+            },
+            {
+              "label": "W około połowie przypadków",
+              "score": 3
+            },
+            {
+              "label": "Częściej niż w połowie przypadków",
+              "score": 4
+            },
+            {
+              "label": "Prawie zawsze lub zawsze",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "text": "Podczas stosunku jak często udawało się Panu utrzymać erekcję po penetracji?",
+          "options": [
+            {
+              "label": "Nie podejmowałem stosunku",
+              "score": 0
+            },
+            {
+              "label": "Prawie nigdy lub nigdy",
+              "score": 1
+            },
+            {
+              "label": "Rzadziej niż w połowie przypadków",
+              "score": 2
+            },
+            {
+              "label": "W około połowie przypadków",
+              "score": 3
+            },
+            {
+              "label": "Częściej niż w połowie przypadków",
+              "score": 4
+            },
+            {
+              "label": "Prawie zawsze lub zawsze",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "text": "Podczas stosunku jak trudno było utrzymać erekcję do jego zakończenia?",
+          "options": [
+            {
+              "label": "Nie podejmowałem stosunku",
+              "score": 0
+            },
+            {
+              "label": "Ekstremalnie trudno",
+              "score": 1
+            },
+            {
+              "label": "Bardzo trudno",
+              "score": 2
+            },
+            {
+              "label": "Trudno",
+              "score": 3
+            },
+            {
+              "label": "Nieznacznie trudno",
+              "score": 4
+            },
+            {
+              "label": "Bez trudu",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "text": "Gdy podejmował Pan stosunek, jak często był on dla Pana satysfakcjonujący?",
+          "options": [
+            {
+              "label": "Nie podejmowałem stosunku",
+              "score": 0
+            },
+            {
+              "label": "Prawie nigdy lub nigdy",
+              "score": 1
+            },
+            {
+              "label": "Rzadziej niż w połowie przypadków",
+              "score": 2
+            },
+            {
+              "label": "W około połowie przypadków",
+              "score": 3
+            },
+            {
+              "label": "Częściej niż w połowie przypadków",
+              "score": 4
+            },
+            {
+              "label": "Prawie zawsze lub zawsze",
+              "score": 5
+            }
+          ]
+        }
+      ],
+      "bands": {
+        "none": {
+          "title": "Brak zaburzeń erekcji",
+          "text": "Odpowiedzi nie wskazują na zaburzenia erekcji. Jeśli mimo to coś Pana niepokoi, warto omówić to z lekarzem."
+        },
+        "mild": {
+          "title": "Łagodne zaburzenia erekcji",
+          "text": "Wynik mieści się w zakresie łagodnych zaburzeń erekcji. Warto omówić to z lekarzem — przyczyna bywa odwracalna."
+        },
+        "mildModerate": {
+          "title": "Łagodne do umiarkowanych zaburzenia erekcji",
+          "text": "Wynik wskazuje na zaburzenia o nasileniu łagodnym do umiarkowanego. Zalecana konsultacja lekarska i diagnostyka przyczyny."
+        },
+        "moderate": {
+          "title": "Umiarkowane zaburzenia erekcji",
+          "text": "Wynik wskazuje na umiarkowane zaburzenia erekcji. Zalecana konsultacja lekarska — zaburzenia erekcji bywają wczesnym sygnałem chorób naczyniowych i metabolicznych."
+        },
+        "severe": {
+          "title": "Nasilone zaburzenia erekcji",
+          "text": "Wynik wskazuje na nasilone zaburzenia erekcji. Zalecana konsultacja lekarska i diagnostyka — im wcześniej ustalona przyczyna, tym więcej opcji postępowania."
+        }
+      }
+    },
+    ams: {
+      "name": "AMS — nasilenie objawów",
+      "tagline": "17 pytań · około 4 minut",
+      "intro": "Skala objawów starzejącego się mężczyzny. Proszę ocenić, jak nasilony jest u Pana każdy z objawów. Wynik pokazuje ciężar objawów, a nie ich przyczynę.",
+      "disclaimer": "AMS mierzy nasilenie objawów, nie poziom hormonów — wysoki wynik nie oznacza niedoboru testosteronu, a niski go nie wyklucza. Skala dobrze pokazuje natomiast zmianę w czasie, dlatego bywa powtarzana w trakcie leczenia.",
+      "options": [
+        {
+          "label": "Brak",
+          "score": 1
+        },
+        {
+          "label": "Łagodne",
+          "score": 2
+        },
+        {
+          "label": "Umiarkowane",
+          "score": 3
+        },
+        {
+          "label": "Silne",
+          "score": 4
+        },
+        {
+          "label": "Bardzo silne",
+          "score": 5
+        }
+      ],
+      "items": [
+        "Pogorszenie ogólnego samopoczucia",
+        "Bóle stawów i mięśni",
+        "Nadmierna potliwość",
+        "Problemy ze snem",
+        "Zwiększona potrzeba snu, częste uczucie zmęczenia",
+        "Drażliwość",
+        "Nerwowość",
+        "Niepokój lub lęk",
+        "Wyczerpanie fizyczne, brak witalności",
+        "Spadek siły mięśniowej",
+        "Obniżony nastrój",
+        "Poczucie, że najlepsze lata ma Pan za sobą",
+        "Poczucie wypalenia, bycia na dnie",
+        "Wolniejszy porost zarostu i owłosienia",
+        "Spadek sprawności lub częstotliwości aktywności seksualnej",
+        "Mniej porannych erekcji",
+        "Spadek libido"
+      ],
+      "subscales": {
+        "somatic": "Objawy somatyczne",
+        "psychological": "Objawy psychiczne",
+        "sexual": "Objawy seksualne"
+      },
+      "bands": {
+        "none": {
+          "title": "Objawy nieobecne lub minimalne",
+          "text": "Nasilenie objawów jest niewielkie. Jeśli coś Pana niepokoi mimo tego wyniku, warto omówić to z lekarzem."
+        },
+        "mild": {
+          "title": "Łagodne nasilenie objawów",
+          "text": "Objawy są obecne, ale w niewielkim stopniu. Warto obserwować, czy nasilają się w czasie."
+        },
+        "moderate": {
+          "title": "Umiarkowane nasilenie objawów",
+          "text": "Objawy są wyraźnie odczuwalne. Warto omówić je z lekarzem i ustalić, co za nimi stoi — przyczyn może być kilka naraz."
+        },
+        "severe": {
+          "title": "Znaczne nasilenie objawów",
+          "text": "Objawy są nasilone i realnie obciążają codzienność. Zalecana konsultacja lekarska wraz z diagnostyką."
+        }
+      }
+    },
     contact: {
       title: "Umów konsultację",
       subtitle: "Konsultacja lekarska jest pierwszym krokiem do diagnostyki i ewentualnego leczenia zaburzeń hormonalnych.",
@@ -218,7 +473,8 @@ const translations = {
       faq: "FAQ",
       contact: "Contact",
       call: "Book a visit",
-      blog: "Blog"
+      blog: "Blog",
+      questionnaires: "Questionnaires"
     },
     hero: {
       badge: "Medical consultations · Diagnostics · Therapy",
@@ -307,6 +563,260 @@ const translations = {
       q5: "Is hormonal therapy safe?",
       a5: "Every therapy carries potential benefits and risks. Treatment safety depends on proper qualification, appropriate dosing, and regular patient monitoring by a physician."
     },
+    questionnaires: {
+      "pageTitle": "Screening questionnaires",
+      "pageSubtitle": "Tools used in clinical practice that help put your symptoms in order before speaking to a doctor. None of them makes a diagnosis.",
+      "question": "Question",
+      "back": "Back",
+      "close": "Close",
+      "book": "Book a consultation",
+      "score": "Your score",
+      "sourceLink": "View the source publication on PubMed",
+      "fill": "Take the questionnaire",
+      "sourceLabel": "Source",
+      "pageNote": "Questionnaire results are not a diagnosis. They only mean something alongside a medical history and laboratory results — please do not interpret them on your own."
+    },
+    iief5: {
+      "name": "IIEF-5 — erectile function",
+      "tagline": "5 questions · about 2 minutes",
+      "intro": "The abridged International Index of Erectile Function, also known as SHIM. The questions cover the past 6 months.",
+      "disclaimer": "IIEF-5 is a screening tool and does not replace a medical diagnosis. Erectile dysfunction has many possible causes — vascular, metabolic, neurological, psychological and hormonal.",
+      "questions": [
+        {
+          "text": "How do you rate your confidence that you could get and keep an erection?",
+          "options": [
+            {
+              "label": "Very low",
+              "score": 1
+            },
+            {
+              "label": "Low",
+              "score": 2
+            },
+            {
+              "label": "Moderate",
+              "score": 3
+            },
+            {
+              "label": "High",
+              "score": 4
+            },
+            {
+              "label": "Very high",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "text": "When you had erections with sexual stimulation, how often were they hard enough for penetration?",
+          "options": [
+            {
+              "label": "No sexual activity",
+              "score": 0
+            },
+            {
+              "label": "Almost never or never",
+              "score": 1
+            },
+            {
+              "label": "A few times (much less than half the time)",
+              "score": 2
+            },
+            {
+              "label": "Sometimes (about half the time)",
+              "score": 3
+            },
+            {
+              "label": "Most times (much more than half the time)",
+              "score": 4
+            },
+            {
+              "label": "Almost always or always",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "text": "During sexual intercourse, how often were you able to maintain your erection after penetration?",
+          "options": [
+            {
+              "label": "Did not attempt intercourse",
+              "score": 0
+            },
+            {
+              "label": "Almost never or never",
+              "score": 1
+            },
+            {
+              "label": "A few times (much less than half the time)",
+              "score": 2
+            },
+            {
+              "label": "Sometimes (about half the time)",
+              "score": 3
+            },
+            {
+              "label": "Most times (much more than half the time)",
+              "score": 4
+            },
+            {
+              "label": "Almost always or always",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "text": "During sexual intercourse, how difficult was it to maintain your erection to completion?",
+          "options": [
+            {
+              "label": "Did not attempt intercourse",
+              "score": 0
+            },
+            {
+              "label": "Extremely difficult",
+              "score": 1
+            },
+            {
+              "label": "Very difficult",
+              "score": 2
+            },
+            {
+              "label": "Difficult",
+              "score": 3
+            },
+            {
+              "label": "Slightly difficult",
+              "score": 4
+            },
+            {
+              "label": "Not difficult",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "text": "When you attempted sexual intercourse, how often was it satisfactory for you?",
+          "options": [
+            {
+              "label": "Did not attempt intercourse",
+              "score": 0
+            },
+            {
+              "label": "Almost never or never",
+              "score": 1
+            },
+            {
+              "label": "A few times (much less than half the time)",
+              "score": 2
+            },
+            {
+              "label": "Sometimes (about half the time)",
+              "score": 3
+            },
+            {
+              "label": "Most times (much more than half the time)",
+              "score": 4
+            },
+            {
+              "label": "Almost always or always",
+              "score": 5
+            }
+          ]
+        }
+      ],
+      "bands": {
+        "none": {
+          "title": "No erectile dysfunction",
+          "text": "Your answers do not indicate erectile dysfunction. If something still concerns you, it is worth discussing with a doctor."
+        },
+        "mild": {
+          "title": "Mild erectile dysfunction",
+          "text": "The score falls in the mild range. Worth discussing with a doctor — the cause is often reversible."
+        },
+        "mildModerate": {
+          "title": "Mild to moderate erectile dysfunction",
+          "text": "The score indicates mild to moderate dysfunction. A medical consultation and diagnostic work-up are advisable."
+        },
+        "moderate": {
+          "title": "Moderate erectile dysfunction",
+          "text": "The score indicates moderate dysfunction. A medical consultation is advisable — erectile dysfunction can be an early sign of vascular and metabolic disease."
+        },
+        "severe": {
+          "title": "Severe erectile dysfunction",
+          "text": "The score indicates severe dysfunction. A medical consultation and work-up are advisable — the earlier the cause is established, the more options remain."
+        }
+      }
+    },
+    ams: {
+      "name": "AMS — symptom burden",
+      "tagline": "17 questions · about 4 minutes",
+      "intro": "The Aging Males Symptoms scale. Rate how severe each symptom has been for you recently. The score shows the weight of your symptoms, not their cause.",
+      "disclaimer": "AMS measures symptom severity, not hormone levels — a high score does not mean testosterone deficiency, and a low one does not rule it out. What it does show well is change over time, which is why it is often repeated during treatment.",
+      "options": [
+        {
+          "label": "None",
+          "score": 1
+        },
+        {
+          "label": "Mild",
+          "score": 2
+        },
+        {
+          "label": "Moderate",
+          "score": 3
+        },
+        {
+          "label": "Severe",
+          "score": 4
+        },
+        {
+          "label": "Extremely severe",
+          "score": 5
+        }
+      ],
+      "items": [
+        "Decline in your feeling of general well-being",
+        "Joint and muscular pain",
+        "Excessive sweating",
+        "Sleep problems",
+        "Increased need for sleep, often feeling tired",
+        "Irritability",
+        "Nervousness",
+        "Anxiety",
+        "Physical exhaustion, lacking vitality",
+        "Decrease in muscular strength",
+        "Depressive mood",
+        "Feeling that you have passed your peak",
+        "Feeling burnt out, having hit rock bottom",
+        "Slower beard and body hair growth",
+        "Decrease in ability or frequency of sexual activity",
+        "Fewer morning erections",
+        "Decrease in sexual desire"
+      ],
+      "subscales": {
+        "somatic": "Somatic symptoms",
+        "psychological": "Psychological symptoms",
+        "sexual": "Sexual symptoms"
+      },
+      "bands": {
+        "none": {
+          "title": "No or minimal symptoms",
+          "text": "Symptom severity is low. If something concerns you despite this score, it is worth discussing with a doctor."
+        },
+        "mild": {
+          "title": "Mild symptom severity",
+          "text": "Symptoms are present but slight. Worth watching whether they grow over time."
+        },
+        "moderate": {
+          "title": "Moderate symptom severity",
+          "text": "Symptoms are clearly noticeable. Worth discussing with a doctor to establish what lies behind them — there may be several causes at once."
+        },
+        "severe": {
+          "title": "Marked symptom severity",
+          "text": "Symptoms are severe and genuinely weigh on daily life. A medical consultation and work-up are advisable."
+        }
+      }
+    },
     contact: {
       title: "Book a consultation",
       subtitle: "A medical consultation is the first step toward diagnosing and potentially treating hormonal disorders.",
@@ -393,7 +903,8 @@ const translations = {
       faq: "FAQ",
       contact: "Kontakt",
       call: "Termin buchen",
-      blog: "Blog"
+      blog: "Blog",
+      questionnaires: "Fragebögen"
     },
     hero: {
       badge: "Ärztliche Beratung · Diagnostik · Therapie",
@@ -481,6 +992,260 @@ const translations = {
       a4: "Beratungen finden ausschließlich in Fernform (Telekonsultation) statt — bequem, von überall aus. Der Termin wird individuell vereinbart.",
       q5: "Ist die Hormontherapie sicher?",
       a5: "Jede Therapie birgt potenzielle Vorteile und Risiken. Die Behandlungssicherheit hängt von der richtigen Qualifikation, der angemessenen Dosierung und der regelmäßigen Überwachung des Patienten durch den Arzt ab."
+    },
+    questionnaires: {
+      "pageTitle": "Screening-Fragebögen",
+      "pageSubtitle": "In der klinischen Praxis eingesetzte Instrumente, die helfen, Beschwerden vor dem Arztgespräch zu ordnen. Keines davon stellt eine Diagnose.",
+      "question": "Frage",
+      "back": "Zurück",
+      "close": "Schließen",
+      "book": "Beratung vereinbaren",
+      "score": "Ihr Ergebnis",
+      "sourceLink": "Quellpublikation bei PubMed ansehen",
+      "fill": "Fragebogen ausfüllen",
+      "sourceLabel": "Quelle",
+      "pageNote": "Ergebnisse von Fragebögen sind keine Diagnose. Sie sind erst zusammen mit Anamnese und Laborwerten aussagekräftig — bitte interpretieren Sie sie nicht selbst."
+    },
+    iief5: {
+      "name": "IIEF-5 — erektile Funktion",
+      "tagline": "5 Fragen · etwa 2 Minuten",
+      "intro": "Die Kurzform des Internationalen Index der Erektilen Funktion, auch als SHIM bekannt. Die Fragen beziehen sich auf die letzten 6 Monate.",
+      "disclaimer": "IIEF-5 ist ein Screening-Instrument und ersetzt keine ärztliche Diagnose. Erektionsstörungen können viele Ursachen haben — vaskuläre, metabolische, neurologische, psychische und hormonelle.",
+      "questions": [
+        {
+          "text": "Wie schätzen Sie Ihre Zuversicht ein, eine Erektion bekommen und halten zu können?",
+          "options": [
+            {
+              "label": "Sehr gering",
+              "score": 1
+            },
+            {
+              "label": "Gering",
+              "score": 2
+            },
+            {
+              "label": "Mäßig",
+              "score": 3
+            },
+            {
+              "label": "Hoch",
+              "score": 4
+            },
+            {
+              "label": "Sehr hoch",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "text": "Wenn Sie bei sexueller Stimulation eine Erektion hatten, wie oft war sie hart genug für eine Penetration?",
+          "options": [
+            {
+              "label": "Keine sexuelle Aktivität",
+              "score": 0
+            },
+            {
+              "label": "Fast nie oder nie",
+              "score": 1
+            },
+            {
+              "label": "Seltener als in der Hälfte der Fälle",
+              "score": 2
+            },
+            {
+              "label": "Etwa in der Hälfte der Fälle",
+              "score": 3
+            },
+            {
+              "label": "Häufiger als in der Hälfte der Fälle",
+              "score": 4
+            },
+            {
+              "label": "Fast immer oder immer",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "text": "Wie oft konnten Sie beim Geschlechtsverkehr die Erektion nach der Penetration aufrechterhalten?",
+          "options": [
+            {
+              "label": "Kein Geschlechtsverkehr versucht",
+              "score": 0
+            },
+            {
+              "label": "Fast nie oder nie",
+              "score": 1
+            },
+            {
+              "label": "Seltener als in der Hälfte der Fälle",
+              "score": 2
+            },
+            {
+              "label": "Etwa in der Hälfte der Fälle",
+              "score": 3
+            },
+            {
+              "label": "Häufiger als in der Hälfte der Fälle",
+              "score": 4
+            },
+            {
+              "label": "Fast immer oder immer",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "text": "Wie schwierig war es beim Geschlechtsverkehr, die Erektion bis zum Ende aufrechtzuerhalten?",
+          "options": [
+            {
+              "label": "Kein Geschlechtsverkehr versucht",
+              "score": 0
+            },
+            {
+              "label": "Äußerst schwierig",
+              "score": 1
+            },
+            {
+              "label": "Sehr schwierig",
+              "score": 2
+            },
+            {
+              "label": "Schwierig",
+              "score": 3
+            },
+            {
+              "label": "Etwas schwierig",
+              "score": 4
+            },
+            {
+              "label": "Nicht schwierig",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "text": "Wenn Sie Geschlechtsverkehr versucht haben, wie oft war er für Sie befriedigend?",
+          "options": [
+            {
+              "label": "Kein Geschlechtsverkehr versucht",
+              "score": 0
+            },
+            {
+              "label": "Fast nie oder nie",
+              "score": 1
+            },
+            {
+              "label": "Seltener als in der Hälfte der Fälle",
+              "score": 2
+            },
+            {
+              "label": "Etwa in der Hälfte der Fälle",
+              "score": 3
+            },
+            {
+              "label": "Häufiger als in der Hälfte der Fälle",
+              "score": 4
+            },
+            {
+              "label": "Fast immer oder immer",
+              "score": 5
+            }
+          ]
+        }
+      ],
+      "bands": {
+        "none": {
+          "title": "Keine erektile Dysfunktion",
+          "text": "Ihre Antworten weisen nicht auf eine erektile Dysfunktion hin. Wenn Sie dennoch etwas beunruhigt, besprechen Sie es ärztlich."
+        },
+        "mild": {
+          "title": "Leichte erektile Dysfunktion",
+          "text": "Das Ergebnis liegt im leichten Bereich. Eine Abklärung lohnt sich — die Ursache ist oft umkehrbar."
+        },
+        "mildModerate": {
+          "title": "Leichte bis mäßige erektile Dysfunktion",
+          "text": "Das Ergebnis weist auf eine leichte bis mäßige Störung hin. Eine ärztliche Beratung und Abklärung sind ratsam."
+        },
+        "moderate": {
+          "title": "Mäßige erektile Dysfunktion",
+          "text": "Das Ergebnis weist auf eine mäßige Störung hin. Eine ärztliche Beratung ist ratsam — Erektionsstörungen können ein frühes Zeichen von Gefäß- und Stoffwechselerkrankungen sein."
+        },
+        "severe": {
+          "title": "Ausgeprägte erektile Dysfunktion",
+          "text": "Das Ergebnis weist auf eine ausgeprägte Störung hin. Eine ärztliche Beratung und Abklärung sind ratsam — je früher die Ursache feststeht, desto mehr Möglichkeiten bleiben."
+        }
+      }
+    },
+    ams: {
+      "name": "AMS — Beschwerdelast",
+      "tagline": "17 Fragen · etwa 4 Minuten",
+      "intro": "Die Aging Males Symptoms-Skala. Bitte bewerten Sie, wie stark jede Beschwerde bei Ihnen zuletzt ausgeprägt war. Das Ergebnis zeigt das Gewicht der Beschwerden, nicht ihre Ursache.",
+      "disclaimer": "AMS misst die Stärke von Beschwerden, nicht den Hormonspiegel — ein hoher Wert bedeutet keinen Testosteronmangel, ein niedriger schließt ihn nicht aus. Gut abbilden kann die Skala dagegen Veränderungen über die Zeit, weshalb sie im Verlauf einer Behandlung oft wiederholt wird.",
+      "options": [
+        {
+          "label": "Keine",
+          "score": 1
+        },
+        {
+          "label": "Leicht",
+          "score": 2
+        },
+        {
+          "label": "Mittel",
+          "score": 3
+        },
+        {
+          "label": "Stark",
+          "score": 4
+        },
+        {
+          "label": "Sehr stark",
+          "score": 5
+        }
+      ],
+      "items": [
+        "Abnahme des allgemeinen Wohlbefindens",
+        "Gelenk- und Muskelschmerzen",
+        "Starkes Schwitzen",
+        "Schlafprobleme",
+        "Erhöhtes Schlafbedürfnis, häufiges Müdigkeitsgefühl",
+        "Reizbarkeit",
+        "Nervosität",
+        "Ängstlichkeit",
+        "Körperliche Erschöpfung, fehlender Antrieb",
+        "Abnahme der Muskelkraft",
+        "Depressive Verstimmung",
+        "Gefühl, den Höhepunkt des Lebens überschritten zu haben",
+        "Gefühl, ausgebrannt zu sein",
+        "Langsamerer Bart- und Körperhaarwuchs",
+        "Abnahme der sexuellen Leistungsfähigkeit oder Häufigkeit",
+        "Weniger Morgenerektionen",
+        "Abnahme des sexuellen Verlangens"
+      ],
+      "subscales": {
+        "somatic": "Somatische Beschwerden",
+        "psychological": "Psychische Beschwerden",
+        "sexual": "Sexuelle Beschwerden"
+      },
+      "bands": {
+        "none": {
+          "title": "Keine oder minimale Beschwerden",
+          "text": "Die Beschwerdelast ist gering. Wenn Sie trotz dieses Ergebnisses etwas beunruhigt, besprechen Sie es ärztlich."
+        },
+        "mild": {
+          "title": "Leichte Beschwerdelast",
+          "text": "Beschwerden sind vorhanden, aber gering ausgeprägt. Beobachten Sie, ob sie mit der Zeit zunehmen."
+        },
+        "moderate": {
+          "title": "Mittlere Beschwerdelast",
+          "text": "Die Beschwerden sind deutlich spürbar. Es lohnt sich, ärztlich abzuklären, was dahintersteckt — oft kommen mehrere Ursachen zusammen."
+        },
+        "severe": {
+          "title": "Starke Beschwerdelast",
+          "text": "Die Beschwerden sind ausgeprägt und belasten den Alltag spürbar. Eine ärztliche Beratung mit Abklärung ist ratsam."
+        }
+      }
     },
     contact: {
       title: "Beratung vereinbaren",
@@ -603,6 +1368,26 @@ function useLanguage() {
   if (!ctx) throw new Error("useLanguage must be used within LanguageProvider");
   return ctx;
 }
+const SCROLL_MARGIN = 96;
+const scrollToAnchor = (el) => {
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+  let takenOver = false;
+  const release = () => {
+    takenOver = true;
+  };
+  const events = ["wheel", "touchstart", "keydown"];
+  events.forEach((e) => window.addEventListener(e, release, { once: true, passive: true }));
+  window.setTimeout(() => {
+    events.forEach((e) => window.removeEventListener(e, release));
+    if (takenOver) return;
+    const drift = el.getBoundingClientRect().top - SCROLL_MARGIN;
+    if (Math.abs(drift) > 4) window.scrollBy({ top: drift, behavior: "auto" });
+  }, 700);
+};
+const scrollToId = (id) => {
+  const el = document.getElementById(id);
+  if (el) scrollToAnchor(el);
+};
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
@@ -678,8 +1463,7 @@ const SiteNav = () => {
     e.preventDefault();
     const id = href.replace("#", "");
     if (isHome) {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
+      scrollToId(id);
     } else {
       navigate("/", { state: { scrollTo: id } });
     }
@@ -704,6 +1488,15 @@ const SiteNav = () => {
       ),
       /* @__PURE__ */ jsxs("div", { className: "hidden md:flex items-center gap-6", children: [
         links.map((l) => /* @__PURE__ */ jsx("a", { href: l.href, onClick: (e) => scrollTo(e, l.href), className: "text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer", children: l.label }, l.href)),
+        /* @__PURE__ */ jsx(
+          Link,
+          {
+            to: "/kwestionariusze",
+            onClick: () => window.scrollTo({ top: 0, behavior: "smooth" }),
+            className: "text-sm text-muted-foreground hover:text-foreground transition-colors",
+            children: t.nav.questionnaires
+          }
+        ),
         /* @__PURE__ */ jsx(
           Link,
           {
@@ -792,6 +1585,18 @@ const SiteNav = () => {
       /* @__PURE__ */ jsx(
         Link,
         {
+          to: "/kwestionariusze",
+          onClick: () => {
+            setOpen(false);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          },
+          className: "block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors",
+          children: t.nav.questionnaires
+        }
+      ),
+      /* @__PURE__ */ jsx(
+        Link,
+        {
           to: "/blog",
           onClick: () => {
             setOpen(false);
@@ -812,10 +1617,29 @@ const EMAIL = "treblinskamarta@zdrowiehormonalne.pl";
 const [local, domain] = EMAIL.split("@");
 const EMAIL_LOCAL = `${local}@`;
 const EMAIL_DOMAIN = domain;
+const HOME_PATHS = ["/", "/en", "/de"];
+const useSectionLink = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isHome = HOME_PATHS.includes(location.pathname);
+  return useCallback(
+    (id, beforeLeaving) => (e) => {
+      e.preventDefault();
+      beforeLeaving == null ? void 0 : beforeLeaving();
+      if (isHome) {
+        scrollToId(id);
+      } else {
+        navigate("/", { state: { scrollTo: id } });
+      }
+    },
+    [isHome, navigate]
+  );
+};
 const HeroSection = () => {
   const { t, locale } = useLanguage();
   const phoneDisplay = locale === "pl" ? "572 565 887" : "+48 572 565 887";
   const [copied, setCopied] = useState(false);
+  const sectionLink = useSectionLink();
   const sectionRef = useRef(null);
   useEffect(() => {
     const el = sectionRef.current;
@@ -844,7 +1668,7 @@ const HeroSection = () => {
         /* @__PURE__ */ jsx("h1", { className: "font-serif text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 text-foreground", children: t.hero.title }),
         /* @__PURE__ */ jsx("p", { className: "text-lg md:text-xl text-foreground mb-10 leading-relaxed", children: t.hero.description }),
         /* @__PURE__ */ jsxs("div", { className: "mb-12 flex flex-col items-center gap-3", children: [
-          /* @__PURE__ */ jsx(Button, { variant: "cta", size: "xl", className: "w-full sm:w-auto", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "#kontakt", children: [
+          /* @__PURE__ */ jsx(Button, { variant: "cta", size: "xl", className: "w-full sm:w-auto", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "#kontakt", onClick: sectionLink("kontakt"), children: [
             t.hero.cta,
             /* @__PURE__ */ jsx(ArrowRight, { className: "cta-arrow" })
           ] }) }),
@@ -979,7 +1803,6 @@ const ServicesSection = () => {
   ] }) });
 };
 const FAQ_TESTS_ID = "faq-badania";
-const FAQ_SCROLL_MARGIN = 96;
 const FAQ_OPEN_EVENT = "faq:open";
 const requestFaqOpen = (id) => {
   window.dispatchEvent(new CustomEvent(FAQ_OPEN_EVENT, { detail: id }));
@@ -2293,19 +3116,7 @@ const FaqSection = () => {
       window.history.replaceState(null, "", `#${id}`);
       const el = document.getElementById(id);
       if (!el) return;
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-      let takenOver = false;
-      const release = () => {
-        takenOver = true;
-      };
-      const events = ["wheel", "touchstart", "keydown"];
-      events.forEach((e) => window.addEventListener(e, release, { once: true, passive: true }));
-      window.setTimeout(() => {
-        events.forEach((e) => window.removeEventListener(e, release));
-        if (takenOver) return;
-        const drift = el.getBoundingClientRect().top - FAQ_SCROLL_MARGIN;
-        if (Math.abs(drift) > 4) window.scrollBy({ top: drift, behavior: "auto" });
-      }, 600);
+      scrollToAnchor(el);
     };
     const onRequest = (e) => reveal(e.detail);
     window.addEventListener(FAQ_OPEN_EVENT, onRequest);
@@ -2332,7 +3143,7 @@ const ContactSection = () => {
     setCopied(true);
     setTimeout(() => setCopied(false), 2e3);
   };
-  return /* @__PURE__ */ jsx("section", { className: "py-20 md:py-28 bg-background", id: "kontakt", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-4xl", children: [
+  return /* @__PURE__ */ jsx("section", { className: "scroll-mt-24 py-20 md:py-28 bg-background", id: "kontakt", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-4xl", children: [
     /* @__PURE__ */ jsxs(ScrollReveal, { children: [
       /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl md:text-4xl text-foreground text-center mb-4", children: t.contact.title }),
       /* @__PURE__ */ jsx("p", { className: "text-muted-foreground text-center mb-8 max-w-xl mx-auto", children: t.contact.subtitle })
@@ -2461,6 +3272,7 @@ const DialogDescription = React.forwardRef(({ className, ...props }, ref) => /* 
 DialogDescription.displayName = DialogPrimitive.Description.displayName;
 const AdamQuizModal = ({ open, onOpenChange }) => {
   const { t } = useLanguage();
+  const sectionLink = useSectionLink();
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState([]);
   const questions = [
@@ -2555,7 +3367,7 @@ const AdamQuizModal = ({ open, onOpenChange }) => {
         /* @__PURE__ */ jsx("p", { className: "text-muted-foreground text-sm leading-relaxed", children: positive ? t.adam.positiveText : t.adam.negativeText })
       ] }),
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col gap-2", children: [
-        positive && /* @__PURE__ */ jsx(Button, { variant: "cta", className: "w-full", asChild: true, onClick: handleClose, children: /* @__PURE__ */ jsx("a", { href: "#kontakt", children: t.adam.ctaConsult }) }),
+        positive && /* @__PURE__ */ jsx(Button, { variant: "cta", className: "w-full", asChild: true, children: /* @__PURE__ */ jsx("a", { href: "/#kontakt", onClick: sectionLink("kontakt", handleClose), children: t.adam.ctaConsult }) }),
         /* @__PURE__ */ jsx(Button, { variant: "outline", className: "w-full", onClick: handleClose, children: t.adam.close })
       ] }),
       /* @__PURE__ */ jsx("p", { className: "text-xs text-muted-foreground", children: t.adam.disclaimer })
@@ -2570,7 +3382,16 @@ const AdamQuizBanner = () => {
       /* @__PURE__ */ jsx("div", { className: "flex-shrink-0 w-12 h-12 rounded-full bg-teal-mid/15 flex items-center justify-center text-teal-mid", children: /* @__PURE__ */ jsx(ClipboardList, { className: "w-5 h-5" }) }),
       /* @__PURE__ */ jsxs("div", { className: "flex-1", children: [
         /* @__PURE__ */ jsx("p", { className: "font-semibold text-foreground leading-snug", children: t.adam.bannerTitle }),
-        /* @__PURE__ */ jsx("p", { className: "text-muted-foreground text-sm mt-0.5", children: t.adam.bannerDesc })
+        /* @__PURE__ */ jsx("p", { className: "text-muted-foreground text-sm mt-0.5", children: t.adam.bannerDesc }),
+        /* @__PURE__ */ jsx(
+          Link,
+          {
+            to: "/kwestionariusze",
+            onClick: () => window.scrollTo({ top: 0, behavior: "smooth" }),
+            className: "mt-1.5 inline-block text-sm text-teal-mid underline decoration-teal-mid/30 underline-offset-4 transition-colors hover:decoration-teal-mid",
+            children: t.questionnaires.pageTitle
+          }
+        )
       ] }),
       /* @__PURE__ */ jsx(Button, { className: "flex-shrink-0", onClick: () => setOpen(true), children: t.adam.bannerCta })
     ] }) }) }) }),
@@ -2675,9 +3496,8 @@ const FloatingCTA = () => {
           href: "#kontakt",
           className: "flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-cta text-cta-foreground font-semibold text-sm h-11 px-4 shadow-[0_2px_10px_-3px_hsl(var(--cta)/0.45)]",
           onClick: (e) => {
-            var _a;
             e.preventDefault();
-            (_a = document.getElementById("kontakt")) == null ? void 0 : _a.scrollIntoView({ behavior: "smooth" });
+            scrollToId("kontakt");
           },
           children: [
             /* @__PURE__ */ jsx(Calendar, { className: "w-4 h-4" }),
@@ -2699,9 +3519,8 @@ const FloatingCTA = () => {
       {
         href: "#kontakt",
         onClick: (e) => {
-          var _a;
           e.preventDefault();
-          (_a = document.getElementById("kontakt")) == null ? void 0 : _a.scrollIntoView({ behavior: "smooth" });
+          scrollToId("kontakt");
         },
         className: "hidden md:flex fixed bottom-6 right-6 z-50 items-center gap-2 rounded-full bg-cta text-cta-foreground font-semibold text-sm h-12 px-5 shadow-[0_3px_12px_-4px_hsl(var(--cta)/0.5)] hover:bg-cta-hover hover:-translate-y-px transition-all duration-200 animate-in slide-in-from-bottom-4 duration-300",
         children: [
@@ -2860,10 +3679,7 @@ const Index = () => {
     var _a;
     const id = (_a = location.state) == null ? void 0 : _a.scrollTo;
     if (!id) return;
-    const timeout = setTimeout(() => {
-      var _a2;
-      (_a2 = document.getElementById(id)) == null ? void 0 : _a2.scrollIntoView({ behavior: "smooth" });
-    }, 100);
+    const timeout = setTimeout(() => scrollToId(id), 100);
     return () => clearTimeout(timeout);
   }, [location.state]);
   return /* @__PURE__ */ jsxs(Fragment, { children: [
@@ -2945,6 +3761,7 @@ const formatDate = (iso) => new Date(iso).toLocaleDateString("pl-PL", { year: "n
 const BlogPost = () => {
   const { slug } = useParams();
   const post = blogPosts.find((p) => p.slug === slug);
+  const sectionLink = useSectionLink();
   useEffect(() => {
     window.scrollTo(0, 0);
     if (post) {
@@ -2997,7 +3814,7 @@ const BlogPost = () => {
             /* @__PURE__ */ jsx(ArrowLeft, { className: "w-4 h-4" }),
             "Wszystkie artykuły"
           ] }),
-          /* @__PURE__ */ jsx("a", { href: "/#kontakt", className: "text-sm text-primary hover:underline", children: "Umów konsultację →" })
+          /* @__PURE__ */ jsx("a", { href: "/#kontakt", onClick: sectionLink("kontakt"), className: "text-sm text-primary hover:underline", children: "Umów konsultację →" })
         ] })
       ] }) })
     ] }),
