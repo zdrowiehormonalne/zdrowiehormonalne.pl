@@ -147,7 +147,7 @@ const translations = {
       "pageNote": "Wyniki kwestionariuszy nie są diagnozą. Mają wartość dopiero zestawione z wywiadem lekarskim i wynikami badań — proszę nie interpretować ich samodzielnie."
     },
     iief5: {
-      "name": "IIEF-5 — funkcja erekcyjna",
+      "name": "Międzynarodowy Wskaźnik Funkcji Erekcyjnej (IIEF-5)",
       "tagline": "5 pytań · około 2 minut",
       "intro": "Skrócona wersja Międzynarodowego Wskaźnika Funkcji Erekcyjnej, używana też pod nazwą SHIM. Pytania dotyczą ostatnich 6 miesięcy.",
       "disclaimer": "IIEF-5 jest narzędziem przesiewowym i nie zastępuje diagnozy lekarskiej. Zaburzenia erekcji mogą mieć wiele przyczyn — naczyniowych, metabolicznych, neurologicznych, psychicznych i hormonalnych.",
@@ -318,7 +318,7 @@ const translations = {
       }
     },
     ams: {
-      "name": "AMS — nasilenie objawów",
+      "name": "Skala objawów starzejącego się mężczyzny (AMS)",
       "tagline": "17 pytań · około 4 minut",
       "intro": "Skala objawów starzejącego się mężczyzny. Proszę ocenić, jak nasilony jest u Pana każdy z objawów. Wynik pokazuje ciężar objawów, a nie ich przyczynę.",
       "disclaimer": "AMS mierzy nasilenie objawów, nie poziom hormonów — wysoki wynik nie oznacza niedoboru testosteronu, a niski go nie wyklucza. Skala dobrze pokazuje natomiast zmianę w czasie, dlatego bywa powtarzana w trakcie leczenia.",
@@ -441,7 +441,8 @@ const translations = {
       bannerTitle: "Sprawdź, czy możesz mieć niedobór testosteronu",
       bannerDesc: "Wypełnij ankietę ADAM — 10 pytań, ok. 2 minuty, natychmiastowy wynik",
       bannerCta: "Wypełnij ankietę",
-      title: "Ankieta ADAM",
+      title: "Kwestionariusz niedoboru androgenów (ADAM)",
+      tagline: "10 pytań · około 2 minut",
       questionLabel: "Pytanie",
       yes: "Tak",
       no: "Nie",
@@ -577,7 +578,7 @@ const translations = {
       "pageNote": "Questionnaire results are not a diagnosis. They only mean something alongside a medical history and laboratory results — please do not interpret them on your own."
     },
     iief5: {
-      "name": "IIEF-5 — erectile function",
+      "name": "International Index of Erectile Function (IIEF-5)",
       "tagline": "5 questions · about 2 minutes",
       "intro": "The abridged International Index of Erectile Function, also known as SHIM. The questions cover the past 6 months.",
       "disclaimer": "IIEF-5 is a screening tool and does not replace a medical diagnosis. Erectile dysfunction has many possible causes — vascular, metabolic, neurological, psychological and hormonal.",
@@ -748,7 +749,7 @@ const translations = {
       }
     },
     ams: {
-      "name": "AMS — symptom burden",
+      "name": "Aging Males' Symptoms scale (AMS)",
       "tagline": "17 questions · about 4 minutes",
       "intro": "The Aging Males Symptoms scale. Rate how severe each symptom has been for you recently. The score shows the weight of your symptoms, not their cause.",
       "disclaimer": "AMS measures symptom severity, not hormone levels — a high score does not mean testosterone deficiency, and a low one does not rule it out. What it does show well is change over time, which is why it is often repeated during treatment.",
@@ -871,7 +872,8 @@ const translations = {
       bannerTitle: "Check if you may have testosterone deficiency",
       bannerDesc: "Complete the ADAM questionnaire — 10 questions, ~2 minutes, instant result",
       bannerCta: "Take the questionnaire",
-      title: "ADAM Questionnaire",
+      title: "Androgen Deficiency in the Aging Male (ADAM)",
+      tagline: "10 questions · about 2 minutes",
       questionLabel: "Question",
       yes: "Yes",
       no: "No",
@@ -1007,7 +1009,7 @@ const translations = {
       "pageNote": "Ergebnisse von Fragebögen sind keine Diagnose. Sie sind erst zusammen mit Anamnese und Laborwerten aussagekräftig — bitte interpretieren Sie sie nicht selbst."
     },
     iief5: {
-      "name": "IIEF-5 — erektile Funktion",
+      "name": "Internationaler Index der Erektilen Funktion (IIEF-5)",
       "tagline": "5 Fragen · etwa 2 Minuten",
       "intro": "Die Kurzform des Internationalen Index der Erektilen Funktion, auch als SHIM bekannt. Die Fragen beziehen sich auf die letzten 6 Monate.",
       "disclaimer": "IIEF-5 ist ein Screening-Instrument und ersetzt keine ärztliche Diagnose. Erektionsstörungen können viele Ursachen haben — vaskuläre, metabolische, neurologische, psychische und hormonelle.",
@@ -1178,7 +1180,7 @@ const translations = {
       }
     },
     ams: {
-      "name": "AMS — Beschwerdelast",
+      "name": "Aging Males' Symptoms-Skala (AMS)",
       "tagline": "17 Fragen · etwa 4 Minuten",
       "intro": "Die Aging Males Symptoms-Skala. Bitte bewerten Sie, wie stark jede Beschwerde bei Ihnen zuletzt ausgeprägt war. Das Ergebnis zeigt das Gewicht der Beschwerden, nicht ihre Ursache.",
       "disclaimer": "AMS misst die Stärke von Beschwerden, nicht den Hormonspiegel — ein hoher Wert bedeutet keinen Testosteronmangel, ein niedriger schließt ihn nicht aus. Gut abbilden kann die Skala dagegen Veränderungen über die Zeit, weshalb sie im Verlauf einer Behandlung oft wiederholt wird.",
@@ -1301,7 +1303,8 @@ const translations = {
       bannerTitle: "Prüfen Sie, ob Sie einen Testosteronmangel haben könnten",
       bannerDesc: "Füllen Sie den ADAM-Fragebogen aus — 10 Fragen, ca. 2 Minuten, sofortiges Ergebnis",
       bannerCta: "Fragebogen ausfüllen",
-      title: "ADAM-Fragebogen",
+      title: "Androgenmangel beim alternden Mann (ADAM)",
+      tagline: "10 Fragen · etwa 2 Minuten",
       questionLabel: "Frage",
       yes: "Ja",
       no: "Nein",
