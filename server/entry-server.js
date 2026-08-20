@@ -2116,15 +2116,15 @@ const DoctorSection = () => {
           "button",
           {
             onClick: () => setLightbox(cert.webp),
-            className: "group w-full rounded-xl overflow-hidden border border-border bg-card shadow-sm hover:shadow-md transition-shadow cursor-zoom-in",
-            children: /* @__PURE__ */ jsxs("picture", { children: [
+            className: "group flex h-64 w-full items-center justify-center rounded-xl border border-border bg-card p-3 shadow-sm transition-shadow hover:shadow-md cursor-zoom-in sm:h-80 lg:h-96",
+            children: /* @__PURE__ */ jsxs("picture", { className: "block h-full w-full", children: [
               /* @__PURE__ */ jsx("source", { srcSet: cert.webp, type: "image/webp" }),
               /* @__PURE__ */ jsx(
                 "img",
                 {
                   src: cert.jpg,
                   alt: cert.alt,
-                  className: "w-full h-auto object-contain",
+                  className: "h-full w-full object-contain",
                   loading: "lazy"
                 }
               )
