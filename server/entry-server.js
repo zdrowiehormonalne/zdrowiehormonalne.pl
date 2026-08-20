@@ -3141,7 +3141,7 @@ const ContactSection = () => {
     setCopied(true);
     setTimeout(() => setCopied(false), 2e3);
   };
-  return /* @__PURE__ */ jsx("section", { className: "scroll-mt-24 py-20 md:py-28 bg-background", id: "kontakt", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-4xl", children: [
+  return /* @__PURE__ */ jsx("section", { className: "py-20 md:py-28 bg-background", id: "kontakt", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-4xl", children: [
     /* @__PURE__ */ jsxs(ScrollReveal, { children: [
       /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl md:text-4xl text-foreground text-center mb-4", children: t.contact.title }),
       /* @__PURE__ */ jsx("p", { className: "text-muted-foreground text-center mb-8 max-w-xl mx-auto", children: t.contact.subtitle })
