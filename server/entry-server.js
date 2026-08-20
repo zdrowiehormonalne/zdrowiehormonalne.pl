@@ -8,7 +8,7 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useLocation, useNavigate, Link, useParams, Navigate, Routes, Route } from "react-router-dom";
-import { Calendar, X, Menu, ArrowRight, Phone, Mail, Check, Copy, BatteryLow, Brain, Moon, HeartPulse, TrendingUp, FlaskConical, Stethoscope, BarChart3, FileSearch, ClipboardCheck, ShieldCheck, Crosshair, GraduationCap, Award, BookOpen, ArrowLeft, ExternalLink, Star, Clock, ChevronDown, Video, AlertCircle, CheckCircle, ClipboardList, MessageSquarePlus, Send, Loader2 } from "lucide-react";
+import { Calendar, X, Menu, ArrowRight, Phone, Mail, Check, Copy, BatteryLow, Brain, Moon, HeartPulse, TrendingUp, FlaskConical, Stethoscope, BarChart3, FileSearch, ClipboardCheck, ShieldCheck, Crosshair, GraduationCap, Award, BookOpen, ArrowLeft, ExternalLink, Star, Clock, ChevronDown, CalendarCheck, Video, AlertCircle, CheckCircle, ClipboardList, MessageSquarePlus, Send, Loader2 } from "lucide-react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
 import useEmblaCarousel from "embla-carousel-react";
@@ -96,6 +96,7 @@ const translations = {
       step1Desc: "Szczegółowy wywiad medyczny i analiza objawów",
       step2: "Badania laboratoryjne",
       step2Desc: "Zlecenie odpowiednich badań hormonalnych",
+      step2Link: "Jakie badania warto wykonać przed konsultacją?",
       step3: "Omówienie wyników",
       step3Desc: "Interpretacja wyników i wyjaśnienie dalszych kroków",
       step4: "Dalsze postępowanie",
@@ -134,7 +135,6 @@ const translations = {
     contact: {
       title: "Umów konsultację",
       subtitle: "Konsultacja lekarska jest pierwszym krokiem do diagnostyki i ewentualnego leczenia zaburzeń hormonalnych.",
-      phone: "Telefon",
       email: "E-mail",
       consultForm: "Forma konsultacji",
       consultFormValue: "Zdalnie — wygodnie, z dowolnego miejsca",
@@ -142,8 +142,10 @@ const translations = {
       schedule: "Terminy",
       scheduleValue: "Indywidualnie dostosowane do pacjenta",
       firstConsultation: "Pierwsza konsultacja",
-      firstConsultationDesc: "Skontaktuj się telefonicznie lub mailowo, aby umówić wizytę. Podczas rejestracji otrzymasz informacje o badaniach, które warto wykonać przed konsultacją.",
-      callNow: "Zadzwoń teraz",
+      firstConsultationDesc: "Trwa 60 minut: szczegółowy wywiad, analiza objawów i dotychczasowych wyników oraz ustalenie zakresu dalszej diagnostyki.",
+      testsLink: "Jakie badania warto wykonać przed konsultacją?",
+      bookMedfile: "Umów online przez Medfile",
+      bookPhone: "Zadzwoń:",
       priceNote: "Pierwsza konsultacja (60 min) — 799 zł",
       priceFollowUp: "Wizyta kontrolna (30 min) — 449 zł"
     },
@@ -269,6 +271,7 @@ const translations = {
       step1Desc: "Detailed medical interview and symptom analysis",
       step2: "Laboratory tests",
       step2Desc: "Ordering appropriate hormonal tests",
+      step2Link: "Which tests are worth doing before the consultation?",
       step3: "Results discussion",
       step3Desc: "Interpretation of results and explanation of next steps",
       step4: "Further management",
@@ -307,7 +310,6 @@ const translations = {
     contact: {
       title: "Book a consultation",
       subtitle: "A medical consultation is the first step toward diagnosing and potentially treating hormonal disorders.",
-      phone: "Phone",
       email: "E-mail",
       consultForm: "Consultation format",
       consultFormValue: "Remote — conveniently, from anywhere",
@@ -315,8 +317,10 @@ const translations = {
       schedule: "Appointments",
       scheduleValue: "Individually tailored to the patient",
       firstConsultation: "First consultation",
-      firstConsultationDesc: "Contact us by phone or email to schedule a visit. During registration, you will receive information about tests worth doing before the consultation.",
-      callNow: "Call now",
+      firstConsultationDesc: "It lasts 60 minutes: a detailed medical history, a review of your symptoms and any existing results, and agreeing the scope of further diagnostics.",
+      testsLink: "Which tests are worth doing before the consultation?",
+      bookMedfile: "Book online via Medfile",
+      bookPhone: "Call:",
       priceNote: "First consultation (60 min) — 799 PLN",
       priceFollowUp: "Follow-up visit (30 min) — 449 PLN"
     },
@@ -442,6 +446,7 @@ const translations = {
       step1Desc: "Ausführliche Anamnese und Symptomanalyse",
       step2: "Laboruntersuchungen",
       step2Desc: "Anordnung entsprechender Hormonuntersuchungen",
+      step2Link: "Welche Untersuchungen sind vor der Beratung sinnvoll?",
       step3: "Befundbesprechung",
       step3Desc: "Interpretation der Ergebnisse und Erläuterung der nächsten Schritte",
       step4: "Weiteres Vorgehen",
@@ -480,7 +485,6 @@ const translations = {
     contact: {
       title: "Beratung vereinbaren",
       subtitle: "Eine ärztliche Beratung ist der erste Schritt zur Diagnostik und gegebenenfalls zur Behandlung hormoneller Störungen.",
-      phone: "Telefon",
       email: "E-Mail",
       consultForm: "Beratungsform",
       consultFormValue: "Fernberatung — bequem, von überall",
@@ -488,8 +492,10 @@ const translations = {
       schedule: "Termine",
       scheduleValue: "Individuell auf den Patienten abgestimmt",
       firstConsultation: "Erstberatung",
-      firstConsultationDesc: "Nehmen Sie telefonisch oder per E-Mail Kontakt auf, um einen Termin zu vereinbaren. Bei der Anmeldung erhalten Sie Hinweise zu empfohlenen Voruntersuchungen.",
-      callNow: "Jetzt anrufen",
+      firstConsultationDesc: "Sie dauert 60 Minuten: ausführliche Anamnese, Auswertung Ihrer Beschwerden und vorhandener Befunde sowie Festlegung der weiteren Diagnostik.",
+      testsLink: "Welche Untersuchungen sind vor der Beratung sinnvoll?",
+      bookMedfile: "Online über Medfile buchen",
+      bookPhone: "Anrufen:",
       priceNote: "Erstberatung (60 Min.) — 799 PLN",
       priceFollowUp: "Kontrolltermin (30 Min.) — 449 PLN"
     },
@@ -882,7 +888,7 @@ const HeroSection = () => {
             className: "hero-photo-mask w-full h-96 md:h-full object-cover [object-position:50%_18%] md:[object-position:right_center]",
             width: 750,
             height: 1166,
-            fetchPriority: "high"
+            ...{ fetchpriority: "high" }
           }
         )
       ] }) })
@@ -965,11 +971,13 @@ const ServicesSection = () => {
     ] }) }, i)) })
   ] }) });
 };
+const FAQ_TESTS_ID = "faq-badania";
+const FAQ_TESTS_HREF = `#${FAQ_TESTS_ID}`;
 const ProcessSection = () => {
   const { t } = useLanguage();
   const steps = [
     { num: "01", title: t.process.step1, desc: t.process.step1Desc },
-    { num: "02", title: t.process.step2, desc: t.process.step2Desc },
+    { num: "02", title: t.process.step2, desc: t.process.step2Desc, link: t.process.step2Link },
     { num: "03", title: t.process.step3, desc: t.process.step3Desc },
     { num: "04", title: t.process.step4, desc: t.process.step4Desc }
   ];
@@ -984,7 +992,15 @@ const ProcessSection = () => {
         /* @__PURE__ */ jsx("div", { className: "relative z-10 flex h-16 w-16 items-center justify-center self-start rounded-xl bg-hero font-serif text-xl text-hero-foreground md:h-[4.5rem] md:w-[4.5rem] md:rounded-2xl", children: s.num }),
         /* @__PURE__ */ jsxs("div", { className: "min-w-0 pt-1 md:pt-2", children: [
           /* @__PURE__ */ jsx("h3", { className: "font-sans text-lg font-semibold leading-tight text-foreground", children: s.title }),
-          /* @__PURE__ */ jsx("p", { className: "mt-2 text-muted-foreground", children: s.desc })
+          /* @__PURE__ */ jsx("p", { className: "mt-2 text-muted-foreground", children: s.desc }),
+          s.link && /* @__PURE__ */ jsx(
+            "a",
+            {
+              href: FAQ_TESTS_HREF,
+              className: "mt-2 inline-block text-sm text-primary underline decoration-primary/30 underline-offset-4 transition-colors hover:decoration-primary",
+              children: s.link
+            }
+          )
         ] })
       ] }) }, i)) })
     ] }),
@@ -1300,7 +1316,7 @@ const reviews = [
   { name: "Grzegorz", text: "Bardzo konkretny lekarz, dokładny wywiad, pytania w punkt, Pani Marta wie jak poprowadzić rozmowę, dokładne zalecenia 10/10" },
   { name: "Kacper", text: "Będę polecał, szczere 5 gwiazdek" }
 ];
-const MEDFILE_URL = "https://www.medfile.pl/marta-treblinska-2/specjalista/ostrow-mazowiecki/";
+const MEDFILE_URL$1 = "https://www.medfile.pl/marta-treblinska-2/specjalista/ostrow-mazowiecki/";
 const Stars = () => /* @__PURE__ */ jsx("div", { className: "flex gap-0.5", children: [...Array(5)].map((_, i) => /* @__PURE__ */ jsx(Star, { className: "h-4 w-4 fill-yellow-400 text-yellow-400" }, i)) });
 const ReviewsSection = () => {
   const { locale } = useLanguage();
@@ -1323,7 +1339,7 @@ const ReviewsSection = () => {
       /* @__PURE__ */ jsxs(
         "a",
         {
-          href: MEDFILE_URL,
+          href: MEDFILE_URL$1,
           target: "_blank",
           rel: "noopener noreferrer",
           className: "inline-flex items-center gap-1.5 text-sm text-primary hover:underline",
@@ -2238,22 +2254,40 @@ const AccordionContent = React.forwardRef(({ className, children, ...props }, re
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;
 const FaqSection = () => {
   const { t } = useLanguage();
+  const [open, setOpen] = useState("");
   const faqs = [
-    { q: t.faq.q1, a: t.faq.a1 },
-    { q: t.faq.q2, a: t.faq.a2 },
-    { q: t.faq.q3, a: t.faq.a3 },
-    { q: t.faq.q4, a: t.faq.a4 },
-    { q: t.faq.q5, a: t.faq.a5 }
+    { id: "faq-leczenie", q: t.faq.q1, a: t.faq.a1 },
+    { id: FAQ_TESTS_ID, q: t.faq.q2, a: t.faq.a2 },
+    { id: "faq-kontrola", q: t.faq.q3, a: t.faq.a3 },
+    { id: "faq-forma", q: t.faq.q4, a: t.faq.a4 },
+    { id: "faq-bezpieczenstwo", q: t.faq.q5, a: t.faq.a5 }
   ];
+  useEffect(() => {
+    const openFromHash = () => {
+      const id = window.location.hash.slice(1);
+      if (!faqs.some((f) => f.id === id)) return;
+      setOpen(id);
+      requestAnimationFrame(
+        () => {
+          var _a;
+          return (_a = document.getElementById(id)) == null ? void 0 : _a.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      );
+    };
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
+    return () => window.removeEventListener("hashchange", openFromHash);
+  }, []);
   return /* @__PURE__ */ jsx("section", { className: "py-20 md:py-28 bg-section-alt", id: "faq", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-3xl", children: [
     /* @__PURE__ */ jsx(ScrollReveal, { children: /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl md:text-4xl text-foreground text-center mb-14", children: t.faq.title }) }),
-    /* @__PURE__ */ jsx(Accordion, { type: "single", collapsible: true, className: "space-y-3", children: faqs.map((faq, i) => /* @__PURE__ */ jsx(ScrollReveal, { delay: i * 100, children: /* @__PURE__ */ jsxs(AccordionItem, { value: `faq-${i}`, className: "bg-card border border-border rounded-xl px-6 data-[state=open]:shadow-sm", children: [
+    /* @__PURE__ */ jsx(Accordion, { type: "single", collapsible: true, value: open, onValueChange: setOpen, className: "space-y-3", children: faqs.map((faq, i) => /* @__PURE__ */ jsx(ScrollReveal, { delay: i * 100, children: /* @__PURE__ */ jsxs(AccordionItem, { id: faq.id, value: faq.id, className: "scroll-mt-24 bg-card border border-border rounded-xl px-6 data-[state=open]:shadow-sm", children: [
       /* @__PURE__ */ jsx(AccordionTrigger, { className: "text-left font-sans font-medium text-foreground hover:no-underline py-5", children: faq.q }),
       /* @__PURE__ */ jsx(AccordionContent, { className: "text-muted-foreground leading-relaxed pb-5", children: faq.a })
-    ] }) }, i)) })
+    ] }) }, faq.id)) })
   ] }) });
 };
 const EMAIL = "treblinskamarta@zdrowiehormonalne.pl";
+const MEDFILE_URL = "https://rejestracja.medfile.pl/register/index/?uuid=9af9f7bc-4525-7d5f-43cc-cc53b53b3394";
 const ContactSection = () => {
   const { t, locale } = useLanguage();
   const phoneDisplay = locale === "pl" ? "572 565 887" : "+48 572 565 887";
@@ -2268,18 +2302,24 @@ const ContactSection = () => {
   return /* @__PURE__ */ jsx("section", { className: "py-20 md:py-28 bg-background", id: "kontakt", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-4xl", children: [
     /* @__PURE__ */ jsxs(ScrollReveal, { children: [
       /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl md:text-4xl text-foreground text-center mb-4", children: t.contact.title }),
-      /* @__PURE__ */ jsx("p", { className: "text-muted-foreground text-center mb-14 max-w-xl mx-auto", children: t.contact.subtitle })
+      /* @__PURE__ */ jsx("p", { className: "text-muted-foreground text-center mb-8 max-w-xl mx-auto", children: t.contact.subtitle })
     ] }),
+    /* @__PURE__ */ jsx(ScrollReveal, { delay: 100, children: /* @__PURE__ */ jsx("div", { className: "mb-16", children: /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row gap-3 justify-center", children: [
+      /* @__PURE__ */ jsx(Button, { variant: "cta", size: "lg", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: MEDFILE_URL, target: "_blank", rel: "noopener noreferrer", children: [
+        /* @__PURE__ */ jsx(CalendarCheck, { className: "w-4 h-4" }),
+        t.contact.bookMedfile,
+        /* @__PURE__ */ jsx(ExternalLink, { className: "w-3.5 h-3.5 opacity-60" })
+      ] }) }),
+      /* @__PURE__ */ jsx(Button, { variant: "outline", size: "lg", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", children: [
+        /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4" }),
+        t.contact.bookPhone,
+        " ",
+        phoneDisplay
+      ] }) })
+    ] }) }) }),
     /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8", children: [
       /* @__PURE__ */ jsxs("div", { className: "space-y-6", children: [
-        /* @__PURE__ */ jsx(ScrollReveal, { delay: 100, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", className: "flex items-center gap-4 p-5 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-sm transition-all group", children: [
-          /* @__PURE__ */ jsx("div", { className: "w-12 h-12 shrink-0 rounded-lg bg-teal-light flex items-center justify-center text-teal-mid group-hover:scale-110 transition-transform", children: /* @__PURE__ */ jsx(Phone, { className: "w-5 h-5" }) }),
-          /* @__PURE__ */ jsxs("div", { children: [
-            /* @__PURE__ */ jsx("p", { className: "text-sm text-muted-foreground", children: t.contact.phone }),
-            /* @__PURE__ */ jsx("p", { className: "font-semibold text-foreground", children: phoneDisplay })
-          ] })
-        ] }) }),
-        /* @__PURE__ */ jsx(ScrollReveal, { delay: 200, children: /* @__PURE__ */ jsxs("a", { href: `mailto:${EMAIL}`, className: "flex items-center gap-4 p-5 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-sm transition-all group", children: [
+        /* @__PURE__ */ jsx(ScrollReveal, { delay: 100, children: /* @__PURE__ */ jsxs("a", { href: `mailto:${EMAIL}`, className: "flex items-center gap-4 p-5 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-sm transition-all group", children: [
           /* @__PURE__ */ jsx("div", { className: "w-12 h-12 shrink-0 rounded-lg bg-teal-light flex items-center justify-center text-teal-mid group-hover:scale-110 transition-transform", children: /* @__PURE__ */ jsx(Mail, { className: "w-5 h-5" }) }),
           /* @__PURE__ */ jsxs("div", { className: "min-w-0 flex-1", children: [
             /* @__PURE__ */ jsx("p", { className: "text-sm text-muted-foreground", children: t.contact.email }),
@@ -2318,10 +2358,17 @@ const ContactSection = () => {
           /* @__PURE__ */ jsx("p", { className: "text-hero-foreground/50 text-sm", children: t.contact.priceNote }),
           /* @__PURE__ */ jsx("p", { className: "text-hero-foreground/50 text-sm", children: t.contact.priceFollowUp })
         ] }),
-        /* @__PURE__ */ jsx(Button, { variant: "cta", size: "lg", className: "mx-auto", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", children: [
-          /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4 mr-2" }),
-          t.contact.callNow
-        ] }) })
+        /* @__PURE__ */ jsxs(
+          "a",
+          {
+            href: FAQ_TESTS_HREF,
+            className: "inline-flex items-center justify-center gap-2 text-sm text-hero-foreground/80 underline decoration-hero-foreground/30 underline-offset-4 transition-colors hover:text-hero-foreground hover:decoration-hero-foreground",
+            children: [
+              /* @__PURE__ */ jsx(FlaskConical, { className: "w-4 h-4" }),
+              t.contact.testsLink
+            ]
+          }
+        )
       ] }) })
     ] })
   ] }) });
