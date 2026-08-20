@@ -808,7 +808,10 @@ const SiteNav = () => {
     ] })
   ] });
 };
-const EMAIL$1 = "treblinskamarta@zdrowiehormonalne.pl";
+const EMAIL = "treblinskamarta@zdrowiehormonalne.pl";
+const [local, domain] = EMAIL.split("@");
+const EMAIL_LOCAL = `${local}@`;
+const EMAIL_DOMAIN = domain;
 const HeroSection = () => {
   const { t, locale } = useLanguage();
   const phoneDisplay = locale === "pl" ? "572 565 887" : "+48 572 565 887";
@@ -829,7 +832,7 @@ const HeroSection = () => {
   }, []);
   const handleCopy = (e) => {
     e.preventDefault();
-    navigator.clipboard.writeText(EMAIL$1);
+    navigator.clipboard.writeText(EMAIL);
     setCopied(true);
     setTimeout(() => setCopied(false), 2e3);
   };
@@ -862,9 +865,13 @@ const HeroSection = () => {
         ] }),
         /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm text-foreground", children: [
           /* @__PURE__ */ jsxs("span", { className: "flex items-center gap-2", children: [
-            /* @__PURE__ */ jsxs("a", { href: `mailto:${EMAIL$1}`, className: "flex items-center gap-2 hover:text-foreground/90 transition-colors", children: [
-              /* @__PURE__ */ jsx(Mail, { className: "w-4 h-4" }),
-              EMAIL$1
+            /* @__PURE__ */ jsxs("a", { href: `mailto:${EMAIL}`, className: "flex items-center gap-2 hover:text-foreground/90 transition-colors", children: [
+              /* @__PURE__ */ jsx(Mail, { className: "w-4 h-4 shrink-0" }),
+              /* @__PURE__ */ jsxs("span", { className: "[overflow-wrap:break-word]", children: [
+                EMAIL_LOCAL,
+                /* @__PURE__ */ jsx("wbr", {}),
+                EMAIL_DOMAIN
+              ] })
             ] }),
             /* @__PURE__ */ jsx("button", { onClick: handleCopy, className: "p-1 rounded hover:bg-foreground/5 transition-colors", title: "Copy email", children: copied ? /* @__PURE__ */ jsx(Check, { className: "w-3.5 h-3.5" }) : /* @__PURE__ */ jsx(Copy, { className: "w-3.5 h-3.5" }) })
           ] }),
@@ -972,7 +979,23 @@ const ServicesSection = () => {
   ] }) });
 };
 const FAQ_TESTS_ID = "faq-badania";
-const FAQ_TESTS_HREF = `#${FAQ_TESTS_ID}`;
+const FAQ_SCROLL_MARGIN = 96;
+const FAQ_OPEN_EVENT = "faq:open";
+const requestFaqOpen = (id) => {
+  window.dispatchEvent(new CustomEvent(FAQ_OPEN_EVENT, { detail: id }));
+};
+const FaqLink = ({ id, className, children }) => /* @__PURE__ */ jsx(
+  "a",
+  {
+    href: `#${id}`,
+    className,
+    onClick: (e) => {
+      e.preventDefault();
+      requestFaqOpen(id);
+    },
+    children
+  }
+);
 const ProcessSection = () => {
   const { t } = useLanguage();
   const steps = [
@@ -994,9 +1017,9 @@ const ProcessSection = () => {
           /* @__PURE__ */ jsx("h3", { className: "font-sans text-lg font-semibold leading-tight text-foreground", children: s.title }),
           /* @__PURE__ */ jsx("p", { className: "mt-2 text-muted-foreground", children: s.desc }),
           s.link && /* @__PURE__ */ jsx(
-            "a",
+            FaqLink,
             {
-              href: FAQ_TESTS_HREF,
+              id: FAQ_TESTS_ID,
               className: "mt-2 inline-block text-sm text-primary underline decoration-primary/30 underline-offset-4 transition-colors hover:decoration-primary",
               children: s.link
             }
@@ -2252,31 +2275,42 @@ const AccordionContent = React.forwardRef(({ className, children, ...props }, re
   }
 ));
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;
+const FAQ_IDS = ["faq-leczenie", FAQ_TESTS_ID, "faq-kontrola", "faq-forma", "faq-bezpieczenstwo"];
 const FaqSection = () => {
   const { t } = useLanguage();
   const [open, setOpen] = useState("");
   const faqs = [
-    { id: "faq-leczenie", q: t.faq.q1, a: t.faq.a1 },
-    { id: FAQ_TESTS_ID, q: t.faq.q2, a: t.faq.a2 },
-    { id: "faq-kontrola", q: t.faq.q3, a: t.faq.a3 },
-    { id: "faq-forma", q: t.faq.q4, a: t.faq.a4 },
-    { id: "faq-bezpieczenstwo", q: t.faq.q5, a: t.faq.a5 }
-  ];
+    { q: t.faq.q1, a: t.faq.a1 },
+    { q: t.faq.q2, a: t.faq.a2 },
+    { q: t.faq.q3, a: t.faq.a3 },
+    { q: t.faq.q4, a: t.faq.a4 },
+    { q: t.faq.q5, a: t.faq.a5 }
+  ].map((faq, i) => ({ ...faq, id: FAQ_IDS[i] }));
   useEffect(() => {
-    const openFromHash = () => {
-      const id = window.location.hash.slice(1);
-      if (!faqs.some((f) => f.id === id)) return;
+    const reveal = (id) => {
+      if (!FAQ_IDS.includes(id)) return;
       setOpen(id);
-      requestAnimationFrame(
-        () => {
-          var _a;
-          return (_a = document.getElementById(id)) == null ? void 0 : _a.scrollIntoView({ behavior: "smooth", block: "center" });
-        }
-      );
+      window.history.replaceState(null, "", `#${id}`);
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      let takenOver = false;
+      const release = () => {
+        takenOver = true;
+      };
+      const events = ["wheel", "touchstart", "keydown"];
+      events.forEach((e) => window.addEventListener(e, release, { once: true, passive: true }));
+      window.setTimeout(() => {
+        events.forEach((e) => window.removeEventListener(e, release));
+        if (takenOver) return;
+        const drift = el.getBoundingClientRect().top - FAQ_SCROLL_MARGIN;
+        if (Math.abs(drift) > 4) window.scrollBy({ top: drift, behavior: "auto" });
+      }, 600);
     };
-    openFromHash();
-    window.addEventListener("hashchange", openFromHash);
-    return () => window.removeEventListener("hashchange", openFromHash);
+    const onRequest = (e) => reveal(e.detail);
+    window.addEventListener(FAQ_OPEN_EVENT, onRequest);
+    reveal(window.location.hash.slice(1));
+    return () => window.removeEventListener(FAQ_OPEN_EVENT, onRequest);
   }, []);
   return /* @__PURE__ */ jsx("section", { className: "py-20 md:py-28 bg-section-alt", id: "faq", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-3xl", children: [
     /* @__PURE__ */ jsx(ScrollReveal, { children: /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl md:text-4xl text-foreground text-center mb-14", children: t.faq.title }) }),
@@ -2286,7 +2320,6 @@ const FaqSection = () => {
     ] }) }, faq.id)) })
   ] }) });
 };
-const EMAIL = "treblinskamarta@zdrowiehormonalne.pl";
 const MEDFILE_URL = "https://rejestracja.medfile.pl/register/index/?uuid=9af9f7bc-4525-7d5f-43cc-cc53b53b3394";
 const ContactSection = () => {
   const { t, locale } = useLanguage();
@@ -2323,7 +2356,11 @@ const ContactSection = () => {
           /* @__PURE__ */ jsx("div", { className: "w-12 h-12 shrink-0 rounded-lg bg-teal-light flex items-center justify-center text-teal-mid group-hover:scale-110 transition-transform", children: /* @__PURE__ */ jsx(Mail, { className: "w-5 h-5" }) }),
           /* @__PURE__ */ jsxs("div", { className: "min-w-0 flex-1", children: [
             /* @__PURE__ */ jsx("p", { className: "text-sm text-muted-foreground", children: t.contact.email }),
-            /* @__PURE__ */ jsx("p", { className: "font-semibold text-foreground text-xs sm:text-sm md:text-base break-all select-all", children: EMAIL })
+            /* @__PURE__ */ jsxs("p", { className: "font-semibold text-foreground text-sm md:text-base [overflow-wrap:break-word] select-all", children: [
+              EMAIL_LOCAL,
+              /* @__PURE__ */ jsx("wbr", {}),
+              EMAIL_DOMAIN
+            ] })
           ] }),
           /* @__PURE__ */ jsx(
             "button",
@@ -2359,12 +2396,12 @@ const ContactSection = () => {
           /* @__PURE__ */ jsx("p", { className: "text-hero-foreground/50 text-sm", children: t.contact.priceFollowUp })
         ] }),
         /* @__PURE__ */ jsxs(
-          "a",
+          FaqLink,
           {
-            href: FAQ_TESTS_HREF,
+            id: FAQ_TESTS_ID,
             className: "inline-flex items-center justify-center gap-2 text-sm text-hero-foreground/80 underline decoration-hero-foreground/30 underline-offset-4 transition-colors hover:text-hero-foreground hover:decoration-hero-foreground",
             children: [
-              /* @__PURE__ */ jsx(FlaskConical, { className: "w-4 h-4" }),
+              /* @__PURE__ */ jsx(FlaskConical, { className: "w-4 h-4 shrink-0" }),
               t.contact.testsLink
             ]
           }
