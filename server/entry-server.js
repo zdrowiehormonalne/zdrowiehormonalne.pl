@@ -8,7 +8,7 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useLocation, useNavigate, Link, useParams, Navigate, Routes, Route } from "react-router-dom";
-import { Calendar, X, Menu, ArrowRight, Phone, Mail, Check, Copy, BatteryLow, Brain, Moon, HeartPulse, TrendingUp, FlaskConical, Stethoscope, BarChart3, FileSearch, ClipboardCheck, ShieldCheck, Crosshair, GraduationCap, Award, BookOpen, ArrowLeft, ExternalLink, Star, Clock, ChevronDown, CalendarCheck, Video, AlertCircle, CheckCircle, ClipboardList, MessageSquarePlus, Send, Loader2 } from "lucide-react";
+import { Calendar, X, Menu, ArrowRight, Phone, Mail, Check, Copy, BatteryLow, Brain, Moon, HeartPulse, TrendingUp, FlaskConical, Stethoscope, BarChart3, FileSearch, ClipboardCheck, ShieldCheck, Crosshair, ArrowLeft, GraduationCap, Award, BookOpen, ExternalLink, Star, Clock, ChevronDown, CalendarCheck, Video, AlertCircle, CheckCircle, ClipboardList, MessageSquarePlus, Send, Loader2 } from "lucide-react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
 import useEmblaCarousel from "embla-carousel-react";
@@ -44,7 +44,9 @@ const translations = {
       contact: "Kontakt",
       call: "Umów wizytę",
       blog: "Blog",
-      questionnaires: "Kwestionariusze"
+      questionnaires: "Kwestionariusze",
+      reviews: "Opinie",
+      articles: "Artykuły"
     },
     hero: {
       badge: "Konsultacje lekarskie · Diagnostyka · Terapia",
@@ -475,7 +477,9 @@ const translations = {
       contact: "Contact",
       call: "Book a visit",
       blog: "Blog",
-      questionnaires: "Questionnaires"
+      questionnaires: "Questionnaires",
+      reviews: "Reviews",
+      articles: "Articles"
     },
     hero: {
       badge: "Medical consultations · Diagnostics · Therapy",
@@ -906,7 +910,9 @@ const translations = {
       contact: "Kontakt",
       call: "Termin buchen",
       blog: "Blog",
-      questionnaires: "Fragebögen"
+      questionnaires: "Fragebögen",
+      reviews: "Bewertungen",
+      articles: "Artikel"
     },
     hero: {
       badge: "Ärztliche Beratung · Diagnostik · Therapie",
@@ -1456,13 +1462,14 @@ const SiteNav = () => {
   const isHome = homePaths.includes(location.pathname);
   const links = [
     { label: t.nav.symptoms, href: "#objawy" },
-    { label: t.nav.questionnaires, to: "/kwestionariusze" },
     { label: t.nav.services, href: "#uslugi" },
     { label: t.nav.process, href: "#proces" },
     { label: t.nav.doctor, href: "#lekarz" },
-    { label: t.nav.blog, to: "/blog" },
+    { label: t.nav.reviews, href: "#opinie" },
+    { label: t.nav.articles, href: "#artykuly" },
     { label: t.nav.faq, href: "#faq" },
-    { label: t.nav.contact, href: "#kontakt" }
+    { label: t.nav.contact, href: "#kontakt" },
+    { label: t.nav.questionnaires, to: "/kwestionariusze" }
   ];
   const scrollTo = useCallback((e, href) => {
     e.preventDefault();
@@ -1855,114 +1862,6 @@ const TrtInfoSection = () => {
     ] }) })
   ] }) });
 };
-const INSTITUTION_TERMS = [
-  "Warszawski Uniwersytet Medyczny",
-  "Medical University of Warsaw",
-  "Medizinische Universität Warschau",
-  "Harvard Medical School"
-];
-const boldTerms = (text, terms) => {
-  for (const term of terms) {
-    const idx = text.indexOf(term);
-    if (idx === -1) continue;
-    return /* @__PURE__ */ jsxs(Fragment, { children: [
-      text.slice(0, idx),
-      /* @__PURE__ */ jsx("strong", { className: "font-semibold text-foreground", children: term }),
-      boldTerms(text.slice(idx + term.length), terms)
-    ] });
-  }
-  return text;
-};
-const DoctorSection = () => {
-  const { t } = useLanguage();
-  const [lightbox, setLightbox] = useState(null);
-  const certificates = [
-    { webp: "/images/cert-harvard.webp", jpg: "/images/cert-harvard.jpg", alt: "Harvard Medical School Certificate" },
-    { webp: "/images/cert-trt-master.webp", jpg: "/images/cert-trt-master.jpg", alt: "TRT Master Practitioner Certificate" },
-    { webp: "/images/cert-dr-marcin-madziarski.webp", jpg: "/images/cert-dr-marcin-madziarski.jpg", alt: "Kurs TrT - od teorii do praktyki klinicznej" }
-  ];
-  return /* @__PURE__ */ jsxs(Fragment, { children: [
-    /* @__PURE__ */ jsx("section", { className: "py-20 md:py-28 bg-background", id: "lekarz", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-4xl", children: [
-      /* @__PURE__ */ jsx(ScrollReveal, { children: /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl md:text-4xl text-foreground text-center mb-14", children: t.doctor.title }) }),
-      /* @__PURE__ */ jsx(ScrollReveal, { delay: 150, children: /* @__PURE__ */ jsxs("div", { className: "flex flex-col md:flex-row items-center gap-10 md:gap-14", children: [
-        /* @__PURE__ */ jsxs("picture", { className: "flex-shrink-0", children: [
-          /* @__PURE__ */ jsx("source", { srcSet: "/images/dr-marta-treblinska-portrait.webp", type: "image/webp" }),
-          /* @__PURE__ */ jsx(
-            "img",
-            {
-              src: "/images/dr-marta-treblinska-portrait.jpg",
-              alt: t.doctor.name,
-              className: "w-56 h-72 md:w-64 md:h-80 rounded-2xl object-cover shadow-md",
-              loading: "lazy",
-              width: 640,
-              height: 896
-            }
-          )
-        ] }),
-        /* @__PURE__ */ jsxs("div", { children: [
-          /* @__PURE__ */ jsx("h3", { className: "font-serif text-2xl text-foreground mb-2", children: t.doctor.name }),
-          /* @__PURE__ */ jsxs("div", { className: "space-y-4 text-muted-foreground", children: [
-            /* @__PURE__ */ jsxs("div", { className: "flex items-start gap-3", children: [
-              /* @__PURE__ */ jsx(GraduationCap, { className: "w-5 h-5 text-teal-mid flex-shrink-0 mt-0.5" }),
-              /* @__PURE__ */ jsx("span", { children: boldTerms(t.doctor.education, INSTITUTION_TERMS) })
-            ] }),
-            /* @__PURE__ */ jsxs("div", { className: "flex items-start gap-3", children: [
-              /* @__PURE__ */ jsx(GraduationCap, { className: "w-5 h-5 text-teal-mid flex-shrink-0 mt-0.5" }),
-              /* @__PURE__ */ jsx("span", { children: boldTerms(t.doctor.harvard, INSTITUTION_TERMS) })
-            ] }),
-            /* @__PURE__ */ jsxs("div", { className: "flex items-start gap-3", children: [
-              /* @__PURE__ */ jsx(Award, { className: "w-5 h-5 text-teal-mid flex-shrink-0 mt-0.5" }),
-              /* @__PURE__ */ jsx("span", { children: t.doctor.alfa })
-            ] }),
-            /* @__PURE__ */ jsxs("div", { className: "flex items-start gap-3", children: [
-              /* @__PURE__ */ jsx(Award, { className: "w-5 h-5 text-teal-mid flex-shrink-0 mt-0.5" }),
-              /* @__PURE__ */ jsx("span", { children: t.doctor.experience })
-            ] }),
-            /* @__PURE__ */ jsxs("div", { className: "flex items-start gap-3", children: [
-              /* @__PURE__ */ jsx(BookOpen, { className: "w-5 h-5 text-teal-mid flex-shrink-0 mt-0.5" }),
-              /* @__PURE__ */ jsx("span", { children: t.doctor.ebm })
-            ] })
-          ] })
-        ] })
-      ] }) }),
-      /* @__PURE__ */ jsx(ScrollReveal, { delay: 300, children: /* @__PURE__ */ jsx("div", { className: "mt-16 grid grid-cols-1 sm:grid-cols-2 gap-6", children: certificates.map((cert) => /* @__PURE__ */ jsx(
-        "button",
-        {
-          onClick: () => setLightbox(cert.webp),
-          className: "group rounded-xl overflow-hidden border border-border bg-card shadow-sm hover:shadow-md transition-shadow cursor-zoom-in",
-          children: /* @__PURE__ */ jsxs("picture", { children: [
-            /* @__PURE__ */ jsx("source", { srcSet: cert.webp, type: "image/webp" }),
-            /* @__PURE__ */ jsx(
-              "img",
-              {
-                src: cert.jpg,
-                alt: cert.alt,
-                className: "w-full h-auto object-contain",
-                loading: "lazy"
-              }
-            )
-          ] })
-        },
-        cert.webp
-      )) }) })
-    ] }) }),
-    lightbox && /* @__PURE__ */ jsx(
-      "div",
-      {
-        className: "fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 cursor-zoom-out",
-        onClick: () => setLightbox(null),
-        children: /* @__PURE__ */ jsx(
-          "img",
-          {
-            src: lightbox,
-            alt: "Certificate",
-            className: "max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
-          }
-        )
-      }
-    )
-  ] });
-};
 const CarouselContext = React.createContext(null);
 function useCarousel() {
   const context = React.useContext(CarouselContext);
@@ -2142,6 +2041,117 @@ const CarouselNext = React.forwardRef(
   }
 );
 CarouselNext.displayName = "CarouselNext";
+const INSTITUTION_TERMS = [
+  "Warszawski Uniwersytet Medyczny",
+  "Medical University of Warsaw",
+  "Medizinische Universität Warschau",
+  "Harvard Medical School"
+];
+const boldTerms = (text, terms) => {
+  for (const term of terms) {
+    const idx = text.indexOf(term);
+    if (idx === -1) continue;
+    return /* @__PURE__ */ jsxs(Fragment, { children: [
+      text.slice(0, idx),
+      /* @__PURE__ */ jsx("strong", { className: "font-semibold text-foreground", children: term }),
+      boldTerms(text.slice(idx + term.length), terms)
+    ] });
+  }
+  return text;
+};
+const DoctorSection = () => {
+  const { t } = useLanguage();
+  const [lightbox, setLightbox] = useState(null);
+  const certificates = [
+    { webp: "/images/cert-harvard.webp", jpg: "/images/cert-harvard.jpg", alt: "Harvard Medical School Certificate" },
+    { webp: "/images/cert-trt-master.webp", jpg: "/images/cert-trt-master.jpg", alt: "TRT Master Practitioner Certificate" },
+    { webp: "/images/cert-dr-marcin-madziarski.webp", jpg: "/images/cert-dr-marcin-madziarski.jpg", alt: "Kurs TrT - od teorii do praktyki klinicznej" }
+  ];
+  return /* @__PURE__ */ jsxs(Fragment, { children: [
+    /* @__PURE__ */ jsx("section", { className: "py-20 md:py-28 bg-background", id: "lekarz", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-4xl", children: [
+      /* @__PURE__ */ jsx(ScrollReveal, { children: /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl md:text-4xl text-foreground text-center mb-14", children: t.doctor.title }) }),
+      /* @__PURE__ */ jsx(ScrollReveal, { delay: 150, children: /* @__PURE__ */ jsxs("div", { className: "flex flex-col md:flex-row items-center gap-10 md:gap-14", children: [
+        /* @__PURE__ */ jsxs("picture", { className: "flex-shrink-0", children: [
+          /* @__PURE__ */ jsx("source", { srcSet: "/images/dr-marta-treblinska-portrait.webp", type: "image/webp" }),
+          /* @__PURE__ */ jsx(
+            "img",
+            {
+              src: "/images/dr-marta-treblinska-portrait.jpg",
+              alt: t.doctor.name,
+              className: "w-56 h-72 md:w-64 md:h-80 rounded-2xl object-cover shadow-md",
+              loading: "lazy",
+              width: 640,
+              height: 896
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxs("div", { children: [
+          /* @__PURE__ */ jsx("h3", { className: "font-serif text-2xl text-foreground mb-2", children: t.doctor.name }),
+          /* @__PURE__ */ jsxs("div", { className: "space-y-4 text-muted-foreground", children: [
+            /* @__PURE__ */ jsxs("div", { className: "flex items-start gap-3", children: [
+              /* @__PURE__ */ jsx(GraduationCap, { className: "w-5 h-5 text-teal-mid flex-shrink-0 mt-0.5" }),
+              /* @__PURE__ */ jsx("span", { children: boldTerms(t.doctor.education, INSTITUTION_TERMS) })
+            ] }),
+            /* @__PURE__ */ jsxs("div", { className: "flex items-start gap-3", children: [
+              /* @__PURE__ */ jsx(GraduationCap, { className: "w-5 h-5 text-teal-mid flex-shrink-0 mt-0.5" }),
+              /* @__PURE__ */ jsx("span", { children: boldTerms(t.doctor.harvard, INSTITUTION_TERMS) })
+            ] }),
+            /* @__PURE__ */ jsxs("div", { className: "flex items-start gap-3", children: [
+              /* @__PURE__ */ jsx(Award, { className: "w-5 h-5 text-teal-mid flex-shrink-0 mt-0.5" }),
+              /* @__PURE__ */ jsx("span", { children: t.doctor.alfa })
+            ] }),
+            /* @__PURE__ */ jsxs("div", { className: "flex items-start gap-3", children: [
+              /* @__PURE__ */ jsx(Award, { className: "w-5 h-5 text-teal-mid flex-shrink-0 mt-0.5" }),
+              /* @__PURE__ */ jsx("span", { children: t.doctor.experience })
+            ] }),
+            /* @__PURE__ */ jsxs("div", { className: "flex items-start gap-3", children: [
+              /* @__PURE__ */ jsx(BookOpen, { className: "w-5 h-5 text-teal-mid flex-shrink-0 mt-0.5" }),
+              /* @__PURE__ */ jsx("span", { children: t.doctor.ebm })
+            ] })
+          ] })
+        ] })
+      ] }) }),
+      /* @__PURE__ */ jsx(ScrollReveal, { delay: 300, children: /* @__PURE__ */ jsx("div", { className: "mt-16", children: /* @__PURE__ */ jsxs(Carousel, { opts: { align: "start", loop: false }, className: "w-full", children: [
+        /* @__PURE__ */ jsx(CarouselContent, { className: "-ml-4", children: certificates.map((cert) => /* @__PURE__ */ jsx(CarouselItem, { className: "pl-4 basis-4/5 sm:basis-1/2 lg:basis-1/3", children: /* @__PURE__ */ jsx(
+          "button",
+          {
+            onClick: () => setLightbox(cert.webp),
+            className: "group w-full rounded-xl overflow-hidden border border-border bg-card shadow-sm hover:shadow-md transition-shadow cursor-zoom-in",
+            children: /* @__PURE__ */ jsxs("picture", { children: [
+              /* @__PURE__ */ jsx("source", { srcSet: cert.webp, type: "image/webp" }),
+              /* @__PURE__ */ jsx(
+                "img",
+                {
+                  src: cert.jpg,
+                  alt: cert.alt,
+                  className: "w-full h-auto object-contain",
+                  loading: "lazy"
+                }
+              )
+            ] })
+          }
+        ) }, cert.webp)) }),
+        /* @__PURE__ */ jsx(CarouselPrevious, { className: "hidden sm:flex -left-4" }),
+        /* @__PURE__ */ jsx(CarouselNext, { className: "hidden sm:flex -right-4" })
+      ] }) }) })
+    ] }) }),
+    lightbox && /* @__PURE__ */ jsx(
+      "div",
+      {
+        className: "fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 cursor-zoom-out",
+        onClick: () => setLightbox(null),
+        children: /* @__PURE__ */ jsx(
+          "img",
+          {
+            src: lightbox,
+            alt: "Certificate",
+            className: "max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+          }
+        )
+      }
+    )
+  ] });
+};
 const reviews = [
   { name: "Grzegorz", text: "Chapeau bas. Realne zainteresowanie pacjentem, godzinna konsultacja minęła mi jak 2 minuty. Pani Marta wszystko dokładnie wytłumaczyła, zero sztampy, a przy tym profesjonalizm." },
   { name: "Jacek", text: "Wizyta przebiegła bardzo szczegółowo i dokładnie, jestem bardzo zadowolony z przebiegu konsultacji i profesjonalizmu pani doktor." },
@@ -2165,7 +2175,7 @@ const ReviewsSection = () => {
   const title = locale === "en" ? "Patient Reviews" : locale === "de" ? "Patientenbewertungen" : "Opinie pacjentów";
   const allReviews = locale === "en" ? "See all reviews" : locale === "de" ? "Alle Bewertungen" : "Zobacz wszystkie opinie";
   const verified = locale === "en" ? "Verified visit" : locale === "de" ? "Verifizierter Besuch" : "Weryfikacja wizyty";
-  return /* @__PURE__ */ jsx("section", { className: "py-16 md:py-24 bg-secondary/30", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-4 max-w-6xl", children: [
+  return /* @__PURE__ */ jsx("section", { className: "py-16 md:py-24 bg-secondary/30", id: "opinie", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-4 max-w-6xl", children: [
     /* @__PURE__ */ jsx(ScrollReveal, { children: /* @__PURE__ */ jsxs("div", { className: "text-center mb-12", children: [
       /* @__PURE__ */ jsx("h2", { className: "text-3xl md:text-4xl font-bold text-foreground mb-3 font-display", children: title }),
       /* @__PURE__ */ jsx("div", { className: "flex items-center justify-center gap-2 mb-2", children: /* @__PURE__ */ jsx(Stars, {}) }),
@@ -3006,7 +3016,7 @@ const blogPosts = [
 ];
 const BlogSection = () => {
   const recent = blogPosts.slice(0, 3);
-  return /* @__PURE__ */ jsx("section", { className: "py-16 md:py-24 bg-background", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-5xl", children: [
+  return /* @__PURE__ */ jsx("section", { className: "py-16 md:py-24 bg-background", id: "artykuly", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-5xl", children: [
     /* @__PURE__ */ jsx(ScrollReveal, { children: /* @__PURE__ */ jsxs("div", { className: "flex items-end justify-between mb-10", children: [
       /* @__PURE__ */ jsxs("div", { children: [
         /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl md:text-4xl text-foreground mb-2", children: "Artykuły i porady" }),
