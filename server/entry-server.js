@@ -410,7 +410,7 @@ const translations = {
     footer: {
       entityInfo: "Informacje o podmiocie",
       practice: "Indywidualna Praktyka Lekarska Marta Treblińska",
-      address: "ul. Duboisa 1/21, Ostrów Mazowiecki",
+      address: "ul. Duboisa 1/21, Ostrów Mazowiecka",
       doctorName: "lekarz Marta Treblińska",
       remote: "Konsultacje zdalne",
       legalInfo: "Informacje prawne",
@@ -852,7 +852,7 @@ const translations = {
     footer: {
       entityInfo: "Entity information",
       practice: "Individual Medical Practice Marta Treblińska",
-      address: "ul. Duboisa 1/21, Ostrów Mazowiecki, Poland",
+      address: "ul. Duboisa 1/21, Ostrów Mazowiecka, Poland",
       doctorName: "Marta Treblińska, MD",
       remote: "Remote consultations",
       legalInfo: "Legal information",
@@ -1294,7 +1294,7 @@ const translations = {
     footer: {
       entityInfo: "Angaben zur Praxis",
       practice: "Einzelärztliche Praxis Marta Treblińska",
-      address: "ul. Duboisa 1/21, Ostrów Mazowiecki, Polen",
+      address: "ul. Duboisa 1/21, Ostrów Mazowiecka, Polen",
       doctorName: "Dr. med. Marta Treblińska",
       remote: "Fernkonsultationen",
       legalInfo: "Rechtliche Informationen",
@@ -3974,7 +3974,7 @@ const PrivacyPolicy = () => {
     /* @__PURE__ */ jsx("main", { className: "py-16 md:py-24 bg-background", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-3xl prose prose-slate", children: [
       /* @__PURE__ */ jsx("h1", { className: "font-serif text-3xl md:text-4xl text-foreground mb-8", children: "Polityka prywatności" }),
       /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground", children: "1. Administrator danych osobowych" }),
-      /* @__PURE__ */ jsx("p", { className: "text-muted-foreground", children: 'Administratorem danych osobowych jest Indywidualna Praktyka Lekarska Marta Treblińska, ul. Duboisa 1/21, Ostrów Mazowiecki (dalej: „Administrator").' }),
+      /* @__PURE__ */ jsx("p", { className: "text-muted-foreground", children: 'Administratorem danych osobowych jest Indywidualna Praktyka Lekarska Marta Treblińska, ul. Duboisa 1/21, Ostrów Mazowiecka (dalej: „Administrator").' }),
       /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground", children: "2. Cel i podstawa przetwarzania" }),
       /* @__PURE__ */ jsx("p", { className: "text-muted-foreground", children: "Dane osobowe przetwarzane są w celu: umówienia i realizacji konsultacji lekarskiej (art. 6 ust. 1 lit. b RODO), wypełnienia obowiązków prawnych Administratora (art. 6 ust. 1 lit. c RODO), w tym prowadzenia dokumentacji medycznej." }),
       /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground", children: "3. Okres przechowywania danych" }),
