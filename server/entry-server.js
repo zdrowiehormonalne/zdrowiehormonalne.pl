@@ -2338,8 +2338,8 @@ const blogPosts = [
   },
   {
     slug: "shbg-co-to-jest",
-    title: "SHBG — czym jest i jak wpływa na poziom aktywnego testosteronu?",
-    metaDescription: "SHBG (globulina wiążąca hormony płciowe) to kluczowy parametr w ocenie gospodarki hormonalnej mężczyzny. Dowiedz się, czym jest, co na nią wpływa i dlaczego jest ważna.",
+    title: "SHBG — co to jest, normy i jak czytać wynik badania",
+    metaDescription: "SHBG, czyli globulina wiążąca hormony płciowe — co oznacza Twój wynik, jakie są normy u mężczyzn i dlaczego bez tego parametru sam testosteron całkowity mówi niewiele.",
     date: "2025-10-15",
     readingTime: 6,
     excerpt: 'Mężczyźni często przychodzą na konsultację z wynikiem testosteronu "w normie", ale z wyraźnymi objawami niedoboru. Częstą przyczyną tej rozbieżności jest właśnie SHBG — białko, które decyduje, ile testosteronu jest faktycznie dostępne dla organizmu.',
@@ -2589,8 +2589,8 @@ const blogPosts = [
   },
   {
     slug: "jak-zbadac-poziom-testosteronu",
-    title: "Jak zbadać poziom testosteronu? Panel hormonalny — badania, normy i interpretacja",
-    metaDescription: "Kompletny przewodnik po badaniach poziomu testosteronu: które parametry sprawdzić, kiedy pobrać krew, jak czytać wyniki i co oznaczają odchylenia od normy.",
+    title: "Badanie testosteronu — jakie parametry, kiedy zrobić i jak czytać wynik",
+    metaDescription: "Badanie testosteronu: które parametry sprawdzić, kiedy pobrać krew, jak czytać wynik i co oznaczają odchylenia od normy.",
     date: "2024-11-28",
     readingTime: 7,
     excerpt: 'Wykonanie badania "testosteron" to dopiero początek. Żeby rzetelnie ocenić gospodarkę hormonalną mężczyzny, potrzebny jest szerszy panel badań. Dowiedz się, co powinien obejmować i jak go prawidłowo zinterpretować.',
@@ -2627,8 +2627,8 @@ const blogPosts = [
   },
   {
     slug: "objawy-niskiego-testosteronu-po-40",
-    title: "Objawy niskiego testosteronu u mężczyzn po 40-tce — kiedy warto się zbadać?",
-    metaDescription: "Dowiedz się, jakie objawy mogą świadczyć o niedoborze testosteronu u mężczyzn po 40-ce i kiedy warto wykonać podstawowy panel hormonalny.",
+    title: "Objawy niskiego testosteronu u mężczyzn — lista i kiedy się zbadać",
+    metaDescription: "Objawy niskiego testosteronu u mężczyzn — pełna lista, kiedy wykonać panel hormonalny i co dalej zrobić z wynikiem.",
     date: "2024-11-15",
     readingTime: 6,
     excerpt: "Po czterdziestce wiele mężczyzn zauważa stopniowe zmiany — mniejszą energię, gorszy sen, spadek motywacji. Część z tych objawów może być związana z naturalnym obniżaniem się poziomu testosteronu.",
@@ -2689,7 +2689,7 @@ const blogPosts = [
   },
   {
     slug: "hipogonadyzm-u-mezczyzn",
-    title: "Hipogonadyzm u mężczyzn — czym jest i jak się objawia?",
+    title: "Hipogonadyzm u mężczyzn — objawy, przyczyny i leczenie",
     metaDescription: "Hipogonadyzm to stan niedoboru testosteronu z powodu zaburzeń na poziomie jąder lub przysadki. Dowiedz się, czym różni się hipogonadyzm pierwotny od wtórnego i jak go diagnozować.",
     date: "2024-05-10",
     readingTime: 6,
@@ -2937,7 +2937,7 @@ const blogPosts = [
   },
   {
     slug: "prolaktyna-u-mezczyzn",
-    title: "Prolaktyna u mężczyzn — kiedy warto ją zbadać i co oznacza wysoki wynik?",
+    title: "Prolaktyna u mężczyzn — normy, objawy podwyższonej i co dalej",
     metaDescription: "Wysoka prolaktyna u mężczyzn może powodować obniżone libido, ginekomastię i zaburzenia erekcji. Dowiedz się, kiedy badać prolaktynę i co oznacza hiperprolaktynemia.",
     date: "2021-11-22",
     readingTime: 5,
@@ -2968,7 +2968,7 @@ const blogPosts = [
   },
   {
     slug: "estradiol-u-mezczyzn",
-    title: "Estradiol u mężczyzn — czy mężczyźni potrzebują estrogenów?",
+    title: "Estradiol u mężczyzn — normy, objawy nadmiaru i co oznacza wynik",
     metaDescription: "Estradiol u mężczyzn pełni ważną rolę, ale jego nadmiar może nasilać objawy niedoboru testosteronu. Dowiedz się, jaka jest norma estradiolu u mężczyzn i kiedy zbadać jego poziom.",
     date: "2021-08-11",
     readingTime: 5,
@@ -3030,8 +3030,8 @@ const blogPosts = [
   },
   {
     slug: "andropauza-mit-czy-rzeczywistosc",
-    title: "Andropauza — mit czy rzeczywistość? Co naprawdę dzieje się z testosteronem po 40-tce?",
-    metaDescription: "Czy andropauza naprawdę istnieje? Porównanie z menopauzą, co wiadomo o spadku testosteronu z wiekiem i kiedy jest to problem wymagający leczenia.",
+    title: "Andropauza — objawy, w jakim wieku się zaczyna i co na nią zrobić",
+    metaDescription: "Andropauza — objawy, w jakim wieku się zaczyna i czym różni się od menopauzy. Co wiadomo o spadku testosteronu z wiekiem i kiedy wymaga leczenia.",
     date: "2022-02-10",
     readingTime: 6,
     excerpt: 'Termin "andropauza" bywa używany potocznie jako męski odpowiednik menopauzy. Ale czy to właściwe porównanie? Rzeczywistość jest bardziej złożona — i zdecydowanie mniej dramatyczna.',
