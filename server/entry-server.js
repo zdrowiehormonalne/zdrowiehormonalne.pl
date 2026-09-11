@@ -2199,6 +2199,8 @@ const MEDFILE_BOOKING_URL = "https://rejestracja.medfile.pl/register/index/?uuid
 const MEDFILE_PROFILE_URL = "https://www.medfile.pl/marta-treblinska-2/specjalista/ostrow-mazowiecki/";
 const PHONE = "+48572565887";
 const PHONE_DISPLAY = "572 565 887";
+const MEDFILE_RATING = 4.82;
+const MEDFILE_REVIEW_COUNT = 22;
 const reviews = [
   { name: "Grzegorz", text: "Chapeau bas. Realne zainteresowanie pacjentem, godzinna konsultacja minęła mi jak 2 minuty. Pani Marta wszystko dokładnie wytłumaczyła, zero sztampy, a przy tym profesjonalizm." },
   { name: "Jacek", text: "Wizyta przebiegła bardzo szczegółowo i dokładnie, jestem bardzo zadowolony z przebiegu konsultacji i profesjonalizmu pani doktor." },
@@ -2224,8 +2226,13 @@ const ReviewsSection = () => {
   return /* @__PURE__ */ jsx("section", { className: "py-16 md:py-24 bg-secondary/30", id: "opinie", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-4 max-w-6xl", children: [
     /* @__PURE__ */ jsx(ScrollReveal, { children: /* @__PURE__ */ jsxs("div", { className: "text-center mb-12", children: [
       /* @__PURE__ */ jsx("h2", { className: "text-3xl md:text-4xl font-bold text-foreground mb-3 font-display", children: title }),
-      /* @__PURE__ */ jsx("div", { className: "flex items-center justify-center gap-2 mb-2", children: /* @__PURE__ */ jsx(Stars, {}) }),
-      /* @__PURE__ */ jsx("p", { className: "text-sm text-muted-foreground mb-2", children: locale === "en" ? "Verified patient reviews" : locale === "de" ? "Verifizierte Patientenbewertungen" : "Zweryfikowane opinie pacjentów" }),
+      /* @__PURE__ */ jsxs("div", { className: "flex items-center justify-center gap-2.5 mb-2", children: [
+        /* @__PURE__ */ jsx(Stars, {}),
+        /* @__PURE__ */ jsx("span", { className: "font-semibold text-foreground tabular-nums", children: MEDFILE_RATING.toLocaleString(locale === "en" ? "en-GB" : locale === "de" ? "de-DE" : "pl-PL", {
+          minimumFractionDigits: 2
+        }) })
+      ] }),
+      /* @__PURE__ */ jsx("p", { className: "text-sm text-muted-foreground mb-2", children: locale === "en" ? `${MEDFILE_REVIEW_COUNT} verified patient reviews` : locale === "de" ? `${MEDFILE_REVIEW_COUNT} verifizierte Patientenbewertungen` : `${MEDFILE_REVIEW_COUNT} zweryfikowanych opinii pacjentów` }),
       /* @__PURE__ */ jsxs(
         "a",
         {
