@@ -8,7 +8,7 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useLocation, useNavigate, Link, useParams, Navigate, Routes, Route } from "react-router-dom";
-import { Calendar, X, Menu, ArrowRight, Phone, Mail, Check, Copy, BatteryLow, Brain, Moon, HeartPulse, TrendingUp, FlaskConical, Stethoscope, BarChart3, FileSearch, ClipboardCheck, ShieldCheck, Crosshair, ArrowLeft, GraduationCap, Award, BookOpen, ExternalLink, Star, Clock, ChevronDown, CalendarCheck, Video, AlertCircle, CheckCircle, ClipboardList, MessageSquarePlus, Send, Loader2 } from "lucide-react";
+import { Calendar, X, Menu, ArrowRight, Phone, Mail, Check, Copy, BatteryLow, Brain, Moon, HeartPulse, TrendingUp, FlaskConical, Stethoscope, BarChart3, FileSearch, ClipboardCheck, ShieldCheck, Crosshair, ArrowLeft, GraduationCap, Award, BookOpen, ExternalLink, Star, Clock, ChevronDown, CalendarCheck, Video, AlertCircle, CheckCircle, ClipboardList } from "lucide-react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
 import useEmblaCarousel from "embla-carousel-react";
@@ -3680,146 +3680,7 @@ const FloatingCTA = () => {
 };
 const SUPABASE_URL = "https://hzpscrzwewcleaomcrwm.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh6cHNjcnp3ZXdjbGVhb21jcndtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5MjUxODAsImV4cCI6MjA5MTUwMTE4MH0.uVVJey7t_83amP3zRTZ_KnJ6yh76lbLidGLD-NjA9og";
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-const FeedbackButton = () => {
-  const { t } = useLanguage();
-  const [open, setOpen] = useState(false);
-  const [message, setMessage] = useState("");
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState("idle");
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!message.trim()) return;
-    setStatus("loading");
-    const { error } = await supabase.from("feedback").insert({
-      message: message.trim(),
-      reporter_email: email.trim() || null
-    });
-    if (error) {
-      setStatus("error");
-      return;
-    }
-    setStatus("success");
-    setMessage("");
-    setEmail("");
-    window.setTimeout(() => {
-      setOpen(false);
-      setStatus("idle");
-    }, 1800);
-  };
-  const handleClose = () => {
-    setOpen(false);
-    setStatus("idle");
-    setMessage("");
-    setEmail("");
-  };
-  const fb = t.feedback;
-  return /* @__PURE__ */ jsxs(Fragment, { children: [
-    /* @__PURE__ */ jsxs(
-      "button",
-      {
-        onClick: () => setOpen(true),
-        className: "hidden md:flex fixed right-0 top-1/2 z-40 items-center gap-1.5 rounded-l-md border border-r-0 border-border/50 bg-muted/80 px-2 py-3 text-xs font-medium text-muted-foreground shadow-sm backdrop-blur-sm transition-all hover:bg-muted hover:text-foreground",
-        style: { writingMode: "vertical-rl", textOrientation: "mixed" },
-        "aria-label": fb.button,
-        children: [
-          /* @__PURE__ */ jsx(MessageSquarePlus, { className: "h-3.5 w-3.5 rotate-90" }),
-          fb.button
-        ]
-      }
-    ),
-    /* @__PURE__ */ jsx(
-      "button",
-      {
-        onClick: () => setOpen(true),
-        className: "md:hidden fixed bottom-[4.5rem] right-3 z-40 flex h-9 w-9 items-center justify-center rounded-full border border-border/50 bg-muted/90 text-muted-foreground shadow-sm backdrop-blur-sm transition-all hover:bg-muted hover:text-foreground",
-        "aria-label": fb.button,
-        children: /* @__PURE__ */ jsx(MessageSquarePlus, { className: "h-4 w-4" })
-      }
-    ),
-    open && /* @__PURE__ */ jsx(
-      "div",
-      {
-        className: "fixed inset-0 z-50 flex items-end justify-center bg-foreground/20 p-4 backdrop-blur-sm animate-in fade-in duration-200 md:items-center",
-        onClick: handleClose,
-        children: /* @__PURE__ */ jsxs(
-          "div",
-          {
-            className: "w-full max-w-sm rounded-xl border border-border bg-card p-5 shadow-xl animate-in slide-in-from-bottom-4 duration-300",
-            onClick: (e) => e.stopPropagation(),
-            children: [
-              /* @__PURE__ */ jsxs("div", { className: "mb-3 flex items-start justify-between gap-2", children: [
-                /* @__PURE__ */ jsxs("div", { children: [
-                  /* @__PURE__ */ jsx("h2", { className: "text-base font-semibold text-foreground", children: fb.title }),
-                  /* @__PURE__ */ jsx("p", { className: "mt-0.5 text-xs text-muted-foreground", children: fb.subtitle })
-                ] }),
-                /* @__PURE__ */ jsx(
-                  "button",
-                  {
-                    onClick: handleClose,
-                    className: "shrink-0 rounded-md p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
-                    "aria-label": "Close",
-                    children: /* @__PURE__ */ jsx(X, { className: "h-4 w-4" })
-                  }
-                )
-              ] }),
-              status === "success" ? /* @__PURE__ */ jsxs("div", { className: "py-8 text-center", children: [
-                /* @__PURE__ */ jsx("div", { className: "mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary", children: /* @__PURE__ */ jsx(Send, { className: "h-5 w-5" }) }),
-                /* @__PURE__ */ jsx("p", { className: "font-medium text-foreground", children: fb.successTitle }),
-                /* @__PURE__ */ jsx("p", { className: "mt-1 text-sm text-muted-foreground", children: fb.successDesc })
-              ] }) : /* @__PURE__ */ jsxs("form", { onSubmit: handleSubmit, className: "space-y-3", children: [
-                /* @__PURE__ */ jsxs("div", { children: [
-                  /* @__PURE__ */ jsx("label", { className: "mb-1 block text-sm font-medium text-foreground", children: fb.messageLabel }),
-                  /* @__PURE__ */ jsx(
-                    "textarea",
-                    {
-                      value: message,
-                      onChange: (e) => setMessage(e.target.value),
-                      placeholder: fb.messagePlaceholder,
-                      rows: 3,
-                      required: true,
-                      className: "w-full resize-none rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                    }
-                  )
-                ] }),
-                /* @__PURE__ */ jsxs("div", { children: [
-                  /* @__PURE__ */ jsxs("label", { className: "mb-1 block text-sm font-medium text-foreground", children: [
-                    fb.emailLabel,
-                    /* @__PURE__ */ jsx("span", { className: "ml-1 font-normal text-muted-foreground", children: fb.emailOptional })
-                  ] }),
-                  /* @__PURE__ */ jsx(
-                    "input",
-                    {
-                      type: "email",
-                      value: email,
-                      onChange: (e) => setEmail(e.target.value),
-                      placeholder: fb.emailPlaceholder,
-                      className: "w-full rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                    }
-                  ),
-                  /* @__PURE__ */ jsx("p", { className: "mt-1 text-xs text-muted-foreground", children: fb.emailHint })
-                ] }),
-                status === "error" && /* @__PURE__ */ jsx("p", { className: "text-sm text-destructive", children: fb.error }),
-                /* @__PURE__ */ jsxs(
-                  "button",
-                  {
-                    type: "submit",
-                    disabled: status === "loading" || !message.trim(),
-                    className: "inline-flex h-9 w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50",
-                    children: [
-                      status === "loading" ? /* @__PURE__ */ jsx(Loader2, { className: "h-3.5 w-3.5 animate-spin" }) : /* @__PURE__ */ jsx(Send, { className: "h-3.5 w-3.5" }),
-                      fb.submit
-                    ]
-                  }
-                )
-              ] })
-            ]
-          }
-        )
-      }
-    )
-  ] });
-};
+createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 const Index = () => {
   const location = useLocation();
   useEffect(() => {
@@ -3846,7 +3707,7 @@ const Index = () => {
     ] }),
     /* @__PURE__ */ jsx(SiteFooter, {}),
     /* @__PURE__ */ jsx(FloatingCTA, {}),
-    /* @__PURE__ */ jsx(FeedbackButton, {}),
+    false,
     /* @__PURE__ */ jsx(CookieBanner, {})
   ] });
 };
@@ -4061,13 +3922,31 @@ const Regulamin = () => {
 const NotFound = () => {
   const location = useLocation();
   useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
+    console.error("404: brak trasy", location.pathname);
   }, [location.pathname]);
-  return /* @__PURE__ */ jsx("div", { className: "flex min-h-screen items-center justify-center bg-muted", children: /* @__PURE__ */ jsxs("div", { className: "text-center", children: [
-    /* @__PURE__ */ jsx("h1", { className: "mb-4 text-4xl font-bold", children: "404" }),
-    /* @__PURE__ */ jsx("p", { className: "mb-4 text-xl text-muted-foreground", children: "Oops! Page not found" }),
-    /* @__PURE__ */ jsx("a", { href: "/", className: "text-primary underline hover:text-primary/90", children: "Return to Home" })
-  ] }) });
+  return /* @__PURE__ */ jsxs(Fragment, { children: [
+    /* @__PURE__ */ jsx(SiteNav, {}),
+    /* @__PURE__ */ jsx("main", { className: "bg-background", children: /* @__PURE__ */ jsxs("section", { className: "container mx-auto px-6 max-w-2xl py-24 md:py-32 text-center", children: [
+      /* @__PURE__ */ jsx("p", { className: "font-mono text-sm tracking-widest text-muted-foreground mb-4", children: "404" }),
+      /* @__PURE__ */ jsx("h1", { className: "font-serif text-3xl md:text-4xl text-foreground mb-4 text-balance", children: "Tej strony nie ma" }),
+      /* @__PURE__ */ jsx("p", { className: "text-muted-foreground mb-10 max-w-md mx-auto leading-relaxed", children: "Adres jest nieprawidłowy albo strona została przeniesiona. Poniżej są miejsca, od których najłatwiej zacząć." }),
+      /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row gap-3 justify-center", children: [
+        /* @__PURE__ */ jsx(Button, { variant: "cta", size: "lg", asChild: true, children: /* @__PURE__ */ jsxs(Link, { to: "/", children: [
+          /* @__PURE__ */ jsx(ArrowLeft, { className: "w-4 h-4" }),
+          "Strona główna"
+        ] }) }),
+        /* @__PURE__ */ jsx(Button, { variant: "outline", size: "lg", asChild: true, children: /* @__PURE__ */ jsxs(Link, { to: "/blog", children: [
+          /* @__PURE__ */ jsx(BookOpen, { className: "w-4 h-4" }),
+          "Artykuły"
+        ] }) }),
+        /* @__PURE__ */ jsx(Button, { variant: "outline", size: "lg", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", onClick: () => trackPhone("artykul"), children: [
+          /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4" }),
+          "572 565 887"
+        ] }) })
+      ] })
+    ] }) }),
+    /* @__PURE__ */ jsx(SiteFooter, {})
+  ] });
 };
 function render(url) {
   const queryClient = new QueryClient();
