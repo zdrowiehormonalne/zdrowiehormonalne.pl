@@ -132,28 +132,37 @@
         wait_for_update: 500
       });
 
-      // Zgoda z poprzedniej wizyty. Klucz współdzielony z src/lib/consent.ts.
+      // Zgoda z poprzedniej wizyty, w podziale na cele. Klucz i format
+      // współdzielone z src/lib/consent.ts — zmiana w jednym miejscu wymaga
+      // poprawki w drugim. Wartości 'accepted'/'rejected' pochodzą z pierwszej,
+      // dwustanowej wersji banera i nadal siedzą w przeglądarkach części osób.
       try {
-        if (localStorage.getItem('cookie-consent') === 'accepted') {
+        var raw = localStorage.getItem('cookie-consent');
+        if (raw) {
+          var s = raw === 'accepted' ? { analytics: 1, marketing: 1 }
+                : raw === 'rejected' ? { analytics: 0, marketing: 0 }
+                : JSON.parse(raw);
+          var a = s.analytics ? 'granted' : 'denied';
+          var m = s.marketing ? 'granted' : 'denied';
           gtag('consent', 'update', {
-            ad_storage: 'granted',
-            ad_user_data: 'granted',
-            ad_personalization: 'granted',
-            analytics_storage: 'granted',
-            functionality_storage: 'granted',
-            personalization_storage: 'granted'
+            analytics_storage: a,
+            functionality_storage: a,
+            personalization_storage: a,
+            ad_storage: m,
+            ad_user_data: m,
+            ad_personalization: m
           });
         }
       } catch (e) {
-        // Prywatne okno albo zablokowany magazyn — zostaje odmowa.
+        // Prywatne okno, zablokowany magazyn albo uszkodzona wartość — zostaje odmowa.
       }
 
       gtag('js', new Date());
       gtag('config', 'G-WKK5SY6RTV');
     </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKK5SY6RTV"></script>
-    <script type="module" crossorigin src="/assets/index-Bn8iuqlx.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DTPfXP3X.css">
+    <script type="module" crossorigin src="/assets/index-B7ZM5_4A.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-guW58xCf.css">
   </head>
   <body>
     <div id="root"><div class="flex min-h-screen items-center justify-center bg-muted"><div class="text-center"><h1 class="mb-4 text-4xl font-bold">404</h1><p class="mb-4 text-xl text-muted-foreground">Oops! Page not found</p><a href="/" class="text-primary underline hover:text-primary/90">Return to Home</a></div></div></div>

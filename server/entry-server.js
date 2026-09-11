@@ -15,6 +15,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
+import * as SwitchPrimitives from "@radix-ui/react-switch";
 import { createClient } from "@supabase/supabase-js";
 function cn(...inputs) {
   return twMerge(clsx(inputs));
@@ -419,10 +420,19 @@ const translations = {
       copyright: "Indywidualna Praktyka Lekarska Marta Treblińska. Wszelkie prawa zastrzeżone."
     },
     cookie: {
-      text: "Używamy plików cookies do analityki — żeby wiedzieć, skąd trafiasz na stronę. Możesz je odrzucić, serwis zadziała tak samo. Szczegóły w",
-      privacyLink: "Polityką prywatności",
-      reject: "Odrzuć",
-      accept: "Akceptuję"
+      text: "Używamy plików cookies do analityki i marketingu. Możesz wybrać, na co się zgadzasz — serwis działa tak samo niezależnie od decyzji. Szczegóły w",
+      privacyLink: "Polityce prywatności",
+      necessaryOnly: "Tylko niezbędne",
+      acceptAll: "Akceptuję wszystkie",
+      customize: "Dostosuj",
+      save: "Zapisz wybór",
+      always: "Zawsze aktywne",
+      catNecessary: "Niezbędne",
+      catNecessaryDesc: "Potrzebne do wyświetlenia strony i zapamiętania tej decyzji. Nie da się ich wyłączyć.",
+      catAnalytics: "Analityczne",
+      catAnalyticsDesc: "Google Analytics — ile osób odwiedza stronę i z jakich źródeł trafia.",
+      catMarketing: "Marketingowe",
+      catMarketingDesc: "HubSpot i Google Ads — mierzenie skuteczności reklam i dopasowanie przekazu."
     },
     feedback: {
       button: "Feedback",
@@ -852,10 +862,19 @@ const translations = {
       copyright: "Individual Medical Practice Marta Treblińska, MD. All rights reserved."
     },
     cookie: {
-      text: "We use analytics cookies to see how people find this site. You can reject them — everything works the same either way. Details in the",
+      text: "We use cookies for analytics and marketing. You choose what you agree to — the site works the same either way. Details in the",
       privacyLink: "Privacy Policy",
-      reject: "Reject",
-      accept: "Accept"
+      necessaryOnly: "Necessary only",
+      acceptAll: "Accept all",
+      customize: "Customise",
+      save: "Save choice",
+      always: "Always on",
+      catNecessary: "Necessary",
+      catNecessaryDesc: "Needed to show the page and remember this choice. These cannot be turned off.",
+      catAnalytics: "Analytics",
+      catAnalyticsDesc: "Google Analytics — how many people visit and where they come from.",
+      catMarketing: "Marketing",
+      catMarketingDesc: "HubSpot and Google Ads — measuring how well campaigns work."
     },
     feedback: {
       button: "Feedback",
@@ -1285,10 +1304,19 @@ const translations = {
       copyright: "Einzelärztliche Praxis Marta Treblińska. Alle Rechte vorbehalten."
     },
     cookie: {
-      text: "Wir verwenden Analyse-Cookies, um zu sehen, wie Sie auf diese Seite gelangen. Sie können sie ablehnen — die Seite funktioniert genauso. Einzelheiten in der",
+      text: "Wir verwenden Cookies für Analyse und Marketing. Sie entscheiden, womit Sie einverstanden sind — die Seite funktioniert in jedem Fall gleich. Einzelheiten in der",
       privacyLink: "Datenschutzrichtlinie",
-      reject: "Ablehnen",
-      accept: "Akzeptieren"
+      necessaryOnly: "Nur notwendige",
+      acceptAll: "Alle akzeptieren",
+      customize: "Anpassen",
+      save: "Auswahl speichern",
+      always: "Immer aktiv",
+      catNecessary: "Notwendig",
+      catNecessaryDesc: "Nötig, um die Seite anzuzeigen und diese Entscheidung zu speichern. Nicht abschaltbar.",
+      catAnalytics: "Analyse",
+      catAnalyticsDesc: "Google Analytics — wie viele Personen die Seite besuchen und woher sie kommen.",
+      catMarketing: "Marketing",
+      catMarketingDesc: "HubSpot und Google Ads — Messung der Wirksamkeit von Kampagnen."
     },
     feedback: {
       button: "Feedback",
@@ -3447,28 +3475,40 @@ const SiteFooter = () => {
     ] })
   ] }) });
 };
+const Switch = React.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ jsx(
+  SwitchPrimitives.Root,
+  {
+    className: cn(
+      "peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors data-[state=checked]:bg-primary data-[state=unchecked]:bg-input focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50",
+      className
+    ),
+    ...props,
+    ref,
+    children: /* @__PURE__ */ jsx(
+      SwitchPrimitives.Thumb,
+      {
+        className: cn(
+          "pointer-events-none block h-5 w-5 rounded-full bg-background shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0"
+        )
+      }
+    )
+  }
+));
+Switch.displayName = SwitchPrimitives.Root.displayName;
 const CONSENT_KEY = "cookie-consent";
-const CONSENT_TYPES = [
-  "ad_storage",
-  "ad_user_data",
-  "ad_personalization",
-  "analytics_storage",
-  "functionality_storage",
-  "personalization_storage"
-];
+const ALL_GRANTED = { analytics: true, marketing: true };
+const NONE_GRANTED = { analytics: false, marketing: false };
 const readConsent = () => {
   try {
-    const stored = localStorage.getItem(CONSENT_KEY);
-    return stored === "accepted" || stored === "rejected" ? stored : null;
+    const raw = localStorage.getItem(CONSENT_KEY);
+    if (!raw) return null;
+    if (raw === "accepted") return ALL_GRANTED;
+    if (raw === "rejected") return NONE_GRANTED;
+    const parsed = JSON.parse(raw);
+    return { analytics: !!parsed.analytics, marketing: !!parsed.marketing };
   } catch {
     return null;
   }
-};
-const pushConsentUpdate = (value) => {
-  if (typeof window === "undefined" || typeof window.gtag !== "function") return;
-  const update = {};
-  for (const type of CONSENT_TYPES) update[type] = value;
-  window.gtag("consent", "update", update);
 };
 const HUBSPOT_SRC = "https://js-eu1.hs-scripts.com/149306826.js";
 const HUBSPOT_SCRIPT_ID = "hs-script-loader";
@@ -3482,43 +3522,93 @@ const loadHubSpot = () => {
   script.defer = true;
   document.body.appendChild(script);
 };
-const setConsent = (decision) => {
+const pushConsentUpdate = ({ analytics, marketing }) => {
+  if (typeof window === "undefined" || typeof window.gtag !== "function") return;
+  const a = analytics ? "granted" : "denied";
+  const m = marketing ? "granted" : "denied";
+  window.gtag("consent", "update", {
+    analytics_storage: a,
+    functionality_storage: a,
+    personalization_storage: a,
+    ad_storage: m,
+    ad_user_data: m,
+    ad_personalization: m
+  });
+};
+const setConsent = (state) => {
   try {
-    localStorage.setItem(CONSENT_KEY, decision);
+    localStorage.setItem(CONSENT_KEY, JSON.stringify(state));
   } catch {
   }
-  pushConsentUpdate(decision === "accepted" ? "granted" : "denied");
-  if (decision === "accepted") loadHubSpot();
+  pushConsentUpdate(state);
+  if (state.marketing) loadHubSpot();
 };
 const applyStoredConsent = () => {
-  if (readConsent() === "accepted") loadHubSpot();
+  var _a;
+  if ((_a = readConsent()) == null ? void 0 : _a.marketing) loadHubSpot();
 };
 const CookieBanner = () => {
   const [visible, setVisible] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const [choice, setChoice] = useState(NONE_GRANTED);
   const { t } = useLanguage();
   useEffect(() => {
     if (readConsent()) applyStoredConsent();
     else setVisible(true);
   }, []);
-  const accept = () => {
-    setConsent("accepted");
-    setVisible(false);
-  };
-  const reject = () => {
-    setConsent("rejected");
+  const decide = (state) => {
+    setConsent(state);
     setVisible(false);
   };
   if (!visible) return null;
-  return /* @__PURE__ */ jsx("div", { className: "fixed bottom-0 inset-x-0 z-50 p-4", children: /* @__PURE__ */ jsx("div", { className: "container mx-auto max-w-3xl", children: /* @__PURE__ */ jsxs("div", { className: "bg-card border border-border rounded-2xl shadow-xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4", children: [
-    /* @__PURE__ */ jsxs("p", { className: "text-sm text-muted-foreground flex-1", children: [
+  return /* @__PURE__ */ jsx("div", { className: "fixed bottom-0 inset-x-0 z-50 p-4", children: /* @__PURE__ */ jsx("div", { className: "container mx-auto max-w-3xl", children: /* @__PURE__ */ jsxs("div", { className: "bg-card border border-border rounded-2xl shadow-xl p-6 space-y-5", children: [
+    /* @__PURE__ */ jsxs("p", { className: "text-sm text-muted-foreground", children: [
       t.cookie.text,
       " ",
       /* @__PURE__ */ jsx("a", { href: "/polityka-prywatnosci", className: "text-primary underline underline-offset-2", children: t.cookie.privacyLink }),
       "."
     ] }),
-    /* @__PURE__ */ jsxs("div", { className: "flex gap-2 flex-shrink-0", children: [
-      /* @__PURE__ */ jsx(Button, { variant: "outline", size: "sm", onClick: reject, children: t.cookie.reject }),
-      /* @__PURE__ */ jsx(Button, { size: "sm", onClick: accept, children: t.cookie.accept })
+    expanded && /* @__PURE__ */ jsxs("div", { className: "space-y-4 border-t border-border pt-4", children: [
+      /* @__PURE__ */ jsxs("div", { className: "flex items-start justify-between gap-4", children: [
+        /* @__PURE__ */ jsxs("div", { children: [
+          /* @__PURE__ */ jsx("p", { className: "text-sm font-medium text-foreground", children: t.cookie.catNecessary }),
+          /* @__PURE__ */ jsx("p", { className: "text-xs text-muted-foreground", children: t.cookie.catNecessaryDesc })
+        ] }),
+        /* @__PURE__ */ jsx("span", { className: "text-xs text-muted-foreground whitespace-nowrap pt-0.5", children: t.cookie.always })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: "flex items-start justify-between gap-4", children: [
+        /* @__PURE__ */ jsxs("div", { children: [
+          /* @__PURE__ */ jsx("p", { className: "text-sm font-medium text-foreground", children: t.cookie.catAnalytics }),
+          /* @__PURE__ */ jsx("p", { className: "text-xs text-muted-foreground", children: t.cookie.catAnalyticsDesc })
+        ] }),
+        /* @__PURE__ */ jsx(
+          Switch,
+          {
+            checked: choice.analytics,
+            onCheckedChange: (analytics) => setChoice({ ...choice, analytics }),
+            "aria-label": t.cookie.catAnalytics
+          }
+        )
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: "flex items-start justify-between gap-4", children: [
+        /* @__PURE__ */ jsxs("div", { children: [
+          /* @__PURE__ */ jsx("p", { className: "text-sm font-medium text-foreground", children: t.cookie.catMarketing }),
+          /* @__PURE__ */ jsx("p", { className: "text-xs text-muted-foreground", children: t.cookie.catMarketingDesc })
+        ] }),
+        /* @__PURE__ */ jsx(
+          Switch,
+          {
+            checked: choice.marketing,
+            onCheckedChange: (marketing) => setChoice({ ...choice, marketing }),
+            "aria-label": t.cookie.catMarketing
+          }
+        )
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row gap-2 sm:justify-end", children: [
+      expanded ? /* @__PURE__ */ jsx(Button, { variant: "outline", size: "sm", onClick: () => decide(choice), children: t.cookie.save }) : /* @__PURE__ */ jsx(Button, { variant: "outline", size: "sm", onClick: () => setExpanded(true), children: t.cookie.customize }),
+      /* @__PURE__ */ jsx(Button, { variant: "outline", size: "sm", onClick: () => decide(NONE_GRANTED), children: t.cookie.necessaryOnly }),
+      /* @__PURE__ */ jsx(Button, { size: "sm", onClick: () => decide(ALL_GRANTED), children: t.cookie.acceptAll })
     ] })
   ] }) }) });
 };
@@ -3879,8 +3969,25 @@ const PrivacyPolicy = () => {
       /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground", children: "4. Prawa osoby, której dane dotyczą" }),
       /* @__PURE__ */ jsx("p", { className: "text-muted-foreground", children: "Przysługuje Ci prawo do: dostępu do danych, ich sprostowania, usunięcia (w zakresie dozwolonym prawem), ograniczenia przetwarzania, przenoszenia danych oraz wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych." }),
       /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground", children: "5. Pliki cookies" }),
-      /* @__PURE__ */ jsx("p", { className: "text-muted-foreground", children: "Strona wykorzystuje pliki cookies niezbędne do prawidłowego funkcjonowania serwisu. Pliki cookies nie służą do identyfikacji użytkowników. Użytkownik może zmienić ustawienia dotyczące cookies w swojej przeglądarce internetowej." }),
-      /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground", children: "6. Kontakt" }),
+      /* @__PURE__ */ jsx("p", { className: "text-muted-foreground", children: "Strona wykorzystuje pliki cookies w trzech kategoriach. Zgoda na kategorie inne niż niezbędne jest dobrowolna, udzielana w banerze przy pierwszej wizycie (art. 6 ust. 1 lit. a RODO) i można ją w każdej chwili wycofać, usuwając dane witryny w przeglądarce. Do czasu wyrażenia zgody narzędzia analityczne i marketingowe nie zapisują żadnych informacji na urządzeniu użytkownika." }),
+      /* @__PURE__ */ jsxs("ul", { className: "text-muted-foreground list-disc pl-5 space-y-2", children: [
+        /* @__PURE__ */ jsxs("li", { children: [
+          /* @__PURE__ */ jsx("strong", { className: "text-foreground font-medium", children: "Niezbędne" }),
+          " — umożliwiają wyświetlenie strony i zapamiętanie decyzji dotyczącej cookies. Nie wymagają zgody i nie można ich wyłączyć."
+        ] }),
+        /* @__PURE__ */ jsxs("li", { children: [
+          /* @__PURE__ */ jsx("strong", { className: "text-foreground font-medium", children: "Analityczne" }),
+          " — Google Analytics 4. Służą do ustalenia liczby odwiedzin oraz źródeł, z których użytkownicy trafiają na stronę."
+        ] }),
+        /* @__PURE__ */ jsxs("li", { children: [
+          /* @__PURE__ */ jsx("strong", { className: "text-foreground font-medium", children: "Marketingowe" }),
+          " — HubSpot oraz Google Ads. Służą do pomiaru skuteczności działań reklamowych."
+        ] })
+      ] }),
+      /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground", children: "6. Odbiorcy danych" }),
+      /* @__PURE__ */ jsx("p", { className: "text-muted-foreground", children: "Po wyrażeniu zgody dane o korzystaniu ze strony (m.in. identyfikator cookie, adres IP, informacje o urządzeniu i przeglądarce) mogą być przekazywane dostawcom narzędzi analitycznych i marketingowych: Google Ireland Limited oraz HubSpot Ireland Limited, działającym jako odrębni administratorzy lub podmioty przetwarzające, zgodnie z własnymi politykami prywatności. Przekazanie danych poza Europejski Obszar Gospodarczy może nastąpić na podstawie standardowych klauzul umownych zatwierdzonych przez Komisję Europejską." }),
+      /* @__PURE__ */ jsx("p", { className: "text-muted-foreground", children: "Dane dotyczące umówienia i przebiegu konsultacji przetwarzane są w systemie Medfile i nie są przekazywane do narzędzi analitycznych ani marketingowych." }),
+      /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground", children: "7. Kontakt" }),
       /* @__PURE__ */ jsx("p", { className: "text-muted-foreground", children: "W sprawach związanych z ochroną danych osobowych można kontaktować się z Administratorem pod adresem e-mail: treblinskamarta@zdrowiehormonalne.pl lub korespondencyjnie na adres podmiotu." })
     ] }) }),
     /* @__PURE__ */ jsx(SiteFooter, {})
