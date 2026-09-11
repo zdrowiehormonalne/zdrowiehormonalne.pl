@@ -472,7 +472,9 @@ const translations = {
       positiveText: "Twoje odpowiedzi wskazują na objawy mogące świadczyć o niedoborze androgenów. Wynik ankiety ADAM nie jest diagnozą — potwierdzenie wymaga konsultacji lekarskiej i badań.",
       negativeTitle: "Wynik nie wskazuje na niedobór testosteronu",
       negativeText: "Twoje odpowiedzi nie spełniają kryteriów pozytywnego wyniku ankiety ADAM. Jeśli mimo to odczuwasz niepokojące objawy, warto omówić je z lekarzem.",
-      ctaConsult: "Umów konsultację lekarską",
+      ctaBook: "Umów wizytę online",
+      ctaPhone: "Lub zadzwoń:",
+      ctaRead: "Zobacz, co jeszcze może dawać takie objawy",
       close: "Zamknij",
       disclaimer: "Ankieta ADAM jest narzędziem przesiewowym i nie zastępuje diagnozy lekarskiej."
     }
@@ -914,7 +916,9 @@ const translations = {
       positiveText: "Your answers indicate symptoms that may be associated with androgen deficiency. The ADAM questionnaire result is not a diagnosis — confirmation requires a medical consultation and laboratory tests.",
       negativeTitle: "Result does not indicate testosterone deficiency",
       negativeText: "Your answers do not meet the criteria for a positive ADAM questionnaire result. If you still experience concerning symptoms, it is worth discussing them with a doctor.",
-      ctaConsult: "Book a medical consultation",
+      ctaBook: "Book a visit online",
+      ctaPhone: "Or call:",
+      ctaRead: "See what else can cause these symptoms",
       close: "Close",
       disclaimer: "The ADAM questionnaire is a screening tool and does not replace a medical diagnosis."
     }
@@ -1356,7 +1360,9 @@ const translations = {
       positiveText: "Ihre Antworten weisen auf Symptome hin, die mit einem Androgendefizit zusammenhängen können. Das ADAM-Ergebnis ist keine Diagnose — eine Bestätigung erfordert eine ärztliche Beratung und Laboruntersuchungen.",
       negativeTitle: "Ergebnis weist nicht auf Testosteronmangel hin",
       negativeText: "Ihre Antworten erfüllen nicht die Kriterien für ein positives ADAM-Ergebnis. Wenn Sie dennoch beunruhigende Symptome haben, sollten Sie diese mit einem Arzt besprechen.",
-      ctaConsult: "Beratung vereinbaren",
+      ctaBook: "Termin online vereinbaren",
+      ctaPhone: "Oder rufen Sie an:",
+      ctaRead: "Was sonst noch solche Beschwerden verursachen kann",
       close: "Schließen",
       disclaimer: "Der ADAM-Fragebogen ist ein Screening-Instrument und ersetzt keine ärztliche Diagnose."
     }
@@ -2189,6 +2195,10 @@ const DoctorSection = () => {
     )
   ] });
 };
+const MEDFILE_BOOKING_URL = "https://rejestracja.medfile.pl/register/index/?uuid=9af9f7bc-4525-7d5f-43cc-cc53b53b3394";
+const MEDFILE_PROFILE_URL = "https://www.medfile.pl/marta-treblinska-2/specjalista/ostrow-mazowiecki/";
+const PHONE = "+48572565887";
+const PHONE_DISPLAY = "572 565 887";
 const reviews = [
   { name: "Grzegorz", text: "Chapeau bas. Realne zainteresowanie pacjentem, godzinna konsultacja minęła mi jak 2 minuty. Pani Marta wszystko dokładnie wytłumaczyła, zero sztampy, a przy tym profesjonalizm." },
   { name: "Jacek", text: "Wizyta przebiegła bardzo szczegółowo i dokładnie, jestem bardzo zadowolony z przebiegu konsultacji i profesjonalizmu pani doktor." },
@@ -2197,7 +2207,6 @@ const reviews = [
   { name: "Grzegorz", text: "Bardzo konkretny lekarz, dokładny wywiad, pytania w punkt, Pani Marta wie jak poprowadzić rozmowę, dokładne zalecenia 10/10" },
   { name: "Kacper", text: "Będę polecał, szczere 5 gwiazdek" }
 ];
-const MEDFILE_URL$1 = "https://www.medfile.pl/marta-treblinska-2/specjalista/ostrow-mazowiecki/";
 const Stars = () => /* @__PURE__ */ jsx("div", { className: "flex gap-0.5", children: [...Array(5)].map((_, i) => /* @__PURE__ */ jsx(Star, { className: "h-4 w-4 fill-yellow-400 text-yellow-400" }, i)) });
 const ReviewsSection = () => {
   const { locale } = useLanguage();
@@ -2220,7 +2229,7 @@ const ReviewsSection = () => {
       /* @__PURE__ */ jsxs(
         "a",
         {
-          href: MEDFILE_URL$1,
+          href: MEDFILE_PROFILE_URL,
           target: "_blank",
           rel: "noopener noreferrer",
           className: "inline-flex items-center gap-1.5 text-sm text-primary hover:underline",
@@ -3166,7 +3175,6 @@ const FaqSection = () => {
     ] }) }, faq.id)) })
   ] }) });
 };
-const MEDFILE_URL = "https://rejestracja.medfile.pl/register/index/?uuid=9af9f7bc-4525-7d5f-43cc-cc53b53b3394";
 const ContactSection = () => {
   const { t, locale } = useLanguage();
   const phoneDisplay = locale === "pl" ? "572 565 887" : "+48 572 565 887";
@@ -3184,7 +3192,7 @@ const ContactSection = () => {
       /* @__PURE__ */ jsx("p", { className: "text-muted-foreground text-center mb-8 max-w-xl mx-auto", children: t.contact.subtitle })
     ] }),
     /* @__PURE__ */ jsx(ScrollReveal, { delay: 100, children: /* @__PURE__ */ jsx("div", { className: "mb-16", children: /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row gap-3 justify-center", children: [
-      /* @__PURE__ */ jsx(Button, { variant: "cta", size: "lg", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: MEDFILE_URL, target: "_blank", rel: "noopener noreferrer", onClick: () => trackBook("kontakt"), children: [
+      /* @__PURE__ */ jsx(Button, { variant: "cta", size: "lg", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: MEDFILE_BOOKING_URL, target: "_blank", rel: "noopener noreferrer", onClick: () => trackBook("kontakt"), children: [
         /* @__PURE__ */ jsx(CalendarCheck, { className: "w-4 h-4" }),
         t.contact.bookMedfile,
         /* @__PURE__ */ jsx(ExternalLink, { className: "w-3.5 h-3.5 opacity-60" })
@@ -3307,7 +3315,6 @@ const DialogDescription = React.forwardRef(({ className, ...props }, ref) => /* 
 DialogDescription.displayName = DialogPrimitive.Description.displayName;
 const AdamQuizModal = ({ open, onOpenChange }) => {
   const { t } = useLanguage();
-  const sectionLink = useSectionLink();
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState([]);
   const questions = [
@@ -3405,8 +3412,37 @@ const AdamQuizModal = ({ open, onOpenChange }) => {
         /* @__PURE__ */ jsx("p", { className: "text-muted-foreground text-sm leading-relaxed", children: positive ? t.adam.positiveText : t.adam.negativeText })
       ] }),
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col gap-2", children: [
-        positive && /* @__PURE__ */ jsx(Button, { variant: "cta", className: "w-full", asChild: true, children: /* @__PURE__ */ jsx("a", { href: "/#kontakt", onClick: sectionLink("kontakt", handleClose), children: t.adam.ctaConsult }) }),
-        /* @__PURE__ */ jsx(Button, { variant: "outline", className: "w-full", onClick: handleClose, children: t.adam.close })
+        positive ? /* @__PURE__ */ jsxs(Fragment, { children: [
+          /* @__PURE__ */ jsx(Button, { variant: "cta", className: "w-full", asChild: true, children: /* @__PURE__ */ jsxs(
+            "a",
+            {
+              href: MEDFILE_BOOKING_URL,
+              target: "_blank",
+              rel: "noopener noreferrer",
+              onClick: () => trackBook("kwestionariusz"),
+              children: [
+                /* @__PURE__ */ jsx(CalendarCheck, { className: "w-4 h-4" }),
+                t.adam.ctaBook,
+                /* @__PURE__ */ jsx(ExternalLink, { className: "w-3.5 h-3.5 opacity-60" })
+              ]
+            }
+          ) }),
+          /* @__PURE__ */ jsx(Button, { variant: "outline", className: "w-full", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: `tel:${PHONE}`, onClick: () => trackPhone("kwestionariusz"), children: [
+            /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4" }),
+            t.adam.ctaPhone,
+            " ",
+            PHONE_DISPLAY
+          ] }) })
+        ] }) : (
+          // A negative result used to be a dead end with nothing but a
+          // close button, even though ADAM misses plenty and the man may
+          // still have the symptoms that brought him here.
+          /* @__PURE__ */ jsx(Button, { variant: "outline", className: "w-full", asChild: true, children: /* @__PURE__ */ jsxs(Link, { to: "/blog", onClick: handleClose, children: [
+            /* @__PURE__ */ jsx(BookOpen, { className: "w-4 h-4" }),
+            t.adam.ctaRead
+          ] }) })
+        ),
+        /* @__PURE__ */ jsx(Button, { variant: "ghost", className: "w-full", onClick: handleClose, children: t.adam.close })
       ] }),
       /* @__PURE__ */ jsx("p", { className: "text-xs text-muted-foreground", children: t.adam.disclaimer })
     ] })
