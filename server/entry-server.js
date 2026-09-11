@@ -419,7 +419,7 @@ const translations = {
       copyright: "Indywidualna Praktyka Lekarska Marta Treblińska. Wszelkie prawa zastrzeżone."
     },
     cookie: {
-      text: "Ta strona korzysta z plików cookies w celu zapewnienia prawidłowego działania serwisu. Korzystając ze strony wyrażasz zgodę na ich użycie zgodnie z",
+      text: "Używamy plików cookies do analityki — żeby wiedzieć, skąd trafiasz na stronę. Możesz je odrzucić, serwis zadziała tak samo. Szczegóły w",
       privacyLink: "Polityką prywatności",
       reject: "Odrzuć",
       accept: "Akceptuję"
@@ -852,7 +852,7 @@ const translations = {
       copyright: "Individual Medical Practice Marta Treblińska, MD. All rights reserved."
     },
     cookie: {
-      text: "This website uses cookies to ensure proper functioning. By using the site, you consent to their use in accordance with the",
+      text: "We use analytics cookies to see how people find this site. You can reject them — everything works the same either way. Details in the",
       privacyLink: "Privacy Policy",
       reject: "Reject",
       accept: "Accept"
@@ -1285,7 +1285,7 @@ const translations = {
       copyright: "Einzelärztliche Praxis Marta Treblińska. Alle Rechte vorbehalten."
     },
     cookie: {
-      text: "Diese Website verwendet Cookies, um die ordnungsgemäße Funktion sicherzustellen. Durch die Nutzung der Seite stimmen Sie deren Verwendung gemäß der",
+      text: "Wir verwenden Analyse-Cookies, um zu sehen, wie Sie auf diese Seite gelangen. Sie können sie ablehnen — die Seite funktioniert genauso. Einzelheiten in der",
       privacyLink: "Datenschutzrichtlinie",
       reject: "Ablehnen",
       accept: "Akzeptieren"
@@ -3447,19 +3447,65 @@ const SiteFooter = () => {
     ] })
   ] }) });
 };
+const CONSENT_KEY = "cookie-consent";
+const CONSENT_TYPES = [
+  "ad_storage",
+  "ad_user_data",
+  "ad_personalization",
+  "analytics_storage",
+  "functionality_storage",
+  "personalization_storage"
+];
+const readConsent = () => {
+  try {
+    const stored = localStorage.getItem(CONSENT_KEY);
+    return stored === "accepted" || stored === "rejected" ? stored : null;
+  } catch {
+    return null;
+  }
+};
+const pushConsentUpdate = (value) => {
+  if (typeof window === "undefined" || typeof window.gtag !== "function") return;
+  const update = {};
+  for (const type of CONSENT_TYPES) update[type] = value;
+  window.gtag("consent", "update", update);
+};
+const HUBSPOT_SRC = "https://js-eu1.hs-scripts.com/149306826.js";
+const HUBSPOT_SCRIPT_ID = "hs-script-loader";
+const loadHubSpot = () => {
+  if (typeof document === "undefined") return;
+  if (document.getElementById(HUBSPOT_SCRIPT_ID)) return;
+  const script = document.createElement("script");
+  script.id = HUBSPOT_SCRIPT_ID;
+  script.src = HUBSPOT_SRC;
+  script.async = true;
+  script.defer = true;
+  document.body.appendChild(script);
+};
+const setConsent = (decision) => {
+  try {
+    localStorage.setItem(CONSENT_KEY, decision);
+  } catch {
+  }
+  pushConsentUpdate(decision === "accepted" ? "granted" : "denied");
+  if (decision === "accepted") loadHubSpot();
+};
+const applyStoredConsent = () => {
+  if (readConsent() === "accepted") loadHubSpot();
+};
 const CookieBanner = () => {
   const [visible, setVisible] = useState(false);
   const { t } = useLanguage();
   useEffect(() => {
-    const consent = localStorage.getItem("cookie-consent");
-    if (!consent) setVisible(true);
+    if (readConsent()) applyStoredConsent();
+    else setVisible(true);
   }, []);
   const accept = () => {
-    localStorage.setItem("cookie-consent", "accepted");
+    setConsent("accepted");
     setVisible(false);
   };
   const reject = () => {
-    localStorage.setItem("cookie-consent", "rejected");
+    setConsent("rejected");
     setVisible(false);
   };
   if (!visible) return null;
@@ -3471,7 +3517,7 @@ const CookieBanner = () => {
       "."
     ] }),
     /* @__PURE__ */ jsxs("div", { className: "flex gap-2 flex-shrink-0", children: [
-      /* @__PURE__ */ jsx(Button, { variant: "ghost", size: "sm", onClick: reject, children: t.cookie.reject }),
+      /* @__PURE__ */ jsx(Button, { variant: "outline", size: "sm", onClick: reject, children: t.cookie.reject }),
       /* @__PURE__ */ jsx(Button, { size: "sm", onClick: accept, children: t.cookie.accept })
     ] })
   ] }) }) });

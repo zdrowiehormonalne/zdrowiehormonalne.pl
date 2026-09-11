@@ -28,6 +28,13 @@
           "url": "https://zdrowiehormonalne.pl/",
           "telephone": "+48572565887",
           "email": "treblinskamarta@zdrowiehormonalne.pl",
+          "sameAs": [
+            "https://www.znanylekarz.pl/marta-treblinska/lekarz-bez-specjalizacji/ostrow-mazowiecka",
+            "https://www.medfile.pl/marta-treblinska-2/specjalista/ostrow-mazowiecki/",
+            "https://www.halodoctor.pl/lekarze/marta-treblinska-2-specjalista-polska",
+            "https://telemedi.com/pl/kataloglekarzy/lekarz/lekarz-ogolny-internista/marta-treblinska/de5c5e6d-5eae-469c-bf6c-d36152e70940",
+            "https://pl.linkedin.com/in/marta-trebli%C5%84ska-511983208"
+          ],
           "medicalSpecialty": "Endocrinology",
           "priceRange": "zł zł",
           "address": {
@@ -103,15 +110,49 @@
     <noscript><img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=TWÓJ_PIXEL_ID&ev=PageView&noscript=1"
     /></noscript> -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKK5SY6RTV"></script>
+    <!-- Google tag (gtag.js) — Consent Mode v2.
+         Kolejność jest tu istotna: zgody muszą trafić do dataLayer ZANIM
+         załaduje się skrypt Google, inaczej pierwsze odsłony zdążą zapisać
+         ciasteczka przed decyzją użytkownika. Dlatego ten blok jest przed
+         tagiem <script async>, a nie po nim. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+
+      // Domyślnie odmowa. Tag się ładuje, ale do czasu zgody nie zapisuje
+      // niczego w przeglądarce i wysyła wyłącznie bezciasteczkowe pingi.
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'denied',
+        personalization_storage: 'denied',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
+
+      // Zgoda z poprzedniej wizyty. Klucz współdzielony z src/lib/consent.ts.
+      try {
+        if (localStorage.getItem('cookie-consent') === 'accepted') {
+          gtag('consent', 'update', {
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+            analytics_storage: 'granted',
+            functionality_storage: 'granted',
+            personalization_storage: 'granted'
+          });
+        }
+      } catch (e) {
+        // Prywatne okno albo zablokowany magazyn — zostaje odmowa.
+      }
+
       gtag('js', new Date());
       gtag('config', 'G-WKK5SY6RTV');
     </script>
-    <script type="module" crossorigin src="/assets/index-DeoaxPEW.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKK5SY6RTV"></script>
+    <script type="module" crossorigin src="/assets/index-Bn8iuqlx.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-DTPfXP3X.css">
   </head>
   <body>
