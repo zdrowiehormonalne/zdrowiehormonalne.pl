@@ -3570,6 +3570,26 @@ const loadHubSpot = () => {
   script.defer = true;
   document.body.appendChild(script);
 };
+const META_PIXEL_ID = "1055700163915942";
+const loadMetaPixel = () => {
+  if (typeof window === "undefined" || window.fbq) return;
+  const fbq = function(...args) {
+    if (fbq.callMethod) fbq.callMethod.apply(fbq, args);
+    else fbq.queue.push(args);
+  };
+  fbq.queue = [];
+  fbq.loaded = true;
+  fbq.version = "2.0";
+  fbq.push = fbq;
+  window.fbq = fbq;
+  window._fbq = fbq;
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = "https://connect.facebook.net/en_US/fbevents.js";
+  document.head.appendChild(script);
+  fbq("init", META_PIXEL_ID);
+  fbq("track", "PageView");
+};
 const pushConsentUpdate = ({ analytics, marketing }) => {
   if (typeof window === "undefined" || typeof window.gtag !== "function") return;
   const a = analytics ? "granted" : "denied";
@@ -3589,11 +3609,16 @@ const setConsent = (state) => {
   } catch {
   }
   pushConsentUpdate(state);
-  if (state.marketing) loadHubSpot();
+  if (state.marketing) {
+    loadHubSpot();
+    loadMetaPixel();
+  }
 };
 const applyStoredConsent = () => {
   var _a;
-  if ((_a = readConsent()) == null ? void 0 : _a.marketing) loadHubSpot();
+  if (!((_a = readConsent()) == null ? void 0 : _a.marketing)) return;
+  loadHubSpot();
+  loadMetaPixel();
 };
 const CookieBanner = () => {
   const [visible, setVisible] = useState(false);
