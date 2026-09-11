@@ -1636,6 +1636,14 @@ const SiteNav = () => {
     ] })
   ] });
 };
+const track = (name, params = {}) => {
+  if (typeof window === "undefined" || typeof window.gtag !== "function") return;
+  window.gtag("event", name, params);
+};
+const trackBook = (placement) => track("book_click", { placement });
+const trackPhone = (placement) => track("phone_click", { placement });
+const trackEmail = (placement) => track("email_click", { placement });
+const trackQuiz = (quiz, result) => track("quiz_complete", { quiz, result });
 const EMAIL = "treblinskamarta@zdrowiehormonalne.pl";
 const [local, domain] = EMAIL.split("@");
 const EMAIL_LOCAL = `${local}@`;
@@ -1701,6 +1709,7 @@ const HeroSection = () => {
               "a",
               {
                 href: "tel:+48572565887",
+                onClick: () => trackPhone("hero"),
                 className: "inline-flex items-center gap-1.5 font-semibold text-foreground underline decoration-foreground/25 underline-offset-4 transition-colors hover:decoration-foreground",
                 children: [
                   /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4" }),
@@ -1712,7 +1721,7 @@ const HeroSection = () => {
         ] }),
         /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm text-foreground", children: [
           /* @__PURE__ */ jsxs("span", { className: "flex items-center gap-2", children: [
-            /* @__PURE__ */ jsxs("a", { href: `mailto:${EMAIL}`, className: "flex items-center gap-2 hover:text-foreground/90 transition-colors", children: [
+            /* @__PURE__ */ jsxs("a", { href: `mailto:${EMAIL}`, onClick: () => trackEmail("hero"), className: "flex items-center gap-2 hover:text-foreground/90 transition-colors", children: [
               /* @__PURE__ */ jsx(Mail, { className: "w-4 h-4 shrink-0" }),
               /* @__PURE__ */ jsxs("span", { className: "[overflow-wrap:break-word]", children: [
                 EMAIL_LOCAL,
@@ -3175,12 +3184,12 @@ const ContactSection = () => {
       /* @__PURE__ */ jsx("p", { className: "text-muted-foreground text-center mb-8 max-w-xl mx-auto", children: t.contact.subtitle })
     ] }),
     /* @__PURE__ */ jsx(ScrollReveal, { delay: 100, children: /* @__PURE__ */ jsx("div", { className: "mb-16", children: /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row gap-3 justify-center", children: [
-      /* @__PURE__ */ jsx(Button, { variant: "cta", size: "lg", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: MEDFILE_URL, target: "_blank", rel: "noopener noreferrer", children: [
+      /* @__PURE__ */ jsx(Button, { variant: "cta", size: "lg", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: MEDFILE_URL, target: "_blank", rel: "noopener noreferrer", onClick: () => trackBook("kontakt"), children: [
         /* @__PURE__ */ jsx(CalendarCheck, { className: "w-4 h-4" }),
         t.contact.bookMedfile,
         /* @__PURE__ */ jsx(ExternalLink, { className: "w-3.5 h-3.5 opacity-60" })
       ] }) }),
-      /* @__PURE__ */ jsx(Button, { variant: "outline", size: "lg", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", children: [
+      /* @__PURE__ */ jsx(Button, { variant: "outline", size: "lg", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", onClick: () => trackPhone("kontakt"), children: [
         /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4" }),
         t.contact.bookPhone,
         " ",
@@ -3189,7 +3198,7 @@ const ContactSection = () => {
     ] }) }) }),
     /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8", children: [
       /* @__PURE__ */ jsxs("div", { className: "space-y-6", children: [
-        /* @__PURE__ */ jsx(ScrollReveal, { delay: 100, children: /* @__PURE__ */ jsxs("a", { href: `mailto:${EMAIL}`, className: "flex items-center gap-4 p-5 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-sm transition-all group", children: [
+        /* @__PURE__ */ jsx(ScrollReveal, { delay: 100, children: /* @__PURE__ */ jsxs("a", { href: `mailto:${EMAIL}`, onClick: () => trackEmail("kontakt"), className: "flex items-center gap-4 p-5 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-sm transition-all group", children: [
           /* @__PURE__ */ jsx("div", { className: "w-12 h-12 shrink-0 rounded-lg bg-teal-light flex items-center justify-center text-teal-mid group-hover:scale-110 transition-transform", children: /* @__PURE__ */ jsx(Mail, { className: "w-5 h-5" }) }),
           /* @__PURE__ */ jsxs("div", { className: "min-w-0 flex-1", children: [
             /* @__PURE__ */ jsx("p", { className: "text-sm text-muted-foreground", children: t.contact.email }),
@@ -3335,6 +3344,9 @@ const AdamQuizModal = ({ open, onOpenChange }) => {
   };
   const positive = isFinished ? isPositive(answers) : false;
   const progress = answers.length / questions.length * 100;
+  useEffect(() => {
+    if (isFinished) trackQuiz("adam", positive ? "dodatni" : "ujemny");
+  }, [isFinished, positive]);
   return /* @__PURE__ */ jsx(Dialog, { open, onOpenChange: handleClose, children: /* @__PURE__ */ jsxs(DialogContent, { className: "max-w-md", children: [
     /* @__PURE__ */ jsx(DialogHeader, { children: /* @__PURE__ */ jsx(DialogTitle, { className: "font-serif text-xl text-center", children: t.adam.title }) }),
     !isFinished ? /* @__PURE__ */ jsxs("div", { className: "space-y-6 pt-1", children: [
@@ -3643,6 +3655,7 @@ const FloatingCTA = () => {
         "a",
         {
           href: "tel:+48572565887",
+          onClick: () => trackPhone("pasek_mobilny"),
           className: "inline-flex items-center justify-center rounded-lg border border-border bg-background text-foreground font-medium text-sm h-11 w-11 shrink-0",
           children: /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4" })
         }
@@ -3938,7 +3951,7 @@ const BlogPost = () => {
         /* @__PURE__ */ jsxs("div", { className: "mt-12 p-8 rounded-2xl bg-hero text-hero-foreground text-center", children: [
           /* @__PURE__ */ jsx("h3", { className: "font-serif text-2xl mb-3", children: "Chcesz omówić swój przypadek?" }),
           /* @__PURE__ */ jsx("p", { className: "text-hero-foreground/70 mb-6 max-w-md mx-auto", children: "Skontaktuj się z lekarz Martą Treblińską — konsultacja zdalna, z dowolnego miejsca." }),
-          /* @__PURE__ */ jsx(Button, { variant: "cta", size: "lg", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", children: [
+          /* @__PURE__ */ jsx(Button, { variant: "cta", size: "lg", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", onClick: () => trackPhone("artykul"), children: [
             /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4 mr-2" }),
             "Zadzwoń teraz"
           ] }) })
