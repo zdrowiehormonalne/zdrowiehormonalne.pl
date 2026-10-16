@@ -2107,6 +2107,7 @@ const DoctorSection = () => {
   const [lightbox, setLightbox] = useState(null);
   const certificates = [
     { webp: "/images/cert-harvard.webp", jpg: "/images/cert-harvard.jpg", alt: "Harvard Medical School Certificate" },
+    { webp: "/images/cert-eaa-congress-2026.webp", jpg: "/images/cert-eaa-congress-2026.jpg", alt: "European Academy of Andrology – 14th European Congress of Andrology, Certificate of Attendance" },
     { webp: "/images/cert-trt-master.webp", jpg: "/images/cert-trt-master.jpg", alt: "TRT Master Practitioner Certificate" },
     { webp: "/images/cert-dr-marcin-madziarski.webp", jpg: "/images/cert-dr-marcin-madziarski.jpg", alt: "Kurs TrT - od teorii do praktyki klinicznej" }
   ];
