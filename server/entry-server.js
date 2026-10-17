@@ -15,7 +15,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import * as SwitchPrimitives from "@radix-ui/react-switch";
 import { createClient } from "@supabase/supabase-js";
 function cn(...inputs) {
   return twMerge(clsx(inputs));
@@ -416,6 +415,7 @@ const translations = {
       legalInfo: "Informacje prawne",
       privacy: "Polityka prywatności (RODO)",
       terms: "Regulamin",
+      cookieSettings: "Ustawienia cookies",
       disclaimer: "Materiały zamieszczone na niniejszej stronie internetowej mają charakter wyłącznie informacyjny i nie stanowią reklamy usług medycznych w rozumieniu obowiązujących przepisów prawa. Treści nie zastępują porady lekarskiej. Decyzję o leczeniu podejmuje lekarz po badaniu i analizie wyników.",
       copyright: "Indywidualna Praktyka Lekarska Marta Treblińska. Wszelkie prawa zastrzeżone."
     },
@@ -432,7 +432,7 @@ const translations = {
       catAnalytics: "Analityczne",
       catAnalyticsDesc: "Google Analytics — ile osób odwiedza stronę i z jakich źródeł trafia.",
       catMarketing: "Marketingowe",
-      catMarketingDesc: "HubSpot i Google Ads — mierzenie skuteczności reklam i dopasowanie przekazu."
+      catMarketingDesc: "HubSpot i Meta (Facebook, Instagram) — mierzenie skuteczności reklam i docieranie z nimi do osób, które odwiedziły stronę."
     },
     feedback: {
       button: "Feedback",
@@ -860,6 +860,7 @@ const translations = {
       legalInfo: "Legal information",
       privacy: "Privacy Policy (GDPR)",
       terms: "Terms of Service",
+      cookieSettings: "Cookie settings",
       disclaimer: "The materials published on this website are for informational purposes only and do not constitute advertising of medical services under applicable law. The content does not replace medical advice. Treatment decisions are made by a physician after examination and analysis of results.",
       copyright: "Individual Medical Practice Marta Treblińska, MD. All rights reserved."
     },
@@ -876,7 +877,7 @@ const translations = {
       catAnalytics: "Analytics",
       catAnalyticsDesc: "Google Analytics — how many people visit and where they come from.",
       catMarketing: "Marketing",
-      catMarketingDesc: "HubSpot and Google Ads — measuring how well campaigns work."
+      catMarketingDesc: "HubSpot and Meta (Facebook, Instagram) — measuring how well ads work and showing them to people who have visited the site."
     },
     feedback: {
       button: "Feedback",
@@ -1304,6 +1305,7 @@ const translations = {
       legalInfo: "Rechtliche Informationen",
       privacy: "Datenschutzrichtlinie (DSGVO)",
       terms: "Nutzungsbedingungen",
+      cookieSettings: "Cookie-Einstellungen",
       disclaimer: "Die auf dieser Website veröffentlichten Materialien dienen ausschließlich zu Informationszwecken und stellen keine Werbung für medizinische Leistungen dar. Die Inhalte ersetzen keine ärztliche Beratung. Behandlungsentscheidungen werden vom Arzt nach Untersuchung und Analyse der Ergebnisse getroffen.",
       copyright: "Einzelärztliche Praxis Marta Treblińska. Alle Rechte vorbehalten."
     },
@@ -1320,7 +1322,7 @@ const translations = {
       catAnalytics: "Analyse",
       catAnalyticsDesc: "Google Analytics — wie viele Personen die Seite besuchen und woher sie kommen.",
       catMarketing: "Marketing",
-      catMarketingDesc: "HubSpot und Google Ads — Messung der Wirksamkeit von Kampagnen."
+      catMarketingDesc: "HubSpot und Meta (Facebook, Instagram) — Messung der Wirksamkeit von Anzeigen und Ausspielung an Personen, die die Seite besucht haben."
     },
     feedback: {
       button: "Feedback",
@@ -1649,7 +1651,7 @@ const track = (name, params = {}) => {
 const trackBook = (placement) => track("book_click", { placement });
 const trackPhone = (placement) => track("phone_click", { placement });
 const trackEmail = (placement) => track("email_click", { placement });
-const trackQuiz = (quiz, result) => track("quiz_complete", { quiz, result });
+const trackQuiz = (quiz) => track("quiz_complete", { quiz });
 const EMAIL = "treblinskamarta@zdrowiehormonalne.pl";
 const [local, domain] = EMAIL.split("@");
 const EMAIL_LOCAL = `${local}@`;
@@ -3360,8 +3362,8 @@ const AdamQuizModal = ({ open, onOpenChange }) => {
   const positive = isFinished ? isPositive(answers) : false;
   const progress = answers.length / questions.length * 100;
   useEffect(() => {
-    if (isFinished) trackQuiz("adam", positive ? "dodatni" : "ujemny");
-  }, [isFinished, positive]);
+    if (isFinished) trackQuiz("adam");
+  }, [isFinished]);
   return /* @__PURE__ */ jsx(Dialog, { open, onOpenChange: handleClose, children: /* @__PURE__ */ jsxs(DialogContent, { className: "max-w-md", children: [
     /* @__PURE__ */ jsx(DialogHeader, { children: /* @__PURE__ */ jsx(DialogTitle, { className: "font-serif text-xl text-center", children: t.adam.title }) }),
     !isFinished ? /* @__PURE__ */ jsxs("div", { className: "space-y-6 pt-1", children: [
@@ -3480,6 +3482,11 @@ const AdamQuizBanner = () => {
     /* @__PURE__ */ jsx(AdamQuizModal, { open, onOpenChange: setOpen })
   ] });
 };
+const COOKIE_SETTINGS_EVENT = "cookie-settings:open";
+const openCookieSettings = () => {
+  if (typeof window === "undefined") return;
+  window.dispatchEvent(new Event(COOKIE_SETTINGS_EVENT));
+};
 const SiteFooter = () => {
   const { t, locale } = useLanguage();
   const privacyPath = locale === "pl" ? "/polityka-prywatnosci" : `/${locale === "en" ? "en" : "de"}/polityka-prywatnosci`;
@@ -3516,7 +3523,16 @@ const SiteFooter = () => {
         /* @__PURE__ */ jsx("h3", { className: "font-serif text-xl mb-4 text-hero-foreground", children: t.footer.legalInfo }),
         /* @__PURE__ */ jsxs("div", { className: "space-y-2 text-sm", children: [
           /* @__PURE__ */ jsx("a", { href: privacyPath, className: "block text-hero-foreground/70 hover:text-hero-foreground transition-colors", children: t.footer.privacy }),
-          /* @__PURE__ */ jsx("a", { href: termsPath, className: "block text-hero-foreground/70 hover:text-hero-foreground transition-colors", children: t.footer.terms })
+          /* @__PURE__ */ jsx("a", { href: termsPath, className: "block text-hero-foreground/70 hover:text-hero-foreground transition-colors", children: t.footer.terms }),
+          /* @__PURE__ */ jsx(
+            "button",
+            {
+              type: "button",
+              onClick: openCookieSettings,
+              className: "block text-left text-hero-foreground/70 hover:text-hero-foreground transition-colors",
+              children: t.footer.cookieSettings
+            }
+          )
         ] })
       ] })
     ] }),
@@ -3530,168 +3546,6 @@ const SiteFooter = () => {
       ] })
     ] })
   ] }) });
-};
-const Switch = React.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ jsx(
-  SwitchPrimitives.Root,
-  {
-    className: cn(
-      "peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors data-[state=checked]:bg-primary data-[state=unchecked]:bg-input focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50",
-      className
-    ),
-    ...props,
-    ref,
-    children: /* @__PURE__ */ jsx(
-      SwitchPrimitives.Thumb,
-      {
-        className: cn(
-          "pointer-events-none block h-5 w-5 rounded-full bg-background shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0"
-        )
-      }
-    )
-  }
-));
-Switch.displayName = SwitchPrimitives.Root.displayName;
-const CONSENT_KEY = "cookie-consent";
-const ALL_GRANTED = { analytics: true, marketing: true };
-const NONE_GRANTED = { analytics: false, marketing: false };
-const readConsent = () => {
-  try {
-    const raw = localStorage.getItem(CONSENT_KEY);
-    if (!raw) return null;
-    if (raw === "accepted") return ALL_GRANTED;
-    if (raw === "rejected") return NONE_GRANTED;
-    const parsed = JSON.parse(raw);
-    return { analytics: !!parsed.analytics, marketing: !!parsed.marketing };
-  } catch {
-    return null;
-  }
-};
-const HUBSPOT_SRC = "https://js-eu1.hs-scripts.com/149306826.js";
-const HUBSPOT_SCRIPT_ID = "hs-script-loader";
-const loadHubSpot = () => {
-  if (typeof document === "undefined") return;
-  if (document.getElementById(HUBSPOT_SCRIPT_ID)) return;
-  const script = document.createElement("script");
-  script.id = HUBSPOT_SCRIPT_ID;
-  script.src = HUBSPOT_SRC;
-  script.async = true;
-  script.defer = true;
-  document.body.appendChild(script);
-};
-const META_PIXEL_ID = "1055700163915942";
-const loadMetaPixel = () => {
-  if (typeof window === "undefined" || window.fbq) return;
-  const fbq = function(...args) {
-    if (fbq.callMethod) fbq.callMethod.apply(fbq, args);
-    else fbq.queue.push(args);
-  };
-  fbq.queue = [];
-  fbq.loaded = true;
-  fbq.version = "2.0";
-  fbq.push = fbq;
-  window.fbq = fbq;
-  window._fbq = fbq;
-  const script = document.createElement("script");
-  script.async = true;
-  script.src = "https://connect.facebook.net/en_US/fbevents.js";
-  document.head.appendChild(script);
-  fbq("init", META_PIXEL_ID);
-  fbq("track", "PageView");
-};
-const pushConsentUpdate = ({ analytics, marketing }) => {
-  if (typeof window === "undefined" || typeof window.gtag !== "function") return;
-  const a = analytics ? "granted" : "denied";
-  const m = marketing ? "granted" : "denied";
-  window.gtag("consent", "update", {
-    analytics_storage: a,
-    functionality_storage: a,
-    personalization_storage: a,
-    ad_storage: m,
-    ad_user_data: m,
-    ad_personalization: m
-  });
-};
-const setConsent = (state) => {
-  try {
-    localStorage.setItem(CONSENT_KEY, JSON.stringify(state));
-  } catch {
-  }
-  pushConsentUpdate(state);
-  if (state.marketing) {
-    loadHubSpot();
-    loadMetaPixel();
-  }
-};
-const applyStoredConsent = () => {
-  var _a;
-  if (!((_a = readConsent()) == null ? void 0 : _a.marketing)) return;
-  loadHubSpot();
-  loadMetaPixel();
-};
-const CookieBanner = () => {
-  const [visible, setVisible] = useState(false);
-  const [expanded, setExpanded] = useState(false);
-  const [choice, setChoice] = useState(NONE_GRANTED);
-  const { t } = useLanguage();
-  useEffect(() => {
-    if (readConsent()) applyStoredConsent();
-    else setVisible(true);
-  }, []);
-  const decide = (state) => {
-    setConsent(state);
-    setVisible(false);
-  };
-  if (!visible) return null;
-  return /* @__PURE__ */ jsx("div", { className: "fixed bottom-0 inset-x-0 z-50 p-4", children: /* @__PURE__ */ jsx("div", { className: "container mx-auto max-w-3xl", children: /* @__PURE__ */ jsxs("div", { className: "bg-card border border-border rounded-2xl shadow-xl p-6 space-y-5", children: [
-    /* @__PURE__ */ jsxs("p", { className: "text-sm text-muted-foreground", children: [
-      t.cookie.text,
-      " ",
-      /* @__PURE__ */ jsx("a", { href: "/polityka-prywatnosci", className: "text-primary underline underline-offset-2", children: t.cookie.privacyLink }),
-      "."
-    ] }),
-    expanded && /* @__PURE__ */ jsxs("div", { className: "space-y-4 border-t border-border pt-4", children: [
-      /* @__PURE__ */ jsxs("div", { className: "flex items-start justify-between gap-4", children: [
-        /* @__PURE__ */ jsxs("div", { children: [
-          /* @__PURE__ */ jsx("p", { className: "text-sm font-medium text-foreground", children: t.cookie.catNecessary }),
-          /* @__PURE__ */ jsx("p", { className: "text-xs text-muted-foreground", children: t.cookie.catNecessaryDesc })
-        ] }),
-        /* @__PURE__ */ jsx("span", { className: "text-xs text-muted-foreground whitespace-nowrap pt-0.5", children: t.cookie.always })
-      ] }),
-      /* @__PURE__ */ jsxs("div", { className: "flex items-start justify-between gap-4", children: [
-        /* @__PURE__ */ jsxs("div", { children: [
-          /* @__PURE__ */ jsx("p", { className: "text-sm font-medium text-foreground", children: t.cookie.catAnalytics }),
-          /* @__PURE__ */ jsx("p", { className: "text-xs text-muted-foreground", children: t.cookie.catAnalyticsDesc })
-        ] }),
-        /* @__PURE__ */ jsx(
-          Switch,
-          {
-            checked: choice.analytics,
-            onCheckedChange: (analytics) => setChoice({ ...choice, analytics }),
-            "aria-label": t.cookie.catAnalytics
-          }
-        )
-      ] }),
-      /* @__PURE__ */ jsxs("div", { className: "flex items-start justify-between gap-4", children: [
-        /* @__PURE__ */ jsxs("div", { children: [
-          /* @__PURE__ */ jsx("p", { className: "text-sm font-medium text-foreground", children: t.cookie.catMarketing }),
-          /* @__PURE__ */ jsx("p", { className: "text-xs text-muted-foreground", children: t.cookie.catMarketingDesc })
-        ] }),
-        /* @__PURE__ */ jsx(
-          Switch,
-          {
-            checked: choice.marketing,
-            onCheckedChange: (marketing) => setChoice({ ...choice, marketing }),
-            "aria-label": t.cookie.catMarketing
-          }
-        )
-      ] })
-    ] }),
-    /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row gap-2 sm:justify-end", children: [
-      expanded ? /* @__PURE__ */ jsx(Button, { variant: "outline", size: "sm", onClick: () => decide(choice), children: t.cookie.save }) : /* @__PURE__ */ jsx(Button, { variant: "outline", size: "sm", onClick: () => setExpanded(true), children: t.cookie.customize }),
-      /* @__PURE__ */ jsx(Button, { variant: "outline", size: "sm", onClick: () => decide(NONE_GRANTED), children: t.cookie.necessaryOnly }),
-      /* @__PURE__ */ jsx(Button, { size: "sm", onClick: () => decide(ALL_GRANTED), children: t.cookie.acceptAll })
-    ] })
-  ] }) }) });
 };
 const FloatingCTA = () => {
   const { t } = useLanguage();
@@ -3776,8 +3630,7 @@ const Index = () => {
     ] }),
     /* @__PURE__ */ jsx(SiteFooter, {}),
     /* @__PURE__ */ jsx(FloatingCTA, {}),
-    false,
-    /* @__PURE__ */ jsx(CookieBanner, {})
+    false
   ] });
 };
 const formatDate$1 = (iso) => new Date(iso).toLocaleDateString("pl-PL", { year: "numeric", month: "long", day: "numeric" });
@@ -3898,91 +3751,270 @@ const BlogPost = () => {
     /* @__PURE__ */ jsx(SiteFooter, {})
   ] });
 };
+const Section = ({ title, children }) => /* @__PURE__ */ jsxs("section", { className: "space-y-3", children: [
+  /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground", children: title }),
+  children
+] });
+const Purpose = ({ title, basis, period }) => /* @__PURE__ */ jsxs("div", { className: "rounded-xl border border-border bg-card p-4 space-y-1.5 text-sm", children: [
+  /* @__PURE__ */ jsx("h3", { className: "font-sans text-base font-semibold text-foreground", children: title }),
+  /* @__PURE__ */ jsxs("p", { children: [
+    /* @__PURE__ */ jsx("span", { className: "font-medium text-foreground", children: "Podstawa prawna: " }),
+    basis
+  ] }),
+  /* @__PURE__ */ jsxs("p", { children: [
+    /* @__PURE__ */ jsx("span", { className: "font-medium text-foreground", children: "Okres przechowywania: " }),
+    period
+  ] })
+] });
+const CookieSettingsLink = ({ children }) => /* @__PURE__ */ jsx("button", { type: "button", onClick: openCookieSettings, className: "text-primary underline underline-offset-2", children });
 const PrivacyPolicy = () => {
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsx(SiteNav, {}),
-    /* @__PURE__ */ jsx("main", { className: "py-16 md:py-24 bg-background", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-3xl prose prose-slate", children: [
-      /* @__PURE__ */ jsx("h1", { className: "font-serif text-3xl md:text-4xl text-foreground mb-8", children: "Polityka prywatności" }),
-      /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground", children: "1. Administrator danych osobowych" }),
-      /* @__PURE__ */ jsx("p", { className: "text-muted-foreground", children: 'Administratorem danych osobowych jest Indywidualna Praktyka Lekarska Marta Treblińska, ul. Duboisa 1/21, Ostrów Mazowiecka (dalej: „Administrator").' }),
-      /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground", children: "2. Cel i podstawa przetwarzania" }),
-      /* @__PURE__ */ jsx("p", { className: "text-muted-foreground", children: "Dane osobowe przetwarzane są w celu: umówienia i realizacji konsultacji lekarskiej (art. 6 ust. 1 lit. b RODO), wypełnienia obowiązków prawnych Administratora (art. 6 ust. 1 lit. c RODO), w tym prowadzenia dokumentacji medycznej." }),
-      /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground", children: "3. Okres przechowywania danych" }),
-      /* @__PURE__ */ jsx("p", { className: "text-muted-foreground", children: "Dane osobowe przechowywane są przez okres wymagany przepisami prawa, w szczególności ustawy o prawach pacjenta i Rzeczniku Praw Pacjenta (dokumentacja medyczna — 20 lat od ostatniego wpisu)." }),
-      /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground", children: "4. Prawa osoby, której dane dotyczą" }),
-      /* @__PURE__ */ jsx("p", { className: "text-muted-foreground", children: "Przysługuje Ci prawo do: dostępu do danych, ich sprostowania, usunięcia (w zakresie dozwolonym prawem), ograniczenia przetwarzania, przenoszenia danych oraz wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych." }),
-      /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground", children: "5. Pliki cookies" }),
-      /* @__PURE__ */ jsx("p", { className: "text-muted-foreground", children: "Strona wykorzystuje pliki cookies w trzech kategoriach. Zgoda na kategorie inne niż niezbędne jest dobrowolna, udzielana w banerze przy pierwszej wizycie (art. 6 ust. 1 lit. a RODO) i można ją w każdej chwili wycofać, usuwając dane witryny w przeglądarce. Do czasu wyrażenia zgody narzędzia analityczne i marketingowe nie zapisują żadnych informacji na urządzeniu użytkownika." }),
-      /* @__PURE__ */ jsxs("ul", { className: "text-muted-foreground list-disc pl-5 space-y-2", children: [
-        /* @__PURE__ */ jsxs("li", { children: [
-          /* @__PURE__ */ jsx("strong", { className: "text-foreground font-medium", children: "Niezbędne" }),
-          " — umożliwiają wyświetlenie strony i zapamiętanie decyzji dotyczącej cookies. Nie wymagają zgody i nie można ich wyłączyć."
-        ] }),
-        /* @__PURE__ */ jsxs("li", { children: [
-          /* @__PURE__ */ jsx("strong", { className: "text-foreground font-medium", children: "Analityczne" }),
-          " — Google Analytics 4. Służą do ustalenia liczby odwiedzin oraz źródeł, z których użytkownicy trafiają na stronę."
-        ] }),
-        /* @__PURE__ */ jsxs("li", { children: [
-          /* @__PURE__ */ jsx("strong", { className: "text-foreground font-medium", children: "Marketingowe" }),
-          " — HubSpot oraz Google Ads. Służą do pomiaru skuteczności działań reklamowych."
+    /* @__PURE__ */ jsx("main", { className: "py-16 md:py-24 bg-background", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-3xl space-y-10 text-muted-foreground leading-relaxed", children: [
+      /* @__PURE__ */ jsxs("header", { className: "space-y-3", children: [
+        /* @__PURE__ */ jsx("h1", { className: "font-serif text-3xl md:text-4xl text-foreground", children: "Polityka prywatności" }),
+        /* @__PURE__ */ jsx("p", { className: "text-sm", children: "Ostatnia aktualizacja: 16 października 2026 r." }),
+        /* @__PURE__ */ jsx("p", { children: "Informacje o przetwarzaniu danych osobowych zgodnie z art. 13 Rozporządzenia (UE) 2016/679 („RODO”) oraz o plikach cookies zgodnie z art. 399 ustawy — Prawo komunikacji elektronicznej." })
+      ] }),
+      /* @__PURE__ */ jsxs(Section, { title: "1. Administrator", children: [
+        /* @__PURE__ */ jsx("p", { children: "Administratorem danych osobowych jest lek. Marta Treblińska, prowadząca działalność pod firmą Indywidualna Praktyka Lekarska Marta Treblińska, ul. Stanisława Dubois 1/21, 07-300 Ostrów Mazowiecka, NIP 7591759015, REGON 527117814 („Administrator”)." }),
+        /* @__PURE__ */ jsxs("p", { children: [
+          "Kontakt: ",
+          /* @__PURE__ */ jsx("a", { href: `mailto:${EMAIL}`, className: "text-primary underline underline-offset-2", children: EMAIL }),
+          ", tel.",
+          " ",
+          /* @__PURE__ */ jsx("a", { href: `tel:${PHONE}`, className: "text-primary underline underline-offset-2", children: PHONE_DISPLAY }),
+          " lub listownie na adres Administratora."
         ] })
       ] }),
-      /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground", children: "6. Odbiorcy danych" }),
-      /* @__PURE__ */ jsx("p", { className: "text-muted-foreground", children: "Po wyrażeniu zgody dane o korzystaniu ze strony (m.in. identyfikator cookie, adres IP, informacje o urządzeniu i przeglądarce) mogą być przekazywane dostawcom narzędzi analitycznych i marketingowych: Google Ireland Limited oraz HubSpot Ireland Limited, działającym jako odrębni administratorzy lub podmioty przetwarzające, zgodnie z własnymi politykami prywatności. Przekazanie danych poza Europejski Obszar Gospodarczy może nastąpić na podstawie standardowych klauzul umownych zatwierdzonych przez Komisję Europejską." }),
-      /* @__PURE__ */ jsx("p", { className: "text-muted-foreground", children: "Dane dotyczące umówienia i przebiegu konsultacji przetwarzane są w systemie Medfile i nie są przekazywane do narzędzi analitycznych ani marketingowych." }),
-      /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground", children: "7. Kontakt" }),
-      /* @__PURE__ */ jsx("p", { className: "text-muted-foreground", children: "W sprawach związanych z ochroną danych osobowych można kontaktować się z Administratorem pod adresem e-mail: treblinskamarta@zdrowiehormonalne.pl lub korespondencyjnie na adres podmiotu." })
+      /* @__PURE__ */ jsx(Section, { title: "2. Cele, podstawy prawne i okresy przechowywania", children: /* @__PURE__ */ jsxs("div", { className: "space-y-3", children: [
+        /* @__PURE__ */ jsx(
+          Purpose,
+          {
+            title: "Udzielanie świadczeń zdrowotnych i prowadzenie dokumentacji medycznej",
+            basis: /* @__PURE__ */ jsx(Fragment, { children: "art. 9 ust. 2 lit. h RODO oraz art. 6 ust. 1 lit. c RODO w związku z ustawą o prawach pacjenta i Rzeczniku Praw Pacjenta i ustawą o zawodach lekarza i lekarza dentysty." }),
+            period: "przez okresy określone w art. 29 ustawy o prawach pacjenta i Rzeczniku Praw Pacjenta (co do zasady 20 lat od końca roku kalendarzowego, w którym dokonano ostatniego wpisu)."
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          Purpose,
+          {
+            title: "Rezerwacja wizyty, zawarcie i wykonanie umowy",
+            basis: "art. 6 ust. 1 lit. b RODO.",
+            period: "do czasu wykonania umowy, a następnie do upływu terminu przedawnienia roszczeń."
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          Purpose,
+          {
+            title: "Rozliczenia, księgowość i podatki",
+            basis: "art. 6 ust. 1 lit. c RODO w związku z przepisami o rachunkowości i przepisami podatkowymi.",
+            period: "przez okres wymagany tymi przepisami."
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          Purpose,
+          {
+            title: "Odpowiedź na wiadomości przesłane e-mailem lub telefonicznie",
+            basis: /* @__PURE__ */ jsx(Fragment, { children: "art. 6 ust. 1 lit. f RODO — prawnie uzasadniony interes Administratora polegający na udzieleniu odpowiedzi; w zakresie informacji o zdrowiu — art. 9 ust. 2 lit. h RODO." }),
+            period: "do czasu załatwienia sprawy, a następnie do upływu terminu przedawnienia roszczeń."
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          Purpose,
+          {
+            title: "Ustalenie, dochodzenie i obrona roszczeń",
+            basis: /* @__PURE__ */ jsx(Fragment, { children: "art. 6 ust. 1 lit. f RODO — prawnie uzasadniony interes Administratora polegający na ochronie jego praw; w zakresie danych o zdrowiu — art. 9 ust. 2 lit. f RODO." }),
+            period: "do upływu terminu przedawnienia roszczeń."
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          Purpose,
+          {
+            title: "Zapewnienie działania i bezpieczeństwa strony internetowej",
+            basis: /* @__PURE__ */ jsx(Fragment, { children: "art. 6 ust. 1 lit. f RODO — prawnie uzasadniony interes Administratora polegający na udostępnieniu strony i ochronie jej przed nadużyciami." }),
+            period: "przez okres przechowywania logów przez dostawcę hostingu."
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          Purpose,
+          {
+            title: "Statystyka odwiedzin strony (pliki cookies analityczne)",
+            basis: "zgoda — art. 6 ust. 1 lit. a RODO.",
+            period: "do wycofania zgody lub do upływu okresu przechowywania ustawionego w narzędziu analitycznym."
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          Purpose,
+          {
+            title: "Marketing i pomiar skuteczności reklam (pliki cookies marketingowe)",
+            basis: "zgoda — art. 6 ust. 1 lit. a RODO.",
+            period: "do wycofania zgody lub do upływu okresu przechowywania stosowanego przez dostawcę narzędzia."
+          }
+        )
+      ] }) }),
+      /* @__PURE__ */ jsxs(Section, { title: "3. Odbiorcy danych", children: [
+        /* @__PURE__ */ jsx("p", { children: "Dane mogą być przekazywane następującym kategoriom odbiorców:" }),
+        /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-5 space-y-1.5", children: [
+          /* @__PURE__ */ jsx("li", { children: "dostawcom systemów informatycznych do rejestracji wizyt i prowadzenia dokumentacji medycznej;" }),
+          /* @__PURE__ */ jsx("li", { children: "operatorom płatności;" }),
+          /* @__PURE__ */ jsx("li", { children: "dostawcom usług poczty elektronicznej, hostingu i usług IT;" }),
+          /* @__PURE__ */ jsx("li", { children: "podmiotom świadczącym usługi księgowe i prawne;" }),
+          /* @__PURE__ */ jsx("li", { children: "po wyrażeniu zgody — dostawcom narzędzi analitycznych i marketingowych: Google Ireland Limited (Google Analytics), HubSpot Ireland Limited i Meta Platforms Ireland Limited (Meta Pixel);" }),
+          /* @__PURE__ */ jsx("li", { children: "podmiotom uprawnionym na podstawie przepisów prawa." })
+        ] }),
+        /* @__PURE__ */ jsxs("p", { children: [
+          "W zakresie zbierania danych za pomocą Meta Pixel i ich przekazania do Meta Administrator i Meta Platforms Ireland Limited są współadministratorami (art. 26 RODO). Zgodnie z ich uzgodnieniem Administrator odpowiada za uzyskanie zgody i przekazanie informacji o przetwarzaniu, a Meta — za realizację praw osób, których dane dotyczą, w odniesieniu do danych przechowywanych przez Meta. Dalsze przetwarzanie danych przez Meta odbywa się na zasadach opisanych w",
+          " ",
+          /* @__PURE__ */ jsx(
+            "a",
+            {
+              href: "https://www.facebook.com/privacy/policy/",
+              className: "text-primary underline underline-offset-2",
+              target: "_blank",
+              rel: "noopener noreferrer",
+              children: "polityce prywatności Meta"
+            }
+          ),
+          "."
+        ] })
+      ] }),
+      /* @__PURE__ */ jsx(Section, { title: "4. Przekazywanie danych poza Europejski Obszar Gospodarczy", children: /* @__PURE__ */ jsx("p", { children: "Dostawcy narzędzi analitycznych i marketingowych oraz usług IT mogą przekazywać dane do Stanów Zjednoczonych. Podstawą jest decyzja Komisji Europejskiej z 10 lipca 2023 r. stwierdzająca odpowiedni stopień ochrony w ramach EU-US Data Privacy Framework." }) }),
+      /* @__PURE__ */ jsxs(Section, { title: "5. Prawa osoby, której dane dotyczą", children: [
+        /* @__PURE__ */ jsx("p", { children: "Przysługuje Ci prawo dostępu do danych, ich sprostowania, usunięcia lub ograniczenia przetwarzania, prawo do przenoszenia danych oraz prawo wniesienia sprzeciwu wobec przetwarzania opartego na art. 6 ust. 1 lit. f RODO — na zasadach określonych w RODO." }),
+        /* @__PURE__ */ jsxs("p", { children: [
+          "Zgodę możesz wycofać w dowolnym momencie, bez wpływu na zgodność z prawem przetwarzania dokonanego przed jej wycofaniem — w ",
+          /* @__PURE__ */ jsx(CookieSettingsLink, { children: "ustawieniach cookies" }),
+          "."
+        ] }),
+        /* @__PURE__ */ jsx("p", { children: "Przysługuje Ci prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych." })
+      ] }),
+      /* @__PURE__ */ jsx(Section, { title: "6. Obowiązek podania danych", children: /* @__PURE__ */ jsx("p", { children: "Podanie danych w dokumentacji medycznej jest wymogiem ustawowym. Podanie danych przy rezerwacji jest warunkiem zawarcia umowy — bez nich rezerwacja nie jest możliwa. W pozostałym zakresie podanie danych jest dobrowolne, a zgoda na pliki cookies analityczne i marketingowe nie jest warunkiem korzystania ze strony." }) }),
+      /* @__PURE__ */ jsx(Section, { title: "7. Zautomatyzowane podejmowanie decyzji", children: /* @__PURE__ */ jsx("p", { children: "Administrator nie podejmuje decyzji opartych wyłącznie na zautomatyzowanym przetwarzaniu, w tym profilowaniu, o których mowa w art. 22 RODO." }) }),
+      /* @__PURE__ */ jsxs(Section, { title: "8. Pliki cookies", children: [
+        /* @__PURE__ */ jsx("p", { children: "Strona zapisuje informacje w urządzeniu użytkownika i uzyskuje do nich dostęp (pliki cookies i podobne technologie) w następujących celach:" }),
+        /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-5 space-y-1.5", children: [
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("span", { className: "text-foreground font-medium", children: "niezbędne" }),
+            " — wyświetlenie strony, zapamiętanie wersji językowej i decyzji dotyczącej cookies; nie wymagają zgody;"
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("span", { className: "text-foreground font-medium", children: "analityczne" }),
+            " — statystyka odwiedzin (Google Analytics); wymagają zgody;"
+          ] }),
+          /* @__PURE__ */ jsxs("li", { children: [
+            /* @__PURE__ */ jsx("span", { className: "text-foreground font-medium", children: "marketingowe" }),
+            " — pomiar skuteczności reklam i ich dopasowanie (HubSpot, Meta Pixel); wymagają zgody."
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxs("p", { children: [
+          "Zgodę wyrażasz w banerze i możesz ją w każdej chwili zmienić w",
+          " ",
+          /* @__PURE__ */ jsx(CookieSettingsLink, { children: "ustawieniach cookies" }),
+          " (link także w stopce strony). Zapisywanie plików cookies możesz również ograniczyć w ustawieniach przeglądarki."
+        ] }),
+        /* @__PURE__ */ jsx("p", { children: "Formularz rezerwacji jest udostępniany przez dostawcę systemu rejestracji i może stosować własne pliki cookies na zasadach określonych przez tego dostawcę." })
+      ] }),
+      /* @__PURE__ */ jsx(Section, { title: "9. Zmiany polityki", children: /* @__PURE__ */ jsx("p", { children: "Aktualna wersja polityki prywatności jest dostępna na tej stronie." }) })
     ] }) }),
     /* @__PURE__ */ jsx(SiteFooter, {})
   ] });
 };
+const Paragraph = ({ n, title, children }) => /* @__PURE__ */ jsxs("section", { className: "space-y-3", children: [
+  /* @__PURE__ */ jsxs("h2", { className: "font-serif text-xl text-foreground", children: [
+    "§ ",
+    n,
+    ". ",
+    title
+  ] }),
+  /* @__PURE__ */ jsx("ol", { className: "list-decimal pl-5 space-y-2 marker:text-foreground/60", children })
+] });
 const Regulamin = () => {
+  const mail = /* @__PURE__ */ jsx("a", { href: `mailto:${EMAIL}`, className: "text-primary underline underline-offset-2", children: EMAIL });
+  const phone = /* @__PURE__ */ jsx("a", { href: `tel:${PHONE}`, className: "text-primary underline underline-offset-2", children: PHONE_DISPLAY });
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsx(SiteNav, {}),
-    /* @__PURE__ */ jsx("main", { className: "py-16 md:py-24 bg-background", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-3xl", children: [
-      /* @__PURE__ */ jsx("h1", { className: "font-serif text-3xl md:text-4xl text-foreground mb-8", children: "Regulamin" }),
-      /* @__PURE__ */ jsxs("div", { className: "space-y-8 text-muted-foreground leading-relaxed", children: [
-        /* @__PURE__ */ jsxs("div", { children: [
-          /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground mb-3", children: "1. Postanowienia ogólne" }),
-          /* @__PURE__ */ jsx("p", { children: 'Niniejszy regulamin określa zasady korzystania ze strony internetowej prowadzonej przez Indywidualną Praktykę Lekarską lekarz med. Marta Treblińska (dalej: „Usługodawca").' })
+    /* @__PURE__ */ jsx("main", { className: "py-16 md:py-24 bg-background", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-3xl space-y-10 text-muted-foreground leading-relaxed", children: [
+      /* @__PURE__ */ jsxs("header", { className: "space-y-3", children: [
+        /* @__PURE__ */ jsx("h1", { className: "font-serif text-3xl md:text-4xl text-foreground", children: "Regulamin" }),
+        /* @__PURE__ */ jsx("p", { className: "text-sm", children: "Obowiązuje od 16 października 2026 r." }),
+        /* @__PURE__ */ jsx("p", { children: "Regulamin określa zasady korzystania ze strony zdrowiehormonalne.pl oraz zasady rezerwacji i udzielania konsultacji lekarskich. Jest regulaminem, o którym mowa w art. 8 ustawy z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną." })
+      ] }),
+      /* @__PURE__ */ jsxs(Paragraph, { n: 1, title: "Usługodawca i definicje", children: [
+        /* @__PURE__ */ jsx("li", { children: "Usługodawcą jest lek. Marta Treblińska, prowadząca działalność leczniczą pod firmą Indywidualna Praktyka Lekarska Marta Treblińska, ul. Stanisława Dubois 1/21, 07-300 Ostrów Mazowiecka, NIP 7591759015, REGON 527117814, wpisana do Rejestru Podmiotów Wykonujących Działalność Leczniczą pod numerem 000000270413 (dalej: „Usługodawca”)." }),
+        /* @__PURE__ */ jsx("li", { children: "Usługodawca wykonuje zawód lekarza — zawód regulowany, do którego wykonywania uprawnia prawo wykonywania zawodu przyznane przez okręgową radę lekarską. Usługodawca jest członkiem samorządu lekarskiego i podlega ustawie o zawodach lekarza i lekarza dentysty oraz Kodeksowi Etyki Lekarskiej." }),
+        /* @__PURE__ */ jsxs("li", { children: [
+          "Kontakt z Usługodawcą: e-mail ",
+          mail,
+          ", telefon ",
+          phone,
+          ", adres korespondencyjny podany w ust. 1."
         ] }),
-        /* @__PURE__ */ jsxs("div", { children: [
-          /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground mb-3", children: "2. Zakres usług" }),
-          /* @__PURE__ */ jsx("p", { children: "Usługodawca świadczy konsultacje lekarskie w zakresie diagnostyki i leczenia zaburzeń hormonalnych u mężczyzn. Konsultacje odbywają się w formie zdalnej (teleporada) zgodnie z obowiązującymi przepisami dotyczącymi telemedycyny." })
-        ] }),
-        /* @__PURE__ */ jsxs("div", { children: [
-          /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground mb-3", children: "3. Warunki korzystania z usług" }),
-          /* @__PURE__ */ jsx("p", { children: "Umówienie konsultacji odbywa się poprzez kontakt telefoniczny lub mailowy. Termin konsultacji ustalany jest indywidualnie. Konsultacja lekarska nie zastępuje wizyty w nagłych przypadkach medycznych — w stanach zagrożenia życia należy kontaktować się z pogotowiem ratunkowym (tel. 112 lub 999)." })
-        ] }),
-        /* @__PURE__ */ jsxs("div", { children: [
-          /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground mb-3", children: "4. Odpowiedzialność" }),
-          /* @__PURE__ */ jsx("p", { children: "Treści zamieszczone na stronie mają charakter wyłącznie informacyjny i nie stanowią porady medycznej. Decyzja o wdrożeniu leczenia podejmowana jest przez lekarza po przeprowadzeniu konsultacji i analizie wyników badań." })
-        ] }),
-        /* @__PURE__ */ jsxs("div", { children: [
-          /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground mb-3", children: "5. Ochrona danych osobowych" }),
-          /* @__PURE__ */ jsxs("p", { children: [
-            "Zasady przetwarzania danych osobowych określa",
-            " ",
-            /* @__PURE__ */ jsx("a", { href: "/polityka-prywatnosci", className: "text-primary underline underline-offset-2", children: "Polityka prywatności" }),
-            "."
-          ] })
-        ] }),
-        /* @__PURE__ */ jsxs("div", { children: [
-          /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground mb-3", children: "6. Postanowienia końcowe" }),
-          /* @__PURE__ */ jsx("p", { children: "Usługodawca zastrzega sobie prawo do zmiany regulaminu. Aktualny regulamin jest dostępny na niniejszej stronie. W sprawach nieuregulowanych regulaminem zastosowanie mają przepisy prawa polskiego." })
-        ] }),
-        /* @__PURE__ */ jsxs("div", { children: [
-          /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground mb-3", children: "7. Kontakt" }),
-          /* @__PURE__ */ jsxs("p", { children: [
-            "W sprawach związanych z regulaminem można kontaktować się pod adresem e-mail:",
-            " ",
-            /* @__PURE__ */ jsx("a", { href: "mailto:treblinskamarta@zdrowiehormonalne.pl", className: "text-primary underline underline-offset-2", children: "treblinskamarta@zdrowiehormonalne.pl" }),
-            " ",
-            "lub telefonicznie: ",
-            /* @__PURE__ */ jsx("a", { href: "tel:+48572565887", className: "text-primary underline underline-offset-2", children: "+48 572 565 887" }),
-            "."
-          ] })
+        /* @__PURE__ */ jsxs("li", { children: [
+          "Użyte w regulaminie pojęcia oznaczają: ",
+          /* @__PURE__ */ jsx("span", { className: "text-foreground", children: "Strona" }),
+          " — serwis internetowy zdrowiehormonalne.pl; ",
+          /* @__PURE__ */ jsx("span", { className: "text-foreground", children: "Użytkownik" }),
+          " — każda osoba korzystająca ze Strony;",
+          " ",
+          /* @__PURE__ */ jsx("span", { className: "text-foreground", children: "Pacjent" }),
+          " — osoba korzystająca z Konsultacji;",
+          " ",
+          /* @__PURE__ */ jsx("span", { className: "text-foreground", children: "Konsultacja" }),
+          " — świadczenie zdrowotne udzielane przez lekarza na odległość, za pośrednictwem systemów teleinformatycznych lub systemów łączności (teleporada);",
+          " ",
+          /* @__PURE__ */ jsx("span", { className: "text-foreground", children: "Medfile" }),
+          " — system rezerwacji wizyt prowadzony przez Medfile Sp. z o.o."
         ] })
+      ] }),
+      /* @__PURE__ */ jsxs(Paragraph, { n: 2, title: "Usługi świadczone drogą elektroniczną", children: [
+        /* @__PURE__ */ jsx("li", { children: "Za pośrednictwem Strony Usługodawca bezpłatnie udostępnia: (a) treści informacyjne i artykuły, (b) kwestionariusze objawów (ADAM, IIEF-5, AMS), (c) dostęp do formularza rezerwacji Konsultacji w systemie Medfile." }),
+        /* @__PURE__ */ jsx("li", { children: "Korzystanie z treści i kwestionariuszy jest bezpłatne i nie wymaga rejestracji. Rozpoczyna się z chwilą wejścia na Stronę i kończy z chwilą jej opuszczenia." }),
+        /* @__PURE__ */ jsx("li", { children: "Kwestionariusze są narzędziem orientacyjnym. Ich wynik nie stanowi diagnozy ani porady lekarskiej i nie zastępuje Konsultacji. Odpowiedzi są przetwarzane wyłącznie w przeglądarce Użytkownika i nie są zapisywane." }),
+        /* @__PURE__ */ jsx("li", { children: "Rezerwacja Konsultacji odbywa się przez formularz systemu Medfile, z którego Usługodawca korzysta do zapisów pacjentów." }),
+        /* @__PURE__ */ jsx("li", { children: "Do korzystania ze Strony potrzebne jest urządzenie z dostępem do internetu i aktualną wersją przeglądarki (np. Chrome, Safari, Firefox, Edge) z włączoną obsługą JavaScript. Do Konsultacji potrzebne jest dodatkowo urządzenie z kamerą i mikrofonem umożliwiające połączenie wideo oraz aktywny adres e-mail." }),
+        /* @__PURE__ */ jsx("li", { children: "Korzystanie z internetu wiąże się z typowymi zagrożeniami, takimi jak złośliwe oprogramowanie czy próby wyłudzenia danych." }),
+        /* @__PURE__ */ jsx("li", { children: "Użytkownik nie może dostarczać za pośrednictwem Strony treści o charakterze bezprawnym." }),
+        /* @__PURE__ */ jsx("li", { children: "Treści na Stronie mają charakter wyłącznie informacyjny i edukacyjny, nie stanowią porady medycznej ani reklamy świadczeń zdrowotnych. Decyzję o diagnostyce i leczeniu lekarz podejmuje indywidualnie, po Konsultacji." })
+      ] }),
+      /* @__PURE__ */ jsxs(Paragraph, { n: 3, title: "Zakres i forma Konsultacji", children: [
+        /* @__PURE__ */ jsx("li", { children: "Usługodawca udziela Konsultacji w zakresie diagnostyki i leczenia zaburzeń hormonalnych u mężczyzn, w tym niedoboru testosteronu, w formie zdalnej — za pośrednictwem połączenia wideo." }),
+        /* @__PURE__ */ jsx("li", { children: "Konsultacje są świadczeniami odpłatnymi, niefinansowanymi ze środków publicznych (nie są udzielane w ramach umowy z Narodowym Funduszem Zdrowia)." }),
+        /* @__PURE__ */ jsx("li", { children: "Z Konsultacji mogą korzystać osoby pełnoletnie." }),
+        /* @__PURE__ */ jsx("li", { children: "Na początku Konsultacji lekarz potwierdza tożsamość Pacjenta. Pacjent podaje imię, nazwisko i numer PESEL, a w razie jego braku — dane dokumentu tożsamości. Bez potwierdzenia tożsamości nie jest możliwe udzielenie świadczenia ani wystawienie recepty." }),
+        /* @__PURE__ */ jsx("li", { children: "Lekarz może uznać, że stan zdrowia Pacjenta wymaga badania fizykalnego, pilnej diagnostyki lub opieki innego specjalisty — wówczas informuje o tym Pacjenta i wskazuje dalsze postępowanie. Wystawienie recepty, skierowania lub zaświadczenia następuje wyłącznie wtedy, gdy lekarz uzna to za uzasadnione medycznie, zgodnie z aktualną wiedzą medyczną." }),
+        /* @__PURE__ */ jsx("li", { children: "Pacjent przekazuje lekarzowi prawdziwe i pełne informacje o stanie zdrowia, przyjmowanych lekach i wynikach badań. Zalecane badania laboratoryjne Pacjent wykonuje we własnym zakresie, przed Konsultacją lub w terminie wskazanym przez lekarza." }),
+        /* @__PURE__ */ jsx("li", { children: "W przypadku terapii długoterminowej warunkiem jej bezpiecznego prowadzenia są regularne wizyty kontrolne i badania w terminach wyznaczonych przez lekarza." }),
+        /* @__PURE__ */ jsx("li", { className: "text-foreground", children: "Konsultacje nie służą do pomocy w stanach nagłych. W razie zagrożenia życia lub zdrowia należy zadzwonić pod numer alarmowy 112 albo zgłosić się na szpitalny oddział ratunkowy." })
+      ] }),
+      /* @__PURE__ */ jsxs(Paragraph, { n: 4, title: "Rezerwacja", children: [
+        /* @__PURE__ */ jsx("li", { children: "Konsultację można zarezerwować w szczególności przez formularz rezerwacji w systemie Medfile dostępny na Stronie." }),
+        /* @__PURE__ */ jsx("li", { children: "Umowa o udzielenie Konsultacji zostaje zawarta z chwilą potwierdzenia rezerwacji przez Usługodawcę lub system Medfile, a gdy wymagana jest przedpłata — z chwilą jej zaksięgowania." })
+      ] }),
+      /* @__PURE__ */ jsxs(Paragraph, { n: 5, title: "Ceny i płatności", children: [
+        /* @__PURE__ */ jsx("li", { children: "Aktualne ceny Konsultacji są wskazane w formularzu rezerwacji, przed złożeniem rezerwacji." }),
+        /* @__PURE__ */ jsx("li", { children: "Ceny są cenami końcowymi. Świadczenia zdrowotne są zwolnione z podatku VAT na podstawie art. 43 ust. 1 pkt 19 ustawy o podatku od towarów i usług." }),
+        /* @__PURE__ */ jsx("li", { children: "Rezerwacja online może wymagać przedpłaty, realizowanej przez operatora płatności udostępnionego w systemie Medfile." })
+      ] }),
+      /* @__PURE__ */ jsxs(Paragraph, { n: 6, title: "Dokumentacja medyczna i dane osobowe", children: [
+        /* @__PURE__ */ jsx("li", { children: "Usługodawca prowadzi dokumentację medyczną Pacjenta i udostępnia ją na zasadach ustawy o prawach pacjenta i Rzeczniku Praw Pacjenta. Pacjent ma prawo do informacji o swoim stanie zdrowia oraz do zachowania w tajemnicy informacji z nim związanych." }),
+        /* @__PURE__ */ jsxs("li", { children: [
+          "Zasady przetwarzania danych osobowych i stosowania plików cookies określa",
+          " ",
+          /* @__PURE__ */ jsx("a", { href: "/polityka-prywatnosci", className: "text-primary underline underline-offset-2", children: "Polityka prywatności" }),
+          "."
+        ] })
+      ] }),
+      /* @__PURE__ */ jsx(Paragraph, { n: 7, title: "Reklamacje", children: /* @__PURE__ */ jsxs("li", { children: [
+        "Reklamacje dotyczące Strony lub Konsultacji można składać e-mailem na adres ",
+        mail,
+        " albo listownie na adres Usługodawcy. Reklamacja powinna zawierać dane kontaktowe i opis problemu."
+      ] }) }),
+      /* @__PURE__ */ jsxs(Paragraph, { n: 8, title: "Postanowienia końcowe", children: [
+        /* @__PURE__ */ jsx("li", { children: "Usługodawca może zmienić regulamin. Zmiany obowiązują od dnia wskazanego w nowej wersji. Do Konsultacji zarezerwowanych przed zmianą stosuje się regulamin w dotychczasowym brzmieniu." }),
+        /* @__PURE__ */ jsx("li", { children: "Regulamin nie wyłącza ani nie ogranicza praw, które przysługują Pacjentowi jako konsumentowi lub pacjentowi na podstawie bezwzględnie obowiązujących przepisów prawa." }),
+        /* @__PURE__ */ jsx("li", { children: "W sprawach nieuregulowanych zastosowanie mają przepisy prawa polskiego, w szczególności Kodeksu cywilnego, ustawy o działalności leczniczej, ustawy o prawach pacjenta i Rzeczniku Praw Pacjenta, ustawy o zawodach lekarza i lekarza dentysty oraz ustawy o świadczeniu usług drogą elektroniczną." }),
+        /* @__PURE__ */ jsx("li", { children: "Regulamin jest dostępny bezpłatnie na Stronie w formie umożliwiającej jego pobranie, utrwalenie i wydrukowanie." })
       ] })
     ] }) }),
     /* @__PURE__ */ jsx(SiteFooter, {})
