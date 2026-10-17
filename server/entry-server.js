@@ -8,7 +8,7 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useLocation, useNavigate, Link, useParams, Navigate, Routes, Route } from "react-router-dom";
-import { Calendar, X, Menu, ArrowRight, Phone, Mail, Check, Copy, BatteryLow, Brain, Moon, HeartPulse, TrendingUp, FlaskConical, Stethoscope, BarChart3, FileSearch, ClipboardCheck, ShieldCheck, Crosshair, ArrowLeft, GraduationCap, Award, BookOpen, ExternalLink, Star, Clock, ChevronDown, CalendarCheck, Video, AlertCircle, CheckCircle, ClipboardList } from "lucide-react";
+import { Calendar, X, Menu, ArrowRight, Phone, Mail, Check, Copy, BatteryLow, Brain, Moon, HeartPulse, TrendingUp, FlaskConical, Stethoscope, BarChart3, FileSearch, ClipboardCheck, ShieldCheck, RotateCcw, Crosshair, ArrowLeft, GraduationCap, Award, BookOpen, ExternalLink, Star, Clock, ChevronDown, CalendarCheck, Video, AlertCircle, CheckCircle, ClipboardList } from "lucide-react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
 import useEmblaCarousel from "embla-carousel-react";
@@ -90,7 +90,9 @@ const translations = {
       therapy: "Prowadzenie terapii",
       therapyDesc: "Prowadzimy leczenie zgodnie ze standardami medycyny opartej na dowodach",
       monitoring: "Monitorowanie leczenia",
-      monitoringDesc: "Regularne kontrole zapewniające skuteczność i bezpieczeństwo terapii"
+      monitoringDesc: "Regularne kontrole zapewniające skuteczność i bezpieczeństwo terapii",
+      recovery: "Odblok po testosteronie i sterydach",
+      recoveryDesc: "Przywracanie własnej produkcji testosteronu po zakończeniu terapii testosteronem lub po stosowaniu sterydów anabolicznych"
     },
     process: {
       title: "Jak wygląda proces diagnostyczny?",
@@ -133,7 +135,9 @@ const translations = {
       q4: "Czy konsultacja odbywa się stacjonarnie czy online?",
       a4: "Konsultacje odbywają się wyłącznie w formie zdalnej (teleporada) — wygodnie, z dowolnego miejsca. Termin wizyty ustalany jest indywidualnie.",
       q5: "Czy terapia hormonalna jest bezpieczna?",
-      a5: "Każda terapia niesie ze sobą potencjalne korzyści i ryzyka. Bezpieczeństwo leczenia zależy od prawidłowej kwalifikacji, odpowiedniego dawkowania oraz regularnego monitorowania pacjenta przez lekarza."
+      a5: "Każda terapia niesie ze sobą potencjalne korzyści i ryzyka. Bezpieczeństwo leczenia zależy od prawidłowej kwalifikacji, odpowiedniego dawkowania oraz regularnego monitorowania pacjenta przez lekarza.",
+      q6: "Czy pomagacie w odbloku po terapii testosteronem lub cyklu sterydowym?",
+      a6: "Tak. Testosteron podawany z zewnątrz — zarówno w ramach terapii prowadzonej przez lekarza, jak i przyjmowany samodzielnie — oraz sterydy anaboliczne hamują własną produkcję testosteronu. Po ich odstawieniu często pojawia się spadek libido, zmęczenie, obniżony nastrój czy problemy z erekcją. Podczas konsultacji oceniamy wyniki badań i stan zdrowia oraz ustalamy dalsze postępowanie, którego celem jest przywrócenie naturalnej produkcji hormonów. Rozmowa jest objęta tajemnicą lekarską."
     },
     questionnaires: {
       "pageTitle": "Kwestionariusze przesiewowe",
@@ -535,7 +539,9 @@ const translations = {
       therapy: "Therapy management",
       therapyDesc: "We manage treatment in accordance with evidence-based medicine standards",
       monitoring: "Treatment monitoring",
-      monitoringDesc: "Regular check-ups ensuring the effectiveness and safety of therapy"
+      monitoringDesc: "Regular check-ups ensuring the effectiveness and safety of therapy",
+      recovery: "Recovery after testosterone and steroids (PCT)",
+      recoveryDesc: "Restoring your own testosterone production after ending testosterone therapy or anabolic steroid use"
     },
     process: {
       title: "How does the diagnostic process work?",
@@ -578,7 +584,9 @@ const translations = {
       q4: "Is the consultation in-person or online?",
       a4: "Consultations are conducted exclusively remotely (teleconsultation) — conveniently, from anywhere. The appointment time is arranged individually.",
       q5: "Is hormonal therapy safe?",
-      a5: "Every therapy carries potential benefits and risks. Treatment safety depends on proper qualification, appropriate dosing, and regular patient monitoring by a physician."
+      a5: "Every therapy carries potential benefits and risks. Treatment safety depends on proper qualification, appropriate dosing, and regular patient monitoring by a physician.",
+      q6: "Do you help with recovery (PCT) after testosterone therapy or a steroid cycle?",
+      a6: "Yes. Testosterone given from outside — whether as therapy prescribed by a doctor or self-administered — and anabolic steroids suppress the body’s own testosterone production. After stopping them, low libido, fatigue, low mood or erectile problems are common. During the consultation we review test results and overall health and set a plan aimed at restoring natural hormone production. The conversation is covered by medical confidentiality."
     },
     questionnaires: {
       "pageTitle": "Screening questionnaires",
@@ -980,7 +988,9 @@ const translations = {
       therapy: "Therapieführung",
       therapyDesc: "Wir führen die Behandlung nach den aktuellen Leitlinien evidenzbasierter Medizin durch",
       monitoring: "Therapieüberwachung",
-      monitoringDesc: "Regelmäßige Kontrolluntersuchungen zur Sicherstellung von Wirksamkeit und Verträglichkeit"
+      monitoringDesc: "Regelmäßige Kontrolluntersuchungen zur Sicherstellung von Wirksamkeit und Verträglichkeit",
+      recovery: "Wiederherstellung nach Testosteron und Steroiden (PCT)",
+      recoveryDesc: "Wiederherstellung der körpereigenen Testosteronproduktion nach Ende einer Testosterontherapie oder nach Einnahme anaboler Steroide"
     },
     process: {
       title: "Wie läuft der diagnostische Prozess ab?",
@@ -1023,7 +1033,9 @@ const translations = {
       q4: "Findet die Beratung persönlich oder online statt?",
       a4: "Beratungen finden ausschließlich in Fernform (Telekonsultation) statt — bequem, von überall aus. Der Termin wird individuell vereinbart.",
       q5: "Ist die Hormontherapie sicher?",
-      a5: "Jede Therapie birgt potenzielle Vorteile und Risiken. Die Behandlungssicherheit hängt von der richtigen Qualifikation, der angemessenen Dosierung und der regelmäßigen Überwachung des Patienten durch den Arzt ab."
+      a5: "Jede Therapie birgt potenzielle Vorteile und Risiken. Die Behandlungssicherheit hängt von der richtigen Qualifikation, der angemessenen Dosierung und der regelmäßigen Überwachung des Patienten durch den Arzt ab.",
+      q6: "Helfen Sie bei der Wiederherstellung (PCT) nach einer Testosterontherapie oder einem Steroidzyklus?",
+      a6: "Ja. Von außen zugeführtes Testosteron — ob im Rahmen einer ärztlich verordneten Therapie oder eigenmächtig eingenommen — sowie anabole Steroide unterdrücken die körpereigene Testosteronproduktion. Nach dem Absetzen treten häufig Libidoverlust, Müdigkeit, gedrückte Stimmung oder Erektionsprobleme auf. In der Beratung beurteilen wir Befunde und Gesundheitszustand und legen das weitere Vorgehen fest, mit dem Ziel, die natürliche Hormonproduktion wiederherzustellen. Das Gespräch unterliegt der ärztlichen Schweigepflicht."
     },
     questionnaires: {
       "pageTitle": "Screening-Fragebögen",
@@ -1821,7 +1833,10 @@ const ServicesSection = () => {
     { icon: FileSearch, title: t.services.interpretation, desc: t.services.interpretationDesc },
     { icon: ClipboardCheck, title: t.services.qualification, desc: t.services.qualificationDesc },
     { icon: HeartPulse, title: t.services.therapy, desc: t.services.therapyDesc },
-    { icon: ShieldCheck, title: t.services.monitoring, desc: t.services.monitoringDesc }
+    { icon: ShieldCheck, title: t.services.monitoring, desc: t.services.monitoringDesc },
+    // Patients come looking for this by name — "odblok" — so it is listed as a
+    // service in its own right, not left implied by "therapy".
+    { icon: RotateCcw, title: t.services.recovery, desc: t.services.recoveryDesc }
   ];
   return /* @__PURE__ */ jsx("section", { className: "py-20 md:py-28 bg-section-alt", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-5xl", children: [
     /* @__PURE__ */ jsxs(ScrollReveal, { children: [
@@ -1835,11 +1850,19 @@ const ServicesSection = () => {
         ] })
       ] })
     ] }),
-    /* @__PURE__ */ jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8", children: services.map((s, i) => /* @__PURE__ */ jsx(ScrollReveal, { delay: i * 80, children: /* @__PURE__ */ jsxs("div", { className: "text-center", children: [
-      /* @__PURE__ */ jsx("div", { className: "w-14 h-14 mx-auto rounded-full bg-teal-light flex items-center justify-center text-teal-mid mb-5", children: /* @__PURE__ */ jsx(s.icon, { className: "w-6 h-6" }) }),
-      /* @__PURE__ */ jsx("h3", { className: "font-sans font-semibold text-foreground mb-2", children: s.title }),
-      /* @__PURE__ */ jsx("p", { className: "text-muted-foreground text-sm leading-relaxed", children: s.desc })
-    ] }) }, i)) })
+    /* @__PURE__ */ jsx("div", { className: "flex flex-wrap justify-center gap-8", children: services.map((s, i) => /* @__PURE__ */ jsx(
+      ScrollReveal,
+      {
+        delay: i * 80,
+        className: "w-full md:w-[calc((100%-2rem)/2)] lg:w-[calc((100%-4rem)/3)]",
+        children: /* @__PURE__ */ jsxs("div", { className: "text-center", children: [
+          /* @__PURE__ */ jsx("div", { className: "w-14 h-14 mx-auto rounded-full bg-teal-light flex items-center justify-center text-teal-mid mb-5", children: /* @__PURE__ */ jsx(s.icon, { className: "w-6 h-6" }) }),
+          /* @__PURE__ */ jsx("h3", { className: "font-sans font-semibold text-foreground mb-2", children: s.title }),
+          /* @__PURE__ */ jsx("p", { className: "text-muted-foreground text-sm leading-relaxed", children: s.desc })
+        ] })
+      },
+      i
+    )) })
   ] }) });
 };
 const FAQ_TESTS_ID = "faq-badania";
@@ -2278,6 +2301,65 @@ const ReviewsSection = () => {
   ] }) });
 };
 const blogPosts = [
+  {
+    slug: "odblok-po-testosteronie-i-sterydach",
+    title: "Odblok po testosteronie i sterydach — jak odzyskać własną produkcję testosteronu",
+    metaDescription: "Odblok (PCT) po zakończeniu terapii testosteronem, cyklu sterydowym lub samodzielnym przyjmowaniu testosteronu: dlaczego produkcja hormonów spada, jakie badania wykonać i jak wygląda odblok pod kontrolą lekarza.",
+    date: "2026-10-17",
+    readingTime: 6,
+    excerpt: "Po odstawieniu testosteronu — także przyjmowanego w ramach terapii — lub sterydów anabolicznych własna produkcja hormonów często nie wraca od razu. Wyjaśniamy, co dzieje się w organizmie, jakie objawy są typowe i jak wygląda odblok prowadzony przez lekarza.",
+    content: [
+      {
+        heading: "Czym jest odblok?",
+        paragraphs: [
+          "„Odblok” (ang. PCT — post-cycle therapy) to potoczna nazwa okresu po zakończeniu podawania testosteronu lub przyjmowania sterydów anaboliczno-androgennych, w którym organizm ma odzyskać zdolność do samodzielnej produkcji testosteronu. W języku medycznym mówimy o hipogonadyzmie wtórnym wywołanym podawaniem androgenów z zewnątrz.",
+          "Odblok dotyczy kilku grup mężczyzn: tych, którzy kończą terapię zastępczą testosteronem prowadzoną przez lekarza — na przykład dlatego, że planują ojcostwo lub zdecydowali się przerwać leczenie; tych, którzy przyjmowali testosteron samodzielnie, bez badań i nadzoru; oraz osób po cyklach sterydów anabolicznych."
+        ]
+      },
+      {
+        heading: "Dlaczego po odstawieniu produkcja testosteronu spada?",
+        paragraphs: [
+          "Produkcją testosteronu steruje oś podwzgórze–przysadka–jądra. Gdy we krwi krąży dużo testosteronu podawanego z zewnątrz, przysadka ogranicza wydzielanie hormonów LH i FSH, które pobudzają jądra do pracy. Jądra „przechodzą w stan spoczynku” — spada zarówno produkcja testosteronu, jak i plemników.",
+          "Po odstawieniu preparatów poziom testosteronu z zewnątrz szybko maleje, a oś hormonalna potrzebuje czasu, żeby znów zacząć działać. Ten czas jest bardzo różny: u części mężczyzn to kilka miesięcy, u innych ponad rok. Zależy m.in. od długości i intensywności stosowania, rodzaju preparatów, wieku i stanu zdrowia sprzed rozpoczęcia. U części osób produkcja nie wraca w pełni."
+        ]
+      },
+      {
+        heading: "Typowe objawy po odstawieniu",
+        paragraphs: [
+          "Najczęściej pojawiają się: spadek libido, problemy z erekcją, przewlekłe zmęczenie, obniżony nastrój, drażliwość lub objawy depresyjne, zaburzenia snu, utrata siły i masy mięśniowej oraz przyrost tkanki tłuszczowej. Część mężczyzn zauważa też powiększenie gruczołów piersiowych (ginekomastię) lub problemy z płodnością.",
+          "Objawy te bywają na tyle uciążliwe, że skłaniają do powrotu do preparatów — co zamyka błędne koło i wydłuża zahamowanie osi hormonalnej."
+        ]
+      },
+      {
+        heading: "Dlaczego nie warto robić odbloku „na własną rękę”?",
+        paragraphs: [
+          "W internecie i na siłowniach krąży wiele gotowych schematów odbloku. Problem w tym, że opierają się na lekach na receptę, które mają przeciwwskazania i działania niepożądane, a dawkowanie „z forum” nie uwzględnia wyników badań ani stanu zdrowia konkretnej osoby.",
+          "Stosowanie sterydów anabolicznych może też pozostawić ślad, którego nie widać bez badań: podwyższony hematokryt, niekorzystny profil lipidowy, obciążenie wątroby czy podwyższone ciśnienie tętnicze. Odblok to dobry moment, żeby to sprawdzić — zanim pojawią się powikłania."
+        ]
+      },
+      {
+        heading: "Jakie badania wykonać?",
+        paragraphs: [
+          "Podstawą jest panel hormonalny: testosteron całkowity i wolny, SHBG, LH, FSH, estradiol i prolaktyna. Ze względu na możliwe skutki stosowania sterydów warto wykonać również morfologię z hematokrytem, profil lipidowy oraz próby wątrobowe. Jeśli ważna jest płodność, lekarz może zlecić badanie nasienia.",
+          "Szczegółowy zakres badań i moment ich wykonania ustala lekarz — zależy on m.in. od tego, kiedy i jakie preparaty zostały odstawione."
+        ]
+      },
+      {
+        heading: "Jak wygląda odblok prowadzony przez lekarza?",
+        paragraphs: [
+          "Podczas konsultacji lekarz zbiera wywiad (jakie preparaty, jak długo, kiedy odstawione), analizuje wyniki badań i ocenia stan zdrowia. Na tej podstawie ustala plan postępowania, którego celem jest przywrócenie naturalnej produkcji testosteronu. Może on obejmować obserwację z kontrolą badań, leczenie farmakologiczne dobrane indywidualnie, a gdy oś hormonalna nie wraca mimo leczenia — omówienie innych możliwości, w tym terapii zastępczej testosteronem.",
+          "Kluczowe są kontrole: powtarzane badania pozwalają ocenić, czy produkcja hormonów wraca, i w razie potrzeby zmodyfikować leczenie."
+        ]
+      },
+      {
+        heading: "Rozmowa bez oceniania",
+        paragraphs: [
+          "Wielu mężczyzn odkłada wizytę, bo obawia się oceny za wcześniejsze samodzielne stosowanie testosteronu lub sterydów. Konsultacja dotyczy zdrowia, a jej przebieg jest objęty tajemnicą lekarską. Rzetelne informacje o przyjmowanych preparatach są potrzebne po to, by dobrać właściwe postępowanie.",
+          "Konsultacja odbywa się zdalnie, więc można z niej skorzystać z dowolnego miejsca w Polsce."
+        ]
+      }
+    ]
+  },
   {
     slug: "trt-a-uklad-krazenia",
     title: "Testosteron a serce — czy TRT jest bezpieczna dla układu krążenia?",
@@ -3152,7 +3234,7 @@ const AccordionContent = React.forwardRef(({ className, children, ...props }, re
   }
 ));
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;
-const FAQ_IDS = ["faq-leczenie", FAQ_TESTS_ID, "faq-kontrola", "faq-forma", "faq-bezpieczenstwo"];
+const FAQ_IDS = ["faq-leczenie", FAQ_TESTS_ID, "faq-kontrola", "faq-forma", "faq-bezpieczenstwo", "faq-odblok"];
 const FaqSection = () => {
   const { t } = useLanguage();
   const [open, setOpen] = useState("");
@@ -3161,7 +3243,8 @@ const FaqSection = () => {
     { q: t.faq.q2, a: t.faq.a2 },
     { q: t.faq.q3, a: t.faq.a3 },
     { q: t.faq.q4, a: t.faq.a4 },
-    { q: t.faq.q5, a: t.faq.a5 }
+    { q: t.faq.q5, a: t.faq.a5 },
+    { q: t.faq.q6, a: t.faq.a6 }
   ].map((faq, i) => ({ ...faq, id: FAQ_IDS[i] }));
   useEffect(() => {
     const reveal = (id) => {
