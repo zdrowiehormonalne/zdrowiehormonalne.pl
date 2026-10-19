@@ -51,7 +51,7 @@ const translations = {
     hero: {
       badge: "Konsultacje lekarskie · Diagnostyka · Terapia",
       title: "Chroniczne zmęczenie, problemy ze snem, obniżone libido?",
-      description: "To może być niedobór testosteronu. Zdalna konsultacja lekarska — wygodnie, z dowolnego miejsca.",
+      description: "To może być niedobór testosteronu. Zdalna konsultacja lekarska: wygodnie, z dowolnego miejsca.",
       cta: "Umów konsultację",
       ctaPhonePrefix: "lub zadzwoń:",
       doctorName: "lekarz Marta Treblińska",
@@ -61,7 +61,7 @@ const translations = {
     },
     symptoms: {
       title: "Kiedy warto rozważyć konsultację lekarską?",
-      subtitle: "Rozpoznajesz któreś z tych objawów? Mogą mieć wiele przyczyn — niedobór testosteronu jest jedną z nich. Konsultacja lekarska pomoże wyjaśnić, co się dzieje.",
+      subtitle: "Rozpoznajesz któreś z tych objawów? Mogą mieć wiele przyczyn: niedobór testosteronu jest jedną z nich. Konsultacja lekarska pomoże wyjaśnić, co się dzieje.",
       fatigue: "Chroniczne zmęczenie i brak energii",
       fatigueDesc: "Budzisz się zmęczony, choć przespałeś całą noc.",
       brain: "Mgła w głowie",
@@ -107,7 +107,7 @@ const translations = {
       step4: "Dalsze postępowanie",
       step4Desc: "Ustalenie planu leczenia, jeśli istnieją wskazania medyczne",
       disclaimer: "Leczenie wdrażane jest wyłącznie w przypadku istnienia wskazań medycznych.",
-      patientNote: "Regularne wizyty kontrolne i terminowe wykonywanie zleconych badań są nieodłącznym elementem bezpiecznej terapii. Pacjent aktywnie uczestniczy w tym procesie — lekarz zapewnia opiekę, a terminowość kontroli leży po stronie pacjenta."
+      patientNote: "Regularne wizyty kontrolne i terminowe wykonywanie zleconych badań są nieodłącznym elementem bezpiecznej terapii. Pacjent aktywnie uczestniczy w tym procesie, lekarz zapewnia opiekę, a terminowość kontroli leży po stronie pacjenta."
     },
     trtInfo: {
       title: "Leczenie niedoboru testosteronu",
@@ -119,10 +119,10 @@ const translations = {
       title: "Lekarz prowadzący",
       name: "lekarz Marta Treblińska",
       education: "Lekarz medycyny, Warszawski Uniwersytet Medyczny",
-      harvard: "Testosterone Therapy and Sexual Dysfunction — Harvard Medical School",
+      harvard: "Testosterone Therapy and Sexual Dysfunction, Harvard Medical School",
       experience: "Wieloletnie doświadczenie w diagnostyce i leczeniu zaburzeń hormonalnych u mężczyzn",
-      ebm: "Precyzyjne szukanie przyczyny, nie leczenie objawów — oparte na medycynie opartej na dowodach (EBM)",
-      alfa: "Certyfikat TRT Master Practitioner — specjalistyczne szkolenie z hormonalnej terapii zastępczej u mężczyzn"
+      ebm: "Precyzyjne szukanie przyczyny, nie leczenie objawów, oparte na medycynie opartej na dowodach (EBM)",
+      alfa: "Certyfikat TRT Master Practitioner: specjalistyczne szkolenie z hormonalnej terapii zastępczej u mężczyzn"
     },
     faq: {
       title: "Najczęściej zadawane pytania",
@@ -133,11 +133,11 @@ const translations = {
       q3: "Jak wygląda kontrola w trakcie leczenia?",
       a3: "Pacjent objęty leczeniem jest regularnie monitorowany. Kontrole obejmują badania laboratoryjne (m.in. morfologia, hematokryt, profil lipidowy, PSA) oraz wizyty kontrolne, których częstotliwość ustala lekarz.",
       q4: "Czy konsultacja odbywa się stacjonarnie czy online?",
-      a4: "Konsultacje odbywają się wyłącznie w formie zdalnej (teleporada) — wygodnie, z dowolnego miejsca. Termin wizyty ustalany jest indywidualnie.",
+      a4: "Konsultacje odbywają się wyłącznie w formie zdalnej (teleporada): wygodnie, z dowolnego miejsca. Termin wizyty ustalany jest indywidualnie.",
       q5: "Czy terapia hormonalna jest bezpieczna?",
       a5: "Każda terapia niesie ze sobą potencjalne korzyści i ryzyka. Bezpieczeństwo leczenia zależy od prawidłowej kwalifikacji, odpowiedniego dawkowania oraz regularnego monitorowania pacjenta przez lekarza.",
       q6: "Czy pomagacie w odbloku po terapii testosteronem lub cyklu sterydowym?",
-      a6: "Tak. Testosteron podawany z zewnątrz — zarówno w ramach terapii prowadzonej przez lekarza, jak i przyjmowany samodzielnie — oraz sterydy anaboliczne hamują własną produkcję testosteronu. Po ich odstawieniu często pojawia się spadek libido, zmęczenie, obniżony nastrój czy problemy z erekcją. Podczas konsultacji oceniamy wyniki badań i stan zdrowia oraz ustalamy dalsze postępowanie, którego celem jest przywrócenie naturalnej produkcji hormonów. Rozmowa jest objęta tajemnicą lekarską."
+      a6: "Tak. Testosteron podawany z zewnątrz, zarówno w ramach terapii prowadzonej przez lekarza, jak i przyjmowany samodzielnie, oraz sterydy anaboliczne hamują własną produkcję testosteronu. Po ich odstawieniu często pojawia się spadek libido, zmęczenie, obniżony nastrój czy problemy z erekcją. Podczas konsultacji oceniamy wyniki badań i stan zdrowia oraz ustalamy dalsze postępowanie, którego celem jest przywrócenie naturalnej produkcji hormonów. Rozmowa jest objęta tajemnicą lekarską."
     },
     questionnaires: {
       "pageTitle": "Kwestionariusze przesiewowe",
@@ -150,13 +150,13 @@ const translations = {
       "sourceLink": "Zobacz publikację źródłową w PubMed",
       "fill": "Wypełnij kwestionariusz",
       "sourceLabel": "Źródło",
-      "pageNote": "Wyniki kwestionariuszy nie są diagnozą. Mają wartość dopiero zestawione z wywiadem lekarskim i wynikami badań — proszę nie interpretować ich samodzielnie."
+      "pageNote": "Wyniki kwestionariuszy nie są diagnozą. Mają wartość dopiero zestawione z wywiadem lekarskim i wynikami badań, proszę nie interpretować ich samodzielnie."
     },
     iief5: {
       "name": "Międzynarodowy Wskaźnik Funkcji Erekcyjnej (IIEF-5)",
       "tagline": "5 pytań · około 2 minut",
       "intro": "Skrócona wersja Międzynarodowego Wskaźnika Funkcji Erekcyjnej, używana też pod nazwą SHIM. Pytania dotyczą ostatnich 6 miesięcy.",
-      "disclaimer": "IIEF-5 jest narzędziem przesiewowym i nie zastępuje diagnozy lekarskiej. Zaburzenia erekcji mogą mieć wiele przyczyn — naczyniowych, metabolicznych, neurologicznych, psychicznych i hormonalnych.",
+      "disclaimer": "IIEF-5 jest narzędziem przesiewowym i nie zastępuje diagnozy lekarskiej. Zaburzenia erekcji mogą mieć wiele przyczyn: naczyniowych, metabolicznych, neurologicznych, psychicznych i hormonalnych.",
       "questions": [
         {
           "text": "Jak ocenia Pan swoją pewność, że może uzyskać i utrzymać erekcję?",
@@ -307,7 +307,7 @@ const translations = {
         },
         "mild": {
           "title": "Łagodne zaburzenia erekcji",
-          "text": "Wynik mieści się w zakresie łagodnych zaburzeń erekcji. Warto omówić to z lekarzem — przyczyna bywa odwracalna."
+          "text": "Wynik mieści się w zakresie łagodnych zaburzeń erekcji. Warto omówić to z lekarzem: przyczyna bywa odwracalna."
         },
         "mildModerate": {
           "title": "Łagodne do umiarkowanych zaburzenia erekcji",
@@ -315,11 +315,11 @@ const translations = {
         },
         "moderate": {
           "title": "Umiarkowane zaburzenia erekcji",
-          "text": "Wynik wskazuje na umiarkowane zaburzenia erekcji. Zalecana konsultacja lekarska — zaburzenia erekcji bywają wczesnym sygnałem chorób naczyniowych i metabolicznych."
+          "text": "Wynik wskazuje na umiarkowane zaburzenia erekcji. Zalecana konsultacja lekarska: zaburzenia erekcji bywają wczesnym sygnałem chorób naczyniowych i metabolicznych."
         },
         "severe": {
           "title": "Nasilone zaburzenia erekcji",
-          "text": "Wynik wskazuje na nasilone zaburzenia erekcji. Zalecana konsultacja lekarska i diagnostyka — im wcześniej ustalona przyczyna, tym więcej opcji postępowania."
+          "text": "Wynik wskazuje na nasilone zaburzenia erekcji. Zalecana konsultacja lekarska i diagnostyka: im wcześniej ustalona przyczyna, tym więcej opcji postępowania."
         }
       }
     },
@@ -327,7 +327,7 @@ const translations = {
       "name": "Skala objawów starzejącego się mężczyzny (AMS)",
       "tagline": "17 pytań · około 4 minut",
       "intro": "Skala objawów starzejącego się mężczyzny. Proszę ocenić, jak nasilony jest u Pana każdy z objawów. Wynik pokazuje ciężar objawów, a nie ich przyczynę.",
-      "disclaimer": "AMS mierzy nasilenie objawów, nie poziom hormonów — wysoki wynik nie oznacza niedoboru testosteronu, a niski go nie wyklucza. Skala dobrze pokazuje natomiast zmianę w czasie, dlatego bywa powtarzana w trakcie leczenia.",
+      "disclaimer": "AMS mierzy nasilenie objawów, nie poziom hormonów. Wysoki wynik nie oznacza niedoboru testosteronu, a niski go nie wyklucza. Skala dobrze pokazuje natomiast zmianę w czasie, dlatego bywa powtarzana w trakcie leczenia.",
       "options": [
         {
           "label": "Brak",
@@ -385,7 +385,7 @@ const translations = {
         },
         "moderate": {
           "title": "Umiarkowane nasilenie objawów",
-          "text": "Objawy są wyraźnie odczuwalne. Warto omówić je z lekarzem i ustalić, co za nimi stoi — przyczyn może być kilka naraz."
+          "text": "Objawy są wyraźnie odczuwalne. Warto omówić je z lekarzem i ustalić, co za nimi stoi: przyczyn może być kilka naraz."
         },
         "severe": {
           "title": "Znaczne nasilenie objawów",
@@ -398,8 +398,8 @@ const translations = {
       subtitle: "Konsultacja lekarska jest pierwszym krokiem do diagnostyki i ewentualnego leczenia zaburzeń hormonalnych.",
       email: "E-mail",
       consultForm: "Forma konsultacji",
-      consultFormValue: "Zdalnie — wygodnie, z dowolnego miejsca",
-      remoteNote: "Bez dojazdu i kolejek — indywidualny termin.",
+      consultFormValue: "Zdalnie: wygodnie, z dowolnego miejsca",
+      remoteNote: "Bez dojazdu i kolejek: indywidualny termin.",
       schedule: "Terminy",
       scheduleValue: "Indywidualnie dostosowane do pacjenta",
       firstConsultation: "Pierwsza konsultacja",
@@ -407,8 +407,8 @@ const translations = {
       testsLink: "Jakie badania warto wykonać przed konsultacją?",
       bookMedfile: "Umów online przez Medfile",
       bookPhone: "Zadzwoń:",
-      priceNote: "Pierwsza konsultacja (60 min) — 799 zł",
-      priceFollowUp: "Wizyta kontrolna (30 min) — 449 zł"
+      priceNote: "Pierwsza konsultacja (60 min): 799 zł",
+      priceFollowUp: "Wizyta kontrolna (30 min): 449 zł"
     },
     footer: {
       entityInfo: "Informacje o podmiocie",
@@ -424,7 +424,7 @@ const translations = {
       copyright: "Indywidualna Praktyka Lekarska Marta Treblińska. Wszelkie prawa zastrzeżone."
     },
     cookie: {
-      text: "Używamy plików cookies do analityki i marketingu. Możesz wybrać, na co się zgadzasz — serwis działa tak samo niezależnie od decyzji. Szczegóły w",
+      text: "Używamy plików cookies do analityki i marketingu. Możesz wybrać, na co się zgadzasz. Serwis działa tak samo niezależnie od decyzji. Szczegóły w",
       privacyLink: "Polityce prywatności",
       necessaryOnly: "Tylko niezbędne",
       acceptAll: "Akceptuję wszystkie",
@@ -434,14 +434,14 @@ const translations = {
       catNecessary: "Niezbędne",
       catNecessaryDesc: "Potrzebne do wyświetlenia strony i zapamiętania tej decyzji. Nie da się ich wyłączyć.",
       catAnalytics: "Analityczne",
-      catAnalyticsDesc: "Google Analytics — ile osób odwiedza stronę i z jakich źródeł trafia.",
+      catAnalyticsDesc: "Google Analytics: ile osób odwiedza stronę i z jakich źródeł trafia.",
       catMarketing: "Marketingowe",
-      catMarketingDesc: "HubSpot i Meta (Facebook, Instagram) — mierzenie skuteczności reklam i docieranie z nimi do osób, które odwiedziły stronę."
+      catMarketingDesc: "HubSpot i Meta (Facebook, Instagram): mierzenie skuteczności reklam i docieranie z nimi do osób, które odwiedziły stronę."
     },
     feedback: {
       button: "Feedback",
       title: "Zgłoś błąd lub sugestię",
-      subtitle: "Pomóż nam ulepszyć stronę — zgłoś błąd lub podziel się pomysłem. Aby umówić wizytę, skorzystaj z formularza kontaktowego.",
+      subtitle: "Pomóż nam ulepszyć stronę: zgłoś błąd lub podziel się pomysłem. Aby umówić wizytę, skorzystaj z formularza kontaktowego.",
       messageLabel: "Wiadomość",
       messagePlaceholder: "Opisz problem lub podziel się pomysłem...",
       emailLabel: "E-mail",
@@ -455,7 +455,7 @@ const translations = {
     },
     adam: {
       bannerTitle: "Sprawdź, czy możesz mieć niedobór testosteronu",
-      bannerDesc: "Wypełnij ankietę ADAM — 10 pytań, ok. 2 minuty, natychmiastowy wynik",
+      bannerDesc: "Wypełnij ankietę ADAM: 10 pytań, ok. 2 minuty, natychmiastowy wynik",
       bannerCta: "Wypełnij ankietę",
       title: "Kwestionariusz niedoboru androgenów (ADAM)",
       tagline: "10 pytań · około 2 minut",
@@ -473,7 +473,7 @@ const translations = {
       q9: "Czy zasypiasz po kolacji?",
       q10: "Czy Twoja wydajność w pracy lub codziennych czynnościach pogorszyła się?",
       positiveTitle: "Wynik sugeruje możliwy niedobór testosteronu",
-      positiveText: "Twoje odpowiedzi wskazują na objawy mogące świadczyć o niedoborze androgenów. Wynik ankiety ADAM nie jest diagnozą — potwierdzenie wymaga konsultacji lekarskiej i badań.",
+      positiveText: "Twoje odpowiedzi wskazują na objawy mogące świadczyć o niedoborze androgenów. Wynik ankiety ADAM nie jest diagnozą. Potwierdzenie wymaga konsultacji lekarskiej i badań.",
       negativeTitle: "Wynik nie wskazuje na niedobór testosteronu",
       negativeText: "Twoje odpowiedzi nie spełniają kryteriów pozytywnego wyniku ankiety ADAM. Jeśli mimo to odczuwasz niepokojące objawy, warto omówić je z lekarzem.",
       ctaBook: "Umów wizytę online",
@@ -500,7 +500,7 @@ const translations = {
     hero: {
       badge: "Medical consultations · Diagnostics · Therapy",
       title: "Chronic fatigue, sleep problems, decreased libido?",
-      description: "This may be testosterone deficiency. Remote medical consultation — convenient, from anywhere.",
+      description: "This may be testosterone deficiency. Remote medical consultation: convenient, from anywhere.",
       cta: "Book a consultation",
       ctaPhonePrefix: "or call:",
       doctorName: "Marta Treblińska, MD",
@@ -510,7 +510,7 @@ const translations = {
     },
     symptoms: {
       title: "When should you consider a medical consultation?",
-      subtitle: "Do you recognize any of these symptoms? They can have many causes — testosterone deficiency is one of them. A medical consultation will help clarify what is happening.",
+      subtitle: "Do you recognize any of these symptoms? They can have many causes: testosterone deficiency is one of them. A medical consultation will help clarify what is happening.",
       fatigue: "Chronic fatigue and low energy",
       fatigueDesc: "You wake up tired, even after a full night's sleep.",
       brain: "Brain fog",
@@ -527,7 +527,7 @@ const translations = {
     services: {
       title: "What does a consultation cover?",
       sniperTag: "Precision therapy",
-      sniperDesc: "We target the root cause — not the symptoms",
+      sniperDesc: "We target the root cause, not the symptoms",
       diagnostics: "Hormonal disorder diagnostics",
       diagnosticsDesc: "We assess your hormonal status and identify any abnormalities",
       hormoneLevel: "Hormone level assessment",
@@ -556,7 +556,7 @@ const translations = {
       step4: "Further management",
       step4Desc: "Establishing a treatment plan if medical indications exist",
       disclaimer: "Treatment is implemented only when medical indications exist.",
-      patientNote: "Regular follow-up visits and timely completion of ordered tests are an essential part of safe therapy. The patient plays an active role in this process — the physician provides care, while responsibility for attending scheduled check-ups lies with the patient."
+      patientNote: "Regular follow-up visits and timely completion of ordered tests are an essential part of safe therapy. The patient plays an active role in this process, the physician provides care, while responsibility for attending scheduled check-ups lies with the patient."
     },
     trtInfo: {
       title: "Testosterone deficiency treatment",
@@ -568,10 +568,10 @@ const translations = {
       title: "Attending physician",
       name: "Marta Treblińska, MD",
       education: "Doctor of Medicine, Medical University of Warsaw",
-      harvard: "Testosterone Therapy and Sexual Dysfunction — Harvard Medical School",
+      harvard: "Testosterone Therapy and Sexual Dysfunction, Harvard Medical School",
       experience: "Years of experience in diagnosing and treating hormonal disorders in men",
-      ebm: "Precise root-cause diagnosis, not symptom treatment — evidence-based medicine (EBM)",
-      alfa: "TRT Master Practitioner certificate — specialist training in male hormone replacement therapy"
+      ebm: "Precise root-cause diagnosis, not symptom treatment, evidence-based medicine (EBM)",
+      alfa: "TRT Master Practitioner certificate: specialist training in male hormone replacement therapy"
     },
     faq: {
       title: "Frequently asked questions",
@@ -582,11 +582,11 @@ const translations = {
       q3: "What does monitoring look like during treatment?",
       a3: "Patients undergoing treatment are regularly monitored. Check-ups include laboratory tests (including blood count, hematocrit, lipid profile, PSA) and follow-up visits, the frequency of which is determined by the physician.",
       q4: "Is the consultation in-person or online?",
-      a4: "Consultations are conducted exclusively remotely (teleconsultation) — conveniently, from anywhere. The appointment time is arranged individually.",
+      a4: "Consultations are conducted exclusively remotely (teleconsultation): conveniently, from anywhere. The appointment time is arranged individually.",
       q5: "Is hormonal therapy safe?",
       a5: "Every therapy carries potential benefits and risks. Treatment safety depends on proper qualification, appropriate dosing, and regular patient monitoring by a physician.",
       q6: "Do you help with recovery (PCT) after testosterone therapy or a steroid cycle?",
-      a6: "Yes. Testosterone given from outside — whether as therapy prescribed by a doctor or self-administered — and anabolic steroids suppress the body’s own testosterone production. After stopping them, low libido, fatigue, low mood or erectile problems are common. During the consultation we review test results and overall health and set a plan aimed at restoring natural hormone production. The conversation is covered by medical confidentiality."
+      a6: "Yes. Testosterone given from outside, whether as therapy prescribed by a doctor or self-administered, and anabolic steroids suppress the body’s own testosterone production. After stopping them, low libido, fatigue, low mood or erectile problems are common. During the consultation we review test results and overall health and set a plan aimed at restoring natural hormone production. The conversation is covered by medical confidentiality."
     },
     questionnaires: {
       "pageTitle": "Screening questionnaires",
@@ -599,13 +599,13 @@ const translations = {
       "sourceLink": "View the source publication on PubMed",
       "fill": "Take the questionnaire",
       "sourceLabel": "Source",
-      "pageNote": "Questionnaire results are not a diagnosis. They only mean something alongside a medical history and laboratory results — please do not interpret them on your own."
+      "pageNote": "Questionnaire results are not a diagnosis. They only mean something alongside a medical history and laboratory results, please do not interpret them on your own."
     },
     iief5: {
       "name": "International Index of Erectile Function (IIEF-5)",
       "tagline": "5 questions · about 2 minutes",
       "intro": "The abridged International Index of Erectile Function, also known as SHIM. The questions cover the past 6 months.",
-      "disclaimer": "IIEF-5 is a screening tool and does not replace a medical diagnosis. Erectile dysfunction has many possible causes — vascular, metabolic, neurological, psychological and hormonal.",
+      "disclaimer": "IIEF-5 is a screening tool and does not replace a medical diagnosis. Erectile dysfunction has many possible causes: vascular, metabolic, neurological, psychological and hormonal.",
       "questions": [
         {
           "text": "How do you rate your confidence that you could get and keep an erection?",
@@ -756,7 +756,7 @@ const translations = {
         },
         "mild": {
           "title": "Mild erectile dysfunction",
-          "text": "The score falls in the mild range. Worth discussing with a doctor — the cause is often reversible."
+          "text": "The score falls in the mild range. Worth discussing with a doctor: the cause is often reversible."
         },
         "mildModerate": {
           "title": "Mild to moderate erectile dysfunction",
@@ -764,11 +764,11 @@ const translations = {
         },
         "moderate": {
           "title": "Moderate erectile dysfunction",
-          "text": "The score indicates moderate dysfunction. A medical consultation is advisable — erectile dysfunction can be an early sign of vascular and metabolic disease."
+          "text": "The score indicates moderate dysfunction. A medical consultation is advisable: erectile dysfunction can be an early sign of vascular and metabolic disease."
         },
         "severe": {
           "title": "Severe erectile dysfunction",
-          "text": "The score indicates severe dysfunction. A medical consultation and work-up are advisable — the earlier the cause is established, the more options remain."
+          "text": "The score indicates severe dysfunction. A medical consultation and work-up are advisable: the earlier the cause is established, the more options remain."
         }
       }
     },
@@ -776,7 +776,7 @@ const translations = {
       "name": "Aging Males' Symptoms scale (AMS)",
       "tagline": "17 questions · about 4 minutes",
       "intro": "The Aging Males Symptoms scale. Rate how severe each symptom has been for you recently. The score shows the weight of your symptoms, not their cause.",
-      "disclaimer": "AMS measures symptom severity, not hormone levels — a high score does not mean testosterone deficiency, and a low one does not rule it out. What it does show well is change over time, which is why it is often repeated during treatment.",
+      "disclaimer": "AMS measures symptom severity, not hormone levels. A high score does not mean testosterone deficiency, and a low one does not rule it out. What it does show well is change over time, which is why it is often repeated during treatment.",
       "options": [
         {
           "label": "None",
@@ -834,7 +834,7 @@ const translations = {
         },
         "moderate": {
           "title": "Moderate symptom severity",
-          "text": "Symptoms are clearly noticeable. Worth discussing with a doctor to establish what lies behind them — there may be several causes at once."
+          "text": "Symptoms are clearly noticeable. Worth discussing with a doctor to establish what lies behind them: there may be several causes at once."
         },
         "severe": {
           "title": "Marked symptom severity",
@@ -847,8 +847,8 @@ const translations = {
       subtitle: "A medical consultation is the first step toward diagnosing and potentially treating hormonal disorders.",
       email: "E-mail",
       consultForm: "Consultation format",
-      consultFormValue: "Remote — conveniently, from anywhere",
-      remoteNote: "No commute, no waiting room — individual appointment.",
+      consultFormValue: "Remote: conveniently, from anywhere",
+      remoteNote: "No commute, no waiting room, individual appointment.",
       schedule: "Appointments",
       scheduleValue: "Individually tailored to the patient",
       firstConsultation: "First consultation",
@@ -856,8 +856,8 @@ const translations = {
       testsLink: "Which tests are worth doing before the consultation?",
       bookMedfile: "Book online via Medfile",
       bookPhone: "Call:",
-      priceNote: "First consultation (60 min) — 799 PLN",
-      priceFollowUp: "Follow-up visit (30 min) — 449 PLN"
+      priceNote: "First consultation (60 min): 799 PLN",
+      priceFollowUp: "Follow-up visit (30 min): 449 PLN"
     },
     footer: {
       entityInfo: "Entity information",
@@ -873,7 +873,7 @@ const translations = {
       copyright: "Individual Medical Practice Marta Treblińska, MD. All rights reserved."
     },
     cookie: {
-      text: "We use cookies for analytics and marketing. You choose what you agree to — the site works the same either way. Details in the",
+      text: "We use cookies for analytics and marketing. You choose what you agree to. The site works the same either way. Details in the",
       privacyLink: "Privacy Policy",
       necessaryOnly: "Necessary only",
       acceptAll: "Accept all",
@@ -883,14 +883,14 @@ const translations = {
       catNecessary: "Necessary",
       catNecessaryDesc: "Needed to show the page and remember this choice. These cannot be turned off.",
       catAnalytics: "Analytics",
-      catAnalyticsDesc: "Google Analytics — how many people visit and where they come from.",
+      catAnalyticsDesc: "Google Analytics: how many people visit and where they come from.",
       catMarketing: "Marketing",
-      catMarketingDesc: "HubSpot and Meta (Facebook, Instagram) — measuring how well ads work and showing them to people who have visited the site."
+      catMarketingDesc: "HubSpot and Meta (Facebook, Instagram): measuring how well ads work and showing them to people who have visited the site."
     },
     feedback: {
       button: "Feedback",
       title: "Report a bug or suggestion",
-      subtitle: "Help us improve the website — report an issue or share an idea. To book an appointment, please use the contact form.",
+      subtitle: "Help us improve the website: report an issue or share an idea. To book an appointment, please use the contact form.",
       messageLabel: "Message",
       messagePlaceholder: "Describe an issue or share an idea...",
       emailLabel: "E-mail",
@@ -904,7 +904,7 @@ const translations = {
     },
     adam: {
       bannerTitle: "Check if you may have testosterone deficiency",
-      bannerDesc: "Complete the ADAM questionnaire — 10 questions, ~2 minutes, instant result",
+      bannerDesc: "Complete the ADAM questionnaire: 10 questions, ~2 minutes, instant result",
       bannerCta: "Take the questionnaire",
       title: "Androgen Deficiency in the Aging Male (ADAM)",
       tagline: "10 questions · about 2 minutes",
@@ -922,7 +922,7 @@ const translations = {
       q9: "Are you falling asleep after dinner?",
       q10: "Has there been a recent deterioration in your work performance?",
       positiveTitle: "Result suggests possible testosterone deficiency",
-      positiveText: "Your answers indicate symptoms that may be associated with androgen deficiency. The ADAM questionnaire result is not a diagnosis — confirmation requires a medical consultation and laboratory tests.",
+      positiveText: "Your answers indicate symptoms that may be associated with androgen deficiency. The ADAM questionnaire result is not a diagnosis. Confirmation requires a medical consultation and laboratory tests.",
       negativeTitle: "Result does not indicate testosterone deficiency",
       negativeText: "Your answers do not meet the criteria for a positive ADAM questionnaire result. If you still experience concerning symptoms, it is worth discussing them with a doctor.",
       ctaBook: "Book a visit online",
@@ -949,7 +949,7 @@ const translations = {
     hero: {
       badge: "Ärztliche Beratung · Diagnostik · Therapie",
       title: "Chronische Müdigkeit, Schlafprobleme, verminderte Libido?",
-      description: "Das könnte ein Testosteronmangel sein. Ärztliche Fernberatung — bequem, von überall.",
+      description: "Das könnte ein Testosteronmangel sein. Ärztliche Fernberatung: bequem, von überall.",
       cta: "Beratung vereinbaren",
       ctaPhonePrefix: "oder anrufen:",
       doctorName: "Dr. med. Marta Treblińska",
@@ -959,7 +959,7 @@ const translations = {
     },
     symptoms: {
       title: "Wann sollten Sie eine ärztliche Beratung in Betracht ziehen?",
-      subtitle: "Erkennen Sie sich in einem dieser Symptome wieder? Sie können viele Ursachen haben — Testosteronmangel ist eine davon. Eine ärztliche Beratung schafft Klarheit.",
+      subtitle: "Erkennen Sie sich in einem dieser Symptome wieder? Sie können viele Ursachen haben: Testosteronmangel ist eine davon. Eine ärztliche Beratung schafft Klarheit.",
       fatigue: "Chronische Müdigkeit und Energiemangel",
       fatigueDesc: "Sie wachen müde auf, obwohl Sie die ganze Nacht geschlafen haben.",
       brain: "Gehirnnebel",
@@ -976,7 +976,7 @@ const translations = {
     services: {
       title: "Was beinhaltet eine Beratung?",
       sniperTag: "Präzisionstherapie",
-      sniperDesc: "Wir treffen die Ursache — nicht die Symptome",
+      sniperDesc: "Wir treffen die Ursache, nicht die Symptome",
       diagnostics: "Diagnostik hormoneller Störungen",
       diagnosticsDesc: "Wir beurteilen Ihren Hormonstatus und identifizieren mögliche Auffälligkeiten",
       hormoneLevel: "Bestimmung des Hormonspiegels",
@@ -1005,7 +1005,7 @@ const translations = {
       step4: "Weiteres Vorgehen",
       step4Desc: "Erstellung eines Behandlungsplans bei medizinischer Indikation",
       disclaimer: "Eine Behandlung wird nur bei Vorliegen medizinischer Indikationen eingeleitet.",
-      patientNote: "Regelmäßige Kontrolltermine und die zeitgerechte Durchführung angeordneter Untersuchungen sind ein wesentlicher Bestandteil einer sicheren Therapie. Der Patient trägt aktiv zu diesem Prozess bei — die Ärztin sorgt für die medizinische Betreuung, die Wahrnehmung der Kontrolltermine liegt in der Verantwortung des Patienten."
+      patientNote: "Regelmäßige Kontrolltermine und die zeitgerechte Durchführung angeordneter Untersuchungen sind ein wesentlicher Bestandteil einer sicheren Therapie. Der Patient trägt aktiv zu diesem Prozess bei, die Ärztin sorgt für die medizinische Betreuung, die Wahrnehmung der Kontrolltermine liegt in der Verantwortung des Patienten."
     },
     trtInfo: {
       title: "Behandlung des Testosteronmangels",
@@ -1017,10 +1017,10 @@ const translations = {
       title: "Behandelnde Ärztin",
       name: "Dr. med. Marta Treblińska",
       education: "Ärztin, Medizinische Universität Warschau",
-      harvard: "Testosterone Therapy and Sexual Dysfunction — Harvard Medical School",
+      harvard: "Testosterone Therapy and Sexual Dysfunction, Harvard Medical School",
       experience: "Langjährige Erfahrung in der Diagnostik und Behandlung hormoneller Störungen bei Männern",
-      ebm: "Präzise Ursachendiagnostik statt Symptombehandlung — evidenzbasierte Medizin (EBM)",
-      alfa: "TRT Master Practitioner Zertifikat — Fachausbildung in männlicher Hormonersatztherapie"
+      ebm: "Präzise Ursachendiagnostik statt Symptombehandlung: evidenzbasierte Medizin (EBM)",
+      alfa: "TRT Master Practitioner Zertifikat: Fachausbildung in männlicher Hormonersatztherapie"
     },
     faq: {
       title: "Häufig gestellte Fragen",
@@ -1031,11 +1031,11 @@ const translations = {
       q3: "Wie sieht die Kontrolle während der Behandlung aus?",
       a3: "Patienten unter Behandlung werden regelmäßig überwacht. Die Kontrollen umfassen Laboruntersuchungen (u.a. Blutbild, Hämatokrit, Lipidprofil, PSA) und Kontrolltermine, deren Häufigkeit vom Arzt festgelegt wird.",
       q4: "Findet die Beratung persönlich oder online statt?",
-      a4: "Beratungen finden ausschließlich in Fernform (Telekonsultation) statt — bequem, von überall aus. Der Termin wird individuell vereinbart.",
+      a4: "Beratungen finden ausschließlich in Fernform (Telekonsultation) statt: bequem, von überall aus. Der Termin wird individuell vereinbart.",
       q5: "Ist die Hormontherapie sicher?",
       a5: "Jede Therapie birgt potenzielle Vorteile und Risiken. Die Behandlungssicherheit hängt von der richtigen Qualifikation, der angemessenen Dosierung und der regelmäßigen Überwachung des Patienten durch den Arzt ab.",
       q6: "Helfen Sie bei der Wiederherstellung (PCT) nach einer Testosterontherapie oder einem Steroidzyklus?",
-      a6: "Ja. Von außen zugeführtes Testosteron — ob im Rahmen einer ärztlich verordneten Therapie oder eigenmächtig eingenommen — sowie anabole Steroide unterdrücken die körpereigene Testosteronproduktion. Nach dem Absetzen treten häufig Libidoverlust, Müdigkeit, gedrückte Stimmung oder Erektionsprobleme auf. In der Beratung beurteilen wir Befunde und Gesundheitszustand und legen das weitere Vorgehen fest, mit dem Ziel, die natürliche Hormonproduktion wiederherzustellen. Das Gespräch unterliegt der ärztlichen Schweigepflicht."
+      a6: "Ja. Von außen zugeführtes Testosteron, ob im Rahmen einer ärztlich verordneten Therapie oder eigenmächtig eingenommen, sowie anabole Steroide unterdrücken die körpereigene Testosteronproduktion. Nach dem Absetzen treten häufig Libidoverlust, Müdigkeit, gedrückte Stimmung oder Erektionsprobleme auf. In der Beratung beurteilen wir Befunde und Gesundheitszustand und legen das weitere Vorgehen fest, mit dem Ziel, die natürliche Hormonproduktion wiederherzustellen. Das Gespräch unterliegt der ärztlichen Schweigepflicht."
     },
     questionnaires: {
       "pageTitle": "Screening-Fragebögen",
@@ -1048,13 +1048,13 @@ const translations = {
       "sourceLink": "Quellpublikation bei PubMed ansehen",
       "fill": "Fragebogen ausfüllen",
       "sourceLabel": "Quelle",
-      "pageNote": "Ergebnisse von Fragebögen sind keine Diagnose. Sie sind erst zusammen mit Anamnese und Laborwerten aussagekräftig — bitte interpretieren Sie sie nicht selbst."
+      "pageNote": "Ergebnisse von Fragebögen sind keine Diagnose. Sie sind erst zusammen mit Anamnese und Laborwerten aussagekräftig, bitte interpretieren Sie sie nicht selbst."
     },
     iief5: {
       "name": "Internationaler Index der Erektilen Funktion (IIEF-5)",
       "tagline": "5 Fragen · etwa 2 Minuten",
       "intro": "Die Kurzform des Internationalen Index der Erektilen Funktion, auch als SHIM bekannt. Die Fragen beziehen sich auf die letzten 6 Monate.",
-      "disclaimer": "IIEF-5 ist ein Screening-Instrument und ersetzt keine ärztliche Diagnose. Erektionsstörungen können viele Ursachen haben — vaskuläre, metabolische, neurologische, psychische und hormonelle.",
+      "disclaimer": "IIEF-5 ist ein Screening-Instrument und ersetzt keine ärztliche Diagnose. Erektionsstörungen können viele Ursachen haben: vaskuläre, metabolische, neurologische, psychische und hormonelle.",
       "questions": [
         {
           "text": "Wie schätzen Sie Ihre Zuversicht ein, eine Erektion bekommen und halten zu können?",
@@ -1205,7 +1205,7 @@ const translations = {
         },
         "mild": {
           "title": "Leichte erektile Dysfunktion",
-          "text": "Das Ergebnis liegt im leichten Bereich. Eine Abklärung lohnt sich — die Ursache ist oft umkehrbar."
+          "text": "Das Ergebnis liegt im leichten Bereich. Eine Abklärung lohnt sich: die Ursache ist oft umkehrbar."
         },
         "mildModerate": {
           "title": "Leichte bis mäßige erektile Dysfunktion",
@@ -1213,11 +1213,11 @@ const translations = {
         },
         "moderate": {
           "title": "Mäßige erektile Dysfunktion",
-          "text": "Das Ergebnis weist auf eine mäßige Störung hin. Eine ärztliche Beratung ist ratsam — Erektionsstörungen können ein frühes Zeichen von Gefäß- und Stoffwechselerkrankungen sein."
+          "text": "Das Ergebnis weist auf eine mäßige Störung hin. Eine ärztliche Beratung ist ratsam: Erektionsstörungen können ein frühes Zeichen von Gefäß- und Stoffwechselerkrankungen sein."
         },
         "severe": {
           "title": "Ausgeprägte erektile Dysfunktion",
-          "text": "Das Ergebnis weist auf eine ausgeprägte Störung hin. Eine ärztliche Beratung und Abklärung sind ratsam — je früher die Ursache feststeht, desto mehr Möglichkeiten bleiben."
+          "text": "Das Ergebnis weist auf eine ausgeprägte Störung hin. Eine ärztliche Beratung und Abklärung sind ratsam: je früher die Ursache feststeht, desto mehr Möglichkeiten bleiben."
         }
       }
     },
@@ -1225,7 +1225,7 @@ const translations = {
       "name": "Aging Males' Symptoms-Skala (AMS)",
       "tagline": "17 Fragen · etwa 4 Minuten",
       "intro": "Die Aging Males Symptoms-Skala. Bitte bewerten Sie, wie stark jede Beschwerde bei Ihnen zuletzt ausgeprägt war. Das Ergebnis zeigt das Gewicht der Beschwerden, nicht ihre Ursache.",
-      "disclaimer": "AMS misst die Stärke von Beschwerden, nicht den Hormonspiegel — ein hoher Wert bedeutet keinen Testosteronmangel, ein niedriger schließt ihn nicht aus. Gut abbilden kann die Skala dagegen Veränderungen über die Zeit, weshalb sie im Verlauf einer Behandlung oft wiederholt wird.",
+      "disclaimer": "AMS misst die Stärke von Beschwerden, nicht den Hormonspiegel. Ein hoher Wert bedeutet keinen Testosteronmangel, ein niedriger schließt ihn nicht aus. Gut abbilden kann die Skala dagegen Veränderungen über die Zeit, weshalb sie im Verlauf einer Behandlung oft wiederholt wird.",
       "options": [
         {
           "label": "Keine",
@@ -1283,7 +1283,7 @@ const translations = {
         },
         "moderate": {
           "title": "Mittlere Beschwerdelast",
-          "text": "Die Beschwerden sind deutlich spürbar. Es lohnt sich, ärztlich abzuklären, was dahintersteckt — oft kommen mehrere Ursachen zusammen."
+          "text": "Die Beschwerden sind deutlich spürbar. Es lohnt sich, ärztlich abzuklären, was dahintersteckt: oft kommen mehrere Ursachen zusammen."
         },
         "severe": {
           "title": "Starke Beschwerdelast",
@@ -1296,8 +1296,8 @@ const translations = {
       subtitle: "Eine ärztliche Beratung ist der erste Schritt zur Diagnostik und gegebenenfalls zur Behandlung hormoneller Störungen.",
       email: "E-Mail",
       consultForm: "Beratungsform",
-      consultFormValue: "Fernberatung — bequem, von überall",
-      remoteNote: "Kein Anfahrtsweg, kein Wartezimmer — individueller Termin.",
+      consultFormValue: "Fernberatung: bequem, von überall",
+      remoteNote: "Kein Anfahrtsweg, kein Wartezimmer, individueller Termin.",
       schedule: "Termine",
       scheduleValue: "Individuell auf den Patienten abgestimmt",
       firstConsultation: "Erstberatung",
@@ -1305,8 +1305,8 @@ const translations = {
       testsLink: "Welche Untersuchungen sind vor der Beratung sinnvoll?",
       bookMedfile: "Online über Medfile buchen",
       bookPhone: "Anrufen:",
-      priceNote: "Erstberatung (60 Min.) — 799 PLN",
-      priceFollowUp: "Kontrolltermin (30 Min.) — 449 PLN"
+      priceNote: "Erstberatung (60 Min.): 799 PLN",
+      priceFollowUp: "Kontrolltermin (30 Min.): 449 PLN"
     },
     footer: {
       entityInfo: "Angaben zur Praxis",
@@ -1322,7 +1322,7 @@ const translations = {
       copyright: "Einzelärztliche Praxis Marta Treblińska. Alle Rechte vorbehalten."
     },
     cookie: {
-      text: "Wir verwenden Cookies für Analyse und Marketing. Sie entscheiden, womit Sie einverstanden sind — die Seite funktioniert in jedem Fall gleich. Einzelheiten in der",
+      text: "Wir verwenden Cookies für Analyse und Marketing. Sie entscheiden, womit Sie einverstanden sind. Die Seite funktioniert in jedem Fall gleich. Einzelheiten in der",
       privacyLink: "Datenschutzrichtlinie",
       necessaryOnly: "Nur notwendige",
       acceptAll: "Alle akzeptieren",
@@ -1332,14 +1332,14 @@ const translations = {
       catNecessary: "Notwendig",
       catNecessaryDesc: "Nötig, um die Seite anzuzeigen und diese Entscheidung zu speichern. Nicht abschaltbar.",
       catAnalytics: "Analyse",
-      catAnalyticsDesc: "Google Analytics — wie viele Personen die Seite besuchen und woher sie kommen.",
+      catAnalyticsDesc: "Google Analytics: wie viele Personen die Seite besuchen und woher sie kommen.",
       catMarketing: "Marketing",
-      catMarketingDesc: "HubSpot und Meta (Facebook, Instagram) — Messung der Wirksamkeit von Anzeigen und Ausspielung an Personen, die die Seite besucht haben."
+      catMarketingDesc: "HubSpot und Meta (Facebook, Instagram): Messung der Wirksamkeit von Anzeigen und Ausspielung an Personen, die die Seite besucht haben."
     },
     feedback: {
       button: "Feedback",
       title: "Fehler oder Vorschlag melden",
-      subtitle: "Helfen Sie uns, die Website zu verbessern — melden Sie ein Problem oder teilen Sie eine Idee. Für Terminvereinbarungen nutzen Sie bitte das Kontaktformular.",
+      subtitle: "Helfen Sie uns, die Website zu verbessern: melden Sie ein Problem oder teilen Sie eine Idee. Für Terminvereinbarungen nutzen Sie bitte das Kontaktformular.",
       messageLabel: "Nachricht",
       messagePlaceholder: "Problem beschreiben oder Idee teilen...",
       emailLabel: "E-Mail",
@@ -1353,7 +1353,7 @@ const translations = {
     },
     adam: {
       bannerTitle: "Prüfen Sie, ob Sie einen Testosteronmangel haben könnten",
-      bannerDesc: "Füllen Sie den ADAM-Fragebogen aus — 10 Fragen, ca. 2 Minuten, sofortiges Ergebnis",
+      bannerDesc: "Füllen Sie den ADAM-Fragebogen aus: 10 Fragen, ca. 2 Minuten, sofortiges Ergebnis",
       bannerCta: "Fragebogen ausfüllen",
       title: "Androgenmangel beim alternden Mann (ADAM)",
       tagline: "10 Fragen · etwa 2 Minuten",
@@ -1371,7 +1371,7 @@ const translations = {
       q9: "Schlafen Sie nach dem Abendessen ein?",
       q10: "Hat sich Ihre Arbeitsleistung zuletzt verschlechtert?",
       positiveTitle: "Ergebnis deutet auf möglichen Testosteronmangel hin",
-      positiveText: "Ihre Antworten weisen auf Symptome hin, die mit einem Androgendefizit zusammenhängen können. Das ADAM-Ergebnis ist keine Diagnose — eine Bestätigung erfordert eine ärztliche Beratung und Laboruntersuchungen.",
+      positiveText: "Ihre Antworten weisen auf Symptome hin, die mit einem Androgendefizit zusammenhängen können. Das ADAM-Ergebnis ist keine Diagnose. Eine Bestätigung erfordert eine ärztliche Beratung und Laboruntersuchungen.",
       negativeTitle: "Ergebnis weist nicht auf Testosteronmangel hin",
       negativeText: "Ihre Antworten erfüllen nicht die Kriterien für ein positives ADAM-Ergebnis. Wenn Sie dennoch beunruhigende Symptome haben, sollten Sie diese mit einem Arzt besprechen.",
       ctaBook: "Termin online vereinbaren",
@@ -1714,7 +1714,7 @@ const HeroSection = () => {
   return /* @__PURE__ */ jsxs("section", { ref: sectionRef, className: "bg-white text-foreground relative overflow-hidden", children: [
     /* @__PURE__ */ jsx("div", { className: "absolute inset-0 opacity-25 pointer-events-none", style: { backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23dde2e9' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` } }),
     /* @__PURE__ */ jsx("div", { className: "container mx-auto px-6 relative z-10 max-w-7xl animate-fade-in", children: /* @__PURE__ */ jsxs("div", { className: "flex flex-col md:flex-row md:items-center gap-0 md:gap-4 lg:gap-8", children: [
-      /* @__PURE__ */ jsx("div", { className: "flex-1 order-1 py-8 md:py-24 lg:py-28", children: /* @__PURE__ */ jsxs("div", { className: "text-center md:max-w-xl md:ml-auto md:pr-4", children: [
+      /* @__PURE__ */ jsx("div", { className: "flex-1 order-1 py-8 md:py-8 xl:py-16", children: /* @__PURE__ */ jsxs("div", { className: "text-center md:max-w-xl md:ml-auto md:pr-4", children: [
         /* @__PURE__ */ jsx("p", { className: "inline-block text-sm uppercase tracking-[0.2em] text-foreground font-semibold mb-6 px-4 py-2 rounded-full bg-foreground/5 border border-foreground/15", children: t.hero.badge }),
         /* @__PURE__ */ jsx("h1", { className: "font-serif text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 text-foreground", children: t.hero.title }),
         /* @__PURE__ */ jsx("p", { className: "text-lg md:text-xl text-foreground mb-10 leading-relaxed", children: t.hero.description }),
@@ -1761,14 +1761,14 @@ const HeroSection = () => {
           /* @__PURE__ */ jsx("span", { children: "Warszawski Uniwersytet Medyczny" })
         ] })
       ] }) }),
-      /* @__PURE__ */ jsx("div", { className: "order-2 md:flex-shrink-0 md:w-[44%] lg:w-[42%] xl:w-[40%] relative", children: /* @__PURE__ */ jsxs("picture", { className: "block w-full h-full", children: [
+      /* @__PURE__ */ jsx("div", { className: "order-2 md:flex-shrink-0 md:w-[48%] lg:w-[46%] xl:w-[40%] relative", children: /* @__PURE__ */ jsxs("picture", { className: "block w-full md:aspect-[750/1166]", children: [
         /* @__PURE__ */ jsx("source", { srcSet: "/images/dr-marta-treblinska-hero.webp?v=6", type: "image/webp" }),
         /* @__PURE__ */ jsx(
           "img",
           {
             src: "/images/dr-marta-treblinska-hero.jpg?v=6",
             alt: t.hero.doctorName,
-            className: "hero-photo-mask w-full h-96 md:h-full object-cover [object-position:50%_18%] md:[object-position:right_center]",
+            className: "hero-photo-mask w-full h-96 md:h-full object-cover [object-position:50%_18%] md:[object-position:center]",
             width: 750,
             height: 1166,
             ...{ fetchpriority: "high" }
@@ -1834,7 +1834,7 @@ const ServicesSection = () => {
     { icon: ClipboardCheck, title: t.services.qualification, desc: t.services.qualificationDesc },
     { icon: HeartPulse, title: t.services.therapy, desc: t.services.therapyDesc },
     { icon: ShieldCheck, title: t.services.monitoring, desc: t.services.monitoringDesc },
-    // Patients come looking for this by name — "odblok" — so it is listed as a
+    // Patients come looking for this by name, "odblok" - so it is listed as a
     // service in its own right, not left implied by "therapy".
     { icon: RotateCcw, title: t.services.recovery, desc: t.services.recoveryDesc }
   ];
@@ -1845,7 +1845,7 @@ const ServicesSection = () => {
         /* @__PURE__ */ jsx(Crosshair, { className: "w-4 h-4 text-teal-mid" }),
         /* @__PURE__ */ jsx("span", { className: "text-sm font-semibold text-teal-mid tracking-wide uppercase", children: t.services.sniperTag }),
         /* @__PURE__ */ jsxs("span", { className: "text-sm text-muted-foreground", children: [
-          "— ",
+          "- ",
           t.services.sniperDesc
         ] })
       ] })
@@ -2300,26 +2300,54 @@ const ReviewsSection = () => {
     ) })
   ] }) });
 };
+const pubmed = (pmid) => `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`;
+const SRC = {
+  emas: {
+    label: "Wu FC i wsp. Identification of late-onset hypogonadism in middle-aged and elderly men. N Engl J Med. 2010;363:123-135.",
+    url: pubmed("20554979"),
+    year: 2010
+  },
+  eaa2020: {
+    label: "Corona G i wsp. European Academy of Andrology (EAA) guidelines on investigation, treatment and monitoring of functional hypogonadism in males. Andrology. 2020;8:970-987.",
+    url: pubmed("32026626"),
+    year: 2020
+  },
+  endocrine2018: {
+    label: "Bhasin S i wsp. Testosterone Therapy in Men With Hypogonadism: An Endocrine Society Clinical Practice Guideline. J Clin Endocrinol Metab. 2018;103:1715-1744.",
+    url: pubmed("29562364"),
+    year: 2018
+  },
+  aua2018: {
+    label: "Mulhall JP i wsp. Evaluation and Management of Testosterone Deficiency: AUA Guideline. J Urol. 2018;200:423-432.",
+    url: pubmed("29601923"),
+    year: 2018
+  },
+  vermeulen1999: {
+    label: "Vermeulen A, Verdonck L, Kaufman JM. A critical evaluation of simple methods for the estimation of free testosterone in serum. J Clin Endocrinol Metab. 1999;84:3666-3672.",
+    url: pubmed("10523012"),
+    year: 1999
+  }
+};
 const blogPosts = [
   {
     slug: "odblok-po-testosteronie-i-sterydach",
-    title: "Odblok po testosteronie i sterydach — jak odzyskać własną produkcję testosteronu",
+    title: "Odblok po testosteronie i sterydach: jak odzyskać własną produkcję testosteronu",
     metaDescription: "Odblok (PCT) po zakończeniu terapii testosteronem, cyklu sterydowym lub samodzielnym przyjmowaniu testosteronu: dlaczego produkcja hormonów spada, jakie badania wykonać i jak wygląda odblok pod kontrolą lekarza.",
     date: "2026-10-17",
     readingTime: 6,
-    excerpt: "Po odstawieniu testosteronu — także przyjmowanego w ramach terapii — lub sterydów anabolicznych własna produkcja hormonów często nie wraca od razu. Wyjaśniamy, co dzieje się w organizmie, jakie objawy są typowe i jak wygląda odblok prowadzony przez lekarza.",
+    excerpt: "Po odstawieniu testosteronu, także przyjmowanego w ramach terapii, lub sterydów anabolicznych własna produkcja hormonów często nie wraca od razu. Wyjaśniamy, co dzieje się w organizmie, jakie objawy są typowe i jak wygląda odblok prowadzony przez lekarza.",
     content: [
       {
         heading: "Czym jest odblok?",
         paragraphs: [
-          "„Odblok” (ang. PCT — post-cycle therapy) to potoczna nazwa okresu po zakończeniu podawania testosteronu lub przyjmowania sterydów anaboliczno-androgennych, w którym organizm ma odzyskać zdolność do samodzielnej produkcji testosteronu. W języku medycznym mówimy o hipogonadyzmie wtórnym wywołanym podawaniem androgenów z zewnątrz.",
-          "Odblok dotyczy kilku grup mężczyzn: tych, którzy kończą terapię zastępczą testosteronem prowadzoną przez lekarza — na przykład dlatego, że planują ojcostwo lub zdecydowali się przerwać leczenie; tych, którzy przyjmowali testosteron samodzielnie, bez badań i nadzoru; oraz osób po cyklach sterydów anabolicznych."
+          "„Odblok” (ang. PCT, post-cycle therapy) to potoczna nazwa okresu po zakończeniu podawania testosteronu lub przyjmowania sterydów anaboliczno-androgennych, w którym organizm ma odzyskać zdolność do samodzielnej produkcji testosteronu. W języku medycznym mówimy o hipogonadyzmie wtórnym wywołanym podawaniem androgenów z zewnątrz.",
+          "Odblok dotyczy kilku grup mężczyzn: tych, którzy kończą terapię zastępczą testosteronem prowadzoną przez lekarza, na przykład dlatego, że planują ojcostwo lub zdecydowali się przerwać leczenie; tych, którzy przyjmowali testosteron samodzielnie, bez badań i nadzoru; oraz osób po cyklach sterydów anabolicznych."
         ]
       },
       {
         heading: "Dlaczego po odstawieniu produkcja testosteronu spada?",
         paragraphs: [
-          "Produkcją testosteronu steruje oś podwzgórze–przysadka–jądra. Gdy we krwi krąży dużo testosteronu podawanego z zewnątrz, przysadka ogranicza wydzielanie hormonów LH i FSH, które pobudzają jądra do pracy. Jądra „przechodzą w stan spoczynku” — spada zarówno produkcja testosteronu, jak i plemników.",
+          "Produkcją testosteronu steruje oś podwzgórze–przysadka–jądra. Gdy we krwi krąży dużo testosteronu podawanego z zewnątrz, przysadka ogranicza wydzielanie hormonów LH i FSH, które pobudzają jądra do pracy. Jądra „przechodzą w stan spoczynku”, spada zarówno produkcja testosteronu, jak i plemników.",
           "Po odstawieniu preparatów poziom testosteronu z zewnątrz szybko maleje, a oś hormonalna potrzebuje czasu, żeby znów zacząć działać. Ten czas jest bardzo różny: u części mężczyzn to kilka miesięcy, u innych ponad rok. Zależy m.in. od długości i intensywności stosowania, rodzaju preparatów, wieku i stanu zdrowia sprzed rozpoczęcia. U części osób produkcja nie wraca w pełni."
         ]
       },
@@ -2327,27 +2355,27 @@ const blogPosts = [
         heading: "Typowe objawy po odstawieniu",
         paragraphs: [
           "Najczęściej pojawiają się: spadek libido, problemy z erekcją, przewlekłe zmęczenie, obniżony nastrój, drażliwość lub objawy depresyjne, zaburzenia snu, utrata siły i masy mięśniowej oraz przyrost tkanki tłuszczowej. Część mężczyzn zauważa też powiększenie gruczołów piersiowych (ginekomastię) lub problemy z płodnością.",
-          "Objawy te bywają na tyle uciążliwe, że skłaniają do powrotu do preparatów — co zamyka błędne koło i wydłuża zahamowanie osi hormonalnej."
+          "Objawy te bywają na tyle uciążliwe, że skłaniają do powrotu do preparatów, co zamyka błędne koło i wydłuża zahamowanie osi hormonalnej."
         ]
       },
       {
         heading: "Dlaczego nie warto robić odbloku „na własną rękę”?",
         paragraphs: [
           "W internecie i na siłowniach krąży wiele gotowych schematów odbloku. Problem w tym, że opierają się na lekach na receptę, które mają przeciwwskazania i działania niepożądane, a dawkowanie „z forum” nie uwzględnia wyników badań ani stanu zdrowia konkretnej osoby.",
-          "Stosowanie sterydów anabolicznych może też pozostawić ślad, którego nie widać bez badań: podwyższony hematokryt, niekorzystny profil lipidowy, obciążenie wątroby czy podwyższone ciśnienie tętnicze. Odblok to dobry moment, żeby to sprawdzić — zanim pojawią się powikłania."
+          "Stosowanie sterydów anabolicznych może też pozostawić ślad, którego nie widać bez badań: podwyższony hematokryt, niekorzystny profil lipidowy, obciążenie wątroby czy podwyższone ciśnienie tętnicze. Odblok to dobry moment, żeby to sprawdzić, zanim pojawią się powikłania."
         ]
       },
       {
         heading: "Jakie badania wykonać?",
         paragraphs: [
           "Podstawą jest panel hormonalny: testosteron całkowity i wolny, SHBG, LH, FSH, estradiol i prolaktyna. Ze względu na możliwe skutki stosowania sterydów warto wykonać również morfologię z hematokrytem, profil lipidowy oraz próby wątrobowe. Jeśli ważna jest płodność, lekarz może zlecić badanie nasienia.",
-          "Szczegółowy zakres badań i moment ich wykonania ustala lekarz — zależy on m.in. od tego, kiedy i jakie preparaty zostały odstawione."
+          "Szczegółowy zakres badań i moment ich wykonania ustala lekarz, zależy on m.in. od tego, kiedy i jakie preparaty zostały odstawione."
         ]
       },
       {
         heading: "Jak wygląda odblok prowadzony przez lekarza?",
         paragraphs: [
-          "Podczas konsultacji lekarz zbiera wywiad (jakie preparaty, jak długo, kiedy odstawione), analizuje wyniki badań i ocenia stan zdrowia. Na tej podstawie ustala plan postępowania, którego celem jest przywrócenie naturalnej produkcji testosteronu. Może on obejmować obserwację z kontrolą badań, leczenie farmakologiczne dobrane indywidualnie, a gdy oś hormonalna nie wraca mimo leczenia — omówienie innych możliwości, w tym terapii zastępczej testosteronem.",
+          "Podczas konsultacji lekarz zbiera wywiad (jakie preparaty, jak długo, kiedy odstawione), analizuje wyniki badań i ocenia stan zdrowia. Na tej podstawie ustala plan postępowania, którego celem jest przywrócenie naturalnej produkcji testosteronu. Może on obejmować obserwację z kontrolą badań, leczenie farmakologiczne dobrane indywidualnie, a gdy oś hormonalna nie wraca mimo leczenia, omówienie innych możliwości, w tym terapii zastępczej testosteronem.",
           "Kluczowe są kontrole: powtarzane badania pozwalają ocenić, czy produkcja hormonów wraca, i w razie potrzeby zmodyfikować leczenie."
         ]
       },
@@ -2358,103 +2386,104 @@ const blogPosts = [
           "Konsultacja odbywa się zdalnie, więc można z niej skorzystać z dowolnego miejsca w Polsce."
         ]
       }
-    ]
+    ],
+    related: ["hipogonadyzm-u-mezczyzn", "jak-zbadac-poziom-testosteronu", "trt-a-plodnosc"]
   },
   {
     slug: "trt-a-uklad-krazenia",
-    title: "Testosteron a serce — czy TRT jest bezpieczna dla układu krążenia?",
+    title: "Testosteron a serce: czy TRT jest bezpieczna dla układu krążenia?",
     metaDescription: "Czy terapia zastępcza testosteronem (TRT) jest bezpieczna dla serca? Przegląd aktualnych badań i wytycznych dotyczących TRT a chorób układu krążenia.",
     date: "2026-03-20",
     readingTime: 7,
-    excerpt: "Bezpieczeństwo sercowo-naczyniowe TRT to jeden z najczęściej zadawanych pytań pacjentów. Przez lata temat był kontrowersyjny — dziś dysponujemy znacznie lepszymi danymi.",
+    excerpt: "Bezpieczeństwo sercowo-naczyniowe TRT to jeden z najczęściej zadawanych pytań pacjentów. Przez lata temat był kontrowersyjny, dziś dysponujemy znacznie lepszymi danymi.",
     content: [
       {
         heading: "Skąd wzięły się obawy o serce?",
         paragraphs: [
-          "Kontrowersje wokół TRT i układu krążenia nasilił się po 2010 roku, gdy kilka badań sugerowało zwiększone ryzyko zawału i udaru u mężczyzn stosujących terapię testosteronem. Część z tych badań miała jednak poważne wady metodologiczne — m.in. zbyt krótki czas obserwacji, niejednorodne grupy pacjentów czy brak kontroli kluczowych czynników ryzyka.",
+          "Kontrowersje wokół TRT i układu krążenia nasilił się po 2010 roku, gdy kilka badań sugerowało zwiększone ryzyko zawału i udaru u mężczyzn stosujących terapię testosteronem. Część z tych badań miała jednak poważne wady metodologiczne, m.in. zbyt krótki czas obserwacji, niejednorodne grupy pacjentów czy brak kontroli kluczowych czynników ryzyka.",
           "Od tego czasu przeprowadzono wiele lepiej zaprojektowanych badań, w tym randomizowane kontrolowane próby kliniczne, które dają znacznie bardziej wiarygodny obraz sytuacji."
         ]
       },
       {
         heading: "Co mówią aktualne dane naukowe?",
         paragraphs: [
-          "Przełomowym badaniem była opublikowana w 2023 roku próba TRAVERSE — największe jak dotąd randomizowane badanie oceniające bezpieczeństwo sercowo-naczyniowe TRT u mężczyzn z hipogonadyzmem i podwyższonym ryzykiem sercowo-naczyniowym. Wyniki nie wykazały istotnego wzrostu ryzyka poważnych zdarzeń sercowych (MACE) w grupie leczonej testosteronem w porównaniu z placebo.",
-          "Co więcej, wiele badań obserwacyjnych sugeruje, że nieleczony niedobór testosteronu sam w sobie jest czynnikiem ryzyka chorób układu krążenia — ze względu na niekorzystny wpływ na profil lipidowy, insulinooporność, tkankę tłuszczową trzewną i stan zapalny."
+          "Przełomowym badaniem była opublikowana w 2023 roku próba TRAVERSE, największe jak dotąd randomizowane badanie oceniające bezpieczeństwo sercowo-naczyniowe TRT u mężczyzn z hipogonadyzmem i podwyższonym ryzykiem sercowo-naczyniowym. Wyniki nie wykazały istotnego wzrostu ryzyka poważnych zdarzeń sercowych (MACE) w grupie leczonej testosteronem w porównaniu z placebo.",
+          "Co więcej, wiele badań obserwacyjnych sugeruje, że nieleczony niedobór testosteronu sam w sobie jest czynnikiem ryzyka chorób układu krążenia, ze względu na niekorzystny wpływ na profil lipidowy, insulinooporność, tkankę tłuszczową trzewną i stan zapalny."
         ]
       },
       {
         heading: "Kiedy TRT wymaga szczególnej ostrożności?",
         paragraphs: [
           "Mimo korzystnych wyników dużych badań, TRT wymaga indywidualnej oceny ryzyka. Szczególnej uwagi wymagają pacjenci z niedawno przebytym zawałem lub udarem, ciężką niewydolnością serca, niekontrolowanym nadciśnieniem lub bardzo wysokim wyjściowym hematokrytem.",
-          "Kluczowe jest też regularne monitorowanie podczas terapii — hematokryt (testosteron stymuluje erytropoezę, co może zwiększać lepkość krwi), ciśnienie tętnicze i profil lipidowy. Prawidłowo prowadzona terapia z odpowiednim monitorowaniem znacznie minimalizuje potencjalne ryzyko."
+          "Kluczowe jest też regularne monitorowanie podczas terapii: hematokryt (testosteron stymuluje erytropoezę, co może zwiększać lepkość krwi), ciśnienie tętnicze i profil lipidowy. Prawidłowo prowadzona terapia z odpowiednim monitorowaniem znacznie minimalizuje potencjalne ryzyko."
         ]
       },
       {
         heading: "Podsumowanie",
         paragraphs: [
-          "Aktualne dane naukowe nie potwierdzają zwiększonego ryzyka sercowo-naczyniowego u właściwie zakwalifikowanych pacjentów leczonych TRT pod nadzorem lekarskim. Jak zawsze, decyzja o terapii powinna uwzględniać indywidualny profil ryzyka każdego pacjenta — i to właśnie jest rola lekarza prowadzącego."
+          "Aktualne dane naukowe nie potwierdzają zwiększonego ryzyka sercowo-naczyniowego u właściwie zakwalifikowanych pacjentów leczonych TRT pod nadzorem lekarskim. Jak zawsze, decyzja o terapii powinna uwzględniać indywidualny profil ryzyka każdego pacjenta, i to właśnie jest rola lekarza prowadzącego."
         ]
       }
     ]
   },
   {
     slug: "telemedycyna-konsultacja-hormonalna",
-    title: "Telemedycyna w endokrynologii — jak wygląda zdalna konsultacja hormonalna?",
-    metaDescription: "Zdalna konsultacja hormonalna — co to jest teleporada, jak się przygotować, jakie badania warto mieć i czego możesz się spodziewać podczas wizyty online.",
+    title: "Telemedycyna w endokrynologii: jak wygląda zdalna konsultacja hormonalna?",
+    metaDescription: "Zdalna konsultacja hormonalna: co to jest teleporada, jak się przygotować, jakie badania warto mieć i czego możesz się spodziewać podczas wizyty online.",
     date: "2026-01-08",
     readingTime: 5,
-    excerpt: "Konsultacja zdalna stała się standardem dla wielu specjalności medycznych. W przypadku zaburzeń hormonalnych teleporada sprawdza się wyjątkowo dobrze — dowiedz się, jak wygląda i jak się do niej przygotować.",
+    excerpt: "Konsultacja zdalna stała się standardem dla wielu specjalności medycznych. W przypadku zaburzeń hormonalnych teleporada sprawdza się wyjątkowo dobrze, dowiedz się, jak wygląda i jak się do niej przygotować.",
     content: [
       {
         heading: "Czy endokrynologia nadaje się do telemedycyny?",
         paragraphs: [
-          "Diagnostyka i leczenie zaburzeń hormonalnych opiera się w dużej mierze na wynikach badań laboratoryjnych i wywiadzie medycznym — a obie te rzeczy doskonale sprawdzają się w formie zdalnej. W przeciwieństwie do niektórych specjalności wymagających badania fizykalnego (np. ortopedia, chirurgia), większość konsultacji endokrynologicznych nie wymaga bezpośredniego kontaktu fizycznego.",
-          "W praktyce oznacza to, że pacjent może umówić się, przygotować wyniki badań, odbyć rozmowę z lekarzem przez telefon lub wideo i otrzymać zalecenia — nie wychodząc z domu."
+          "Diagnostyka i leczenie zaburzeń hormonalnych opiera się w dużej mierze na wynikach badań laboratoryjnych i wywiadzie medycznym, a obie te rzeczy doskonale sprawdzają się w formie zdalnej. W przeciwieństwie do niektórych specjalności wymagających badania fizykalnego (np. ortopedia, chirurgia), większość konsultacji endokrynologicznych nie wymaga bezpośredniego kontaktu fizycznego.",
+          "W praktyce oznacza to, że pacjent może umówić się, przygotować wyniki badań, odbyć rozmowę z lekarzem przez telefon lub wideo i otrzymać zalecenia, nie wychodząc z domu."
         ]
       },
       {
         heading: "Jak się przygotować do zdalnej konsultacji hormonalnej?",
         paragraphs: [
-          "Dobre przygotowanie znacząco podnosi jakość konsultacji. Warto przed wizytą: zebrać wszystkie posiadane wyniki badań laboratoryjnych (szczególnie hormonalnych — z ostatnich 1–2 lat), przygotować listę przyjmowanych leków i suplementów, zapisać objawy, które chcesz omówić — jak długo trwają, jak bardzo nasilone, co im towarzyszy.",
-          "Jeśli nie masz jeszcze żadnych badań, lekarz może je zlecić podczas konsultacji — a wyniki omówić na kolejnej wizycie. Czasem warto wykonać wstępny panel hormonalny (testosteron całkowity, SHBG, LH, FSH, estradiol, prolaktyna) przed pierwszą wizytą, żeby rozmowa była od razu bardziej konkretna."
+          "Dobre przygotowanie znacząco podnosi jakość konsultacji. Warto przed wizytą: zebrać wszystkie posiadane wyniki badań laboratoryjnych (szczególnie hormonalnych, z ostatnich 1–2 lat), przygotować listę przyjmowanych leków i suplementów, zapisać objawy, które chcesz omówić, jak długo trwają, jak bardzo nasilone, co im towarzyszy.",
+          "Jeśli nie masz jeszcze żadnych badań, lekarz może je zlecić podczas konsultacji, a wyniki omówić na kolejnej wizycie. Czasem warto wykonać wstępny panel hormonalny (testosteron całkowity, SHBG, LH, FSH, estradiol, prolaktyna) przed pierwszą wizytą, żeby rozmowa była od razu bardziej konkretna."
         ]
       },
       {
         heading: "Co dzieje się podczas wizyty?",
         paragraphs: [
           "Konsultacja zazwyczaj trwa 60 minut i obejmuje: szczegółowy wywiad medyczny (objawy, historia chorób, tryb życia), omówienie wyników badań (jeśli są dostępne), wyjaśnienie możliwych przyczyn dolegliwości, przedstawienie opcji diagnostycznych lub terapeutycznych, ustalenie dalszego planu działania.",
-          "Na koniec pacjent otrzymuje zalecenia — co do badań, ewentualnego leczenia, stylu życia lub dalszej diagnostyki. Recepty na leki (jeśli są wskazane) mogą być wystawione w formie e-recepty."
+          "Na koniec pacjent otrzymuje zalecenia, co do badań, ewentualnego leczenia, stylu życia lub dalszej diagnostyki. Recepty na leki (jeśli są wskazane) mogą być wystawione w formie e-recepty."
         ]
       }
     ]
   },
   {
     slug: "shbg-co-to-jest",
-    title: "SHBG — co to jest, normy i jak czytać wynik badania",
-    metaDescription: "SHBG, czyli globulina wiążąca hormony płciowe — co oznacza Twój wynik, jakie są normy u mężczyzn i dlaczego bez tego parametru sam testosteron całkowity mówi niewiele.",
+    title: "SHBG: co to jest, normy i jak czytać wynik badania",
+    metaDescription: "SHBG, czyli globulina wiążąca hormony płciowe: co oznacza Twój wynik, jakie są normy u mężczyzn i dlaczego bez tego parametru sam testosteron całkowity mówi niewiele.",
     date: "2025-10-15",
     readingTime: 6,
-    excerpt: 'Mężczyźni często przychodzą na konsultację z wynikiem testosteronu "w normie", ale z wyraźnymi objawami niedoboru. Częstą przyczyną tej rozbieżności jest właśnie SHBG — białko, które decyduje, ile testosteronu jest faktycznie dostępne dla organizmu.',
+    excerpt: 'Mężczyźni często przychodzą na konsultację z wynikiem testosteronu "w normie", ale z wyraźnymi objawami niedoboru. Częstą przyczyną tej rozbieżności jest właśnie SHBG, białko, które decyduje, ile testosteronu jest faktycznie dostępne dla organizmu.',
     content: [
       {
         heading: "Co to jest SHBG?",
         paragraphs: [
-          "SHBG (Sex Hormone-Binding Globulin) to białko produkowane głównie w wątrobie, które wiąże hormony płciowe — testosteron i estradiol — transportując je we krwi. Testosteron związany z SHBG jest biologicznie nieaktywny, co oznacza, że nie może wnikać do komórek i wywoływać efektów fizjologicznych.",
+          "SHBG (Sex Hormone-Binding Globulin) to białko produkowane głównie w wątrobie, które wiąże hormony płciowe, testosteron i estradiol, transportując je we krwi. Testosteron związany z SHBG jest biologicznie nieaktywny, co oznacza, że nie może wnikać do komórek i wywoływać efektów fizjologicznych.",
           "Tylko testosteron wolny (ok. 1–3% całości) oraz luźno związany z albuminą (ok. 30–50%) jest aktywny biologicznie. Dlatego wysoki poziom SHBG może prowadzić do objawów niedoboru testosteronu nawet przy prawidłowym wyniku testosteronu całkowitego."
         ]
       },
       {
         heading: "Co powoduje wzrost SHBG?",
         paragraphs: [
-          "Poziom SHBG rośnie wraz z wiekiem — to jeden z powodów, dla których starsi mężczyźni mogą odczuwać objawy niedoboru testosteronu mimo formalnie prawidłowego wyniku całkowitego. Inne czynniki podwyższające SHBG to: niedoczynność tarczycy, choroby wątroby (marskość), stosowanie niektórych leków (m.in. fenytoiny, tyroksyny w nadmiarze), nadmierna chudość lub anoreksja, a także estrogeny.",
-          "Z kolei czynniki obniżające SHBG to: otyłość (szczególnie brzuszna), insulinooporność i cukrzyca typu 2, niedoczynność tarczycy (paradoksalnie — zależy od stopnia zaawansowania), kortykosteroidy oraz wysokie stężenia androgenów."
+          "Poziom SHBG rośnie wraz z wiekiem, to jeden z powodów, dla których starsi mężczyźni mogą odczuwać objawy niedoboru testosteronu mimo formalnie prawidłowego wyniku całkowitego. Inne czynniki podwyższające SHBG to: niedoczynność tarczycy, choroby wątroby (marskość), stosowanie niektórych leków (m.in. fenytoiny, tyroksyny w nadmiarze), nadmierna chudość lub anoreksja, a także estrogeny.",
+          "Z kolei czynniki obniżające SHBG to: otyłość (szczególnie brzuszna), insulinooporność i cukrzyca typu 2, niedoczynność tarczycy (paradoksalnie: zależy od stopnia zaawansowania), kortykosteroidy oraz wysokie stężenia androgenów."
         ]
       },
       {
         heading: "Jak SHBG jest uwzględniane w diagnostyce?",
         paragraphs: [
-          "Znając poziom SHBG i testosteronu całkowitego, lekarz może wyliczyć testosteron wolny metodą matematyczną (kalkulator Vermeulena) — bez konieczności dodatkowego, kosztownego badania bezpośredniego. Ta wartość wyliczona często lepiej koreluje z objawami niż sam testosteron całkowity.",
-          "Dlatego badanie SHBG jest standardową częścią panelu hormonalnego przy podejrzeniu niedoboru testosteronu — bez niego interpretacja wyników jest niekompletna."
+          "Znając poziom SHBG i testosteronu całkowitego, lekarz może wyliczyć testosteron wolny metodą matematyczną (kalkulator Vermeulena): bez konieczności dodatkowego, kosztownego badania bezpośredniego. Ta wartość wyliczona często lepiej koreluje z objawami niż sam testosteron całkowity.",
+          "Dlatego badanie SHBG jest standardową częścią panelu hormonalnego przy podejrzeniu niedoboru testosteronu: bez niego interpretacja wyników jest niekompletna."
         ]
       }
     ]
@@ -2465,12 +2494,12 @@ const blogPosts = [
     metaDescription: "Jak niedobór testosteronu wpływa na nastrój, motywację i zdrowie psychiczne mężczyzn? Związek między androgenami a depresją, drażliwością i pogorszeniem funkcji poznawczych.",
     date: "2025-08-02",
     readingTime: 6,
-    excerpt: "Niedobór testosteronu to nie tylko zmęczenie i obniżone libido. Jego wpływ na psychikę bywa równie istotny — i często bywa mylony z depresją lub wypaleniem zawodowym.",
+    excerpt: "Niedobór testosteronu to nie tylko zmęczenie i obniżone libido. Jego wpływ na psychikę bywa równie istotny i często bywa mylony z depresją lub wypaleniem zawodowym.",
     content: [
       {
         heading: "Testosteron a mózg",
         paragraphs: [
-          "Testosteron działa nie tylko na mięśnie, kości i funkcje seksualne. Receptory androgenowe znajdują się również w strukturach mózgu odpowiedzialnych za nastrój, motywację i funkcje poznawcze — m.in. w układzie limbicznym, hipokampie i korze przedczołowej.",
+          "Testosteron działa nie tylko na mięśnie, kości i funkcje seksualne. Receptory androgenowe znajdują się również w strukturach mózgu odpowiedzialnych za nastrój, motywację i funkcje poznawcze, m.in. w układzie limbicznym, hipokampie i korze przedczołowej.",
           "Badania obrazowe wykazały, że niedobór testosteronu wiąże się ze zmniejszoną aktywnością obszarów mózgu powiązanych z motywacją i nagrodą. To może częściowo wyjaśniać charakterystyczne dla hipogonadyzmu uczucie braku chęci do działania, apatii i zobojętnienia."
         ]
       },
@@ -2478,37 +2507,37 @@ const blogPosts = [
         heading: "Objawy psychiczne niedoboru testosteronu",
         paragraphs: [
           'Mężczyźni z potwierdzonym niedoborem testosteronu często zgłaszają: obniżony nastrój lub uczucie przygnębienia, drażliwość i zwiększoną reaktywność emocjonalną, trudności z koncentracją i pamięcią, zmniejszoną motywację, zainteresowania i zdolność do odczuwania przyjemności (anhedonia), a także ogólne poczucie, że "coś jest nie tak", mimo braku konkretnej przyczyny.',
-          "Symptomy te mogą łatwo zostać zinterpretowane jako depresja, wypalenie zawodowe lub kryzys wieku średniego — co sprawia, że wielu mężczyzn przez lata nie otrzymuje właściwej diagnostyki hormonalnej."
+          "Symptomy te mogą łatwo zostać zinterpretowane jako depresja, wypalenie zawodowe lub kryzys wieku średniego, co sprawia, że wielu mężczyzn przez lata nie otrzymuje właściwej diagnostyki hormonalnej."
         ]
       },
       {
         heading: "Czy TRT pomaga na depresję?",
         paragraphs: [
           "Odpowiedź jest niuansowana. U mężczyzn z potwierdzonym hipogonadyzmem i towarzyszącymi objawami psychicznymi, normalizacja testosteronu często przynosi wyraźną poprawę nastroju, energii i motywacji. Nie jest to jednak antydepresant i nie zastąpi leczenia psychiatrycznego w klinicznej depresji.",
-          "Ważne: depresja i niedobór testosteronu mogą współistnieć i wzajemnie się nasilać. Dlatego przy objawach depresyjnych u mężczyzn warto przeprowadzić diagnostykę hormonalną — i traktować ją jako uzupełnienie, nie alternatywę, dla oceny psychiatrycznej."
+          "Ważne: depresja i niedobór testosteronu mogą współistnieć i wzajemnie się nasilać. Dlatego przy objawach depresyjnych u mężczyzn warto przeprowadzić diagnostykę hormonalną i traktować ją jako uzupełnienie, nie alternatywę, dla oceny psychiatrycznej."
         ]
       }
     ]
   },
   {
     slug: "stres-kortyzol-testosteron",
-    title: "Jak stres obniża testosteron — kortyzol a androgeny",
+    title: "Jak stres obniża testosteron: kortyzol a androgeny",
     metaDescription: "Przewlekły stres przez kortyzol hamuje produkcję testosteronu. Dowiedz się, jaki jest mechanizm tego działania i co można zrobić, żeby go ograniczyć.",
     date: "2025-05-18",
     readingTime: 5,
-    excerpt: "Kortyzol i testosteron to hormony, które wzajemnie się wykluczają. Przewlekły stres może istotnie obniżać poziom testosteronu — i to niezależnie od wieku czy stylu życia.",
+    excerpt: "Kortyzol i testosteron to hormony, które wzajemnie się wykluczają. Przewlekły stres może istotnie obniżać poziom testosteronu, i to niezależnie od wieku czy stylu życia.",
     content: [
       {
         heading: "Mechanizm: kortyzol kontra testosteron",
         paragraphs: [
-          "Kortyzol, zwany hormonem stresu, i testosteron są produkowane z tego samego prekursora — cholesterolu. W warunkach przewlekłego stresu oś HPA (podwzgórze-przysadka-nadnercza) jest stale aktywowana, co kieruje zasoby organizmu na produkcję kortyzolu kosztem produkcji androgenów.",
-          "Kortyzol bezpośrednio hamuje oś HPG (podwzgórze-przysadka-gonady) odpowiedzialną za produkcję testosteronu — obniżając wydzielanie GnRH, LH i FSH. To tzw. stres-induced hypogonadism — zjawisko dobrze udokumentowane w literaturze medycznej."
+          "Kortyzol, zwany hormonem stresu, i testosteron są produkowane z tego samego prekursora, cholesterolu. W warunkach przewlekłego stresu oś HPA (podwzgórze-przysadka-nadnercza) jest stale aktywowana, co kieruje zasoby organizmu na produkcję kortyzolu kosztem produkcji androgenów.",
+          "Kortyzol bezpośrednio hamuje oś HPG (podwzgórze-przysadka-gonady) odpowiedzialną za produkcję testosteronu, obniżając wydzielanie GnRH, LH i FSH. To tzw. stres-induced hypogonadism: zjawisko dobrze udokumentowane w literaturze medycznej."
         ]
       },
       {
         heading: "Przewlekły stres a wyniki badań",
         paragraphs: [
-          "Mężczyźni w stanach przewlekłego stresu (przepracowanie, wypalenie zawodowe, chroniczny niedobór snu) mogą mieć wyniki badań wskazujące na niedobór testosteronu — nawet jeśli wcześniej były one prawidłowe. Co ważne, sam stres może być przyczyną niskiego wyniku, bez żadnej patologii jąder czy przysadki.",
+          "Mężczyźni w stanach przewlekłego stresu (przepracowanie, wypalenie zawodowe, chroniczny niedobór snu) mogą mieć wyniki badań wskazujące na niedobór testosteronu, nawet jeśli wcześniej były one prawidłowe. Co ważne, sam stres może być przyczyną niskiego wyniku, bez żadnej patologii jąder czy przysadki.",
           "To właśnie dlatego przy interpretacji wyników badań hormonalnych lekarz powinien uwzględnić kontekst życiowy pacjenta. Wynik wykonany w trakcie intensywnego okresu stresowego może nie odzwierciedlać faktycznego, stabilnego poziomu testosteronu."
         ]
       },
@@ -2523,30 +2552,30 @@ const blogPosts = [
   },
   {
     slug: "testosteron-a-sen",
-    title: "Testosteron a jakość snu — nocna produkcja hormonów",
+    title: "Testosteron a jakość snu: nocna produkcja hormonów",
     metaDescription: "Testosteron produkowany jest głównie podczas snu. Dowiedz się, jak niedobór snu wpływa na poziom testosteronu i jakie objawy może powodować bezdech senny.",
     date: "2025-03-05",
     readingTime: 5,
-    excerpt: "Większość dziennej puli testosteronu produkowana jest w nocy — podczas faz głębokiego snu. Przewlekły niedobór snu i zaburzenia snu mogą istotnie obniżyć poziom testosteronu nawet u młodych, zdrowych mężczyzn.",
+    excerpt: "Większość dziennej puli testosteronu produkowana jest w nocy, podczas faz głębokiego snu. Przewlekły niedobór snu i zaburzenia snu mogą istotnie obniżyć poziom testosteronu nawet u młodych, zdrowych mężczyzn.",
     content: [
       {
         heading: "Nocna produkcja testosteronu",
         paragraphs: [
-          "Testosteron wykazuje wyraźny rytm dobowy ściśle powiązany z cyklem snu. Szczyt produkcji przypada na fazy głębokiego snu (NREM) we wczesnych godzinach nocnych. Poranne stężenie testosteronu — będące podstawą diagnostyki laboratoryjnej — odzwierciedla właśnie efekt nocnej produkcji.",
-          "Badanie opublikowane w JAMA wykazało, że u zdrowych młodych mężczyzn (wiek 24 lat) ograniczenie snu do 5 godzin przez tydzień obniżyło poziom testosteronu o 10–15% — co odpowiada procesowi starzenia o 10–15 lat. To wyraźny sygnał, że sen jest jednym z podstawowych filarów zdrowej gospodarki hormonalnej."
+          "Testosteron wykazuje wyraźny rytm dobowy ściśle powiązany z cyklem snu. Szczyt produkcji przypada na fazy głębokiego snu (NREM) we wczesnych godzinach nocnych. Poranne stężenie testosteronu, będące podstawą diagnostyki laboratoryjnej, odzwierciedla właśnie efekt nocnej produkcji.",
+          "Badanie opublikowane w JAMA wykazało, że u zdrowych młodych mężczyzn (wiek 24 lat) ograniczenie snu do 5 godzin przez tydzień obniżyło poziom testosteronu o 10–15%, co odpowiada procesowi starzenia o 10–15 lat. To wyraźny sygnał, że sen jest jednym z podstawowych filarów zdrowej gospodarki hormonalnej."
         ]
       },
       {
         heading: "Bezdech senny a testosteron",
         paragraphs: [
           "Obturacyjny bezdech senny (OBS) to zaburzenie, w którym drogi oddechowe zamykają się podczas snu, powodując przerwy w oddychaniu, mikroprzebudzenia i fragmentację snu. Jest szczególnie powszechny u mężczyzn z otyłością i po 40-tce.",
-          "OBS istotnie zaburza architekturę snu, co bezpośrednio przekłada się na obniżenie poziomu testosteronu. Co ciekawe, zależność jest dwukierunkowa — niski testosteron sprzyja odkładaniu tkanki tłuszczowej (co nasila bezdech), a bezdech obniża testosteron (co nasila objawy niedoboru). U pacjentów z podejrzeniem bezdechu warto przeprowadzić badanie polisomnograficzne przed podjęciem decyzji o TRT."
+          "OBS istotnie zaburza architekturę snu, co bezpośrednio przekłada się na obniżenie poziomu testosteronu. Co ciekawe, zależność jest dwukierunkowa: niski testosteron sprzyja odkładaniu tkanki tłuszczowej (co nasila bezdech), a bezdech obniża testosteron (co nasila objawy niedoboru). U pacjentów z podejrzeniem bezdechu warto przeprowadzić badanie polisomnograficzne przed podjęciem decyzji o TRT."
         ]
       },
       {
         heading: "Praktyczne wnioski",
         paragraphs: [
-          "Jeśli masz objawy niedoboru testosteronu i jednocześnie śpisz mało lub źle — priorytetem jest poprawa jakości snu. Często wystarczą zmiany higieniczne: stałe godziny snu, eliminacja ekranów przed snem, ciemna i chłodna sypialnia, ograniczenie alkoholu (który mimo że ułatwia zasypianie, fragmentuje sen głęboki).",
+          "Jeśli masz objawy niedoboru testosteronu i jednocześnie śpisz mało lub źle, priorytetem jest poprawa jakości snu. Często wystarczą zmiany higieniczne: stałe godziny snu, eliminacja ekranów przed snem, ciemna i chłodna sypialnia, ograniczenie alkoholu (który mimo że ułatwia zasypianie, fragmentuje sen głęboki).",
           "Wykonanie badań laboratoryjnych po kilku tygodniach dobrego snu może dać zupełnie inne wyniki niż te wykonane w szczycie zmęczenia. Lekarz uwzględni jakość snu jako jeden z kluczowych czynników przy interpretacji wyników hormonalnych."
         ]
       }
@@ -2554,31 +2583,31 @@ const blogPosts = [
   },
   {
     slug: "przewlekle-zmeczenie-hormony-mezczyzna",
-    title: "Przewlekłe zmęczenie u mężczyzn — kiedy sprawdzić hormony?",
+    title: "Przewlekłe zmęczenie u mężczyzn: kiedy sprawdzić hormony?",
     metaDescription: "Chroniczne zmęczenie i brak energii u mężczyzn po 35-tce mogą mieć wiele przyczyn. Dowiedz się, kiedy warto sprawdzić poziom testosteronu i innych hormonów.",
     date: "2025-01-10",
     readingTime: 5,
     excerpt: "Zmęczenie to jeden z najczęstszych powodów wizyt u lekarza. U mężczyzn po 35-tce, gdy zmęczenie jest przewlekłe i nie ma wyraźnej przyczyny, warto sprawdzić gospodarkę hormonalną.",
     content: [
       {
-        heading: 'Zmęczenie, które nie mija — kiedy to nie jest "tylko stres"?',
+        heading: 'Zmęczenie, które nie mija, kiedy to nie jest "tylko stres"?',
         paragraphs: [
-          "Krótkotrwałe zmęczenie po intensywnym czasie, niedoborze snu czy trudnym projekcie jest normalne. Problem pojawia się, gdy zmęczenie jest przewlekłe — trwa tygodniami lub miesiącami, nie ustępuje po wypoczynku i wyraźnie obniża jakość codziennego funkcjonowania.",
+          "Krótkotrwałe zmęczenie po intensywnym czasie, niedoborze snu czy trudnym projekcie jest normalne. Problem pojawia się, gdy zmęczenie jest przewlekłe, trwa tygodniami lub miesiącami, nie ustępuje po wypoczynku i wyraźnie obniża jakość codziennego funkcjonowania.",
           'Takie zmęczenie może mieć wiele przyczyn: anemię, niedobory witamin (B12, D, żelazo), niedoczynność tarczycy, depresję, bezdech senny, przewlekłe infekcje lub zaburzenia hormonalne, w tym niedobór testosteronu. Dlatego "samo przejdzie" to rzadko właściwa strategia.'
         ]
       },
       {
         heading: "Jak hormony wpływają na energię?",
         paragraphs: [
-          "Testosteron ma bezpośredni wpływ na metabolizm energetyczny, produkcję czerwonych krwinek, nastrój i motywację. Jego niedobór często objawia się właśnie przewlekłym zmęczeniem i brakiem chęci do działania — nawet u mężczyzn, którzy wcześniej byli aktywni i pełni energii.",
-          "Hormony tarczycy (T3 i T4) regulują tempo metabolizmu. Niedoczynność tarczycy — stosunkowo powszechna, często nierozpoznana — może powodować silne zmęczenie, przyrost masy ciała, wypadanie włosów i uczucie zimna. Hormony tarczycy i testosteron wzajemnie na siebie wpływają, dlatego zaburzenie jednej osi hormonalnej może wtórnie zaburzać inną."
+          "Testosteron ma bezpośredni wpływ na metabolizm energetyczny, produkcję czerwonych krwinek, nastrój i motywację. Jego niedobór często objawia się właśnie przewlekłym zmęczeniem i brakiem chęci do działania, nawet u mężczyzn, którzy wcześniej byli aktywni i pełni energii.",
+          "Hormony tarczycy (T3 i T4) regulują tempo metabolizmu. Niedoczynność tarczycy, stosunkowo powszechna, często nierozpoznana, może powodować silne zmęczenie, przyrost masy ciała, wypadanie włosów i uczucie zimna. Hormony tarczycy i testosteron wzajemnie na siebie wpływają, dlatego zaburzenie jednej osi hormonalnej może wtórnie zaburzać inną."
         ]
       },
       {
         heading: "Inne możliwe przyczyny, których nie warto pomijać",
         paragraphs: [
           "Przed skupieniem się wyłącznie na testosteronie warto wykluczyć inne powszechne przyczyny: niedobór witaminy D (bardzo częsty, szczególnie w Polsce w miesiącach zimowych), niedobór witaminy B12 lub żelaza, niedoczynność tarczycy (TSH), zespół bezdechu sennego (szczególnie przy otyłości lub głośnym chrapaniu), depresja lub stany lękowe.",
-          "Dobry lekarz nie zawęża diagnostyki od razu do hormonów płciowych — spojrzy na całość i zdecyduje, jakie badania mają sens w konkretnym przypadku."
+          "Dobry lekarz nie zawęża diagnostyki od razu do hormonów płciowych, spojrzy na całość i zdecyduje, jakie badania mają sens w konkretnym przypadku."
         ]
       },
       {
@@ -2592,17 +2621,17 @@ const blogPosts = [
   },
   {
     slug: "niskie-libido-mezczyzna-testosteron",
-    title: "Niskie libido u mężczyzn — kiedy winny jest testosteron?",
+    title: "Niskie libido u mężczyzn: kiedy winny jest testosteron?",
     metaDescription: "Obniżone libido u mężczyzn może mieć wiele przyczyn. Dowiedz się, kiedy warto sprawdzić testosteron, jakie badania wykonać i jak wygląda diagnostyka.",
     date: "2024-12-15",
     readingTime: 5,
-    excerpt: "Obniżone libido to temat, o którym mężczyźni rzadko mówią głośno — a problem dotyczy znacznie więcej osób niż mogłoby się wydawać. Czasem przyczyną są hormony, ale nie zawsze.",
+    excerpt: "Obniżone libido to temat, o którym mężczyźni rzadko mówią głośno, a problem dotyczy znacznie więcej osób niż mogłoby się wydawać. Czasem przyczyną są hormony, ale nie zawsze.",
     content: [
       {
         heading: "Jak powszechny jest problem?",
         paragraphs: [
-          'Szacunki wskazują, że obniżone libido dotyczy 15–25% dorosłych mężczyzn, a częstość rośnie z wiekiem. Mimo to jest to temat, z którym pacjenci rzadko trafiają do lekarza — często z powodu wstydu lub przekonania, że "tak po prostu jest".',
-          "Warto wiedzieć, że obniżone libido to objaw, a nie diagnoza. Oznacza, że coś w organizmie lub psychice nie działa optymalnie — i zazwyczaj da się to zmienić."
+          'Szacunki wskazują, że obniżone libido dotyczy 15–25% dorosłych mężczyzn, a częstość rośnie z wiekiem. Mimo to jest to temat, z którym pacjenci rzadko trafiają do lekarza, często z powodu wstydu lub przekonania, że "tak po prostu jest".',
+          "Warto wiedzieć, że obniżone libido to objaw, a nie diagnoza. Oznacza, że coś w organizmie lub psychice nie działa optymalnie, i zazwyczaj da się to zmienić."
         ]
       },
       {
@@ -2616,21 +2645,21 @@ const blogPosts = [
         heading: "Kiedy testosteron może być przyczyną?",
         paragraphs: [
           "Testosteron ma istotny wpływ na libido u mężczyzn. Hormonalna przyczyna jest bardziej prawdopodobna, gdy obniżeniu libido towarzyszą inne objawy (zmęczenie, gorsze samopoczucie, zmiany w sylwetce), problem narasta stopniowo i nie jest wyraźnie związany z czynnikami psychospołecznymi, a mężczyzna ma ponad 35–40 lat.",
-          "Diagnostyka hormonalna jest stosunkowo prosta i nieinwazyjna — wymaga pobrania krwi rano. To dobry punkt wyjścia do zrozumienia, co się dzieje z organizmem."
+          "Diagnostyka hormonalna jest stosunkowo prosta i nieinwazyjna: wymaga pobrania krwi rano. To dobry punkt wyjścia do zrozumienia, co się dzieje z organizmem."
         ]
       },
       {
         heading: "Jak wygląda diagnostyka?",
         paragraphs: [
-          "Pierwszym krokiem jest konsultacja lekarska — lekarz przeprowadzi wywiad i zdecyduje, jakie badania są wskazane. Standardowo zlecany jest panel hormonalny: testosteron całkowity i wolny, SHBG, LH, FSH, estradiol, prolaktyna.",
-          "Na podstawie wyników i obrazu klinicznego lekarz oceni, czy przyczyna jest hormonalna i czy istnieje wskazanie do leczenia. Jeśli testosteron jest prawidłowy, dalsze poszukiwanie przyczyny może obejmować inne aspekty — psychologiczne, kardiologiczne lub naczyniowe."
+          "Pierwszym krokiem jest konsultacja lekarska: lekarz przeprowadzi wywiad i zdecyduje, jakie badania są wskazane. Standardowo zlecany jest panel hormonalny: testosteron całkowity i wolny, SHBG, LH, FSH, estradiol, prolaktyna.",
+          "Na podstawie wyników i obrazu klinicznego lekarz oceni, czy przyczyna jest hormonalna i czy istnieje wskazanie do leczenia. Jeśli testosteron jest prawidłowy, dalsze poszukiwanie przyczyny może obejmować inne aspekty, psychologiczne, kardiologiczne lub naczyniowe."
         ]
       }
     ]
   },
   {
     slug: "trt-co-to-jest",
-    title: "Terapia zastępcza testosteronem (TRT) — co to jest i dla kogo jest wskazana?",
+    title: "Terapia zastępcza testosteronem (TRT): co to jest i dla kogo jest wskazana?",
     metaDescription: "Czym jest terapia zastępcza testosteronem (TRT), komu może być pomocna, jak przebiega leczenie i jak wygląda monitorowanie? Kompleksowe wyjaśnienie.",
     date: "2024-12-05",
     readingTime: 8,
@@ -2639,15 +2668,15 @@ const blogPosts = [
       {
         heading: "Czym jest TRT?",
         paragraphs: [
-          "Terapia zastępcza testosteronem (TRT, ang. Testosterone Replacement Therapy) to leczenie farmakologiczne stosowane u mężczyzn z potwierdzonym klinicznie i laboratoryjnie niedoborem testosteronu. Jej celem jest przywrócenie poziomu testosteronu do wartości fizjologicznych — nie wywindowanie go ponad normę.",
-          "TRT jest leczeniem medycznym, przepisywanym i nadzorowanym przez lekarza. To nie jest suplementacja stosowana przez zdrowych mężczyzn w celach poprawy sylwetki czy zwiększenia siły — taki cel różni się od medycznie wskazanej TRT i wymaga oddzielnej rozmowy."
+          "Terapia zastępcza testosteronem (TRT, ang. Testosterone Replacement Therapy) to leczenie farmakologiczne stosowane u mężczyzn z potwierdzonym klinicznie i laboratoryjnie niedoborem testosteronu. Jej celem jest przywrócenie poziomu testosteronu do wartości fizjologicznych, nie wywindowanie go ponad normę.",
+          "TRT jest leczeniem medycznym, przepisywanym i nadzorowanym przez lekarza. To nie jest suplementacja stosowana przez zdrowych mężczyzn w celach poprawy sylwetki czy zwiększenia siły, taki cel różni się od medycznie wskazanej TRT i wymaga oddzielnej rozmowy."
         ]
       },
       {
-        heading: "Wskazania do TRT — kiedy leczenie jest rozważane?",
+        heading: "Wskazania do TRT: kiedy leczenie jest rozważane?",
         paragraphs: [
-          "Warunkiem rozważenia TRT jest obecność dwóch elementów jednocześnie: objawów klinicznych sugerujących niedobór testosteronu (zmęczenie, obniżone libido, gorsze samopoczucie psychiczne, zmiany w składzie ciała) oraz potwierdzenia laboratoryjnego — niskiego poziomu testosteronu w co najmniej dwóch porannych badaniach krwi.",
-          "Sam niski wynik bez objawów, ani same objawy bez niskiego wyniku — nie są standardowym wskazaniem do TRT. Decyzja o leczeniu zawsze wymaga indywidualnej oceny lekarskiej i wykluczenia innych przyczyn dolegliwości."
+          "Warunkiem rozważenia TRT jest obecność dwóch elementów jednocześnie: objawów klinicznych sugerujących niedobór testosteronu (zmęczenie, obniżone libido, gorsze samopoczucie psychiczne, zmiany w składzie ciała) oraz potwierdzenia laboratoryjnego, niskiego poziomu testosteronu w co najmniej dwóch porannych badaniach krwi.",
+          "Sam niski wynik bez objawów, ani same objawy bez niskiego wyniku, nie są standardowym wskazaniem do TRT. Decyzja o leczeniu zawsze wymaga indywidualnej oceny lekarskiej i wykluczenia innych przyczyn dolegliwości."
         ]
       },
       {
@@ -2674,106 +2703,161 @@ const blogPosts = [
       {
         heading: "TRT a płodność",
         paragraphs: [
-          "Ważna informacja dla mężczyzn planujących ojcostwo: TRT hamuje własną produkcję testosteronu i spermatogenezę. Stosowanie TRT może prowadzić do przejściowego lub długotrwałego zmniejszenia płodności. Jeśli planujesz mieć dzieci, koniecznie poinformuj o tym lekarza przed rozpoczęciem leczenia — istnieją alternatywne metody, które nie mają tego efektu."
+          "Ważna informacja dla mężczyzn planujących ojcostwo: TRT hamuje własną produkcję testosteronu i spermatogenezę. Stosowanie TRT może prowadzić do przejściowego lub długotrwałego zmniejszenia płodności. Jeśli planujesz mieć dzieci, koniecznie poinformuj o tym lekarza przed rozpoczęciem leczenia, istnieją alternatywne metody, które nie mają tego efektu."
         ]
       }
     ]
   },
   {
     slug: "jak-zbadac-poziom-testosteronu",
-    title: "Badanie testosteronu — jakie parametry, kiedy zrobić i jak czytać wynik",
-    metaDescription: "Badanie testosteronu: które parametry sprawdzić, kiedy pobrać krew, jak czytać wynik i co oznaczają odchylenia od normy.",
+    title: "Norma testosteronu u mężczyzn: wartości, jednostki i jak czytać wynik badania",
+    metaDescription: "Norma testosteronu u mężczyzn: zakresy testosteronu całkowitego i wolnego, przeliczanie nmol/l na ng/dl, progi z wytycznych, jak przygotować się do badania i co oznacza wynik.",
     date: "2024-11-28",
-    readingTime: 7,
-    excerpt: 'Wykonanie badania "testosteron" to dopiero początek. Żeby rzetelnie ocenić gospodarkę hormonalną mężczyzny, potrzebny jest szerszy panel badań. Dowiedz się, co powinien obejmować i jak go prawidłowo zinterpretować.',
+    updated: "2026-10-19",
+    readingTime: 9,
+    excerpt: "Wynik testosteronu w normie nie zawsze oznacza, że wszystko jest w porządku, a wynik poniżej normy nie zawsze oznacza leczenie. Wyjaśniamy, jakie są normy, jak przeliczać jednostki i jak przygotować się do badania, żeby wynik był wiarygodny.",
     content: [
       {
-        heading: 'Dlaczego samo "testosteron całkowity" to za mało?',
+        heading: "Norma testosteronu całkowitego u mężczyzn",
         paragraphs: [
-          "Testosteron całkowity to najczęściej zlecany parametr, ale daje niepełny obraz. Około 44–65% testosteronu we krwi jest trwale związane z SHBG (globuliną wiążącą hormony płciowe) i biologicznie nieaktywne. Dodatkowe 30–54% jest luźno związane z albuminą. Tylko 1–3% testosteronu krąży w formie wolnej i jest bezpośrednio aktywne biologicznie.",
-          'Oznacza to, że mężczyzna z "normalnym" testosteronem całkowitym może mieć niedobór testosteronu wolnego — i odwrotnie. Pełna ocena wymaga uwzględnienia SHBG i ewentualnie wyliczenia lub bezpośredniego pomiaru testosteronu wolnego.'
+          "Zakres referencyjny testosteronu całkowitego u dorosłych mężczyzn wynosi zwykle ok. 8–35 nmol/l, czyli ok. 230–1000 ng/dl. Dokładne granice zależą od laboratorium i metody oznaczenia, dlatego wynik zawsze porównuj z zakresem wydrukowanym na własnym wyniku, a nie z tabelą z internetu.",
+          "Większość laboratoriów podaje jeden zakres dla wszystkich dorosłych mężczyzn, niektóre, przedziały wiekowe. Poziom testosteronu z wiekiem stopniowo spada, ale sam wiek nie jest powodem, by niski wynik uznać za „normalny” u mężczyzny z objawami."
         ]
       },
       {
-        heading: "Rekomendowany panel hormonalny",
+        heading: "Progi niedoboru według wytycznych",
         paragraphs: [
-          "Podstawowe badania przy podejrzeniu niedoboru testosteronu obejmują: testosteron całkowity (T total) — kluczowy parametr wyjściowy; SHBG — niezbędne do interpretacji poziomu testosteronu wolnego; LH i FSH — pozwalają ocenić, czy problem leży w jądrach (hipogonadyzm pierwotny) czy w przysadce (hipogonadyzm wtórny); estradiol (E2) — nadmiar może nasilać objawy niedoboru T; prolaktyna — wysoki poziom hamuje produkcję testosteronu.",
-          "Uzupełniająco mogą być zlecone: morfologia krwi (hematokryt), PSA (u mężczyzn powyżej 40–45 r.ż.), profil lipidowy, TSH (tarczyca) oraz glukoza na czczo. Pełny zakres badań lekarz ustala indywidualnie na podstawie wywiadu."
+          "Towarzystwa naukowe przyjmują nieco różne granice. Amerykańskie Towarzystwo Urologiczne (AUA) uznaje testosteron całkowity poniżej 300 ng/dl (ok. 10,4 nmol/l) za rozsądny próg wspierający rozpoznanie niedoboru. Endocrine Society podaje dolną granicę normy 264 ng/dl (9,2 nmol/l) dla oznaczeń zgodnych ze standardem CDC.",
+          "W dużym europejskim badaniu EMAS prawdopodobieństwo objawów rosło przy testosteronie całkowitym w zakresie ok. 8–13 nmol/l, a jako kryteria hipogonadyzmu przyjęto co najmniej trzy objawy seksualne przy testosteronie całkowitym poniżej 11 nmol/l i wolnym poniżej 220 pmol/l. Żaden z tych progów nie oznacza automatycznie leczenia, decyzję podejmuje lekarz po ocenie całości."
         ]
       },
       {
-        heading: "Kiedy i jak pobrać krew?",
+        heading: "Testosteron wolny i SHBG",
         paragraphs: [
-          "Pora pobrania ma kluczowe znaczenie. Testosteron wykazuje wyraźny rytm dobowy — jego poziom jest najwyższy między 7:00 a 10:00 rano i stopniowo spada przez resztę dnia. Badanie wykonane po południu może dać wynik nawet 20–30% niższy niż poranne.",
-          "Praktyczne zalecenia: pobierz krew między 7:00 a 11:00, na czczo lub po lekkim śniadaniu (bez tłustych posiłków), unikaj intensywnego wysiłku fizycznego poprzedniego dnia i alkoholu przez 24–48 godzin. Jeśli wynik jest graniczny, lekarz może zalecić powtórzenie badania."
+          "Tylko ok. 1–3% testosteronu krąży we krwi w postaci wolnej, biologicznie aktywnej. Około 44–65% jest trwale związane z SHBG (globuliną wiążącą hormony płciowe), a reszta luźno z albuminą. Mężczyzna z prawidłowym testosteronem całkowitym, ale wysokim SHBG, może mieć niedobór testosteronu wolnego, i odwrotnie.",
+          "Testosteron wolny najczęściej wylicza się z testosteronu całkowitego, SHBG i albuminy (np. wzorem Vermeulena). Bezpośrednie oznaczenia „testosteronu wolnego” metodami immunologicznymi bywają mało dokładne. Testosteron wolny ma szczególne znaczenie, gdy testosteron całkowity jest graniczny, a SHBG wysokie lub niskie."
         ]
       },
       {
-        heading: "Normy i jak je interpretować",
+        heading: "Jak przeliczyć jednostki testosteronu",
         paragraphs: [
-          "Normy laboratoryjne dla testosteronu całkowitego u dorosłych mężczyzn zazwyczaj wynoszą 8–35 nmol/L (230–1000 ng/dL), ale zakresy referencyjne mogą różnić się między laboratoriami. Wiele towarzystw medycznych wskazuje, że objawy niedoboru mogą pojawić się już przy wartościach poniżej 12 nmol/L, nawet jeśli formalnie mieszczą się w normie.",
-          'Wynik "w normie" nie wyklucza objawowego niedoboru testosteronu, a wynik "poniżej normy" nie automatycznie oznacza konieczności leczenia. Interpretacja zawsze wymaga klinicznego kontekstu.'
+          "Wyniki podawane są w różnych jednostkach. Testosteron całkowity: nmol/l × 28,84 = ng/dl, a ng/dl × 0,0347 = nmol/l. Przykłady: 8 nmol/l ≈ 231 ng/dl, 12 nmol/l ≈ 346 ng/dl, 20 nmol/l ≈ 577 ng/dl. Jeśli wynik jest w ng/ml, pomnóż go przez 100, aby otrzymać ng/dl (np. 4,5 ng/ml = 450 ng/dl).",
+          "Testosteron wolny: pg/ml × 3,47 = pmol/l (np. 64 pg/ml ≈ 222 pmol/l). Przed porównaniem wyniku z jakimkolwiek progiem upewnij się, że jednostki się zgadzają, to najczęstsze źródło błędnej interpretacji."
+        ]
+      },
+      {
+        heading: "Jak przygotować się do badania testosteronu",
+        paragraphs: [
+          "Testosteron ma wyraźny rytm dobowy, najwyższy jest rano, a po południu bywa nawet o 20–30% niższy. Krew pobieraj między 7:00 a 11:00, najlepiej na czczo. Dzień wcześniej unikaj intensywnego wysiłku i alkoholu, a samo badanie przełóż, jeśli jesteś chory albo po nieprzespanej nocy, infekcja i niedobór snu obniżają wynik.",
+          "Poinformuj lekarza o przyjmowanych lekach i suplementach. Wysokie dawki biotyny mogą zafałszować wyniki niektórych oznaczeń hormonalnych. Jeśli wynik jest niski lub graniczny, badanie powtarza się, rozpoznanie niedoboru wymaga co najmniej dwóch porannych pomiarów."
+        ]
+      },
+      {
+        heading: "Jakie badania wykonać razem z testosteronem",
+        paragraphs: [
+          "Sam testosteron całkowity daje niepełny obraz. Podstawowy panel obejmuje: testosteron całkowity, SHBG, LH i FSH (pozwalają odróżnić hipogonadyzm pierwotny od wtórnego), estradiol oraz prolaktynę.",
+          "Uzupełniająco lekarz może zlecić morfologię (hematokryt), PSA u mężczyzn po 40–45. roku życia, lipidogram, TSH oraz glukozę na czczo. Zakres badań ustala się indywidualnie na podstawie wywiadu."
+        ]
+      },
+      {
+        heading: "Co oznacza wynik w normie, a co poniżej normy",
+        paragraphs: [
+          "Wynik w normie nie wyklucza dolegliwości, objawy przypisywane niskiemu testosteronowi (zmęczenie, spadek libido, gorszy nastrój) często mają inne przyczyny: zaburzenia snu, stres, choroby tarczycy, nadwagę czy niedobory. Wtedy diagnostyka nie kończy się na testosteronie.",
+          "Wynik poniżej normy nie oznacza automatycznie terapii. Najpierw trzeba potwierdzić niedobór w powtórnym badaniu i ustalić jego przyczynę, od niej zależy dalsze postępowanie. Interpretacja zawsze wymaga kontekstu klinicznego."
         ]
       }
-    ]
+    ],
+    related: ["objawy-niskiego-testosteronu-po-40", "shbg-co-to-jest", "hipogonadyzm-u-mezczyzn", "pierwsze-badania-hormonalne"],
+    sources: [SRC.aua2018, SRC.endocrine2018, SRC.emas, SRC.vermeulen1999]
   },
   {
     slug: "objawy-niskiego-testosteronu-po-40",
-    title: "Objawy niskiego testosteronu u mężczyzn — lista i kiedy się zbadać",
-    metaDescription: "Objawy niskiego testosteronu u mężczyzn — pełna lista, kiedy wykonać panel hormonalny i co dalej zrobić z wynikiem.",
+    title: "Niski testosteron: objawy u mężczyzn i kiedy się zbadać",
+    metaDescription: "Niski testosteron: objawy seksualne, fizyczne i psychiczne u mężczyzn, z czym można je pomylić, jakie badania wykonać i kiedy zgłosić się do lekarza.",
     date: "2024-11-15",
-    readingTime: 6,
-    excerpt: "Po czterdziestce wiele mężczyzn zauważa stopniowe zmiany — mniejszą energię, gorszy sen, spadek motywacji. Część z tych objawów może być związana z naturalnym obniżaniem się poziomu testosteronu.",
+    updated: "2026-10-19",
+    readingTime: 8,
+    excerpt: "Spadek libido, zmęczenie, gorszy nastrój, objawy niskiego testosteronu są częste, ale niespecyficzne. Te same dolegliwości mogą mieć inne przyczyny. Wyjaśniamy, jak je rozpoznać i co zrobić dalej.",
     content: [
       {
-        heading: "Dlaczego testosteron spada po 40-tce?",
+        heading: "Czym jest niski testosteron?",
         paragraphs: [
-          "Poziom testosteronu u mężczyzn osiąga szczyt około 25–30 roku życia, a następnie zaczyna stopniowo maleć — szacunkowo o 1–2% rocznie po 35-tce. To naturalne zjawisko fizjologiczne, określane jako andropauza lub ADAM (Androgen Deficiency in the Aging Male). Nie dotyczy jednak wszystkich mężczyzn w jednakowym stopniu.",
-          "Istotną rolę odgrywają też czynniki stylu życia: przewlekły stres, niedobór snu, nadwaga (zwłaszcza otyłość brzuszna), brak aktywności fizycznej oraz niektóre schorzenia przewlekłe. W związku z tym objawy niedoboru testosteronu mogą pojawić się znacznie wcześniej niż wynikałoby to tylko z wieku."
+          "Niski testosteron (niedobór testosteronu, hipogonadyzm) to stan, w którym organizm wytwarza za mało tego hormonu, a jednocześnie występują objawy. Do rozpoznania potrzebne są oba elementy, sam niski wynik bez objawów albo same objawy przy prawidłowym wyniku nie wystarczają.",
+          "Poziom testosteronu osiąga szczyt ok. 25.–30. roku życia, a potem powoli spada, szacunkowo o 1–2% rocznie. Tempo zależy w dużej mierze od stylu życia i chorób współistniejących: otyłość, przewlekły stres, niedobór snu czy brak ruchu mogą obniżyć testosteron także u młodszych mężczyzn."
         ]
       },
       {
-        heading: "Charakterystyczne objawy niedoboru testosteronu",
+        heading: "Objawy seksualne",
         paragraphs: [
-          "Objawy niedoboru testosteronu bywają niespecyficzne — mogą imitować wiele innych stanów. Najczęściej zgłaszane przez pacjentów dolegliwości to przewlekłe zmęczenie i brak energii, obniżone libido, gorsze samopoczucie psychiczne, zmiany w składzie ciała (wzrost tkanki tłuszczowej, utrata masy mięśniowej) oraz zaburzenia snu.",
-          "Ważne: żaden z tych objawów nie jest specyficzny wyłącznie dla niedoboru testosteronu. Mogą być wywołane przez stres, depresję, choroby tarczycy lub inne stany zdrowotne. Dlatego samodzielne diagnozowanie na podstawie objawów jest niewystarczające — konieczna jest diagnostyka laboratoryjna."
+          "W dużym europejskim badaniu EMAS z niskim testosteronem najsilniej wiązały się trzy objawy seksualne: rzadsze poranne erekcje, obniżone libido i zaburzenia erekcji. To one są najbardziej charakterystyczne dla niedoboru.",
+          "Zaburzenia erekcji mają jednak wiele przyczyn, naczyniowych, metabolicznych, psychologicznych, polekowych. Sam problem z erekcją nie przesądza o niskim testosteronie, ale jest dobrym powodem, by sprawdzić hormony i ogólny stan zdrowia."
         ]
       },
       {
-        heading: "Jakie badania wykonać na pierwszym kroku?",
+        heading: "Objawy fizyczne",
         paragraphs: [
-          "Przed wizytą lekarską lub w jej trakcie zazwyczaj zlecany jest podstawowy panel hormonalny, obejmujący: testosteron całkowity (T), SHBG, LH i FSH, estradiol (E2) oraz prolaktyna. Krew do badań hormonalnych należy pobierać rano (między 7:00 a 11:00), na czczo lub po lekkim śniadaniu.",
-          "Interpretacja wyników powinna zawsze odbywać się w kontekście objawów i przy udziale lekarza. Sam wynik w normie laboratoryjnej nie wyklucza objawowego niedoboru testosteronu — normy są szerokie i mogą nie odzwierciedlać optymalnego poziomu dla konkretnego pacjenta."
+          "Do objawów fizycznych należą: przewlekłe zmęczenie i brak energii, spadek masy i siły mięśniowej (także mimo treningów), przyrost tkanki tłuszczowej, zwłaszcza na brzuchu, powiększenie gruczołów piersiowych (ginekomastia), rzadsze golenie się i, w dłuższym czasie, utrata gęstości kości.",
+          "Część z tych zmian działa w obie strony: otyłość brzuszna obniża testosteron, a niski testosteron sprzyja odkładaniu tłuszczu. Dlatego przy nadwadze ocena hormonów i parametrów metabolicznych idzie w parze."
+        ]
+      },
+      {
+        heading: "Objawy psychiczne niskiego testosteronu",
+        paragraphs: [
+          "Niski testosteron może się wiązać z obniżonym nastrojem, drażliwością, spadkiem motywacji i pewności siebie, gorszą koncentracją i pamięcią oraz zaburzeniami snu.",
+          "Te same objawy są typowe dla depresji, przewlekłego stresu czy wypalenia. Jeśli dominuje obniżony nastrój, utrata radości z życia lub myśli rezygnacyjne, potrzebna jest także ocena psychiatryczna lub psychologiczna, wyrównanie hormonów nie zastąpi leczenia depresji."
+        ]
+      },
+      {
+        heading: "Z czym można pomylić objawy niskiego testosteronu",
+        paragraphs: [
+          "Podobne dolegliwości dają m.in.: choroby tarczycy (zwłaszcza niedoczynność), niedobór snu i obturacyjny bezdech senny, przewlekły stres, depresja, nadwaga, insulinooporność i cukrzyca, niedokrwistość, nadmiar alkoholu oraz niektóre leki (np. opioidy, glikokortykosteroidy).",
+          "Dlatego diagnostyka nie powinna ograniczać się do jednego parametru. U wielu mężczyzn z typowymi objawami testosteron okazuje się prawidłowy, a przyczyna leży gdzie indziej."
+        ]
+      },
+      {
+        heading: "Kiedy się zbadać i jakie badania wykonać",
+        paragraphs: [
+          "Warto się zbadać, gdy objawy utrzymują się dłużej niż kilka tygodni, zwłaszcza objawy seksualne. Pomocny na start bywa kwestionariusz ADAM, dostępny bezpłatnie na naszej stronie w zakładce Kwestionariusze, ale to narzędzie orientacyjne, nie diagnoza.",
+          "Podstawowy panel hormonalny obejmuje testosteron całkowity, SHBG, LH, FSH, estradiol i prolaktynę. Krew pobiera się rano (7:00–11:00), najlepiej na czczo. Niski wynik trzeba potwierdzić w powtórnym badaniu."
+        ]
+      },
+      {
+        heading: "Co dalej z wynikiem",
+        paragraphs: [
+          "Jeśli niedobór się potwierdzi, kolejnym krokiem jest ustalenie przyczyny, czy problem leży w jądrach, czy w przysadce, i czy można go odwrócić. Dopiero na tej podstawie lekarz decyduje o leczeniu; terapia testosteronem jest jedną z możliwości, wymagającą kwalifikacji i regularnych kontroli.",
+          "Jeśli wynik jest prawidłowy, a objawy są, warto szukać innych przyczyn zamiast na nich poprzestawać. Interpretację wyników i plan dalszej diagnostyki najlepiej omówić z lekarzem."
         ]
       }
-    ]
+    ],
+    related: ["jak-zbadac-poziom-testosteronu", "testosteron-a-nastoj-depresja", "niskie-libido-mezczyzna-testosteron", "andropauza-mit-czy-rzeczywistosc"],
+    sources: [SRC.emas]
   },
   {
     slug: "testosteron-sklad-ciala",
-    title: "Testosteron a skład ciała — tkanka tłuszczowa, masa mięśniowa i metabolizm",
+    title: "Testosteron a skład ciała: tkanka tłuszczowa, masa mięśniowa i metabolizm",
     metaDescription: "Jak testosteron wpływa na skład ciała mężczyzny? Związek między androgenami a tkanką tłuszczową, masą mięśniową i insulinoopornością.",
     date: "2024-08-22",
     readingTime: 6,
-    excerpt: "Testosteron ma kluczowy wpływ na skład ciała mężczyzny. Jego niedobór sprzyja odkładaniu tłuszczu trzewnego i utracie masy mięśniowej — co z kolei nasila niedobór, tworząc błędne koło.",
+    excerpt: "Testosteron ma kluczowy wpływ na skład ciała mężczyzny. Jego niedobór sprzyja odkładaniu tłuszczu trzewnego i utracie masy mięśniowej, co z kolei nasila niedobór, tworząc błędne koło.",
     content: [
       {
         heading: "Testosteron a tkanka tłuszczowa",
         paragraphs: [
-          "Testosteron hamuje lipolizę (odkładanie tłuszczu) i stymuluje jego spalanie. Jego niedobór sprzyja odkładaniu tkanki tłuszczowej — szczególnie trzewnej (brzusznej), która jest metabolicznie aktywna i produkuje estrogeny, co dodatkowo obniża testosteron. To mechanizm błędnego koła.",
-          "Otyłość trzewna jest jednym z najsilniejszych predyktorów niskiego testosteronu u mężczyzn. Badania pokazują, że każde 10 kg nadmasy ciała wiąże się z obniżeniem testosteronu o ok. 10%. Dlatego redukcja masy ciała często prowadzi do samoistnej normalizacji poziomu testosteronu — bez konieczności farmakoterapii."
+          "Testosteron hamuje lipolizę (odkładanie tłuszczu) i stymuluje jego spalanie. Jego niedobór sprzyja odkładaniu tkanki tłuszczowej, szczególnie trzewnej (brzusznej), która jest metabolicznie aktywna i produkuje estrogeny, co dodatkowo obniża testosteron. To mechanizm błędnego koła.",
+          "Otyłość trzewna jest jednym z najsilniejszych predyktorów niskiego testosteronu u mężczyzn. Badania pokazują, że każde 10 kg nadmasy ciała wiąże się z obniżeniem testosteronu o ok. 10%. Dlatego redukcja masy ciała często prowadzi do samoistnej normalizacji poziomu testosteronu, bez konieczności farmakoterapii."
         ]
       },
       {
         heading: "Testosteron a masa mięśniowa",
         paragraphs: [
-          "Testosteron jest jednym z głównych anabolicznych hormonów w organizmie mężczyzny. Stymuluje syntezę białek mięśniowych, sprzyja regeneracji po wysiłku i wspiera hipertrofię mięśniową. Jego niedobór objawia się stopniową utratą masy i siły mięśniowej — nawet u mężczyzn regularnie trenujących.",
+          "Testosteron jest jednym z głównych anabolicznych hormonów w organizmie mężczyzny. Stymuluje syntezę białek mięśniowych, sprzyja regeneracji po wysiłku i wspiera hipertrofię mięśniową. Jego niedobór objawia się stopniową utratą masy i siły mięśniowej, nawet u mężczyzn regularnie trenujących.",
           "Mężczyźni z hipogonadyzmem często skarżą się na brak efektów treningowych mimo regularnych ćwiczeń i odpowiedniej diety. To typowy sygnał, że warto sprawdzić poziom androgenów."
         ]
       },
       {
         heading: "Testosteron a insulinooporność",
         paragraphs: [
-          "Niski testosteron i insulinooporność są silnie powiązane. Testosteron poprawia wrażliwość tkanek na insulinę i metabolizm glukozy. Jego niedobór sprzyja rozwojowi insulinooporności i cukrzycy typu 2 — a te z kolei dalej obniżają testosteron.",
+          "Niski testosteron i insulinooporność są silnie powiązane. Testosteron poprawia wrażliwość tkanek na insulinę i metabolizm glukozy. Jego niedobór sprzyja rozwojowi insulinooporności i cukrzycy typu 2, a te z kolei dalej obniżają testosteron.",
           "U mężczyzn z otyłością, insulinoopornością lub cukrzycą typu 2 badanie poziomu testosteronu powinno być standardową częścią oceny metabolicznej. Leczenie niedoboru testosteronu może istotnie poprawiać parametry metaboliczne."
         ]
       }
@@ -2781,38 +2865,67 @@ const blogPosts = [
   },
   {
     slug: "hipogonadyzm-u-mezczyzn",
-    title: "Hipogonadyzm u mężczyzn — objawy, przyczyny i leczenie",
-    metaDescription: "Hipogonadyzm to stan niedoboru testosteronu z powodu zaburzeń na poziomie jąder lub przysadki. Dowiedz się, czym różni się hipogonadyzm pierwotny od wtórnego i jak go diagnozować.",
+    title: "Hipogonadyzm u mężczyzn: objawy, przyczyny i leczenie",
+    metaDescription: "Hipogonadyzm u mężczyzn: objawy, rodzaje (pierwotny, wtórny, czynnościowy), przyczyny, diagnostyka i możliwości leczenia: także u mężczyzn planujących ojcostwo.",
     date: "2024-05-10",
-    readingTime: 6,
-    excerpt: "Hipogonadyzm to medyczna nazwa niedoboru testosteronu. Może mieć różne przyczyny i różne oblicza — a prawidłowe rozróżnienie między jego typami jest kluczowe dla doboru odpowiedniego leczenia.",
+    updated: "2026-10-19",
+    readingTime: 8,
+    excerpt: "Hipogonadyzm to medyczna nazwa niedoboru testosteronu. Może mieć różne przyczyny i różne oblicza, a prawidłowe rozróżnienie jego typów jest kluczowe dla doboru leczenia.",
     content: [
       {
         heading: "Czym jest hipogonadyzm?",
         paragraphs: [
-          "Hipogonadyzm to stan, w którym gonady (jądra u mężczyzn) produkują niewystarczającą ilość testosteronu i/lub spermy. W zależności od miejsca, w którym doszło do zaburzenia, wyróżniamy hipogonadyzm pierwotny i wtórny.",
-          'Hipogonadyzm pierwotny (hipergonadotropowy) — zaburzenie leży w samych jądrach. Przysadka "widzi" niski testosteron i reaguje wzrostem LH i FSH, ale jądra nie odpowiadają odpowiednio na ten sygnał. Przyczyny: wrodzone (np. zespół Klinefeltera), nabyte (uraz, infekcja, chemioterapia, napromienianie).'
+          "Hipogonadyzm męski to stan, w którym jądra wytwarzają za mało testosteronu i/lub plemników. Rozpoznaje się go, gdy niski poziom testosteronu w powtórnym, porannym badaniu idzie w parze z objawami.",
+          "W zależności od miejsca zaburzenia wyróżnia się hipogonadyzm pierwotny (problem w jądrach), wtórny (problem w przysadce lub podwzgórzu) oraz hipogonadyzm czynnościowy, związany z otyłością, chorobami przewlekłymi, lekami i wiekiem."
+        ]
+      },
+      {
+        heading: "Objawy hipogonadyzmu",
+        paragraphs: [
+          "Najbardziej charakterystyczne są objawy seksualne: obniżone libido, rzadsze poranne erekcje i zaburzenia erekcji. Do tego dochodzą przewlekłe zmęczenie, spadek masy i siły mięśni, przyrost tkanki tłuszczowej, obniżony nastrój, gorsza koncentracja oraz problemy z płodnością.",
+          "Objawy narastają zwykle powoli i są niespecyficzne, dlatego łatwo przypisać je wiekowi, stresowi czy przemęczeniu. Rozstrzyga diagnostyka laboratoryjna w połączeniu z oceną lekarską."
+        ]
+      },
+      {
+        heading: "Hipogonadyzm pierwotny (hipergonadotropowy)",
+        paragraphs: [
+          "Zaburzenie leży w samych jądrach. Przysadka „widzi” niski testosteron i reaguje wzrostem LH i FSH, ale jądra nie odpowiadają na ten sygnał. Przyczyny wrodzone to m.in. zespół Klinefeltera; nabyte, uraz, zapalenie jąder (np. po śwince), chemioterapia lub radioterapia."
         ]
       },
       {
         heading: "Hipogonadyzm wtórny (hipogonadotropowy)",
         paragraphs: [
-          "W hipogonadyzmie wtórnym problem leży w przysadce lub podwzgórzu — strukturach mózgu regulujących produkcję testosteronu. LH i FSH są niskie lub prawidłowe mimo niskiego testosteronu. Przyczyny: guzy lub urazy przysadki, hiperprolaktynemia, stosowanie steroidów anabolicznych lub opioidów, otyłość, przewlekłe choroby ogólnoustrojowe.",
-          "Rozróżnienie między typem pierwotnym a wtórnym jest kliniczne istotne — inne są przyczyny, inne postępowanie diagnostyczne i inne opcje terapeutyczne. Dlatego sam wynik testosteronu nie wystarczy — konieczne są LH i FSH."
+          "Problem leży w przysadce lub podwzgórzu, strukturach, które sterują pracą jąder. LH i FSH są niskie lub nieadekwatnie prawidłowe mimo niskiego testosteronu. Przyczyny: guzy lub urazy przysadki, hiperprolaktynemia, stosowanie sterydów anabolicznych lub testosteronu z zewnątrz, opioidy, otyłość i przewlekłe choroby.",
+          "Część postaci wtórnych jest odwracalna, np. po leczeniu przyczyny, redukcji masy ciała czy odstawieniu sterydów. Dlatego sam wynik testosteronu nie wystarczy, konieczne są LH i FSH."
         ]
       },
       {
-        heading: "Hipogonadyzm późnego początku (LOH)",
+        heading: "Hipogonadyzm czynnościowy",
         paragraphs: [
-          "Osobną kategorią jest hipogonadyzm późnego początku (Late-Onset Hypogonadism, LOH) — nabyty niedobór testosteronu związany z wiekiem, otyłością i chorobami przewlekłymi. To najczęstszy rodzaj hipogonadyzmu u mężczyzn po 40-tce. Nie jest chorobą samą w sobie, lecz zespołem objawów wynikającym z kumulacji wielu czynników.",
-          "Diagnostyka LOH wymaga zarówno wyników laboratoryjnych (testosteron, LH, FSH), jak i oceny objawów klinicznych. Sama liczba na wyniku nie przesądza o wskazaniach do leczenia."
+          "Hipogonadyzm czynnościowy to niedobór testosteronu bez organicznej choroby jąder, przysadki czy podwzgórza, najczęściej związany z otyłością, chorobami przewlekłymi, przyjmowanymi lekami i wiekiem. Wcześniej nazywano go hipogonadyzmem późnego początku (late-onset hypogonadism).",
+          "Według wytycznych European Academy of Andrology rozpoznaje się go na podstawie objawów i powtarzanych porannych pomiarów testosteronu, po wykluczeniu przyczyn organicznych. Pierwszym krokiem u mężczyzn z nadwagą lub otyłością jest zmiana stylu życia i redukcja masy ciała, a tam, gdzie to możliwe, odstawienie lub zmiana leków hamujących produkcję testosteronu. Sam niski wynik u mężczyzny bez dolegliwości nie jest wskazaniem do leczenia."
+        ]
+      },
+      {
+        heading: "Diagnostyka hipogonadyzmu",
+        paragraphs: [
+          "Podstawą są dwa poranne pomiary testosteronu całkowitego oraz SHBG (do oceny testosteronu wolnego), LH i FSH. W zależności od wyników lekarz może zlecić prolaktynę, estradiol, TSH, morfologię, PSA, a przy podejrzeniu przyczyny przysadkowej, badania obrazowe. U mężczyzn planujących ojcostwo istotne jest badanie nasienia."
+        ]
+      },
+      {
+        heading: "Leczenie hipogonadyzmu",
+        paragraphs: [
+          "Leczenie zależy od typu i przyczyny. Tam, gdzie to możliwe, zaczyna się od przyczyny: leczenia chorób współistniejących, redukcji masy ciała, odstawienia leków lub substancji hamujących oś hormonalną.",
+          "Przy potwierdzonym niedoborze i objawach jedną z opcji jest terapia testosteronem, wymaga kwalifikacji, wykluczenia przeciwwskazań i regularnych kontroli. Terapia testosteronem hamuje produkcję plemników, dlatego u mężczyzn z hipogonadyzmem wtórnym, którzy planują ojcostwo, rozważa się inne leczenie pobudzające jądra."
         ]
       }
-    ]
+    ],
+    related: ["hipogonadyzm-pierwotny-wtorny-roznice", "jak-zbadac-poziom-testosteronu", "trt-a-plodnosc", "odblok-po-testosteronie-i-sterydach"],
+    sources: [SRC.eaa2020, SRC.emas]
   },
   {
     slug: "trt-a-plodnosc",
-    title: "Testosteron a płodność — czy TRT wyklucza możliwość ojcostwa?",
+    title: "Testosteron a płodność: czy TRT wyklucza możliwość ojcostwa?",
     metaDescription: "TRT hamuje własną produkcję testosteronu i spermatogenezę. Dowiedz się, jak TRT wpływa na płodność i jakie są opcje dla mężczyzn planujących ojcostwo.",
     date: "2024-02-14",
     readingTime: 5,
@@ -2821,21 +2934,21 @@ const blogPosts = [
       {
         heading: "Jak TRT wpływa na produkcję nasienia?",
         paragraphs: [
-          "Testosteron podawany z zewnątrz (egzogenny) hamuje oś HPG — podwzgórze przestaje wydzielać GnRH, a przysadka obniża produkcję LH i FSH. Ponieważ to właśnie LH stymuluje komórki Leydiga do produkcji testosteronu wewnątrzjądrowego (niezbędnego do spermatogenezy), a FSH stymuluje bezpośrednio dojrzewanie plemników — efektem jest znaczące obniżenie lub zahamowanie produkcji nasienia.",
+          "Testosteron podawany z zewnątrz (egzogenny) hamuje oś HPG, podwzgórze przestaje wydzielać GnRH, a przysadka obniża produkcję LH i FSH. Ponieważ to właśnie LH stymuluje komórki Leydiga do produkcji testosteronu wewnątrzjądrowego (niezbędnego do spermatogenezy), a FSH stymuluje bezpośrednio dojrzewanie plemników, efektem jest znaczące obniżenie lub zahamowanie produkcji nasienia.",
           "Badania pokazują, że u większości mężczyzn stosujących TRT dochodzi do oligospermii (znacznego zmniejszenia liczby plemników) lub azoospermii (całkowitego braku plemników w nasieniu) w ciągu kilku miesięcy od rozpoczęcia terapii."
         ]
       },
       {
         heading: "Czy ten efekt jest odwracalny?",
         paragraphs: [
-          "U większości mężczyzn spermatogeneza powraca po odstawieniu TRT — ale może to zająć od kilku miesięcy do nawet 2 lat, a powrót nie jest gwarantowany. Czynniki wpływające na szanse powrotu to: wiek pacjenta, czas stosowania TRT, wyjściowa funkcja jąder i inne czynniki indywidualne.",
+          "U większości mężczyzn spermatogeneza powraca po odstawieniu TRT, ale może to zająć od kilku miesięcy do nawet 2 lat, a powrót nie jest gwarantowany. Czynniki wpływające na szanse powrotu to: wiek pacjenta, czas stosowania TRT, wyjściowa funkcja jąder i inne czynniki indywidualne.",
           "Jeśli planowanie ojcostwa jest w horyzoncie czasowym, warto rozważyć zabezpieczenie nasienia (kriokonserwację) przed rozpoczęciem TRT lub alternatywne metody leczenia niedoboru testosteronu, które nie hamują spermatogenezy."
         ]
       },
       {
         heading: "Alternatywy dla mężczyzn planujących ojcostwo",
         paragraphs: [
-          "Dla mężczyzn z hipogonadyzmem wtórnym planujących ojcostwo istnieje alternatywa — gonadotropiny (hCG, FSH) lub selektywne modulatory receptora estrogenowego (klomifen). Te leki stymulują własną produkcję testosteronu i nie hamują spermatogenezy.",
+          "Dla mężczyzn z hipogonadyzmem wtórnym planujących ojcostwo istnieje alternatywa, gonadotropiny (hCG, FSH) lub selektywne modulatory receptora estrogenowego (klomifen). Te leki stymulują własną produkcję testosteronu i nie hamują spermatogenezy.",
           "Decyzja o wyborze metody powinna być podjęta wspólnie z lekarzem po dokładnym omówieniu planów prokreacyjnych, wyników badań i rodzaju hipogonadyzmu."
         ]
       }
@@ -2843,30 +2956,30 @@ const blogPosts = [
   },
   {
     slug: "hormony-a-wypadanie-wlosow",
-    title: "Hormony a wypadanie włosów u mężczyzn — czy testosteron łysi?",
+    title: "Hormony a wypadanie włosów u mężczyzn: czy testosteron łysi?",
     metaDescription: "Wypadanie włosów u mężczyzn jest związane z DHT, pochodną testosteronu. Dowiedz się, jak hormony wpływają na łysienie androgenowe i co można zrobić.",
     date: "2023-11-03",
     readingTime: 5,
-    excerpt: "Łysienie androgenowe to najczęstszy typ wypadania włosów u mężczyzn. Wbrew powszechnemu przekonaniu, to nie sam testosteron jest odpowiedzialny — a DHT, jego aktywna pochodna.",
+    excerpt: "Łysienie androgenowe to najczęstszy typ wypadania włosów u mężczyzn. Wbrew powszechnemu przekonaniu, to nie sam testosteron jest odpowiedzialny, a DHT, jego aktywna pochodna.",
     content: [
       {
-        heading: "DHT — główny sprawca łysienia androgenowego",
+        heading: "DHT: główny sprawca łysienia androgenowego",
         paragraphs: [
-          "Dihydrotestosteron (DHT) to metabolit testosteronu powstający pod wpływem enzymu 5-alfa-reduktazy. DHT wiąże się z receptorami androgenowymi w mieszkach włosowych ze znacznie większym powinowactwem niż testosteron — i u genetycznie predysponowanych mężczyzn powoduje ich miniaturyzację, co prowadzi do stopniowego wypadania włosów.",
-          'Kluczowe słowo to "genetycznie predysponowanych" — nie każdy mężczyzna z wysokim DHT łysieje. Łysienie androgenowe wymaga zarówno obecności DHT, jak i dziedzicznej wrażliwości mieszków włosowych na jego działanie.'
+          "Dihydrotestosteron (DHT) to metabolit testosteronu powstający pod wpływem enzymu 5-alfa-reduktazy. DHT wiąże się z receptorami androgenowymi w mieszkach włosowych ze znacznie większym powinowactwem niż testosteron, i u genetycznie predysponowanych mężczyzn powoduje ich miniaturyzację, co prowadzi do stopniowego wypadania włosów.",
+          'Kluczowe słowo to "genetycznie predysponowanych" - nie każdy mężczyzna z wysokim DHT łysieje. Łysienie androgenowe wymaga zarówno obecności DHT, jak i dziedzicznej wrażliwości mieszków włosowych na jego działanie.'
         ]
       },
       {
         heading: "Czy TRT nasila łysienie?",
         paragraphs: [
-          "U mężczyzn z genetyczną predyspozycją do łysienia androgenowego, TRT może przyspieszyć ten proces — poprzez zwiększenie dostępności androgenów, w tym substratów do konwersji do DHT. Nie jest to efekt pewny ani nieuchronny, ale warto być tego świadomym.",
+          "U mężczyzn z genetyczną predyspozycją do łysienia androgenowego, TRT może przyspieszyć ten proces, poprzez zwiększenie dostępności androgenów, w tym substratów do konwersji do DHT. Nie jest to efekt pewny ani nieuchronny, ale warto być tego świadomym.",
           "Jeśli masz wyraźną historię rodzinną łysienia i obawiasz się tego efektu, warto omówić to z lekarzem przed rozpoczęciem TRT. Dostępne są opcje minimalizujące konwersję do DHT."
         ]
       },
       {
         heading: "Inne hormonalne przyczyny wypadania włosów",
         paragraphs: [
-          "Nie tylko androgeny wpływają na włosy. Niedoczynność tarczycy jest klasyczną przyczyną uogólnionego wypadania włosów (telogen effluvium) — zazwyczaj rozlanego, nie w typowym wzorze łysienia androgenowego. Badanie TSH jest standardowym elementem diagnostyki przy wypadaniu włosów.",
+          "Nie tylko androgeny wpływają na włosy. Niedoczynność tarczycy jest klasyczną przyczyną uogólnionego wypadania włosów (telogen effluvium): zazwyczaj rozlanego, nie w typowym wzorze łysienia androgenowego. Badanie TSH jest standardowym elementem diagnostyki przy wypadaniu włosów.",
           "Niedobór żelaza, cynku, witaminy D i biotyny też może powodować wypadanie włosów. Diagnostyka powinna być kompleksowa, bo przyczyny często nakładają się."
         ]
       }
@@ -2874,16 +2987,16 @@ const blogPosts = [
   },
   {
     slug: "cwiczenia-a-testosteron",
-    title: "Aktywność fizyczna a testosteron — jakie ćwiczenia wspierają gospodarkę hormonalną?",
+    title: "Aktywność fizyczna a testosteron: jakie ćwiczenia wspierają gospodarkę hormonalną?",
     metaDescription: "Regularna aktywność fizyczna może naturalnie podnieść poziom testosteronu. Dowiedz się, które ćwiczenia są najbardziej efektywne i jak unikać przetrenowania.",
     date: "2023-07-19",
     readingTime: 5,
-    excerpt: "Ćwiczenia to jeden z najsilniejszych naturalnych stymulatorów testosteronu. Ale nie każdy trening działa tak samo — a przetrenowanie może efekt odwrócić.",
+    excerpt: "Ćwiczenia to jeden z najsilniejszych naturalnych stymulatorów testosteronu. Ale nie każdy trening działa tak samo, a przetrenowanie może efekt odwrócić.",
     content: [
       {
         heading: "Dlaczego ćwiczenia podnoszą testosteron?",
         paragraphs: [
-          "Aktywność fizyczna — szczególnie ćwiczenia siłowe i interwałowe — stymuluje wydzielanie LH i bezpośrednio pobudza komórki Leydiga do produkcji testosteronu. Efekt jest natychmiastowy (wzrost testosteronu po treningu) i długoterminowy (wyższy baseline u osób regularnie ćwiczących).",
+          "Aktywność fizyczna, szczególnie ćwiczenia siłowe i interwałowe, stymuluje wydzielanie LH i bezpośrednio pobudza komórki Leydiga do produkcji testosteronu. Efekt jest natychmiastowy (wzrost testosteronu po treningu) i długoterminowy (wyższy baseline u osób regularnie ćwiczących).",
           "Mechanizmy są wielokierunkowe: redukcja tkanki tłuszczowej trzewnej (która aromatyzuje testosteron do estrogenów), poprawa wrażliwości na insulinę, redukcja kortyzolu przy umiarkowanej intensywności, wzrost masy mięśniowej."
         ]
       },
@@ -2897,7 +3010,7 @@ const blogPosts = [
       {
         heading: "Aktywność jako uzupełnienie, nie zamiennik diagnostyki",
         paragraphs: [
-          "Regularna aktywność fizyczna, zdrowa dieta i dobry sen mogą naturalnie podnosić testosteron — ale mają swoje limity. Przy potwierdzonym hipogonadyzmie zmiany stylu życia zazwyczaj nie są wystarczające i wymagają uzupełnienia leczeniem medycznym.",
+          "Regularna aktywność fizyczna, zdrowa dieta i dobry sen mogą naturalnie podnosić testosteron, ale mają swoje limity. Przy potwierdzonym hipogonadyzmie zmiany stylu życia zazwyczaj nie są wystarczające i wymagają uzupełnienia leczeniem medycznym.",
           "Jeśli mimo regularnych ćwiczeń i zdrowego trybu życia odczuwasz objawy niedoboru testosteronu, warto wykonać badania i skonsultować się z lekarzem."
         ]
       }
@@ -2909,7 +3022,7 @@ const blogPosts = [
     metaDescription: "Niedobór testosteronu i insulinooporność są silnie powiązane. Dowiedz się, jak hormony androgenowe wpływają na metabolizm glukozy i ryzyko cukrzycy.",
     date: "2023-03-08",
     readingTime: 6,
-    excerpt: "Mężczyźni z cukrzycą typu 2 mają istotnie częściej niedobór testosteronu niż populacja ogólna — i odwrotnie. Ten związek jest dwukierunkowy i ma ważne implikacje kliniczne.",
+    excerpt: "Mężczyźni z cukrzycą typu 2 mają istotnie częściej niedobór testosteronu niż populacja ogólna, i odwrotnie. Ten związek jest dwukierunkowy i ma ważne implikacje kliniczne.",
     content: [
       {
         heading: "Związek między testosteronem a insulinoopornością",
@@ -2921,14 +3034,14 @@ const blogPosts = [
       {
         heading: "Dane epidemiologiczne",
         paragraphs: [
-          "Badania pokazują, że u mężczyzn z cukrzycą typu 2 niedobór testosteronu (definiowany jako testosteron poniżej 10–12 nmol/L) występuje u ok. 25–40% pacjentów — znacznie częściej niż w populacji ogólnej. Odwrotnie, mężczyźni z hipogonadyzmem mają 2–3-krotnie wyższe ryzyko rozwoju cukrzycy.",
-          "Co ważne, normalizacja testosteronu w ramach TRT u mężczyzn z potwierdzonym hipogonadyzmem wiąże się z poprawą parametrów metabolicznych — obniżeniem glikemii na czczo, HbA1c, insuliny i zmniejszeniem tkanki tłuszczowej trzewnej."
+          "Badania pokazują, że u mężczyzn z cukrzycą typu 2 niedobór testosteronu (definiowany jako testosteron poniżej 10–12 nmol/L) występuje u ok. 25–40% pacjentów: znacznie częściej niż w populacji ogólnej. Odwrotnie, mężczyźni z hipogonadyzmem mają 2–3-krotnie wyższe ryzyko rozwoju cukrzycy.",
+          "Co ważne, normalizacja testosteronu w ramach TRT u mężczyzn z potwierdzonym hipogonadyzmem wiąże się z poprawą parametrów metabolicznych, obniżeniem glikemii na czczo, HbA1c, insuliny i zmniejszeniem tkanki tłuszczowej trzewnej."
         ]
       },
       {
         heading: "Praktyczne implikacje",
         paragraphs: [
-          "U mężczyzn z cukrzycą typu 2, nadwagą/otyłością lub insulinoopornością badanie poziomu testosteronu powinno być rutynowe — szczególnie jeśli towarzyszą im objawy sugerujące niedobór androgenów.",
+          "U mężczyzn z cukrzycą typu 2, nadwagą/otyłością lub insulinoopornością badanie poziomu testosteronu powinno być rutynowe, szczególnie jeśli towarzyszą im objawy sugerujące niedobór androgenów.",
           "Leczenie niedoboru testosteronu w tej grupie może przynieść korzyści zarówno hormonalne, jak i metaboliczne. Oczywiście wymaga odpowiedniej kwalifikacji i regularnego monitorowania."
         ]
       }
@@ -2936,52 +3049,52 @@ const blogPosts = [
   },
   {
     slug: "dieta-a-testosteron",
-    title: "Dieta a testosteron — co jeść, żeby wspierać gospodarkę hormonalną?",
+    title: "Dieta a testosteron: co jeść, żeby wspierać gospodarkę hormonalną?",
     metaDescription: "Dowiedz się, jak dieta wpływa na poziom testosteronu. Które składniki odżywcze są kluczowe dla produkcji androgenów i czego unikać.",
     date: "2022-12-01",
     readingTime: 6,
-    excerpt: "Dieta nie zastąpi leczenia medycznego przy potwierdzonym hipogonadyzmie — ale może istotnie wspierać naturalną produkcję testosteronu i ogólną gospodarkę hormonalną.",
+    excerpt: "Dieta nie zastąpi leczenia medycznego przy potwierdzonym hipogonadyzmie, ale może istotnie wspierać naturalną produkcję testosteronu i ogólną gospodarkę hormonalną.",
     content: [
       {
         heading: "Kluczowe składniki odżywcze dla produkcji testosteronu",
         paragraphs: [
-          "Testosteron syntetyzowany jest z cholesterolu, dlatego diety bardzo niskotłuszczowe mogą niekorzystnie wpływać na jego produkcję. Zdrowe tłuszcze — jednonienasycone (oliwa z oliwek, awokado) i nasycone (w umiarkowanych ilościach) — są substratem dla steroidogenezy.",
-          "Cynk jest kofaktorem enzymów biorących udział w syntezie testosteronu. Jego niedobór jest jedną z częstszych niedoborowych przyczyn niskiego testosteronu. Bogate źródła cynku to ostrygi, wołowina, nasiona dyni i rośliny strączkowe. Witamina D działa jak hormon i wpływa na receptory androgenowe. Niedobór witaminy D (bardzo powszechny w Polsce) jest powiązany z niższym testosteronem — suplementacja może przynieść korzyści."
+          "Testosteron syntetyzowany jest z cholesterolu, dlatego diety bardzo niskotłuszczowe mogą niekorzystnie wpływać na jego produkcję. Zdrowe tłuszcze, jednonienasycone (oliwa z oliwek, awokado) i nasycone (w umiarkowanych ilościach): są substratem dla steroidogenezy.",
+          "Cynk jest kofaktorem enzymów biorących udział w syntezie testosteronu. Jego niedobór jest jedną z częstszych niedoborowych przyczyn niskiego testosteronu. Bogate źródła cynku to ostrygi, wołowina, nasiona dyni i rośliny strączkowe. Witamina D działa jak hormon i wpływa na receptory androgenowe. Niedobór witaminy D (bardzo powszechny w Polsce) jest powiązany z niższym testosteronem, suplementacja może przynieść korzyści."
         ]
       },
       {
         heading: "Czego unikać?",
         paragraphs: [
-          "Nadmiar alkoholu obniża testosteron wielotorowo — hamuje syntezę w jądrach, nasila aromatyzację do estrogenów i obciąża wątrobę (która metabolizuje hormony). Przewlekłe, obfite spożycie alkoholu jest jednym z silniejszych czynników obniżających testosteron.",
-          "Dieta wysokoprzetworzona, bogata w cukry proste i tłuszcze trans, sprzyja otyłości, insulinooporności i stanowi zapalnemu — wszystkie te czynniki pośrednio obniżają testosteron. Diety ekstremalnie niskokaloryczne (głodówki) powodują wtórne obniżenie testosteronu przez mechanizm ochrony energetycznej."
+          "Nadmiar alkoholu obniża testosteron wielotorowo, hamuje syntezę w jądrach, nasila aromatyzację do estrogenów i obciąża wątrobę (która metabolizuje hormony). Przewlekłe, obfite spożycie alkoholu jest jednym z silniejszych czynników obniżających testosteron.",
+          "Dieta wysokoprzetworzona, bogata w cukry proste i tłuszcze trans, sprzyja otyłości, insulinooporności i stanowi zapalnemu, wszystkie te czynniki pośrednio obniżają testosteron. Diety ekstremalnie niskokaloryczne (głodówki) powodują wtórne obniżenie testosteronu przez mechanizm ochrony energetycznej."
         ]
       },
       {
         heading: "Realistyczne oczekiwania",
         paragraphs: [
           "Wpływ diety na testosteron jest realny, ale ograniczony. Korekta niedoborów (cynku, witaminy D, magnezu) może poprawić poziom hormonów, ale u mężczyzn z potwierdzonym hipogonadyzmem sama zmiana diety nie zastąpi leczenia medycznego.",
-          "Dobra dieta, aktywność fizyczna i odpowiedni sen tworzą fundament zdrowej gospodarki hormonalnej — i są ważnym uzupełnieniem diagnostyki oraz ewentualnego leczenia farmakologicznego."
+          "Dobra dieta, aktywność fizyczna i odpowiedni sen tworzą fundament zdrowej gospodarki hormonalnej, i są ważnym uzupełnieniem diagnostyki oraz ewentualnego leczenia farmakologicznego."
         ]
       }
     ]
   },
   {
     slug: "testosteron-a-tarczyca",
-    title: "Testosteron a tarczyca — jak te hormony wzajemnie na siebie wpływają?",
+    title: "Testosteron a tarczyca: jak te hormony wzajemnie na siebie wpływają?",
     metaDescription: "Oś androgenów i oś tarczycowa są ze sobą powiązane. Dowiedz się, jak niedoczynność i nadczynność tarczycy wpływają na testosteron i dlaczego oba układy warto oceniać łącznie.",
     date: "2022-09-15",
     readingTime: 5,
-    excerpt: "Mężczyźni z zaburzeniami tarczycy często mają jednocześnie zaburzenia hormonów płciowych — i odwrotnie. Zrozumienie tej zależności jest ważne dla prawidłowej diagnostyki.",
+    excerpt: "Mężczyźni z zaburzeniami tarczycy często mają jednocześnie zaburzenia hormonów płciowych, i odwrotnie. Zrozumienie tej zależności jest ważne dla prawidłowej diagnostyki.",
     content: [
       {
         heading: "Jak tarczyca wpływa na testosteron?",
         paragraphs: [
-          "Hormony tarczycy (T3 i T4) wpływają na produkcję testosteronu na kilku poziomach. Bezpośrednio stymulują komórki Leydiga w jądrach. Regulują produkcję SHBG w wątrobie — nadczynność tarczycy zwiększa SHBG (co obniża wolny testosteron), niedoczynność może ją obniżać.",
+          "Hormony tarczycy (T3 i T4) wpływają na produkcję testosteronu na kilku poziomach. Bezpośrednio stymulują komórki Leydiga w jądrach. Regulują produkcję SHBG w wątrobie, nadczynność tarczycy zwiększa SHBG (co obniża wolny testosteron), niedoczynność może ją obniżać.",
           "Niedoczynność tarczycy, poprzez spowolnienie metabolizmu i wzrost masy ciała, pośrednio nasila aromatyzację testosteronu do estrogenów. Efektem może być względny niedobór androgenów przy prawidłowym testosteronie całkowitym."
         ]
       },
       {
-        heading: "Objawy nakładające się — jak je rozróżnić?",
+        heading: "Objawy nakładające się: jak je rozróżnić?",
         paragraphs: [
           "Niedoczynność tarczycy i niedobór testosteronu mają wiele wspólnych objawów: zmęczenie, przyrost masy ciała, obniżony nastrój, pogorszenie pamięci i koncentracji, wypadanie włosów. To sprawia, że bez badań laboratoryjnych trudno je od siebie odróżnić.",
           "W praktyce oznacza to, że diagnostyka przy objawach ogólnego pogorszenia samopoczucia powinna obejmować zarówno TSH (tarczyca), jak i panel hormonalny (testosteron, SHBG, LH, FSH). Skupienie się wyłącznie na jednej osi może prowadzić do przeoczenia współistniejącego problemu."
@@ -2990,55 +3103,55 @@ const blogPosts = [
       {
         heading: "Jak leczyć, gdy oba problemy współistnieją?",
         paragraphs: [
-          "Gdy stwierdzone są równocześnie niedoczynność tarczycy i niedobór testosteronu, zazwyczaj zaleca się najpierw wyrównanie funkcji tarczycy i obserwację przez kilka miesięcy. Normalizacja TSH często poprawia też poziom testosteronu — bo usuwa jeden z czynników go obniżających.",
-          "Jeśli mimo prawidłowego TSH testosteron nadal pozostaje niski przy objawach — wtedy rozważa się dalszą diagnostykę i ewentualne leczenie niedoboru androgenów."
+          "Gdy stwierdzone są równocześnie niedoczynność tarczycy i niedobór testosteronu, zazwyczaj zaleca się najpierw wyrównanie funkcji tarczycy i obserwację przez kilka miesięcy. Normalizacja TSH często poprawia też poziom testosteronu, bo usuwa jeden z czynników go obniżających.",
+          "Jeśli mimo prawidłowego TSH testosteron nadal pozostaje niski przy objawach, wtedy rozważa się dalszą diagnostykę i ewentualne leczenie niedoboru androgenów."
         ]
       }
     ]
   },
   {
     slug: "hipogonadyzm-pierwotny-wtorny-roznice",
-    title: "Hipogonadyzm pierwotny i wtórny — na czym polegają różnice?",
+    title: "Hipogonadyzm pierwotny i wtórny: na czym polegają różnice?",
     metaDescription: "Hipogonadyzm pierwotny i wtórny różnią się przyczyną, wynikami badań i leczeniem. Dowiedz się, co oznaczają poziomy LH i FSH w diagnostyce niedoboru testosteronu.",
     date: "2022-05-20",
     readingTime: 5,
-    excerpt: "Sam niski testosteron w wynikach to nie cała historia. To, czy LH i FSH są wysokie, niskie czy prawidłowe, mówi lekarzowi, gdzie leży problem — i ma bezpośredni wpływ na wybór leczenia.",
+    excerpt: "Sam niski testosteron w wynikach to nie cała historia. To, czy LH i FSH są wysokie, niskie czy prawidłowe, mówi lekarzowi, gdzie leży problem, i ma bezpośredni wpływ na wybór leczenia.",
     content: [
       {
         heading: "LH i FSH jako klucz diagnostyczny",
         paragraphs: [
           "LH (hormon luteinizujący) i FSH (hormon folikulotropowy) to hormony przysadki, które regulują produkcję testosteronu i spermy w jądrach. Ich pomiar przy niskim testosteronie jest kluczowy, bo wskazuje, gdzie w osi hormonalnej leży problem.",
-          'Jeśli LH i FSH są wysokie przy niskim testosteronie — przysadka "krzyczy" do jąder, ale jądra nie odpowiadają. To hipogonadyzm pierwotny — problem leży w jądrach. Jeśli LH i FSH są niskie lub prawidłowe mimo niskiego testosteronu — sygnał z przysadki jest niewystarczający. To hipogonadyzm wtórny — problem leży w przysadce lub podwzgórzu.'
+          'Jeśli LH i FSH są wysokie przy niskim testosteronie, przysadka "krzyczy" do jąder, ale jądra nie odpowiadają. To hipogonadyzm pierwotny, problem leży w jądrach. Jeśli LH i FSH są niskie lub prawidłowe mimo niskiego testosteronu, sygnał z przysadki jest niewystarczający. To hipogonadyzm wtórny: problem leży w przysadce lub podwzgórzu.'
         ]
       },
       {
         heading: "Przyczyny hipogonadyzmu pierwotnego",
         paragraphs: [
-          "Wrodzone: zespół Klinefeltera (dodatkowy chromosom X — XXY), kryptorchizm (niezstąpione jądra), wrodzone zaburzenia steroidogenezy. Nabyte: zapalenie jąder (np. po śwince), urazy, chemioterapia lub radioterapia, skręt jądra, zaburzenia autoimmunologiczne.",
+          "Wrodzone: zespół Klinefeltera (dodatkowy chromosom X: XXY), kryptorchizm (niezstąpione jądra), wrodzone zaburzenia steroidogenezy. Nabyte: zapalenie jąder (np. po śwince), urazy, chemioterapia lub radioterapia, skręt jądra, zaburzenia autoimmunologiczne.",
           "W hipogonadyzmie pierwotnym TRT jest często jedyną opcją przywrócenia fizjologicznych poziomów testosteronu, bo jądra nie są w stanie samodzielnie produkować wystarczającej ilości hormonu."
         ]
       },
       {
         heading: "Przyczyny hipogonadyzmu wtórnego",
         paragraphs: [
-          "Wrodzone: izolowany niedobór gonadotropin (zespół Kalmanna — z anosmią), inne rzadkie choroby genetyczne. Nabyte: guzy lub urazy przysadki, hyperprolaktynemia, stosowanie steroidów anabolicznych lub opioidów (najczęstsze nabyte przyczyny!), otyłość, przewlekłe choroby, stres, niedobór snu.",
-          "W hipogonadyzmie wtórnym, w zależności od przyczyny, może być możliwe leczenie przyczynowe (np. usunięcie gruczolaka przysadki, odstawienie steroidów anabolicznych) lub zastosowanie gonadotropin (hCG) zamiast TRT — co szczególnie istotne u mężczyzn chcących zachować płodność."
+          "Wrodzone: izolowany niedobór gonadotropin (zespół Kalmanna: z anosmią), inne rzadkie choroby genetyczne. Nabyte: guzy lub urazy przysadki, hyperprolaktynemia, stosowanie steroidów anabolicznych lub opioidów (najczęstsze nabyte przyczyny!), otyłość, przewlekłe choroby, stres, niedobór snu.",
+          "W hipogonadyzmie wtórnym, w zależności od przyczyny, może być możliwe leczenie przyczynowe (np. usunięcie gruczolaka przysadki, odstawienie steroidów anabolicznych) lub zastosowanie gonadotropin (hCG) zamiast TRT: co szczególnie istotne u mężczyzn chcących zachować płodność."
         ]
       }
     ]
   },
   {
     slug: "prolaktyna-u-mezczyzn",
-    title: "Prolaktyna u mężczyzn — normy, objawy podwyższonej i co dalej",
+    title: "Prolaktyna u mężczyzn: normy, objawy podwyższonej i co dalej",
     metaDescription: "Wysoka prolaktyna u mężczyzn może powodować obniżone libido, ginekomastię i zaburzenia erekcji. Dowiedz się, kiedy badać prolaktynę i co oznacza hiperprolaktynemia.",
     date: "2021-11-22",
     readingTime: 5,
-    excerpt: "Prolaktyna to hormon kojarzony głównie z kobietami i laktacją. Tymczasem u mężczyzn jej podwyższony poziom może być przyczyną poważnych zaburzeń hormonalnych — i często pozostaje nierozpoznany.",
+    excerpt: "Prolaktyna to hormon kojarzony głównie z kobietami i laktacją. Tymczasem u mężczyzn jej podwyższony poziom może być przyczyną poważnych zaburzeń hormonalnych, i często pozostaje nierozpoznany.",
     content: [
       {
         heading: "Czym jest prolaktyna i jaką rolę pełni u mężczyzn?",
         paragraphs: [
-          "Prolaktyna (PRL) to hormon produkowany przez przysadkę mózgową. U kobiet reguluje laktację — stąd jej popularne skojarzenia. U mężczyzn pełni mniej oczywistą rolę, ale jej nadmiar ma wyraźne konsekwencje: hamuje wydzielanie GnRH z podwzgórza, co przekłada się na obniżenie LH, FSH i w efekcie testosteronu.",
+          "Prolaktyna (PRL) to hormon produkowany przez przysadkę mózgową. U kobiet reguluje laktację: stąd jej popularne skojarzenia. U mężczyzn pełni mniej oczywistą rolę, ale jej nadmiar ma wyraźne konsekwencje: hamuje wydzielanie GnRH z podwzgórza, co przekłada się na obniżenie LH, FSH i w efekcie testosteronu.",
           "Hiperprolaktynemia (podwyższona prolaktyna) u mężczyzn jest stosunkowo częstym, a jednocześnie często pomijanym zaburzeniem hormonalnym. Szacuje się, że dotyczy ok. 0,1–0,4% populacji ogólnej, ale znacznie częściej mężczyzn z objawami niedoboru testosteronu."
         ]
       },
@@ -3052,31 +3165,31 @@ const blogPosts = [
       {
         heading: "Przyczyny podwyższonej prolaktyny",
         paragraphs: [
-          "Najczęstszą przyczyną hiperprolaktynemii jest gruczolak przysadki wydzielający prolaktynę (prolaktynoma) — zazwyczaj łagodny guz. Inne przyczyny to: leki (szczególnie neuroleptyki, metoklopramid, domperidon, niektóre antydepresanty), niedoczynność tarczycy, choroby nerek lub wątroby, stres i intensywny wysiłek fizyczny (przejściowy wzrost).",
-          "Ważna uwaga praktyczna: prolaktynę należy badać w spokojnych warunkach, bez poprzedzającego stresu czy wysiłku. Lekkie podniesienie wyniku może być artefaktem — przy wątpliwościach bada się tzw. prolaktynę makro lub powtarza badanie."
+          "Najczęstszą przyczyną hiperprolaktynemii jest gruczolak przysadki wydzielający prolaktynę (prolaktynoma): zazwyczaj łagodny guz. Inne przyczyny to: leki (szczególnie neuroleptyki, metoklopramid, domperidon, niektóre antydepresanty), niedoczynność tarczycy, choroby nerek lub wątroby, stres i intensywny wysiłek fizyczny (przejściowy wzrost).",
+          "Ważna uwaga praktyczna: prolaktynę należy badać w spokojnych warunkach, bez poprzedzającego stresu czy wysiłku. Lekkie podniesienie wyniku może być artefaktem, przy wątpliwościach bada się tzw. prolaktynę makro lub powtarza badanie."
         ]
       }
     ]
   },
   {
     slug: "estradiol-u-mezczyzn",
-    title: "Estradiol u mężczyzn — normy, objawy nadmiaru i co oznacza wynik",
+    title: "Estradiol u mężczyzn: normy, objawy nadmiaru i co oznacza wynik",
     metaDescription: "Estradiol u mężczyzn pełni ważną rolę, ale jego nadmiar może nasilać objawy niedoboru testosteronu. Dowiedz się, jaka jest norma estradiolu u mężczyzn i kiedy zbadać jego poziom.",
     date: "2021-08-11",
     readingTime: 5,
-    excerpt: "Estrogeny to hormony kojarzone wyłącznie z kobietami. Tymczasem estradiol odgrywa istotną rolę również w organizmie mężczyzny — problem zaczyna się, gdy jest go za dużo lub za mało.",
+    excerpt: "Estrogeny to hormony kojarzone wyłącznie z kobietami. Tymczasem estradiol odgrywa istotną rolę również w organizmie mężczyzny, problem zaczyna się, gdy jest go za dużo lub za mało.",
     content: [
       {
         heading: "Skąd pochodzi estradiol u mężczyzn?",
         paragraphs: [
-          "Mężczyźni produkują estradiol głównie w procesie aromatyzacji — testosteron jest przekształcany w estradiol przez enzym aromatazę, obecny przede wszystkim w tkance tłuszczowej, wątrobie i mięśniach. Im więcej tkanki tłuszczowej (szczególnie trzewnej), tym intensywniejsza aromatyzacja i wyższy poziom estradiolu.",
+          "Mężczyźni produkują estradiol głównie w procesie aromatyzacji, testosteron jest przekształcany w estradiol przez enzym aromatazę, obecny przede wszystkim w tkance tłuszczowej, wątrobie i mięśniach. Im więcej tkanki tłuszczowej (szczególnie trzewnej), tym intensywniejsza aromatyzacja i wyższy poziom estradiolu.",
           "Niewielka część estradiolu pochodzi bezpośrednio z jąder. U zdrowego mężczyzny poziom estradiolu wynosi zwykle 20–40 pg/mL (70–150 pmol/L), choć zakresy referencyjne różnią się między laboratoriami."
         ]
       },
       {
         heading: "Jaką rolę pełni estradiol u mężczyzn?",
         paragraphs: [
-          'Estradiol u mężczyzn nie jest "zbędny" — pełni szereg ważnych funkcji: chroni kości przed osteoporozą (receptory estrogenowe są obecne w tkance kostnej), wpływa na funkcje poznawcze i nastrój, uczestniczy w regulacji libido (zbyt niski estradiol obniża libido podobnie jak zbyt niski testosteron), reguluje gospodarkę lipidową.',
+          'Estradiol u mężczyzn nie jest "zbędny" - pełni szereg ważnych funkcji: chroni kości przed osteoporozą (receptory estrogenowe są obecne w tkance kostnej), wpływa na funkcje poznawcze i nastrój, uczestniczy w regulacji libido (zbyt niski estradiol obniża libido podobnie jak zbyt niski testosteron), reguluje gospodarkę lipidową.',
           "Problem pojawia się zarówno przy zbyt wysokim, jak i zbyt niskim poziomie estradiolu. Kluczowe jest zachowanie właściwej proporcji testosteronu do estradiolu."
         ]
       },
@@ -3084,72 +3197,96 @@ const blogPosts = [
         heading: "Objawy nadmiaru estradiolu u mężczyzn",
         paragraphs: [
           "Podwyższony estradiol może nasilać objawy podobne do niedoboru testosteronu: zmęczenie, obniżone libido, wahania nastroju, trudności z utratą tkanki tłuszczowej, problemy z erekcją. Dodatkowo może powodować ginekomastię (powiększenie gruczołów piersiowych) i retencję wody.",
-          "Dlatego estradiol jest standardowym elementem panelu hormonalnego — jego wynik interpretowany łącznie z testosteronem daje pełniejszy obraz gospodarki androgenowej. Lekarz oceni proporcje i zdecyduje, czy wynik wymaga interwencji."
+          "Dlatego estradiol jest standardowym elementem panelu hormonalnego, jego wynik interpretowany łącznie z testosteronem daje pełniejszy obraz gospodarki androgenowej. Lekarz oceni proporcje i zdecyduje, czy wynik wymaga interwencji."
         ]
       }
     ]
   },
   {
     slug: "pierwsze-badania-hormonalne",
-    title: "Pierwsze kroki w diagnostyce hormonalnej — od czego zacząć?",
+    title: "Pierwsze kroki w diagnostyce hormonalnej: od czego zacząć?",
     metaDescription: "Nie wiesz od czego zacząć diagnostykę hormonalną? Dowiedz się, jakie badania wykonać w pierwszej kolejności, jak się przygotować i co zrobić z wynikami.",
     date: "2021-05-04",
     readingTime: 4,
-    excerpt: "Wiele osób zwleka z badaniami hormonalnymi, bo nie wie od czego zacząć — który lekarz, jakie badania, jak się przygotować. Ten artykuł porządkuje ten temat krok po kroku.",
+    excerpt: "Wiele osób zwleka z badaniami hormonalnymi, bo nie wie od czego zacząć, który lekarz, jakie badania, jak się przygotować. Ten artykuł porządkuje ten temat krok po kroku.",
     content: [
       {
-        heading: "Krok 1 — zidentyfikuj objawy i czas ich trwania",
+        heading: "Krok 1: zidentyfikuj objawy i czas ich trwania",
         paragraphs: [
-          "Zanim pójdziesz na badania, warto przez chwilę zastanowić się nad objawami: co dokładnie Ci dolega, jak długo, czy nasila się czy jest stałe, czy towarzyszą mu inne zmiany (waga, sen, nastrój, libido). Lekarz zapyta o to podczas wizyty — im lepiej to opiszesz, tym sprawniejszy będzie wywiad i bardziej celna diagnostyka.",
+          "Zanim pójdziesz na badania, warto przez chwilę zastanowić się nad objawami: co dokładnie Ci dolega, jak długo, czy nasila się czy jest stałe, czy towarzyszą mu inne zmiany (waga, sen, nastrój, libido). Lekarz zapyta o to podczas wizyty, im lepiej to opiszesz, tym sprawniejszy będzie wywiad i bardziej celna diagnostyka.",
           'Nie musisz mieć gotowej diagnozy ani teorii. Wystarczy rzetelny opis: "Od roku czuję się permanentnie zmęczony, nawet po dobrej nocy. Libido praktycznie zanikło. Przytyłem 6 kg bez zmiany diety." To wystarczy, żeby lekarz wiedział, od czego zacząć.'
         ]
       },
       {
-        heading: "Krok 2 — podstawowy panel hormonalny",
+        heading: "Krok 2: podstawowy panel hormonalny",
         paragraphs: [
           "Przy podejrzeniu niedoboru testosteronu standardowy panel wyjściowy obejmuje: testosteron całkowity, SHBG (do wyliczenia testosteronu wolnego), LH i FSH (informują o przyczynie niedoboru), estradiol, prolaktyna, TSH (tarczyca), morfologia, glukoza na czczo.",
-          "Krew pobierasz rano (7:00–11:00), na czczo lub po lekkim śniadaniu. Unikaj intensywnego wysiłku dzień wcześniej i alkoholu przez 24–48h. To wszystko — żadnych specjalnych przygotowań."
+          "Krew pobierasz rano (7:00–11:00), na czczo lub po lekkim śniadaniu. Unikaj intensywnego wysiłku dzień wcześniej i alkoholu przez 24–48h. To wszystko: żadnych specjalnych przygotowań."
         ]
       },
       {
-        heading: "Krok 3 — konsultacja z wynikami",
+        heading: "Krok 3: konsultacja z wynikami",
         paragraphs: [
-          "Mając wyniki, umów się na konsultację lekarską. Nie interpretuj wyników samodzielnie przez internet — normy laboratoryjne są szerokie, a interpretacja wymaga uwzględnienia kontekstu klinicznego: wieku, objawów, stylu życia i innych parametrów.",
-          "Konsultacja zdalna jest wygodna i w pełni wystarczająca — wyniki możesz przesłać z wyprzedzeniem, żeby lekarz mógł się z nimi zapoznać przed rozmową. Pierwsza wizyta trwa 60 minut."
+          "Mając wyniki, umów się na konsultację lekarską. Nie interpretuj wyników samodzielnie przez internet, normy laboratoryjne są szerokie, a interpretacja wymaga uwzględnienia kontekstu klinicznego: wieku, objawów, stylu życia i innych parametrów.",
+          "Konsultacja zdalna jest wygodna i w pełni wystarczająca, wyniki możesz przesłać z wyprzedzeniem, żeby lekarz mógł się z nimi zapoznać przed rozmową. Pierwsza wizyta trwa 60 minut."
         ]
       }
     ]
   },
   {
     slug: "andropauza-mit-czy-rzeczywistosc",
-    title: "Andropauza — objawy, w jakim wieku się zaczyna i co na nią zrobić",
-    metaDescription: "Andropauza — objawy, w jakim wieku się zaczyna i czym różni się od menopauzy. Co wiadomo o spadku testosteronu z wiekiem i kiedy wymaga leczenia.",
+    title: "Andropauza: objawy, w jakim wieku się zaczyna i co na nią zrobić",
+    metaDescription: "Andropauza u mężczyzn: objawy, w jakim wieku się zaczyna, czym różni się od menopauzy, jak ją rozpoznać i jakie są możliwości leczenia.",
     date: "2022-02-10",
-    readingTime: 6,
-    excerpt: 'Termin "andropauza" bywa używany potocznie jako męski odpowiednik menopauzy. Ale czy to właściwe porównanie? Rzeczywistość jest bardziej złożona — i zdecydowanie mniej dramatyczna.',
+    updated: "2026-10-19",
+    readingTime: 7,
+    excerpt: "Termin „andropauza” bywa używany jako męski odpowiednik menopauzy. Ale czy to właściwe porównanie? Rzeczywistość jest bardziej złożona, i zdecydowanie mniej dramatyczna.",
     content: [
       {
-        heading: "Andropauza a menopauza — kluczowe różnice",
+        heading: "Czym jest andropauza?",
         paragraphs: [
-          "Menopauza u kobiet to gwałtowne, nieodwracalne zatrzymanie produkcji estrogenów — następuje w stosunkowo krótkim czasie i dotyczy wszystkich kobiet. Andropauza (lub precyzyjniej: ADAM — Androgen Deficiency in the Aging Male) to powolny, stopniowy spadek testosteronu rozłożony na dekady — i nie dotyczący wszystkich mężczyzn w jednakowym stopniu.",
-          'U zdrowego mężczyzny stężenie testosteronu spada o ok. 1–2% rocznie po 35. roku życia. Dla porównania, u kobiety poziom estrogenów w ciągu roku menopauzy spada o kilkadziesiąt procent. To zupełnie inne skale — dlatego termin "andropauza" bywa krytykowany jako mylący.'
+          "Andropauza to potoczna nazwa stopniowego spadku testosteronu u starzejących się mężczyzn, któremu towarzyszą objawy. W medycynie używa się raczej określenia hipogonadyzm czynnościowy (dawniej: hipogonadyzm późnego początku).",
+          "W odróżnieniu od menopauzy, która u każdej kobiety oznacza szybkie i nieodwracalne wygaśnięcie produkcji estrogenów, u mężczyzn spadek jest powolny, ok. 1–2% rocznie, i nie u każdego prowadzi do niedoboru."
         ]
       },
       {
-        heading: "Kiedy naturalny spadek staje się problemem?",
+        heading: "Objawy andropauzy",
         paragraphs: [
-          "Sam fakt obniżenia testosteronu z wiekiem nie jest chorobą i nie wymaga leczenia. Leczenie jest rozważane dopiero, gdy poziom testosteronu spada poniżej określonego progu i jednocześnie pojawiają się objawy kliniczne istotnie wpływające na jakość życia.",
-          "Na tempo i nasilenie spadku wpływają czynniki modyfikowalne: otyłość, brak aktywności fizycznej, przewlekły stres, niedobór snu, palenie tytoniu, nadużywanie alkoholu. Mężczyźni prowadzący zdrowy tryb życia często zachowują wyższy poziom testosteronu znacznie dłużej."
+          "Najczęściej wymieniane objawy to: obniżone libido i zaburzenia erekcji, rzadsze poranne erekcje, przewlekłe zmęczenie, spadek masy i siły mięśni, przyrost tkanki tłuszczowej na brzuchu, gorszy sen, obniżony nastrój i drażliwość, trudności z koncentracją, a rzadziej uderzenia gorąca.",
+          "Żaden z tych objawów nie jest specyficzny, mogą je powodować także choroby tarczycy, depresja, niedobór snu, nadwaga czy przewlekły stres. Dlatego objawy są sygnałem do diagnostyki, a nie gotowym rozpoznaniem."
         ]
       },
       {
-        heading: "Co oznacza to w praktyce?",
+        heading: "W jakim wieku zaczyna się andropauza?",
         paragraphs: [
-          'Pojawienie się objawów takich jak przewlekłe zmęczenie, obniżone libido czy pogorszenie nastroju po 40-tce nie jest "naturalną kolej rzeczy", z którą należy się po prostu pogodzić. Może mieć uchwytną hormonalną przyczynę — i może być leczone.',
-          "Jednocześnie nie każdy mężczyzna po 40-tce z niskim testosteronem wymaga TRT — i nie każde objawy są efektem niedoboru testosteronu. Właśnie dlatego właściwa diagnostyka i ocena lekarska są niezbędne przed podjęciem jakichkolwiek decyzji terapeutycznych."
+          "Nie ma jednego wieku granicznego. Testosteron zaczyna powoli spadać po 30.–35. roku życia, a objawy, jeśli się pojawiają, zwykle po 40.–50. roku życia. W dużym europejskim badaniu EMAS (ponad 3300 mężczyzn w wieku 40–79 lat) z niskim testosteronem wyraźnie wiązały się tylko trzy objawy seksualne: rzadsze poranne erekcje, obniżone libido i zaburzenia erekcji.",
+          "Na tempo spadku silnie wpływają czynniki, na które mamy wpływ: masa ciała, aktywność fizyczna, sen, stres, alkohol i palenie. Mężczyźni prowadzący zdrowy tryb życia często zachowują prawidłowy poziom testosteronu znacznie dłużej."
+        ]
+      },
+      {
+        heading: "Jak rozpoznaje się andropauzę?",
+        paragraphs: [
+          "Rozpoznanie wymaga połączenia objawów z wynikami badań: co najmniej dwóch porannych pomiarów testosteronu całkowitego, a także SHBG, LH i FSH. Lekarz ocenia też inne możliwe przyczyny objawów, m.in. tarczycę, morfologię i parametry metaboliczne.",
+          "Pomocny na start bywa kwestionariusz ADAM, dostępny bezpłatnie na naszej stronie w zakładce Kwestionariusze. Jego wynik nie jest jednak diagnozą, to wskazówka, czy warto wykonać badania."
+        ]
+      },
+      {
+        heading: "Co na andropauzę, możliwości leczenia",
+        paragraphs: [
+          "Podstawą jest styl życia i leczenie chorób współistniejących: redukcja masy ciała przy nadwadze, regularna aktywność fizyczna, odpowiednia ilość snu, ograniczenie alkoholu. U części mężczyzn same te zmiany wyraźnie poprawiają zarówno samopoczucie, jak i wyniki.",
+          "Przy potwierdzonym niedoborze i nasilonych objawach lekarz może rozważyć terapię testosteronem. Wymaga ona kwalifikacji, przeciwwskazaniami są m.in. rak prostaty, wysoki hematokryt, ciężka niewydolność serca i plany rozrodcze, oraz regularnych kontroli."
+        ]
+      },
+      {
+        heading: "Co to oznacza w praktyce?",
+        paragraphs: [
+          "Przewlekłe zmęczenie, spadek libido czy gorszy nastrój po 40-tce nie są „naturalną koleją rzeczy”, z którą trzeba się pogodzić. Mogą mieć uchwytną przyczynę, hormonalną lub inną, i często dają się leczyć.",
+          "Jednocześnie nie każdy mężczyzna po 40-tce z niższym testosteronem wymaga terapii. Właściwa diagnostyka i ocena lekarska są niezbędne przed jakąkolwiek decyzją o leczeniu."
         ]
       }
-    ]
+    ],
+    related: ["objawy-niskiego-testosteronu-po-40", "hipogonadyzm-u-mezczyzn", "trt-co-to-jest", "testosteron-sklad-ciala"],
+    sources: [SRC.eaa2020, SRC.emas]
   }
 ];
 const BlogSection = () => {
@@ -3158,7 +3295,7 @@ const BlogSection = () => {
     /* @__PURE__ */ jsx(ScrollReveal, { children: /* @__PURE__ */ jsxs("div", { className: "flex items-end justify-between mb-10", children: [
       /* @__PURE__ */ jsxs("div", { children: [
         /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl md:text-4xl text-foreground mb-2", children: "Artykuły i porady" }),
-        /* @__PURE__ */ jsx("p", { className: "text-muted-foreground max-w-lg", children: "Wiedza o zdrowiu hormonalnym mężczyzn — testosteron, diagnostyka, TRT." })
+        /* @__PURE__ */ jsx("p", { className: "text-muted-foreground max-w-lg", children: "Wiedza o zdrowiu hormonalnym mężczyzn, testosteron, diagnostyka, TRT." })
       ] }),
       /* @__PURE__ */ jsxs(
         Link,
@@ -3720,7 +3857,7 @@ const formatDate$1 = (iso) => new Date(iso).toLocaleDateString("pl-PL", { year: 
 const Blog = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Blog — zdrowiehormonalne.pl | Artykuły o testosteronie i zdrowiu hormonalnym";
+    document.title = "Blog | zdrowiehormonalne.pl | Artykuły o testosteronie i zdrowiu hormonalnym";
   }, []);
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsx(SiteNav, {}),
@@ -3728,7 +3865,7 @@ const Blog = () => {
       /* @__PURE__ */ jsx("section", { className: "bg-hero text-hero-foreground py-16 md:py-24", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-4xl text-center", children: [
         /* @__PURE__ */ jsx("p", { className: "inline-block text-sm uppercase tracking-[0.2em] font-semibold mb-4 px-4 py-2 rounded-full bg-hero-foreground/10 border border-hero-foreground/20", children: "Wiedza i porady" }),
         /* @__PURE__ */ jsx("h1", { className: "font-serif text-4xl md:text-5xl text-hero-foreground mb-4", children: "Blog" }),
-        /* @__PURE__ */ jsx("p", { className: "text-lg text-hero-foreground/80 max-w-xl mx-auto", children: "Artykuły o zdrowiu hormonalnym mężczyzn — testosteron, diagnostyka, TRT i nie tylko." })
+        /* @__PURE__ */ jsx("p", { className: "text-lg text-hero-foreground/80 max-w-xl mx-auto", children: "Artykuły o zdrowiu hormonalnym mężczyzn, testosteron, diagnostyka, TRT i nie tylko." })
       ] }) }),
       /* @__PURE__ */ jsx("section", { className: "py-16 md:py-24 bg-background", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-4xl", children: [
         /* @__PURE__ */ jsx("div", { className: "space-y-8", children: blogPosts.map((post) => /* @__PURE__ */ jsxs(
@@ -3778,12 +3915,13 @@ const BlogPost = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     if (post) {
-      document.title = `${post.title} — zdrowiehormonalne.pl`;
+      document.title = `${post.title} | zdrowiehormonalne.pl`;
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) metaDesc.setAttribute("content", post.metaDescription);
     }
   }, [post]);
   if (!post) return /* @__PURE__ */ jsx(Navigate, { to: "/blog", replace: true });
+  const related = (post.related ?? []).map((s) => blogPosts.find((p) => p.slug === s)).filter((p) => Boolean(p));
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsx(SiteNav, {}),
     /* @__PURE__ */ jsxs("main", { children: [
@@ -3801,6 +3939,10 @@ const BlogPost = () => {
             /* @__PURE__ */ jsx(Calendar, { className: "w-4 h-4" }),
             formatDate(post.date)
           ] }),
+          post.updated && /* @__PURE__ */ jsxs("span", { children: [
+            "Zaktualizowano: ",
+            formatDate(post.updated)
+          ] }),
           /* @__PURE__ */ jsxs("span", { className: "flex items-center gap-1.5", children: [
             /* @__PURE__ */ jsx(Clock, { className: "w-4 h-4" }),
             post.readingTime,
@@ -3814,9 +3956,17 @@ const BlogPost = () => {
           section.heading && /* @__PURE__ */ jsx("h2", { className: "font-serif text-2xl text-foreground mt-10 mb-4", children: section.heading }),
           section.paragraphs.map((p, j) => /* @__PURE__ */ jsx("p", { className: "text-foreground/80 leading-relaxed mb-4", children: p }, j))
         ] }, i)) }),
+        post.sources && post.sources.length > 0 && /* @__PURE__ */ jsxs("section", { "aria-label": "Źródła", className: "mt-10 border-t border-border pt-6", children: [
+          /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground mb-3", children: "Źródła" }),
+          /* @__PURE__ */ jsx("ol", { className: "list-decimal pl-5 space-y-2 text-sm text-muted-foreground", children: post.sources.map((s) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx("a", { href: s.url, target: "_blank", rel: "noopener noreferrer", className: "hover:text-primary underline underline-offset-2", children: s.label }) }, s.url)) })
+        ] }),
+        related.length > 0 && /* @__PURE__ */ jsxs("nav", { "aria-label": "Powiązane artykuły", className: "mt-12 rounded-2xl border border-border bg-card p-6", children: [
+          /* @__PURE__ */ jsx("h2", { className: "font-serif text-xl text-foreground mb-4", children: "Czytaj też" }),
+          /* @__PURE__ */ jsx("ul", { className: "space-y-2", children: related.map((r) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, { to: `/blog/${r.slug}`, className: "text-primary hover:underline underline-offset-2", children: r.title }) }, r.slug)) })
+        ] }),
         /* @__PURE__ */ jsxs("div", { className: "mt-12 p-8 rounded-2xl bg-hero text-hero-foreground text-center", children: [
           /* @__PURE__ */ jsx("h3", { className: "font-serif text-2xl mb-3", children: "Chcesz omówić swój przypadek?" }),
-          /* @__PURE__ */ jsx("p", { className: "text-hero-foreground/70 mb-6 max-w-md mx-auto", children: "Skontaktuj się z lekarz Martą Treblińską — konsultacja zdalna, z dowolnego miejsca." }),
+          /* @__PURE__ */ jsx("p", { className: "text-hero-foreground/70 mb-6 max-w-md mx-auto", children: "Skontaktuj się z lekarz Martą Treblińską, konsultacja zdalna, z dowolnego miejsca." }),
           /* @__PURE__ */ jsx(Button, { variant: "cta", size: "lg", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", onClick: () => trackPhone("artykul"), children: [
             /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4 mr-2" }),
             "Zadzwoń teraz"
@@ -3857,7 +4007,7 @@ const PrivacyPolicy = () => {
       /* @__PURE__ */ jsxs("header", { className: "space-y-3", children: [
         /* @__PURE__ */ jsx("h1", { className: "font-serif text-3xl md:text-4xl text-foreground", children: "Polityka prywatności" }),
         /* @__PURE__ */ jsx("p", { className: "text-sm", children: "Ostatnia aktualizacja: 16 października 2026 r." }),
-        /* @__PURE__ */ jsx("p", { children: "Informacje o przetwarzaniu danych osobowych zgodnie z art. 13 Rozporządzenia (UE) 2016/679 („RODO”) oraz o plikach cookies zgodnie z art. 399 ustawy — Prawo komunikacji elektronicznej." })
+        /* @__PURE__ */ jsx("p", { children: "Informacje o przetwarzaniu danych osobowych zgodnie z art. 13 Rozporządzenia (UE) 2016/679 („RODO”) oraz o plikach cookies zgodnie z art. 399 ustawy: Prawo komunikacji elektronicznej." })
       ] }),
       /* @__PURE__ */ jsxs(Section, { title: "1. Administrator", children: [
         /* @__PURE__ */ jsx("p", { children: "Administratorem danych osobowych jest lek. Marta Treblińska, prowadząca działalność pod firmą Indywidualna Praktyka Lekarska Marta Treblińska, ul. Stanisława Dubois 1/21, 07-300 Ostrów Mazowiecka, NIP 7591759015, REGON 527117814 („Administrator”)." }),
@@ -3899,7 +4049,7 @@ const PrivacyPolicy = () => {
           Purpose,
           {
             title: "Odpowiedź na wiadomości przesłane e-mailem lub telefonicznie",
-            basis: /* @__PURE__ */ jsx(Fragment, { children: "art. 6 ust. 1 lit. f RODO — prawnie uzasadniony interes Administratora polegający na udzieleniu odpowiedzi; w zakresie informacji o zdrowiu — art. 9 ust. 2 lit. h RODO." }),
+            basis: /* @__PURE__ */ jsx(Fragment, { children: "art. 6 ust. 1 lit. f RODO: prawnie uzasadniony interes Administratora polegający na udzieleniu odpowiedzi; w zakresie informacji o zdrowiu, art. 9 ust. 2 lit. h RODO." }),
             period: "do czasu załatwienia sprawy, a następnie do upływu terminu przedawnienia roszczeń."
           }
         ),
@@ -3907,7 +4057,7 @@ const PrivacyPolicy = () => {
           Purpose,
           {
             title: "Ustalenie, dochodzenie i obrona roszczeń",
-            basis: /* @__PURE__ */ jsx(Fragment, { children: "art. 6 ust. 1 lit. f RODO — prawnie uzasadniony interes Administratora polegający na ochronie jego praw; w zakresie danych o zdrowiu — art. 9 ust. 2 lit. f RODO." }),
+            basis: /* @__PURE__ */ jsx(Fragment, { children: "art. 6 ust. 1 lit. f RODO: prawnie uzasadniony interes Administratora polegający na ochronie jego praw; w zakresie danych o zdrowiu, art. 9 ust. 2 lit. f RODO." }),
             period: "do upływu terminu przedawnienia roszczeń."
           }
         ),
@@ -3915,7 +4065,7 @@ const PrivacyPolicy = () => {
           Purpose,
           {
             title: "Zapewnienie działania i bezpieczeństwa strony internetowej",
-            basis: /* @__PURE__ */ jsx(Fragment, { children: "art. 6 ust. 1 lit. f RODO — prawnie uzasadniony interes Administratora polegający na udostępnieniu strony i ochronie jej przed nadużyciami." }),
+            basis: /* @__PURE__ */ jsx(Fragment, { children: "art. 6 ust. 1 lit. f RODO: prawnie uzasadniony interes Administratora polegający na udostępnieniu strony i ochronie jej przed nadużyciami." }),
             period: "przez okres przechowywania logów przez dostawcę hostingu."
           }
         ),
@@ -3923,7 +4073,7 @@ const PrivacyPolicy = () => {
           Purpose,
           {
             title: "Statystyka odwiedzin strony (pliki cookies analityczne)",
-            basis: "zgoda — art. 6 ust. 1 lit. a RODO.",
+            basis: "zgoda: art. 6 ust. 1 lit. a RODO.",
             period: "do wycofania zgody lub do upływu okresu przechowywania ustawionego w narzędziu analitycznym."
           }
         ),
@@ -3931,7 +4081,7 @@ const PrivacyPolicy = () => {
           Purpose,
           {
             title: "Marketing i pomiar skuteczności reklam (pliki cookies marketingowe)",
-            basis: "zgoda — art. 6 ust. 1 lit. a RODO.",
+            basis: "zgoda: art. 6 ust. 1 lit. a RODO.",
             period: "do wycofania zgody lub do upływu okresu przechowywania stosowanego przez dostawcę narzędzia."
           }
         )
@@ -3943,11 +4093,11 @@ const PrivacyPolicy = () => {
           /* @__PURE__ */ jsx("li", { children: "operatorom płatności;" }),
           /* @__PURE__ */ jsx("li", { children: "dostawcom usług poczty elektronicznej, hostingu i usług IT;" }),
           /* @__PURE__ */ jsx("li", { children: "podmiotom świadczącym usługi księgowe i prawne;" }),
-          /* @__PURE__ */ jsx("li", { children: "po wyrażeniu zgody — dostawcom narzędzi analitycznych i marketingowych: Google Ireland Limited (Google Analytics), HubSpot Ireland Limited i Meta Platforms Ireland Limited (Meta Pixel);" }),
+          /* @__PURE__ */ jsx("li", { children: "po wyrażeniu zgody: dostawcom narzędzi analitycznych i marketingowych: Google Ireland Limited (Google Analytics), HubSpot Ireland Limited i Meta Platforms Ireland Limited (Meta Pixel);" }),
           /* @__PURE__ */ jsx("li", { children: "podmiotom uprawnionym na podstawie przepisów prawa." })
         ] }),
         /* @__PURE__ */ jsxs("p", { children: [
-          "W zakresie zbierania danych za pomocą Meta Pixel i ich przekazania do Meta Administrator i Meta Platforms Ireland Limited są współadministratorami (art. 26 RODO). Zgodnie z ich uzgodnieniem Administrator odpowiada za uzyskanie zgody i przekazanie informacji o przetwarzaniu, a Meta — za realizację praw osób, których dane dotyczą, w odniesieniu do danych przechowywanych przez Meta. Dalsze przetwarzanie danych przez Meta odbywa się na zasadach opisanych w",
+          "W zakresie zbierania danych za pomocą Meta Pixel i ich przekazania do Meta Administrator i Meta Platforms Ireland Limited są współadministratorami (art. 26 RODO). Zgodnie z ich uzgodnieniem Administrator odpowiada za uzyskanie zgody i przekazanie informacji o przetwarzaniu, a Meta, za realizację praw osób, których dane dotyczą, w odniesieniu do danych przechowywanych przez Meta. Dalsze przetwarzanie danych przez Meta odbywa się na zasadach opisanych w",
           " ",
           /* @__PURE__ */ jsx(
             "a",
@@ -3964,30 +4114,30 @@ const PrivacyPolicy = () => {
       ] }),
       /* @__PURE__ */ jsx(Section, { title: "4. Przekazywanie danych poza Europejski Obszar Gospodarczy", children: /* @__PURE__ */ jsx("p", { children: "Dostawcy narzędzi analitycznych i marketingowych oraz usług IT mogą przekazywać dane do Stanów Zjednoczonych. Podstawą jest decyzja Komisji Europejskiej z 10 lipca 2023 r. stwierdzająca odpowiedni stopień ochrony w ramach EU-US Data Privacy Framework." }) }),
       /* @__PURE__ */ jsxs(Section, { title: "5. Prawa osoby, której dane dotyczą", children: [
-        /* @__PURE__ */ jsx("p", { children: "Przysługuje Ci prawo dostępu do danych, ich sprostowania, usunięcia lub ograniczenia przetwarzania, prawo do przenoszenia danych oraz prawo wniesienia sprzeciwu wobec przetwarzania opartego na art. 6 ust. 1 lit. f RODO — na zasadach określonych w RODO." }),
+        /* @__PURE__ */ jsx("p", { children: "Przysługuje Ci prawo dostępu do danych, ich sprostowania, usunięcia lub ograniczenia przetwarzania, prawo do przenoszenia danych oraz prawo wniesienia sprzeciwu wobec przetwarzania opartego na art. 6 ust. 1 lit. f RODO - na zasadach określonych w RODO." }),
         /* @__PURE__ */ jsxs("p", { children: [
-          "Zgodę możesz wycofać w dowolnym momencie, bez wpływu na zgodność z prawem przetwarzania dokonanego przed jej wycofaniem — w ",
+          "Zgodę możesz wycofać w dowolnym momencie, bez wpływu na zgodność z prawem przetwarzania dokonanego przed jej wycofaniem: w ",
           /* @__PURE__ */ jsx(CookieSettingsLink, { children: "ustawieniach cookies" }),
           "."
         ] }),
         /* @__PURE__ */ jsx("p", { children: "Przysługuje Ci prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych." })
       ] }),
-      /* @__PURE__ */ jsx(Section, { title: "6. Obowiązek podania danych", children: /* @__PURE__ */ jsx("p", { children: "Podanie danych w dokumentacji medycznej jest wymogiem ustawowym. Podanie danych przy rezerwacji jest warunkiem zawarcia umowy — bez nich rezerwacja nie jest możliwa. W pozostałym zakresie podanie danych jest dobrowolne, a zgoda na pliki cookies analityczne i marketingowe nie jest warunkiem korzystania ze strony." }) }),
+      /* @__PURE__ */ jsx(Section, { title: "6. Obowiązek podania danych", children: /* @__PURE__ */ jsx("p", { children: "Podanie danych w dokumentacji medycznej jest wymogiem ustawowym. Podanie danych przy rezerwacji jest warunkiem zawarcia umowy: bez nich rezerwacja nie jest możliwa. W pozostałym zakresie podanie danych jest dobrowolne, a zgoda na pliki cookies analityczne i marketingowe nie jest warunkiem korzystania ze strony." }) }),
       /* @__PURE__ */ jsx(Section, { title: "7. Zautomatyzowane podejmowanie decyzji", children: /* @__PURE__ */ jsx("p", { children: "Administrator nie podejmuje decyzji opartych wyłącznie na zautomatyzowanym przetwarzaniu, w tym profilowaniu, o których mowa w art. 22 RODO." }) }),
       /* @__PURE__ */ jsxs(Section, { title: "8. Pliki cookies", children: [
         /* @__PURE__ */ jsx("p", { children: "Strona zapisuje informacje w urządzeniu użytkownika i uzyskuje do nich dostęp (pliki cookies i podobne technologie) w następujących celach:" }),
         /* @__PURE__ */ jsxs("ul", { className: "list-disc pl-5 space-y-1.5", children: [
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("span", { className: "text-foreground font-medium", children: "niezbędne" }),
-            " — wyświetlenie strony, zapamiętanie wersji językowej i decyzji dotyczącej cookies; nie wymagają zgody;"
+            " - wyświetlenie strony, zapamiętanie wersji językowej i decyzji dotyczącej cookies; nie wymagają zgody;"
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("span", { className: "text-foreground font-medium", children: "analityczne" }),
-            " — statystyka odwiedzin (Google Analytics); wymagają zgody;"
+            " - statystyka odwiedzin (Google Analytics); wymagają zgody;"
           ] }),
           /* @__PURE__ */ jsxs("li", { children: [
             /* @__PURE__ */ jsx("span", { className: "text-foreground font-medium", children: "marketingowe" }),
-            " — pomiar skuteczności reklam i ich dopasowanie (HubSpot, Meta Pixel); wymagają zgody."
+            " - pomiar skuteczności reklam i ich dopasowanie (HubSpot, Meta Pixel); wymagają zgody."
           ] })
         ] }),
         /* @__PURE__ */ jsxs("p", { children: [
@@ -4025,7 +4175,7 @@ const Regulamin = () => {
       ] }),
       /* @__PURE__ */ jsxs(Paragraph, { n: 1, title: "Usługodawca i definicje", children: [
         /* @__PURE__ */ jsx("li", { children: "Usługodawcą jest lek. Marta Treblińska, prowadząca działalność leczniczą pod firmą Indywidualna Praktyka Lekarska Marta Treblińska, ul. Stanisława Dubois 1/21, 07-300 Ostrów Mazowiecka, NIP 7591759015, REGON 527117814, wpisana do Rejestru Podmiotów Wykonujących Działalność Leczniczą pod numerem 000000270413 (dalej: „Usługodawca”)." }),
-        /* @__PURE__ */ jsx("li", { children: "Usługodawca wykonuje zawód lekarza — zawód regulowany, do którego wykonywania uprawnia prawo wykonywania zawodu przyznane przez okręgową radę lekarską. Usługodawca jest członkiem samorządu lekarskiego i podlega ustawie o zawodach lekarza i lekarza dentysty oraz Kodeksowi Etyki Lekarskiej." }),
+        /* @__PURE__ */ jsx("li", { children: "Usługodawca wykonuje zawód lekarza: zawód regulowany, do którego wykonywania uprawnia prawo wykonywania zawodu przyznane przez okręgową radę lekarską. Usługodawca jest członkiem samorządu lekarskiego i podlega ustawie o zawodach lekarza i lekarza dentysty oraz Kodeksowi Etyki Lekarskiej." }),
         /* @__PURE__ */ jsxs("li", { children: [
           "Kontakt z Usługodawcą: e-mail ",
           mail,
@@ -4036,18 +4186,18 @@ const Regulamin = () => {
         /* @__PURE__ */ jsxs("li", { children: [
           "Użyte w regulaminie pojęcia oznaczają: ",
           /* @__PURE__ */ jsx("span", { className: "text-foreground", children: "Strona" }),
-          " — serwis internetowy zdrowiehormonalne.pl; ",
+          " - serwis internetowy zdrowiehormonalne.pl; ",
           /* @__PURE__ */ jsx("span", { className: "text-foreground", children: "Użytkownik" }),
-          " — każda osoba korzystająca ze Strony;",
+          " - każda osoba korzystająca ze Strony;",
           " ",
           /* @__PURE__ */ jsx("span", { className: "text-foreground", children: "Pacjent" }),
-          " — osoba korzystająca z Konsultacji;",
+          " - osoba korzystająca z Konsultacji;",
           " ",
           /* @__PURE__ */ jsx("span", { className: "text-foreground", children: "Konsultacja" }),
-          " — świadczenie zdrowotne udzielane przez lekarza na odległość, za pośrednictwem systemów teleinformatycznych lub systemów łączności (teleporada);",
+          " - świadczenie zdrowotne udzielane przez lekarza na odległość, za pośrednictwem systemów teleinformatycznych lub systemów łączności (teleporada);",
           " ",
           /* @__PURE__ */ jsx("span", { className: "text-foreground", children: "Medfile" }),
-          " — system rezerwacji wizyt prowadzony przez Medfile Sp. z o.o."
+          " - system rezerwacji wizyt prowadzony przez Medfile Sp. z o.o."
         ] })
       ] }),
       /* @__PURE__ */ jsxs(Paragraph, { n: 2, title: "Usługi świadczone drogą elektroniczną", children: [
@@ -4061,18 +4211,18 @@ const Regulamin = () => {
         /* @__PURE__ */ jsx("li", { children: "Treści na Stronie mają charakter wyłącznie informacyjny i edukacyjny, nie stanowią porady medycznej ani reklamy świadczeń zdrowotnych. Decyzję o diagnostyce i leczeniu lekarz podejmuje indywidualnie, po Konsultacji." })
       ] }),
       /* @__PURE__ */ jsxs(Paragraph, { n: 3, title: "Zakres i forma Konsultacji", children: [
-        /* @__PURE__ */ jsx("li", { children: "Usługodawca udziela Konsultacji w zakresie diagnostyki i leczenia zaburzeń hormonalnych u mężczyzn, w tym niedoboru testosteronu, w formie zdalnej — za pośrednictwem połączenia wideo." }),
+        /* @__PURE__ */ jsx("li", { children: "Usługodawca udziela Konsultacji w zakresie diagnostyki i leczenia zaburzeń hormonalnych u mężczyzn, w tym niedoboru testosteronu, w formie zdalnej, za pośrednictwem połączenia wideo." }),
         /* @__PURE__ */ jsx("li", { children: "Konsultacje są świadczeniami odpłatnymi, niefinansowanymi ze środków publicznych (nie są udzielane w ramach umowy z Narodowym Funduszem Zdrowia)." }),
         /* @__PURE__ */ jsx("li", { children: "Z Konsultacji mogą korzystać osoby pełnoletnie." }),
-        /* @__PURE__ */ jsx("li", { children: "Na początku Konsultacji lekarz potwierdza tożsamość Pacjenta. Pacjent podaje imię, nazwisko i numer PESEL, a w razie jego braku — dane dokumentu tożsamości. Bez potwierdzenia tożsamości nie jest możliwe udzielenie świadczenia ani wystawienie recepty." }),
-        /* @__PURE__ */ jsx("li", { children: "Lekarz może uznać, że stan zdrowia Pacjenta wymaga badania fizykalnego, pilnej diagnostyki lub opieki innego specjalisty — wówczas informuje o tym Pacjenta i wskazuje dalsze postępowanie. Wystawienie recepty, skierowania lub zaświadczenia następuje wyłącznie wtedy, gdy lekarz uzna to za uzasadnione medycznie, zgodnie z aktualną wiedzą medyczną." }),
+        /* @__PURE__ */ jsx("li", { children: "Na początku Konsultacji lekarz potwierdza tożsamość Pacjenta. Pacjent podaje imię, nazwisko i numer PESEL, a w razie jego braku, dane dokumentu tożsamości. Bez potwierdzenia tożsamości nie jest możliwe udzielenie świadczenia ani wystawienie recepty." }),
+        /* @__PURE__ */ jsx("li", { children: "Lekarz może uznać, że stan zdrowia Pacjenta wymaga badania fizykalnego, pilnej diagnostyki lub opieki innego specjalisty: wówczas informuje o tym Pacjenta i wskazuje dalsze postępowanie. Wystawienie recepty, skierowania lub zaświadczenia następuje wyłącznie wtedy, gdy lekarz uzna to za uzasadnione medycznie, zgodnie z aktualną wiedzą medyczną." }),
         /* @__PURE__ */ jsx("li", { children: "Pacjent przekazuje lekarzowi prawdziwe i pełne informacje o stanie zdrowia, przyjmowanych lekach i wynikach badań. Zalecane badania laboratoryjne Pacjent wykonuje we własnym zakresie, przed Konsultacją lub w terminie wskazanym przez lekarza." }),
         /* @__PURE__ */ jsx("li", { children: "W przypadku terapii długoterminowej warunkiem jej bezpiecznego prowadzenia są regularne wizyty kontrolne i badania w terminach wyznaczonych przez lekarza." }),
         /* @__PURE__ */ jsx("li", { className: "text-foreground", children: "Konsultacje nie służą do pomocy w stanach nagłych. W razie zagrożenia życia lub zdrowia należy zadzwonić pod numer alarmowy 112 albo zgłosić się na szpitalny oddział ratunkowy." })
       ] }),
       /* @__PURE__ */ jsxs(Paragraph, { n: 4, title: "Rezerwacja", children: [
         /* @__PURE__ */ jsx("li", { children: "Konsultację można zarezerwować w szczególności przez formularz rezerwacji w systemie Medfile dostępny na Stronie." }),
-        /* @__PURE__ */ jsx("li", { children: "Umowa o udzielenie Konsultacji zostaje zawarta z chwilą potwierdzenia rezerwacji przez Usługodawcę lub system Medfile, a gdy wymagana jest przedpłata — z chwilą jej zaksięgowania." })
+        /* @__PURE__ */ jsx("li", { children: "Umowa o udzielenie Konsultacji zostaje zawarta z chwilą potwierdzenia rezerwacji przez Usługodawcę lub system Medfile, a gdy wymagana jest przedpłata, z chwilą jej zaksięgowania." })
       ] }),
       /* @__PURE__ */ jsxs(Paragraph, { n: 5, title: "Ceny i płatności", children: [
         /* @__PURE__ */ jsx("li", { children: "Aktualne ceny Konsultacji są wskazane w formularzu rezerwacji, przed złożeniem rezerwacji." }),
