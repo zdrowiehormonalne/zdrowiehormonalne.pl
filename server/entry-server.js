@@ -1496,6 +1496,12 @@ const Button = React.forwardRef(
   }
 );
 Button.displayName = "Button";
+const BrandMark = ({ className = "" }) => /* @__PURE__ */ jsxs("svg", { viewBox: "0 0 96 96", className, "aria-hidden": "true", focusable: "false", children: [
+  /* @__PURE__ */ jsx("rect", { width: "96", height: "96", rx: "22", fill: "#233544" }),
+  /* @__PURE__ */ jsx("path", { d: "M57.92 20.75 A29 29 0 1 0 75.25 38.08", fill: "none", stroke: "#faf8f4", strokeWidth: "9", strokeLinecap: "round" }),
+  /* @__PURE__ */ jsx("path", { d: "M48 33 V63 M33 48 H63", stroke: "#faf8f4", strokeWidth: "9", strokeLinecap: "round" }),
+  /* @__PURE__ */ jsx("circle", { cx: "68.51", cy: "27.49", r: "7", fill: "#f59f0a" })
+] });
 const FlagPL = () => /* @__PURE__ */ jsx("svg", { viewBox: "0 0 640 480", className: "w-5 h-3.5 rounded-[2px] shadow-sm border border-border/30", children: /* @__PURE__ */ jsxs("g", { fillRule: "evenodd", children: [
   /* @__PURE__ */ jsx("path", { fill: "#fff", d: "M640 480H0V0h640z" }),
   /* @__PURE__ */ jsx("path", { fill: "#dc143c", d: "M640 480H0V240h640z" })
@@ -1547,7 +1553,7 @@ const SiteNav = () => {
   const Flag = flagComponents[locale];
   return /* @__PURE__ */ jsxs("nav", { className: "sticky top-0 z-40 bg-card/80 backdrop-blur-lg border-b border-border", children: [
     /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-7xl flex items-center justify-between gap-6 h-16", children: [
-      /* @__PURE__ */ jsx(
+      /* @__PURE__ */ jsxs(
         "a",
         {
           href: "/",
@@ -1557,8 +1563,14 @@ const SiteNav = () => {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }
           },
-          className: "font-serif text-lg text-foreground whitespace-nowrap shrink-0",
-          children: t.hero.doctorName
+          className: "flex items-center gap-2.5 whitespace-nowrap shrink-0",
+          children: [
+            /* @__PURE__ */ jsx(BrandMark, { className: "h-9 w-9 shrink-0" }),
+            /* @__PURE__ */ jsxs("span", { className: "flex flex-col leading-none", children: [
+              /* @__PURE__ */ jsx("span", { className: "font-serif text-lg text-foreground", children: "Zdrowie Hormonalne" }),
+              /* @__PURE__ */ jsx("span", { className: "mt-1 text-[11px] text-muted-foreground", children: t.hero.doctorName })
+            ] })
+          ]
         }
       ),
       /* @__PURE__ */ jsxs("div", { className: "hidden lg:flex items-center gap-4 xl:gap-5", children: [
