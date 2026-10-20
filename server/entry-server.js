@@ -8,7 +8,7 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useLocation, useNavigate, Link, useParams, Navigate, Routes, Route } from "react-router-dom";
-import { Calendar, X, Menu, ArrowRight, Phone, Mail, Check, Copy, BatteryLow, Brain, Moon, HeartPulse, TrendingUp, FlaskConical, Stethoscope, BarChart3, FileSearch, ClipboardCheck, ShieldCheck, RotateCcw, Crosshair, ArrowLeft, GraduationCap, Award, BookOpen, ExternalLink, Star, Clock, ChevronDown, CalendarCheck, Video, AlertCircle, CheckCircle, ClipboardList } from "lucide-react";
+import { Calendar, X, Menu, ArrowRight, Phone, BatteryLow, Brain, Moon, HeartPulse, TrendingUp, FlaskConical, Dumbbell, Stethoscope, BarChart3, FileSearch, ClipboardCheck, ShieldCheck, RotateCcw, Crosshair, ArrowLeft, GraduationCap, Award, BookOpen, ExternalLink, Star, Clock, ChevronDown, CalendarCheck, Mail, Check, Copy, Video, AlertCircle, CheckCircle, ClipboardList } from "lucide-react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
 import useEmblaCarousel from "embla-carousel-react";
@@ -49,19 +49,20 @@ const translations = {
       articles: "Artykuły"
     },
     hero: {
-      badge: "Konsultacje lekarskie · Diagnostyka · Terapia",
+      badge: "Konsultacja wideo z lekarzem · 60 min · z dowolnego miejsca",
       title: "Chroniczne zmęczenie, problemy ze snem, obniżone libido?",
-      description: "To może być niedobór testosteronu. Zdalna konsultacja lekarska: wygodnie, z dowolnego miejsca.",
+      description: "Diagnostyka hormonalna i terapia testosteronem (TRT) pod opieką lekarza. Leczymy przyczynę objawów, nie sam wynik badania.",
+      trtTraining: "Certyfikowana w terapii testosteronem:",
       cta: "Umów konsultację",
       ctaPhonePrefix: "lub zadzwoń:",
       doctorName: "lekarz Marta Treblińska",
       perk1: "Bez poczekalni i ryzyka zakażenia",
-      perk2: "Z dowolnego miejsca w Polsce",
+      perk2: "Z dowolnego miejsca",
       perk3: "Indywidualny termin wizyty"
     },
     symptoms: {
       title: "Kiedy warto rozważyć konsultację lekarską?",
-      subtitle: "Rozpoznajesz któreś z tych objawów? Mogą mieć wiele przyczyn: niedobór testosteronu jest jedną z nich. Konsultacja lekarska pomoże wyjaśnić, co się dzieje.",
+      subtitle: "Rozpoznajesz któreś z tych objawów? Mogą mieć wiele przyczyn, niedobór testosteronu to tylko jedna z nich. Testosteron w normie, a objawy zostają? To częsta sytuacja i też powód do konsultacji.",
       fatigue: "Chroniczne zmęczenie i brak energii",
       fatigueDesc: "Budzisz się zmęczony, choć przespałeś całą noc.",
       brain: "Mgła w głowie",
@@ -73,7 +74,10 @@ const translations = {
       weight: "Przyrost tłuszczu mimo starań",
       weightDesc: "Zmienia się sylwetka, choć tryb życia taki sam.",
       hormones: "Nieprawidłowe wyniki badań hormonalnych",
-      hormonesDesc: "Masz wyniki, ale nie wiesz, co z nimi zrobić."
+      hormonesDesc: "Masz wyniki, ale nie wiesz, co z nimi zrobić.",
+      steroids: "Testosteron lub sterydy brane na własną rękę",
+      steroidsDesc: "Po odstawieniu spadła energia, libido albo nastrój i nie wraca. Rozmowa jest objęta tajemnicą lekarską.",
+      steroidsLink: "Jak wygląda odblok?"
     },
     services: {
       title: "Co obejmuje konsultacja?",
@@ -90,7 +94,7 @@ const translations = {
       therapy: "Prowadzenie terapii",
       therapyDesc: "Prowadzimy leczenie zgodnie ze standardami medycyny opartej na dowodach",
       monitoring: "Monitorowanie leczenia",
-      monitoringDesc: "Regularne kontrole zapewniające skuteczność i bezpieczeństwo terapii",
+      monitoringDesc: "Regularne kontrole skuteczności i bezpieczeństwa terapii",
       recovery: "Odblok po testosteronie i sterydach",
       recoveryDesc: "Przywracanie własnej produkcji testosteronu po zakończeniu terapii testosteronem lub po stosowaniu sterydów anabolicznych"
     },
@@ -107,20 +111,19 @@ const translations = {
       step4: "Dalsze postępowanie",
       step4Desc: "Ustalenie planu leczenia, jeśli istnieją wskazania medyczne",
       disclaimer: "Leczenie wdrażane jest wyłącznie w przypadku istnienia wskazań medycznych.",
-      patientNote: "Regularne wizyty kontrolne i terminowe wykonywanie zleconych badań są nieodłącznym elementem bezpiecznej terapii. Pacjent aktywnie uczestniczy w tym procesie, lekarz zapewnia opiekę, a terminowość kontroli leży po stronie pacjenta."
+      patientNote: "Regularne wizyty kontrolne i terminowe wykonywanie zleconych badań są nieodłącznym elementem bezpiecznej terapii."
     },
     trtInfo: {
-      title: "Leczenie niedoboru testosteronu",
-      p1: "Terapia zastępcza testosteronem (TRT) jest jedną z metod leczenia stosowaną u pacjentów z potwierdzonym niedoborem testosteronu.",
-      p2: "Każdy przypadek wymaga indywidualnej oceny lekarskiej, odpowiedniej diagnostyki oraz regularnej kontroli w trakcie leczenia.",
-      disclaimer: "Decyzja o wdrożeniu leczenia podejmowana jest wyłącznie przez lekarza po przeprowadzeniu pełnej diagnostyki i analizy wyników badań."
+      title: "Terapia testosteronem (TRT)",
+      p1: "Prowadzimy terapię testosteronem u mężczyzn z potwierdzonym niedoborem tego hormonu. Leczenie dobieramy indywidualnie, a jego efekty i bezpieczeństwo kontrolujemy na bieżąco.",
+      disclaimer: "Decyzję o leczeniu lekarz podejmuje po pełnej diagnostyce i analizie wyników badań."
     },
     doctor: {
       title: "Lekarz prowadzący",
       name: "lekarz Marta Treblińska",
       education: "Lekarz medycyny, Warszawski Uniwersytet Medyczny",
       harvard: "Testosterone Therapy and Sexual Dysfunction, Harvard Medical School",
-      experience: "Wieloletnie doświadczenie w diagnostyce i leczeniu zaburzeń hormonalnych u mężczyzn",
+      experience: "Na co dzień leczy mężczyzn z zaburzeniami hormonalnymi i prowadzi terapię testosteronem (TRT)",
       ebm: "Precyzyjne szukanie przyczyny, nie leczenie objawów, oparte na medycynie opartej na dowodach (EBM)",
       alfa: "Certyfikat TRT Master Practitioner: specjalistyczne szkolenie z hormonalnej terapii zastępczej u mężczyzn"
     },
@@ -136,6 +139,8 @@ const translations = {
       a4: "Konsultacje odbywają się wyłącznie w formie zdalnej (teleporada): wygodnie, z dowolnego miejsca. Termin wizyty ustalany jest indywidualnie.",
       q5: "Czy terapia hormonalna jest bezpieczna?",
       a5: "Każda terapia niesie ze sobą potencjalne korzyści i ryzyka. Bezpieczeństwo leczenia zależy od prawidłowej kwalifikacji, odpowiedniego dawkowania oraz regularnego monitorowania pacjenta przez lekarza.",
+      q7: "Mam testosteron w normie, a objawy są. Czy to dla mnie?",
+      a7: "Tak. Zmęczenie, spadek libido czy gorszy sen mają wiele przyczyn poza testosteronem. Na konsultacji ustalamy, co za nimi stoi, i to leczymy.",
       q6: "Czy pomagacie w odbloku po terapii testosteronem lub cyklu sterydowym?",
       a6: "Tak. Testosteron podawany z zewnątrz, zarówno w ramach terapii prowadzonej przez lekarza, jak i przyjmowany samodzielnie, oraz sterydy anaboliczne hamują własną produkcję testosteronu. Po ich odstawieniu często pojawia się spadek libido, zmęczenie, obniżony nastrój czy problemy z erekcją. Podczas konsultacji oceniamy wyniki badań i stan zdrowia oraz ustalamy dalsze postępowanie, którego celem jest przywrócenie naturalnej produkcji hormonów. Rozmowa jest objęta tajemnicą lekarską."
     },
@@ -498,19 +503,20 @@ const translations = {
       articles: "Articles"
     },
     hero: {
-      badge: "Medical consultations · Diagnostics · Therapy",
+      badge: "Video consultation with a doctor · 60 min · from anywhere",
       title: "Chronic fatigue, sleep problems, decreased libido?",
-      description: "This may be testosterone deficiency. Remote medical consultation: convenient, from anywhere.",
+      description: "Hormonal diagnostics and testosterone replacement therapy (TRT) under a doctor’s care. We treat the cause of your symptoms, not just a lab result.",
+      trtTraining: "Certified in testosterone therapy:",
       cta: "Book a consultation",
       ctaPhonePrefix: "or call:",
       doctorName: "Marta Treblińska, MD",
       perk1: "No waiting room, no infection risk",
-      perk2: "From anywhere in Poland",
+      perk2: "From anywhere",
       perk3: "Individual appointment time"
     },
     symptoms: {
       title: "When should you consider a medical consultation?",
-      subtitle: "Do you recognize any of these symptoms? They can have many causes: testosterone deficiency is one of them. A medical consultation will help clarify what is happening.",
+      subtitle: "Do you recognize any of these symptoms? They can have many causes, testosterone deficiency is only one of them. Normal testosterone, but the symptoms stay? That is common, and also a reason to see a doctor.",
       fatigue: "Chronic fatigue and low energy",
       fatigueDesc: "You wake up tired, even after a full night's sleep.",
       brain: "Brain fog",
@@ -522,7 +528,10 @@ const translations = {
       weight: "Weight gain despite effort",
       weightDesc: "Your body composition is changing even though your lifestyle hasn't.",
       hormones: "Abnormal hormonal test results",
-      hormonesDesc: "You have results but don't know what to make of them."
+      hormonesDesc: "You have results but don't know what to make of them.",
+      steroids: "Testosterone or steroids taken on your own",
+      steroidsDesc: "After stopping, your energy, libido or mood dropped and won't come back. The conversation is covered by medical confidentiality.",
+      steroidsLink: "How does recovery (PCT) work?"
     },
     services: {
       title: "What does a consultation cover?",
@@ -539,7 +548,7 @@ const translations = {
       therapy: "Therapy management",
       therapyDesc: "We manage treatment in accordance with evidence-based medicine standards",
       monitoring: "Treatment monitoring",
-      monitoringDesc: "Regular check-ups ensuring the effectiveness and safety of therapy",
+      monitoringDesc: "Regular checks of the effectiveness and safety of therapy",
       recovery: "Recovery after testosterone and steroids (PCT)",
       recoveryDesc: "Restoring your own testosterone production after ending testosterone therapy or anabolic steroid use"
     },
@@ -556,20 +565,19 @@ const translations = {
       step4: "Further management",
       step4Desc: "Establishing a treatment plan if medical indications exist",
       disclaimer: "Treatment is implemented only when medical indications exist.",
-      patientNote: "Regular follow-up visits and timely completion of ordered tests are an essential part of safe therapy. The patient plays an active role in this process, the physician provides care, while responsibility for attending scheduled check-ups lies with the patient."
+      patientNote: "Regular follow-up visits and timely completion of ordered tests are an essential part of safe therapy."
     },
     trtInfo: {
-      title: "Testosterone deficiency treatment",
-      p1: "Testosterone replacement therapy (TRT) is one of the treatment methods used in patients with confirmed testosterone deficiency.",
-      p2: "Each case requires individual medical assessment, appropriate diagnostics, and regular monitoring during treatment.",
-      disclaimer: "The decision to implement treatment is made solely by a physician after completing full diagnostics and analyzing test results."
+      title: "Testosterone therapy (TRT)",
+      p1: "We provide testosterone therapy for men with confirmed testosterone deficiency. Treatment is tailored to each patient, and its effects and safety are monitored throughout.",
+      disclaimer: "The doctor decides on treatment after full diagnostics and analysis of test results."
     },
     doctor: {
       title: "Attending physician",
       name: "Marta Treblińska, MD",
       education: "Doctor of Medicine, Medical University of Warsaw",
       harvard: "Testosterone Therapy and Sexual Dysfunction, Harvard Medical School",
-      experience: "Years of experience in diagnosing and treating hormonal disorders in men",
+      experience: "Treats men with hormonal disorders and manages testosterone therapy (TRT) in day-to-day practice",
       ebm: "Precise root-cause diagnosis, not symptom treatment, evidence-based medicine (EBM)",
       alfa: "TRT Master Practitioner certificate: specialist training in male hormone replacement therapy"
     },
@@ -585,6 +593,8 @@ const translations = {
       a4: "Consultations are conducted exclusively remotely (teleconsultation): conveniently, from anywhere. The appointment time is arranged individually.",
       q5: "Is hormonal therapy safe?",
       a5: "Every therapy carries potential benefits and risks. Treatment safety depends on proper qualification, appropriate dosing, and regular patient monitoring by a physician.",
+      q7: "My testosterone is normal, but I have symptoms. Is this for me?",
+      a7: "Yes. Fatigue, low libido or poor sleep have many causes besides testosterone. In the consultation we establish what is behind them and treat it.",
       q6: "Do you help with recovery (PCT) after testosterone therapy or a steroid cycle?",
       a6: "Yes. Testosterone given from outside, whether as therapy prescribed by a doctor or self-administered, and anabolic steroids suppress the body’s own testosterone production. After stopping them, low libido, fatigue, low mood or erectile problems are common. During the consultation we review test results and overall health and set a plan aimed at restoring natural hormone production. The conversation is covered by medical confidentiality."
     },
@@ -947,19 +957,20 @@ const translations = {
       articles: "Artikel"
     },
     hero: {
-      badge: "Ärztliche Beratung · Diagnostik · Therapie",
+      badge: "Video-Sprechstunde mit der Ärztin · 60 Min. · von überall",
       title: "Chronische Müdigkeit, Schlafprobleme, verminderte Libido?",
-      description: "Das könnte ein Testosteronmangel sein. Ärztliche Fernberatung: bequem, von überall.",
+      description: "Hormondiagnostik und Testosteronersatztherapie (TRT) unter ärztlicher Betreuung. Wir behandeln die Ursache Ihrer Beschwerden, nicht nur einen Laborwert.",
+      trtTraining: "Zertifiziert in Testosterontherapie:",
       cta: "Beratung vereinbaren",
       ctaPhonePrefix: "oder anrufen:",
-      doctorName: "Dr. med. Marta Treblińska",
+      doctorName: "Ärztin Marta Treblińska",
       perk1: "Kein Wartezimmer, kein Ansteckungsrisiko",
-      perk2: "Von überall aus Polen",
+      perk2: "Von überall",
       perk3: "Individueller Terminvorschlag"
     },
     symptoms: {
       title: "Wann sollten Sie eine ärztliche Beratung in Betracht ziehen?",
-      subtitle: "Erkennen Sie sich in einem dieser Symptome wieder? Sie können viele Ursachen haben: Testosteronmangel ist eine davon. Eine ärztliche Beratung schafft Klarheit.",
+      subtitle: "Erkennen Sie sich in einem dieser Symptome wieder? Sie können viele Ursachen haben, Testosteronmangel ist nur eine davon. Testosteron normal, aber die Beschwerden bleiben? Das ist häufig und ebenfalls ein Grund für eine Beratung.",
       fatigue: "Chronische Müdigkeit und Energiemangel",
       fatigueDesc: "Sie wachen müde auf, obwohl Sie die ganze Nacht geschlafen haben.",
       brain: "Gehirnnebel",
@@ -971,7 +982,10 @@ const translations = {
       weight: "Gewichtszunahme trotz Bemühungen",
       weightDesc: "Die Körperzusammensetzung verändert sich, obwohl der Lebensstil gleich geblieben ist.",
       hormones: "Auffällige Hormonwerte",
-      hormonesDesc: "Sie haben Ergebnisse, wissen aber nicht, was Sie damit anfangen sollen."
+      hormonesDesc: "Sie haben Ergebnisse, wissen aber nicht, was Sie damit anfangen sollen.",
+      steroids: "Testosteron oder Steroide in Eigenregie",
+      steroidsDesc: "Nach dem Absetzen sind Energie, Libido oder Stimmung gesunken und kommen nicht zurück. Das Gespräch unterliegt der ärztlichen Schweigepflicht.",
+      steroidsLink: "Wie läuft die Wiederherstellung (PCT) ab?"
     },
     services: {
       title: "Was beinhaltet eine Beratung?",
@@ -988,7 +1002,7 @@ const translations = {
       therapy: "Therapieführung",
       therapyDesc: "Wir führen die Behandlung nach den aktuellen Leitlinien evidenzbasierter Medizin durch",
       monitoring: "Therapieüberwachung",
-      monitoringDesc: "Regelmäßige Kontrolluntersuchungen zur Sicherstellung von Wirksamkeit und Verträglichkeit",
+      monitoringDesc: "Regelmäßige Kontrollen von Wirksamkeit und Verträglichkeit der Therapie",
       recovery: "Wiederherstellung nach Testosteron und Steroiden (PCT)",
       recoveryDesc: "Wiederherstellung der körpereigenen Testosteronproduktion nach Ende einer Testosterontherapie oder nach Einnahme anaboler Steroide"
     },
@@ -1005,20 +1019,19 @@ const translations = {
       step4: "Weiteres Vorgehen",
       step4Desc: "Erstellung eines Behandlungsplans bei medizinischer Indikation",
       disclaimer: "Eine Behandlung wird nur bei Vorliegen medizinischer Indikationen eingeleitet.",
-      patientNote: "Regelmäßige Kontrolltermine und die zeitgerechte Durchführung angeordneter Untersuchungen sind ein wesentlicher Bestandteil einer sicheren Therapie. Der Patient trägt aktiv zu diesem Prozess bei, die Ärztin sorgt für die medizinische Betreuung, die Wahrnehmung der Kontrolltermine liegt in der Verantwortung des Patienten."
+      patientNote: "Regelmäßige Kontrolltermine und die zeitgerechte Durchführung angeordneter Untersuchungen sind ein wesentlicher Bestandteil einer sicheren Therapie."
     },
     trtInfo: {
-      title: "Behandlung des Testosteronmangels",
-      p1: "Die Testosteronersatztherapie (TRT) ist eine Behandlungsmethode für Patienten mit bestätigtem Testosteronmangel.",
-      p2: "Jeder Fall erfordert eine individuelle ärztliche Bewertung, entsprechende Diagnostik und regelmäßige Kontrolle während der Behandlung.",
-      disclaimer: "Die Entscheidung über die Einleitung einer Behandlung trifft ausschließlich der Arzt nach vollständiger Diagnostik und Analyse der Untersuchungsergebnisse."
+      title: "Testosterontherapie (TRT)",
+      p1: "Wir führen Testosterontherapien bei Männern mit bestätigtem Testosteronmangel durch. Die Behandlung wird individuell abgestimmt, Wirkung und Sicherheit werden laufend kontrolliert.",
+      disclaimer: "Über die Behandlung entscheidet die Ärztin nach vollständiger Diagnostik und Auswertung der Befunde."
     },
     doctor: {
       title: "Behandelnde Ärztin",
-      name: "Dr. med. Marta Treblińska",
+      name: "Ärztin Marta Treblińska",
       education: "Ärztin, Medizinische Universität Warschau",
       harvard: "Testosterone Therapy and Sexual Dysfunction, Harvard Medical School",
-      experience: "Langjährige Erfahrung in der Diagnostik und Behandlung hormoneller Störungen bei Männern",
+      experience: "Behandelt im Praxisalltag Männer mit Hormonstörungen und führt Testosterontherapien (TRT) durch",
       ebm: "Präzise Ursachendiagnostik statt Symptombehandlung: evidenzbasierte Medizin (EBM)",
       alfa: "TRT Master Practitioner Zertifikat: Fachausbildung in männlicher Hormonersatztherapie"
     },
@@ -1034,6 +1047,8 @@ const translations = {
       a4: "Beratungen finden ausschließlich in Fernform (Telekonsultation) statt: bequem, von überall aus. Der Termin wird individuell vereinbart.",
       q5: "Ist die Hormontherapie sicher?",
       a5: "Jede Therapie birgt potenzielle Vorteile und Risiken. Die Behandlungssicherheit hängt von der richtigen Qualifikation, der angemessenen Dosierung und der regelmäßigen Überwachung des Patienten durch den Arzt ab.",
+      q7: "Mein Testosteron ist normal, aber ich habe Beschwerden. Bin ich hier richtig?",
+      a7: "Ja. Müdigkeit, Libidoverlust oder schlechter Schlaf haben viele Ursachen außer Testosteron. In der Beratung klären wir, was dahintersteckt, und behandeln es.",
       q6: "Helfen Sie bei der Wiederherstellung (PCT) nach einer Testosterontherapie oder einem Steroidzyklus?",
       a6: "Ja. Von außen zugeführtes Testosteron, ob im Rahmen einer ärztlich verordneten Therapie oder eigenmächtig eingenommen, sowie anabole Steroide unterdrücken die körpereigene Testosteronproduktion. Nach dem Absetzen treten häufig Libidoverlust, Müdigkeit, gedrückte Stimmung oder Erektionsprobleme auf. In der Beratung beurteilen wir Befunde und Gesundheitszustand und legen das weitere Vorgehen fest, mit dem Ziel, die natürliche Hormonproduktion wiederherzustellen. Das Gespräch unterliegt der ärztlichen Schweigepflicht."
     },
@@ -1312,7 +1327,7 @@ const translations = {
       entityInfo: "Angaben zur Praxis",
       practice: "Einzelärztliche Praxis Marta Treblińska",
       address: "ul. Duboisa 1/21, Ostrów Mazowiecka, Polen",
-      doctorName: "Dr. med. Marta Treblińska",
+      doctorName: "Ärztin Marta Treblińska",
       remote: "Fernkonsultationen",
       legalInfo: "Rechtliche Informationen",
       privacy: "Datenschutzrichtlinie (DSGVO)",
@@ -1664,10 +1679,6 @@ const trackBook = (placement) => track("book_click", { placement });
 const trackPhone = (placement) => track("phone_click", { placement });
 const trackEmail = (placement) => track("email_click", { placement });
 const trackQuiz = (quiz) => track("quiz_complete", { quiz });
-const EMAIL = "treblinskamarta@zdrowiehormonalne.pl";
-const [local, domain] = EMAIL.split("@");
-const EMAIL_LOCAL = `${local}@`;
-const EMAIL_DOMAIN = domain;
 const HOME_PATHS = ["/", "/en", "/de"];
 const useSectionLink = () => {
   const navigate = useNavigate();
@@ -1677,7 +1688,7 @@ const useSectionLink = () => {
     (id, beforeLeaving) => (e) => {
       e.preventDefault();
       beforeLeaving == null ? void 0 : beforeLeaving();
-      if (isHome) {
+      if (isHome || document.getElementById(id)) {
         scrollToId(id);
       } else {
         navigate("/", { state: { scrollTo: id } });
@@ -1689,7 +1700,6 @@ const useSectionLink = () => {
 const HeroSection = () => {
   const { t, locale } = useLanguage();
   const phoneDisplay = locale === "pl" ? "572 565 887" : "+48 572 565 887";
-  const [copied, setCopied] = useState(false);
   const sectionLink = useSectionLink();
   const sectionRef = useRef(null);
   useEffect(() => {
@@ -1705,12 +1715,6 @@ const HeroSection = () => {
     el.addEventListener("mousemove", onMove);
     return () => el.removeEventListener("mousemove", onMove);
   }, []);
-  const handleCopy = (e) => {
-    e.preventDefault();
-    navigator.clipboard.writeText(EMAIL);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2e3);
-  };
   return /* @__PURE__ */ jsxs("section", { ref: sectionRef, className: "bg-white text-foreground relative overflow-hidden", children: [
     /* @__PURE__ */ jsx("div", { className: "absolute inset-0 opacity-25 pointer-events-none", style: { backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23dde2e9' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` } }),
     /* @__PURE__ */ jsx("div", { className: "container mx-auto px-6 relative z-10 max-w-7xl animate-fade-in", children: /* @__PURE__ */ jsxs("div", { className: "flex flex-col md:flex-row md:items-center gap-0 md:gap-4 lg:gap-8", children: [
@@ -1718,7 +1722,7 @@ const HeroSection = () => {
         /* @__PURE__ */ jsx("p", { className: "inline-block text-sm uppercase tracking-[0.2em] text-foreground font-semibold mb-6 px-4 py-2 rounded-full bg-foreground/5 border border-foreground/15", children: t.hero.badge }),
         /* @__PURE__ */ jsx("h1", { className: "font-serif text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 text-foreground", children: t.hero.title }),
         /* @__PURE__ */ jsx("p", { className: "text-lg md:text-xl text-foreground mb-10 leading-relaxed", children: t.hero.description }),
-        /* @__PURE__ */ jsxs("div", { className: "mb-12 flex flex-col items-center gap-3", children: [
+        /* @__PURE__ */ jsxs("div", { className: "mb-8 flex flex-col items-center gap-3", children: [
           /* @__PURE__ */ jsx(Button, { variant: "cta", size: "xl", className: "w-full sm:w-auto", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "#kontakt", onClick: sectionLink("kontakt"), children: [
             t.hero.cta,
             /* @__PURE__ */ jsx(ArrowRight, { className: "cta-arrow" })
@@ -1739,26 +1743,12 @@ const HeroSection = () => {
             )
           ] })
         ] }),
-        /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm text-foreground", children: [
-          /* @__PURE__ */ jsxs("span", { className: "flex items-center gap-2", children: [
-            /* @__PURE__ */ jsxs("a", { href: `mailto:${EMAIL}`, onClick: () => trackEmail("hero"), className: "flex items-center gap-2 hover:text-foreground/90 transition-colors", children: [
-              /* @__PURE__ */ jsx(Mail, { className: "w-4 h-4 shrink-0" }),
-              /* @__PURE__ */ jsxs("span", { className: "[overflow-wrap:break-word]", children: [
-                EMAIL_LOCAL,
-                /* @__PURE__ */ jsx("wbr", {}),
-                EMAIL_DOMAIN
-              ] })
-            ] }),
-            /* @__PURE__ */ jsx("button", { onClick: handleCopy, className: "p-1 rounded hover:bg-foreground/5 transition-colors", title: "Copy email", children: copied ? /* @__PURE__ */ jsx(Check, { className: "w-3.5 h-3.5" }) : /* @__PURE__ */ jsx(Copy, { className: "w-3.5 h-3.5" }) })
-          ] }),
-          /* @__PURE__ */ jsx("span", { className: "hidden sm:inline", children: "·" }),
-          /* @__PURE__ */ jsx("span", { children: t.hero.doctorName })
-        ] }),
-        /* @__PURE__ */ jsxs("div", { className: "mt-4 flex items-center justify-center gap-2 text-xs text-foreground/60", children: [
+        /* @__PURE__ */ jsxs("div", { className: "flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm text-foreground/70", children: [
           /* @__PURE__ */ jsx("span", { children: "🎓" }),
-          /* @__PURE__ */ jsx("span", { children: "Harvard Medical School" }),
+          /* @__PURE__ */ jsx("span", { children: t.hero.trtTraining }),
+          /* @__PURE__ */ jsx("span", { className: "font-medium text-foreground", children: "Harvard Medical School" }),
           /* @__PURE__ */ jsx("span", { children: "·" }),
-          /* @__PURE__ */ jsx("span", { children: "Warszawski Uniwersytet Medyczny" })
+          /* @__PURE__ */ jsx("span", { className: "font-medium text-foreground", children: "TRT Master Practitioner" })
         ] })
       ] }) }),
       /* @__PURE__ */ jsx("div", { className: "order-2 md:flex-shrink-0 md:w-[48%] lg:w-[46%] xl:w-[40%] relative", children: /* @__PURE__ */ jsxs("picture", { className: "block w-full md:aspect-[750/1166]", children: [
@@ -1803,6 +1793,23 @@ const ScrollReveal = ({ children, className = "", delay = 0 }) => {
     }
   );
 };
+const FAQ_TESTS_ID = "faq-badania";
+const FAQ_OPEN_EVENT = "faq:open";
+const requestFaqOpen = (id) => {
+  window.dispatchEvent(new CustomEvent(FAQ_OPEN_EVENT, { detail: id }));
+};
+const FaqLink = ({ id, className, children }) => /* @__PURE__ */ jsx(
+  "a",
+  {
+    href: `#${id}`,
+    className,
+    onClick: (e) => {
+      e.preventDefault();
+      requestFaqOpen(id);
+    },
+    children
+  }
+);
 const SymptomsSection = () => {
   const { t } = useLanguage();
   const symptoms = [
@@ -1811,32 +1818,51 @@ const SymptomsSection = () => {
     { icon: Moon, label: t.symptoms.sleep, desc: t.symptoms.sleepDesc },
     { icon: HeartPulse, label: t.symptoms.libido, desc: t.symptoms.libidoDesc },
     { icon: TrendingUp, label: t.symptoms.weight, desc: t.symptoms.weightDesc },
-    { icon: FlaskConical, label: t.symptoms.hormones, desc: t.symptoms.hormonesDesc }
+    { icon: FlaskConical, label: t.symptoms.hormones, desc: t.symptoms.hormonesDesc },
+    // Men coming off a self-run cycle rarely see themselves in a list of
+    // symptoms, so they are addressed by what they did, and pointed at odblok.
+    { icon: Dumbbell, label: t.symptoms.steroids, desc: t.symptoms.steroidsDesc, link: t.symptoms.steroidsLink }
   ];
   return /* @__PURE__ */ jsx("section", { className: "py-20 md:py-28 bg-background", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-4xl", children: [
     /* @__PURE__ */ jsxs(ScrollReveal, { children: [
       /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl md:text-4xl text-foreground text-center mb-4", children: t.symptoms.title }),
       /* @__PURE__ */ jsx("p", { className: "text-muted-foreground text-center mb-14 max-w-2xl mx-auto", children: t.symptoms.subtitle })
     ] }),
-    /* @__PURE__ */ jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6", children: symptoms.map((s, i) => /* @__PURE__ */ jsx(ScrollReveal, { delay: i * 100, children: /* @__PURE__ */ jsxs("div", { className: "group flex flex-col items-center text-center p-6 rounded-xl bg-card border border-border hover:border-primary/20 hover:shadow-md transition-all duration-300 h-full", children: [
-      /* @__PURE__ */ jsx("div", { className: "w-12 h-12 rounded-xl bg-teal-light flex items-center justify-center text-teal-mid group-hover:scale-110 transition-transform mb-4 flex-shrink-0", children: /* @__PURE__ */ jsx(s.icon, { className: "w-5 h-5" }) }),
-      /* @__PURE__ */ jsx("p", { className: "text-foreground font-semibold leading-snug mb-2", children: s.label }),
-      /* @__PURE__ */ jsx("p", { className: "text-muted-foreground text-sm leading-relaxed", children: s.desc })
-    ] }) }, i)) })
+    /* @__PURE__ */ jsx("div", { className: "flex flex-wrap justify-center gap-6", children: symptoms.map((s, i) => /* @__PURE__ */ jsx(
+      ScrollReveal,
+      {
+        delay: i * 100,
+        className: "w-full sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]",
+        children: /* @__PURE__ */ jsxs("div", { className: "group flex flex-col items-center text-center p-6 rounded-xl bg-card border border-border hover:border-primary/20 hover:shadow-md transition-all duration-300 h-full", children: [
+          /* @__PURE__ */ jsx("div", { className: "w-12 h-12 rounded-xl bg-teal-light flex items-center justify-center text-teal-mid group-hover:scale-110 transition-transform mb-4 flex-shrink-0", children: /* @__PURE__ */ jsx(s.icon, { className: "w-5 h-5" }) }),
+          /* @__PURE__ */ jsx("p", { className: "text-foreground font-semibold leading-snug mb-2", children: s.label }),
+          /* @__PURE__ */ jsx("p", { className: "text-muted-foreground text-sm leading-relaxed", children: s.desc }),
+          s.link && /* @__PURE__ */ jsx(
+            FaqLink,
+            {
+              id: "faq-odblok",
+              className: "mt-3 text-sm text-primary underline decoration-primary/30 underline-offset-4 transition-colors hover:decoration-primary",
+              children: s.link
+            }
+          )
+        ] })
+      },
+      i
+    )) })
   ] }) });
 };
 const ServicesSection = () => {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const services = [
-    { icon: Stethoscope, title: t.services.diagnostics, desc: t.services.diagnosticsDesc },
+    { icon: Stethoscope, title: t.services.diagnostics, desc: t.services.diagnosticsDesc, href: "/niski-testosteron" },
     { icon: BarChart3, title: t.services.hormoneLevel, desc: t.services.hormoneLevelDesc },
     { icon: FileSearch, title: t.services.interpretation, desc: t.services.interpretationDesc },
     { icon: ClipboardCheck, title: t.services.qualification, desc: t.services.qualificationDesc },
-    { icon: HeartPulse, title: t.services.therapy, desc: t.services.therapyDesc },
+    { icon: HeartPulse, title: t.services.therapy, desc: t.services.therapyDesc, href: "/terapia-testosteronem" },
     { icon: ShieldCheck, title: t.services.monitoring, desc: t.services.monitoringDesc },
     // Patients come looking for this by name, "odblok" - so it is listed as a
     // service in its own right, not left implied by "therapy".
-    { icon: RotateCcw, title: t.services.recovery, desc: t.services.recoveryDesc }
+    { icon: RotateCcw, title: t.services.recovery, desc: t.services.recoveryDesc, href: "/odblok-po-sterydach" }
   ];
   return /* @__PURE__ */ jsx("section", { className: "py-20 md:py-28 bg-section-alt", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-5xl", children: [
     /* @__PURE__ */ jsxs(ScrollReveal, { children: [
@@ -1857,7 +1883,14 @@ const ServicesSection = () => {
         className: "w-full md:w-[calc((100%-2rem)/2)] lg:w-[calc((100%-4rem)/3)]",
         children: /* @__PURE__ */ jsxs("div", { className: "text-center", children: [
           /* @__PURE__ */ jsx("div", { className: "w-14 h-14 mx-auto rounded-full bg-teal-light flex items-center justify-center text-teal-mid mb-5", children: /* @__PURE__ */ jsx(s.icon, { className: "w-6 h-6" }) }),
-          /* @__PURE__ */ jsx("h3", { className: "font-sans font-semibold text-foreground mb-2", children: s.title }),
+          /* @__PURE__ */ jsx("h3", { className: "font-sans font-semibold text-foreground mb-2", children: s.href && locale === "pl" ? /* @__PURE__ */ jsx(
+            Link,
+            {
+              to: s.href,
+              className: "underline decoration-foreground/25 underline-offset-4 transition-colors hover:text-primary hover:decoration-primary",
+              children: s.title
+            }
+          ) : s.title }),
           /* @__PURE__ */ jsx("p", { className: "text-muted-foreground text-sm leading-relaxed", children: s.desc })
         ] })
       },
@@ -1865,23 +1898,6 @@ const ServicesSection = () => {
     )) })
   ] }) });
 };
-const FAQ_TESTS_ID = "faq-badania";
-const FAQ_OPEN_EVENT = "faq:open";
-const requestFaqOpen = (id) => {
-  window.dispatchEvent(new CustomEvent(FAQ_OPEN_EVENT, { detail: id }));
-};
-const FaqLink = ({ id, className, children }) => /* @__PURE__ */ jsx(
-  "a",
-  {
-    href: `#${id}`,
-    className,
-    onClick: (e) => {
-      e.preventDefault();
-      requestFaqOpen(id);
-    },
-    children
-  }
-);
 const ProcessSection = () => {
   const { t } = useLanguage();
   const steps = [
@@ -1925,7 +1941,6 @@ const TrtInfoSection = () => {
     /* @__PURE__ */ jsx(ScrollReveal, { children: /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl md:text-4xl text-foreground text-center mb-8", children: t.trtInfo.title }) }),
     /* @__PURE__ */ jsx(ScrollReveal, { delay: 150, children: /* @__PURE__ */ jsxs("div", { className: "bg-card rounded-2xl p-5 sm:p-8 md:p-12 border border-border shadow-sm", children: [
       /* @__PURE__ */ jsx("p", { className: "text-foreground leading-relaxed mb-6", children: t.trtInfo.p1 }),
-      /* @__PURE__ */ jsx("p", { className: "text-foreground leading-relaxed mb-6", children: t.trtInfo.p2 }),
       /* @__PURE__ */ jsx("p", { className: "text-sm text-muted-foreground border-t border-border pt-6 italic", children: t.trtInfo.disclaimer })
     ] }) })
   ] }) });
@@ -2237,7 +2252,8 @@ const reviews = [
 ];
 const Stars = () => /* @__PURE__ */ jsx("div", { className: "flex gap-0.5", children: [...Array(5)].map((_, i) => /* @__PURE__ */ jsx(Star, { className: "h-4 w-4 fill-yellow-400 text-yellow-400" }, i)) });
 const ReviewsSection = () => {
-  const { locale } = useLanguage();
+  const { t, locale } = useLanguage();
+  const sectionLink = useSectionLink();
   const timerRef = useRef();
   const plugin = useRef(Autoplay({ delay: 4e3, stopOnInteraction: false, stopOnMouseEnter: true }));
   const handleArrowClick = useCallback(() => {
@@ -2297,7 +2313,11 @@ const ReviewsSection = () => {
           /* @__PURE__ */ jsx(CarouselNext, { className: "-right-4 md:-right-6 bg-card border-border", onClick: handleArrowClick })
         ]
       }
-    ) })
+    ) }),
+    /* @__PURE__ */ jsx("div", { className: "mt-12 flex justify-center", children: /* @__PURE__ */ jsx(Button, { variant: "cta", size: "xl", className: "w-full sm:w-auto", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "#kontakt", onClick: sectionLink("kontakt"), children: [
+      t.hero.cta,
+      /* @__PURE__ */ jsx(ArrowRight, { className: "cta-arrow" })
+    ] }) }) })
   ] }) });
 };
 const pubmed = (pmid) => `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`;
@@ -2383,7 +2403,7 @@ const blogPosts = [
         heading: "Rozmowa bez oceniania",
         paragraphs: [
           "Wielu mężczyzn odkłada wizytę, bo obawia się oceny za wcześniejsze samodzielne stosowanie testosteronu lub sterydów. Konsultacja dotyczy zdrowia, a jej przebieg jest objęty tajemnicą lekarską. Rzetelne informacje o przyjmowanych preparatach są potrzebne po to, by dobrać właściwe postępowanie.",
-          "Konsultacja odbywa się zdalnie, więc można z niej skorzystać z dowolnego miejsca w Polsce."
+          "Konsultacja odbywa się zdalnie, więc można z niej skorzystać z dowolnego miejsca."
         ]
       }
     ],
@@ -3371,12 +3391,13 @@ const AccordionContent = React.forwardRef(({ className, children, ...props }, re
   }
 ));
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;
-const FAQ_IDS = ["faq-leczenie", FAQ_TESTS_ID, "faq-kontrola", "faq-forma", "faq-bezpieczenstwo", "faq-odblok"];
+const FAQ_IDS = ["faq-leczenie", "faq-norma", FAQ_TESTS_ID, "faq-kontrola", "faq-forma", "faq-bezpieczenstwo", "faq-odblok"];
 const FaqSection = () => {
   const { t } = useLanguage();
   const [open, setOpen] = useState("");
   const faqs = [
     { q: t.faq.q1, a: t.faq.a1 },
+    { q: t.faq.q7, a: t.faq.a7 },
     { q: t.faq.q2, a: t.faq.a2 },
     { q: t.faq.q3, a: t.faq.a3 },
     { q: t.faq.q4, a: t.faq.a4 },
@@ -3405,6 +3426,10 @@ const FaqSection = () => {
     ] }) }, faq.id)) })
   ] }) });
 };
+const EMAIL = "treblinskamarta@zdrowiehormonalne.pl";
+const [local, domain] = EMAIL.split("@");
+const EMAIL_LOCAL = `${local}@`;
+const EMAIL_DOMAIN = domain;
 const ContactSection = () => {
   const { t, locale } = useLanguage();
   const phoneDisplay = locale === "pl" ? "572 565 887" : "+48 572 565 887";
@@ -3707,6 +3732,89 @@ const openCookieSettings = () => {
   if (typeof window === "undefined") return;
   window.dispatchEvent(new Event(COOKIE_SETTINGS_EVENT));
 };
+const pl = translations.pl;
+const sentence = (s) => s.endsWith(".") ? s : `${s}.`;
+const servicePages = [
+  {
+    slug: "terapia-testosteronem",
+    title: "Terapia testosteronem (TRT) – lekarz med. Marta Treblińska",
+    metaDescription: "Terapia testosteronem (TRT) u mężczyzn z potwierdzonym niedoborem. Konsultacja wideo z lekarzem, 60 min, z dowolnego miejsca.",
+    h1: "Terapia testosteronem (TRT)",
+    lead: [pl.trtInfo.p1],
+    includes: [
+      { title: pl.services.hormoneLevel, desc: pl.services.hormoneLevelDesc },
+      { title: pl.services.qualification, desc: pl.services.qualificationDesc },
+      { title: pl.services.therapy, desc: pl.services.therapyDesc },
+      { title: pl.services.monitoring, desc: pl.services.monitoringDesc }
+    ],
+    note: pl.trtInfo.disclaimer,
+    faq: [
+      { q: pl.faq.q1, a: pl.faq.a1 },
+      { q: pl.faq.q7, a: pl.faq.a7 },
+      { q: pl.faq.q3, a: pl.faq.a3 },
+      { q: pl.faq.q5, a: pl.faq.a5 }
+    ],
+    articles: ["trt-co-to-jest", "trt-a-uklad-krazenia", "trt-a-plodnosc", "hipogonadyzm-u-mezczyzn"]
+  },
+  {
+    slug: "odblok-po-sterydach",
+    title: "Odblok po sterydach i testosteronie – lekarz med. Marta Treblińska",
+    metaDescription: "Odblok po cyklu sterydowym lub odstawieniu testosteronu. Konsultacja wideo z lekarzem, 60 min, z dowolnego miejsca, objęta tajemnicą lekarską.",
+    h1: "Odblok po sterydach i testosteronie",
+    lead: [
+      sentence(pl.services.recoveryDesc),
+      "Podczas konsultacji oceniamy wyniki badań i stan zdrowia oraz ustalamy dalsze postępowanie, którego celem jest przywrócenie naturalnej produkcji hormonów. Rozmowa jest objęta tajemnicą lekarską."
+    ],
+    forWhom: {
+      title: "Kiedy warto się zgłosić",
+      items: [
+        "Po zakończeniu cyklu sterydowego",
+        "Po odstawieniu testosteronu przyjmowanego na własną rękę",
+        "Po zakończeniu terapii testosteronem prowadzonej przez lekarza",
+        "Gdy po odstawieniu spadło libido, energia lub nastrój albo pojawiły się problemy z erekcją"
+      ]
+    },
+    faq: [
+      { q: pl.faq.q2, a: pl.faq.a2 },
+      { q: pl.faq.q4, a: pl.faq.a4 }
+    ],
+    articles: [
+      "odblok-po-testosteronie-i-sterydach",
+      "hipogonadyzm-u-mezczyzn",
+      "jak-zbadac-poziom-testosteronu",
+      "trt-a-plodnosc"
+    ]
+  },
+  {
+    slug: "niski-testosteron",
+    title: "Niski testosteron: diagnostyka i leczenie – lekarz med. Marta Treblińska",
+    metaDescription: "Objawy niskiego testosteronu, badania i leczenie u mężczyzn. Konsultacja wideo z lekarzem, 60 min, z dowolnego miejsca.",
+    h1: "Niski testosteron: diagnostyka i leczenie",
+    lead: [pl.hero.description],
+    showSymptoms: true,
+    includes: [
+      { title: pl.services.diagnostics, desc: pl.services.diagnosticsDesc },
+      { title: pl.services.hormoneLevel, desc: pl.services.hormoneLevelDesc },
+      { title: pl.services.interpretation, desc: pl.services.interpretationDesc },
+      { title: pl.services.qualification, desc: pl.services.qualificationDesc }
+    ],
+    faq: [
+      { q: pl.faq.q2, a: pl.faq.a2 },
+      { q: pl.faq.q7, a: pl.faq.a7 },
+      { q: pl.faq.q1, a: pl.faq.a1 }
+    ],
+    articles: [
+      "objawy-niskiego-testosteronu-po-40",
+      "jak-zbadac-poziom-testosteronu",
+      "hipogonadyzm-u-mezczyzn",
+      "andropauza-mit-czy-rzeczywistosc"
+    ]
+  }
+];
+const bySlug = (slug) => servicePages.find((s) => s.slug === slug);
+const serviceForArticle = (articleSlug) => [bySlug("niski-testosteron"), bySlug("terapia-testosteronem"), bySlug("odblok-po-sterydach")].find(
+  (s) => s.articles.includes(articleSlug)
+) ?? bySlug("niski-testosteron");
 const SiteFooter = () => {
   const { t, locale } = useLanguage();
   const privacyPath = locale === "pl" ? "/polityka-prywatnosci" : `/${locale === "en" ? "en" : "de"}/polityka-prywatnosci`;
@@ -3756,6 +3864,15 @@ const SiteFooter = () => {
         ] })
       ] })
     ] }),
+    locale === "pl" && /* @__PURE__ */ jsx("nav", { "aria-label": "Usługi", className: "mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm", children: servicePages.map((page) => /* @__PURE__ */ jsx(
+      Link,
+      {
+        to: `/${page.slug}`,
+        className: "text-hero-foreground/70 hover:text-hero-foreground transition-colors",
+        children: page.h1
+      },
+      page.slug
+    )) }),
     /* @__PURE__ */ jsxs("div", { className: "border-t border-hero-foreground/15 mt-10 pt-8", children: [
       /* @__PURE__ */ jsx("p", { className: "text-xs text-hero-foreground/60 text-center leading-relaxed max-w-2xl mx-auto", children: t.footer.disclaimer }),
       /* @__PURE__ */ jsxs("p", { className: "text-xs text-hero-foreground/50 text-center mt-4", children: [
@@ -3844,9 +3961,9 @@ const Index = () => {
       /* @__PURE__ */ jsx(TrtInfoSection, {}),
       /* @__PURE__ */ jsx(DoctorSection, {}),
       /* @__PURE__ */ jsx(ReviewsSection, {}),
-      /* @__PURE__ */ jsx(BlogSection, {}),
       /* @__PURE__ */ jsx(FaqSection, {}),
-      /* @__PURE__ */ jsx(ContactSection, {})
+      /* @__PURE__ */ jsx(ContactSection, {}),
+      /* @__PURE__ */ jsx(BlogSection, {})
     ] }),
     /* @__PURE__ */ jsx(SiteFooter, {}),
     /* @__PURE__ */ jsx(FloatingCTA, {}),
@@ -3921,6 +4038,7 @@ const BlogPost = () => {
     }
   }, [post]);
   if (!post) return /* @__PURE__ */ jsx(Navigate, { to: "/blog", replace: true });
+  const service = serviceForArticle(post.slug);
   const related = (post.related ?? []).map((s) => blogPosts.find((p) => p.slug === s)).filter((p) => Boolean(p));
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsx(SiteNav, {}),
@@ -3967,6 +4085,15 @@ const BlogPost = () => {
         /* @__PURE__ */ jsxs("div", { className: "mt-12 p-8 rounded-2xl bg-hero text-hero-foreground text-center", children: [
           /* @__PURE__ */ jsx("h3", { className: "font-serif text-2xl mb-3", children: "Chcesz omówić swój przypadek?" }),
           /* @__PURE__ */ jsx("p", { className: "text-hero-foreground/70 mb-6 max-w-md mx-auto", children: "Skontaktuj się z lekarz Martą Treblińską, konsultacja zdalna, z dowolnego miejsca." }),
+          /* @__PURE__ */ jsx(
+            Link,
+            {
+              to: `/${service.slug}`,
+              className: "mb-6 inline-block text-hero-foreground underline decoration-hero-foreground/40 underline-offset-4 hover:decoration-hero-foreground",
+              children: service.h1
+            }
+          ),
+          /* @__PURE__ */ jsx("br", {}),
           /* @__PURE__ */ jsx(Button, { variant: "cta", size: "lg", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "tel:+48572565887", onClick: () => trackPhone("artykul"), children: [
             /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4 mr-2" }),
             "Zadzwoń teraz"
@@ -4253,6 +4380,102 @@ const Regulamin = () => {
     /* @__PURE__ */ jsx(SiteFooter, {})
   ] });
 };
+const ServicePage = ({ page }) => {
+  const { t } = useLanguage();
+  useEffect(() => {
+    var _a;
+    window.scrollTo(0, 0);
+    document.title = page.title;
+    (_a = document.querySelector('meta[name="description"]')) == null ? void 0 : _a.setAttribute("content", page.metaDescription);
+  }, [page]);
+  const articles = page.articles.map((slug) => blogPosts.find((p) => p.slug === slug)).filter((p) => Boolean(p));
+  const toContact = (e) => {
+    e.preventDefault();
+    scrollToId("kontakt");
+  };
+  return /* @__PURE__ */ jsxs(Fragment, { children: [
+    /* @__PURE__ */ jsx(SiteNav, {}),
+    /* @__PURE__ */ jsxs("main", { children: [
+      /* @__PURE__ */ jsx("section", { className: "bg-hero text-hero-foreground py-14 md:py-20", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-3xl", children: [
+        /* @__PURE__ */ jsxs("nav", { className: "flex items-center gap-2 text-xs text-hero-foreground/60 mb-6", children: [
+          /* @__PURE__ */ jsx(Link, { to: "/", className: "hover:text-hero-foreground/90 transition-colors", children: "Strona główna" }),
+          /* @__PURE__ */ jsx("span", { children: "/" }),
+          /* @__PURE__ */ jsx("span", { className: "text-hero-foreground/80", children: page.h1 })
+        ] }),
+        /* @__PURE__ */ jsx("p", { className: "text-sm uppercase tracking-[0.15em] text-hero-foreground/70 font-semibold mb-4", children: t.hero.badge }),
+        /* @__PURE__ */ jsx("h1", { className: "font-serif text-4xl md:text-5xl leading-tight mb-6", children: page.h1 }),
+        page.lead.map((p, i) => /* @__PURE__ */ jsx("p", { className: "text-lg text-hero-foreground/85 leading-relaxed mb-4", children: p }, i)),
+        /* @__PURE__ */ jsxs("div", { className: "mt-8 flex flex-col sm:flex-row sm:items-center gap-4", children: [
+          /* @__PURE__ */ jsx(Button, { variant: "cta", size: "xl", asChild: true, children: /* @__PURE__ */ jsxs("a", { href: "#kontakt", onClick: toContact, children: [
+            t.hero.cta,
+            /* @__PURE__ */ jsx(ArrowRight, { className: "cta-arrow" })
+          ] }) }),
+          /* @__PURE__ */ jsxs(
+            "a",
+            {
+              href: "tel:+48572565887",
+              onClick: () => trackPhone("usluga"),
+              className: "inline-flex items-center gap-2 text-sm text-hero-foreground/80 hover:text-hero-foreground",
+              children: [
+                /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4" }),
+                "572 565 887"
+              ]
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxs("p", { className: "mt-8 text-sm text-hero-foreground/70", children: [
+          "🎓 ",
+          t.hero.trtTraining,
+          " ",
+          /* @__PURE__ */ jsx("span", { className: "font-medium text-hero-foreground", children: "Harvard Medical School" }),
+          " ·",
+          " ",
+          /* @__PURE__ */ jsx("span", { className: "font-medium text-hero-foreground", children: "TRT Master Practitioner" })
+        ] })
+      ] }) }),
+      page.forWhom && /* @__PURE__ */ jsx("section", { className: "py-16 md:py-20 bg-background", children: /* @__PURE__ */ jsx("div", { className: "container mx-auto px-6 max-w-3xl", children: /* @__PURE__ */ jsxs(ScrollReveal, { children: [
+        /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl text-foreground mb-8", children: page.forWhom.title }),
+        /* @__PURE__ */ jsx("ul", { className: "space-y-4", children: page.forWhom.items.map((item) => /* @__PURE__ */ jsxs("li", { className: "flex items-start gap-3 text-foreground", children: [
+          /* @__PURE__ */ jsx(Check, { className: "w-5 h-5 text-teal-mid flex-shrink-0 mt-0.5" }),
+          /* @__PURE__ */ jsx("span", { children: item })
+        ] }, item)) })
+      ] }) }) }),
+      page.showSymptoms && /* @__PURE__ */ jsx(SymptomsSection, {}),
+      page.includes && /* @__PURE__ */ jsx("section", { className: "py-16 md:py-20 bg-section-alt", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-4xl", children: [
+        /* @__PURE__ */ jsx(ScrollReveal, { children: /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl text-foreground text-center mb-12", children: t.services.title }) }),
+        /* @__PURE__ */ jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-8", children: page.includes.map((item) => /* @__PURE__ */ jsxs(ScrollReveal, { children: [
+          /* @__PURE__ */ jsx("h3", { className: "font-sans font-semibold text-foreground mb-2", children: item.title }),
+          /* @__PURE__ */ jsx("p", { className: "text-muted-foreground text-sm leading-relaxed", children: item.desc })
+        ] }, item.title)) }),
+        page.note && /* @__PURE__ */ jsx("p", { className: "mt-12 text-center text-sm text-muted-foreground italic", children: page.note })
+      ] }) }),
+      /* @__PURE__ */ jsx(ReviewsSection, {}),
+      /* @__PURE__ */ jsx(DoctorSection, {}),
+      /* @__PURE__ */ jsx("section", { className: "py-16 md:py-20 bg-section-alt", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-3xl", children: [
+        /* @__PURE__ */ jsx(ScrollReveal, { children: /* @__PURE__ */ jsx("h2", { className: "font-serif text-3xl text-foreground text-center mb-10", children: t.faq.title }) }),
+        /* @__PURE__ */ jsx(Accordion, { type: "single", collapsible: true, className: "space-y-3", children: page.faq.map((item) => /* @__PURE__ */ jsxs(
+          AccordionItem,
+          {
+            value: item.q,
+            className: "bg-card border border-border rounded-xl px-6 data-[state=open]:shadow-sm",
+            children: [
+              /* @__PURE__ */ jsx(AccordionTrigger, { className: "text-left font-sans font-medium text-foreground hover:no-underline py-5", children: item.q }),
+              /* @__PURE__ */ jsx(AccordionContent, { className: "text-muted-foreground leading-relaxed pb-5", children: item.a })
+            ]
+          },
+          item.q
+        )) })
+      ] }) }),
+      articles.length > 0 && /* @__PURE__ */ jsx("section", { className: "py-16 bg-background", children: /* @__PURE__ */ jsxs("div", { className: "container mx-auto px-6 max-w-3xl", children: [
+        /* @__PURE__ */ jsx("h2", { className: "font-serif text-2xl text-foreground mb-6", children: "Artykuły" }),
+        /* @__PURE__ */ jsx("ul", { className: "space-y-3", children: articles.map((a) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link, { to: `/blog/${a.slug}`, className: "text-primary hover:underline underline-offset-4", children: a.title }) }, a.slug)) })
+      ] }) }),
+      /* @__PURE__ */ jsx(ContactSection, {})
+    ] }),
+    /* @__PURE__ */ jsx(SiteFooter, {}),
+    /* @__PURE__ */ jsx(FloatingCTA, {})
+  ] });
+};
 const NotFound = () => {
   const location = useLocation();
   useEffect(() => {
@@ -4297,6 +4520,7 @@ function render(url) {
       /* @__PURE__ */ jsx(Route, { path: "/regulamin", element: /* @__PURE__ */ jsx(Regulamin, {}) }),
       /* @__PURE__ */ jsx(Route, { path: "/en/regulamin", element: /* @__PURE__ */ jsx(Regulamin, {}) }),
       /* @__PURE__ */ jsx(Route, { path: "/de/regulamin", element: /* @__PURE__ */ jsx(Regulamin, {}) }),
+      servicePages.map((page) => /* @__PURE__ */ jsx(Route, { path: `/${page.slug}`, element: /* @__PURE__ */ jsx(ServicePage, { page }) }, page.slug)),
       /* @__PURE__ */ jsx(Route, { path: "*", element: /* @__PURE__ */ jsx(NotFound, {}) })
     ] }) }) }) }) })
   );
@@ -4304,5 +4528,6 @@ function render(url) {
 }
 export {
   blogPosts,
-  render
+  render,
+  servicePages
 };
