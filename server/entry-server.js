@@ -413,7 +413,7 @@ const translations = {
       bookMedfile: "Umów online przez Medfile",
       bookPhone: "Zadzwoń:",
       priceNote: "Pierwsza konsultacja (60 min): 799 zł",
-      priceFollowUp: "Wizyta kontrolna (30 min): 449 zł"
+      priceFollowUp: "Wizyta kontrolna (30 min): 499 zł"
     },
     footer: {
       entityInfo: "Informacje o podmiocie",
@@ -867,7 +867,7 @@ const translations = {
       bookMedfile: "Book online via Medfile",
       bookPhone: "Call:",
       priceNote: "First consultation (60 min): 799 PLN",
-      priceFollowUp: "Follow-up visit (30 min): 449 PLN"
+      priceFollowUp: "Follow-up visit (30 min): 499 PLN"
     },
     footer: {
       entityInfo: "Entity information",
@@ -1321,7 +1321,7 @@ const translations = {
       bookMedfile: "Online über Medfile buchen",
       bookPhone: "Anrufen:",
       priceNote: "Erstberatung (60 Min.): 799 PLN",
-      priceFollowUp: "Kontrolltermin (30 Min.): 449 PLN"
+      priceFollowUp: "Kontrolltermin (30 Min.): 499 PLN"
     },
     footer: {
       entityInfo: "Angaben zur Praxis",
