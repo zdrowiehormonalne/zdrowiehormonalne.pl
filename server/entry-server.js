@@ -1414,15 +1414,21 @@ function LanguageProvider({ children, ssrUrl }) {
     const pathLocale = getLocaleFromPath(ssrUrl);
     if (pathLocale) return pathLocale;
     if (!isSSR) {
-      const stored = localStorage.getItem("locale");
-      if (stored && SUPPORTED_LOCALES.includes(stored)) return stored;
+      try {
+        const stored = localStorage.getItem("locale");
+        if (stored && SUPPORTED_LOCALES.includes(stored)) return stored;
+      } catch {
+      }
     }
     return "pl";
   });
   const setLocale = useCallback((newLocale) => {
     setLocaleState(newLocale);
     if (isSSR) return;
-    localStorage.setItem("locale", newLocale);
+    try {
+      localStorage.setItem("locale", newLocale);
+    } catch {
+    }
     const path = window.location.pathname;
     const cleanPath = path.replace(/^\/(en|de)/, "") || "/";
     const newPath = newLocale === "pl" ? cleanPath : `/${newLocale}${cleanPath === "/" ? "" : cleanPath}`;
